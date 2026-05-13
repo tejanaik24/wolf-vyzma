@@ -45,10 +45,11 @@ Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
 ```bash
-game-website/
+vyzma-ai/
   |- public/
   |- src/
     |-- components/
+      |--- ui/
       |--- about.tsx
       |--- animated-title.tsx
       |--- button.tsx
@@ -73,6 +74,7 @@ game-website/
   |- eslint.config.js
   |- index.html
   |- netlify.toml
+  |- package-lock.json
   |- package.json
   |- postcss.config.mjs
   |- tsconfig.app.json
@@ -121,19 +123,25 @@ Useful resources and dependencies that are used in Nova.
 <!--- DEPENDENCIES_START --->
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^10.0.1
 - [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
+- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
 - [@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss): ^4.1.18
 - [@tailwindcss/vite](https://www.npmjs.com/package/@tailwindcss/vite): ^4.1.18
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.13
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
 - [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^6.0.1
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
+- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
+- [embla-carousel-auto-scroll](https://www.npmjs.com/package/embla-carousel-auto-scroll): ^8.6.0
+- [embla-carousel-react](https://www.npmjs.com/package/embla-carousel-react): ^8.6.0
 - [eslint](https://www.npmjs.com/package/eslint): ^10.0.0
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.37.2
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^7.0.1
 - [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.0
+- [framer-motion](https://www.npmjs.com/package/framer-motion): ^12.38.0
 - [globals](https://www.npmjs.com/package/globals): ^17.3.0
 - [gsap](https://www.npmjs.com/package/gsap): ^3.14.2
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.14.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.6
 - [prettier](https://www.npmjs.com/package/prettier): ^3.8.1
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.0
