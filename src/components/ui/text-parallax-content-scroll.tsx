@@ -111,20 +111,21 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
     // 110vh: sticky card pins for ~10vh, entrance/exit tied to viewport edges
     <div ref={outerRef} style={{ minHeight: "110vh" }}>
       <div style={{ paddingLeft: PAD, paddingRight: PAD }}>
+        {/* Outer: sticky + animated conic-gradient border */}
         <div
-          className="sticky overflow-hidden rounded-3xl bg-[#0A0A0D]"
+          className="sticky slide-glow-border rounded-3xl"
           style={{ top: PAD, height: `calc(100vh - ${PAD * 2}px)` }}
         >
+          {/* Inner: 2px inset so the border shows, overflow-hidden clips image */}
           <div
             ref={cardRef}
-            className="absolute inset-0 flex items-center justify-center"
+            className="absolute inset-[2px] overflow-hidden rounded-[22px] bg-[#0A0A0D] flex items-center justify-center"
           >
             <img
               src={imgUrl}
               alt=""
               className="h-full w-full object-contain"
             />
-            <div className="absolute inset-0 rounded-3xl ring-1 ring-white/[0.06] pointer-events-none" />
           </div>
         </div>
       </div>
