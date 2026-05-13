@@ -38,7 +38,7 @@ const SLIDES: SlideData[] = [
   },
 ];
 
-const PAD = 14;
+const PAD = 12;
 
 const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
   const outerRef = useRef<HTMLDivElement>(null);
@@ -52,53 +52,45 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
       const cap = captionRef.current;
       if (!card || !outer || !cap) return;
 
-      // Single timeline covering full visibility window (container top→bottom crossing viewport)
-      // "top bottom" → "bottom top" = 230vh total (130vh container + 100vh viewport)
-      // Sticky is active ~43%–57% of that range — entrance/exit bracket it neatly
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: outer,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.3,
-        },
-      });
-
-      // 0–35%: card rises from depth
-      tl.fromTo(
+      // ── 3D entrance — NO opacity change, images always fully bright ──────
+      // Only scale + rotationX for the floating depth feel
+      gsap.fromTo(
         card,
         {
-          scale: 0.84,
-          rotationX: 16,
-          opacity: 0,
-          transformPerspective: 1100,
+          scale: 0.92,
+          rotationX: 12,
+          transformPerspective: 1000,
           transformOrigin: "50% 50%",
         },
         {
           scale: 1,
           rotationX: 0,
-          opacity: 1,
-          ease: "power1.out",
-        },
-        0
+          ease: "none",
+          scrollTrigger: {
+            trigger: outer,
+            start: "top 90%",   // starts the moment card appears from below
+            end: "top 10%",     // fully in by the time it's near the top
+            scrub: 0.6,         // fast, locked to scroll
+          },
+        }
       );
 
-      // 65–100%: card recedes into depth after sticky unpins
-      tl.to(
-        card,
-        {
-          scale: 0.84,
-          rotationX: -10,
-          opacity: 0,
-          ease: "power1.in",
+      // ── Subtle exit — scale down only, no opacity (keeps images visible) ─
+      gsap.to(card, {
+        scale: 0.88,
+        ease: "none",
+        scrollTrigger: {
+          trigger: outer,
+          start: "bottom 90%",  // card starts shrinking as next slide comes
+          end: "bottom 20%",
+          scrub: 0.6,
         },
-        0.65
-      );
+      });
 
-      // Caption fades up
+      // ── Caption floats up ─────────────────────────────────────────────────
       gsap.fromTo(
         cap,
-        { y: 24, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -106,8 +98,8 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
           scrollTrigger: {
             trigger: cap,
             start: "top 100%",
-            end: "top 55%",
-            scrub: 0.9,
+            end: "top 60%",
+            scrub: 0.6,
           },
         }
       );
@@ -116,8 +108,8 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
   );
 
   return (
-    // 130vh: sticky pins for ~30vh, timeline entrance/exit fill the rest
-    <div ref={outerRef} style={{ minHeight: "130vh" }}>
+    // 110vh: sticky card pins for ~10vh, entrance/exit tied to viewport edges
+    <div ref={outerRef} style={{ minHeight: "110vh" }}>
       <div style={{ paddingLeft: PAD, paddingRight: PAD }}>
         <div
           className="sticky overflow-hidden rounded-3xl bg-[#0A0A0D]"
@@ -137,15 +129,15 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
         </div>
       </div>
 
-      {/* Caption — sits flush after sticky, no travel div */}
+      {/* Caption — tight strip below image, no dead space */}
       <div
         ref={captionRef}
-        className="mx-auto max-w-2xl px-6 py-5 text-center"
+        className="mx-auto max-w-2xl px-6 py-4 text-center"
       >
-        <p className="font-general mb-1.5 text-[10px] uppercase tracking-[0.3em] text-[#3DA3FF]">
+        <p className="font-general mb-1 text-[10px] uppercase tracking-[0.3em] text-[#3DA3FF]">
           {sub}
         </p>
-        <p className="font-circular-web text-base leading-relaxed text-[#D0D2D6] md:text-lg">
+        <p className="font-circular-web text-sm leading-relaxed text-[#D0D2D6] md:text-base">
           {caption}
         </p>
       </div>
