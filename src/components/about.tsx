@@ -31,26 +31,29 @@ export const About = () => {
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          Welcome to Zentry
+          Welcome to Vyzma AI
         </p>
 
-        <AnimatedTitle containerClass="mt-5 !text-black text-center">
+        <AnimatedTitle containerClass="mt-5 !text-white text-center">
           {
-            "Disc<b>o</b>ver the world&apos;s l<b>a</b>rgest <br /> shared adventure"
+            "The future of intell<b>i</b>gence <br /> is h<b>e</b>re"
           }
         </AnimatedTitle>
 
         <div className="about-subtext">
-          <p>The Game of Games begins-your life, now an epic MMORPG</p>
-          <p>Zentry unites every player from countless games and platforms</p>
+          <p>We build AI-powered workflows, automate your growth, and rank where it counts</p>
+          <p>India's premier AI agency — built in Vizag &amp; Bangalore, competing globally</p>
         </div>
       </div>
 
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
-          <img
-            src="/img/about.webp"
-            alt="Background"
+          <video
+            src="/videos/wolf-hero.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="absolute top-0 left-0 size-full object-cover"
           />
         </div>

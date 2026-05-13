@@ -62,15 +62,15 @@ export const Navbar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
             <a href="#hero" className="transition hover:opacity-75">
-              <img src="/img/logo.png" alt="Logo" className="w-10" />
+              <img src="/img/vyzma-logo.png" alt="Vyzma" className="h-16 w-auto" />
             </a>
 
             <Button
               id="product-button"
               rightIcon={TiLocationArrow}
-              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
+              containerClass="bg-[#3DA3FF] text-white md:flex hidden items-center justify-center gap-1"
             >
-              Products
+              Get Started
             </Button>
           </div>
 

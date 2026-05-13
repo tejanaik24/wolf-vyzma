@@ -45,14 +45,14 @@ export const Contact = () => {
         </div>
 
         <div className="flex flex-col items-center text-center">
-          <p className="font-general text-[10px] uppercase">Join Zentry</p>
+          <p className="font-general text-[10px] uppercase">Ready to Build Smarter?</p>
 
           <p className="special-font font-zentry mt-10 w-full text-5xl leading-[0.9] md:text-[6rem]">
-            Let&apos;s b<b>u</b>ild the
-            <br /> new era of <br /> g<b>a</b>ming t<b>o</b>gether
+            Let&apos;s b<b>u</b>ild
+            <br /> s<b>o</b>mething <br /> <b>s</b>mart — t<b>o</b>gether
           </p>
 
-          <Button containerClass="mt-10 cursor-pointer">Contact Us</Button>
+          <Button containerClass="mt-10 cursor-pointer">Start a Project</Button>
         </div>
       </div>
     </section>

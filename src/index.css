@@ -1,4 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/general-sans");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap");
 @import "tailwindcss";
 
 @tailwind utilities;
@@ -6,27 +7,41 @@
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: #dfdff0;
-  font-family: "General Sans", sans-serif;
+  background-color: #0A0A0D;
+  font-family: "Satoshi", "General Sans", sans-serif;
 }
 
 @theme {
-  --color-blue-50: #dfdff0;
-  --color-blue-75: #dfdff2;
-  --color-blue-100: #f0f2fa;
-  --color-blue-200: #101010;
-  --color-blue-300: #4fb7dd;
+  /* Brand color tokens */
+  --color-blue-50:   #F2F4F7;
+  --color-blue-75:   #14151A;
+  --color-blue-100:  #F2F4F7;
+  --color-blue-200:  #0A0A0D;
+  --color-blue-300:  #3DA3FF;
 
-  --color-violet-300: #5724ff;
+  --color-violet-300: #8A5CFF;
 
-  --color-yellow-100: #8e983f;
-  --color-yellow-300: #edff66;
+  --color-yellow-100: #FFB547;
+  --color-yellow-300: #FFB547;
+
+  /* Extended brand palette */
+  --color-void-black:     #0A0A0D;
+  --color-graphite:       #14151A;
+  --color-dark-slate:     #23242B;
+  --color-neural-blue:    #3DA3FF;
+  --color-quantum-violet: #8A5CFF;
+  --color-velocity-gold:  #FFB547;
+  --color-titanium:       #D0D2D6;
+  --color-soft-white:     #F2F4F7;
+  --color-signal-pink:    #FF5CA8;
+  --color-cyber-teal:     #00E6C7;
 
   --font-zentry: "zentry", "sans-serif";
   --font-general: "general", "sans-serif";
   --font-circular-web: "circular-web", "sans-serif";
   --font-robert-medium: "robert-medium", "sans-serif";
   --font-robert-regular: "robert-regular", "sans-serif";
+  --font-satoshi: "Satoshi", "sans-serif";
 }
 
 @layer base {
@@ -71,7 +86,18 @@ body {
   }
 
   .floating-nav {
-    @apply rounded-lg border bg-black;
+    @apply rounded-lg border border-white/10 bg-black;
+  }
+
+  .brand-gradient {
+    background: linear-gradient(90deg, #3DA3FF, #8A5CFF, #FFB547);
+  }
+
+  .brand-gradient-text {
+    background: linear-gradient(90deg, #3DA3FF, #8A5CFF, #FFB547);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .absolute-center {
@@ -195,7 +221,7 @@ body {
 .three-body {
   --uib-size: 35px;
   --uib-speed: 0.8s;
-  --uib-color: #5d3fd3;
+  --uib-color: #3DA3FF;
   position: relative;
   display: inline-block;
   height: var(--uib-size);

@@ -50,12 +50,12 @@ export const Story = () => {
     <section id="story" className="min-h-dvh w-screen bg-black text-blue-50">
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          the multiversal ip world
+          the origin of vyzma
         </p>
 
         <div className="relative size-full">
           <AnimatedTitle containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10">
-            {"The St<b>o</b>ry of <br /> a hidden real<b>m</b>"}
+            {"The B<b>i</b>rth of <br /> a new intell<b>i</b>gence"}
           </AnimatedTitle>
 
           <div className="story-img-container">
@@ -80,13 +80,13 @@ export const Story = () => {
 
         <div className="-mt-80 flex w-full justify-center md:me-44 md:-mt-64 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
-            <p className="font-circular-web mt-3 max-w-sm text-center text-violet-50 md:text-start">
-              Where realms converge, lies Zentry the boundless pillar. Discover
-              its secrets and shape your fate amidst infinite opportunities.
+            <p className="font-circular-web mt-3 max-w-sm text-center text-[#D0D2D6] md:text-start">
+              Where data meets intelligence, Vyzma emerges. Discover the
+              story behind the AI that's reshaping how we work and create.
             </p>
 
             <Button id="realm-button" containerClass="mt-5">
-              Discover Prologue
+              Read Our Story
             </Button>
           </div>
         </div>

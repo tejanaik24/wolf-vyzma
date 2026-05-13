@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
 import { Story } from "@/components/story";
+import { Logos3 } from "@/components/ui/logos3";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <main>
         <Hero />
         <About />
+        <Logos3 />
         <Features />
         <Story />
         <Contact />

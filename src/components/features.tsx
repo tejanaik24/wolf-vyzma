@@ -1,6 +1,7 @@
 import { VIDEO_LINKS } from "@/constants";
 import { PropsWithChildren, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import { VyzmaParallaxSlides } from "@/components/ui/text-parallax-content-scroll";
 
 interface BentoTiltProps {
   className?: string;
@@ -81,27 +82,16 @@ export const Features = () => {
       <div className="container mx-auto px-3 md:px-10">
         <div className="px-5 py-32">
           <p className="font-circular-web text-lg text-blue-50">
-            Into the Metagame Layer
+            Intelligent Capabilities
           </p>
 
           <p className="font-circular-web max-w-md text-lg text-blue-50 opacity-50">
-            Immerse yourself in a rich and ever-expanding universe where a
-            vibrant array of products converge into an interconnected overlay
-            experience on your world.
+            From AI chatbots to workflow automation — deploy intelligent systems
+            that work 24/7 so your business runs smarter, faster, with less effort.
           </p>
         </div>
 
-        <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
-          <BentoCard
-            src={VIDEO_LINKS.feature1}
-            title={
-              <>
-                radia<b>n</b>t
-              </>
-            }
-            description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-          />
-        </BentoTilt>
+        <VyzmaParallaxSlides />
 
         <div
           id="nexus"
@@ -112,10 +102,10 @@ export const Features = () => {
               src={VIDEO_LINKS.feature2}
               title={
                 <>
-                  zig<b>m</b>a
+                  re<b>a</b>son
                 </>
               }
-              description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+              description="Advanced AI reasoning that analyzes your data, surfaces insights, and makes decisions in real-time."
             />
           </BentoTilt>
 
@@ -124,10 +114,10 @@ export const Features = () => {
               src={VIDEO_LINKS.feature3}
               title={
                 <>
-                  n<b>e</b>xus
+                  cre<b>a</b>te
                 </>
               }
-              description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+              description="Generate content, campaigns, and code with AI trained on your brand voice and business context."
             />
           </BentoTilt>
 
@@ -136,20 +126,20 @@ export const Features = () => {
               src={VIDEO_LINKS.feature4}
               title={
                 <>
-                  az<b>u</b>l
+                  c<b>o</b>nnect
                 </>
               }
-              description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+              description="Seamlessly integrate with your existing tools — WhatsApp, Instagram, CRMs, and more. Zero disruption."
             />
           </BentoTilt>
 
           <BentoTilt className="bento-tilt_2">
-            <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
-              <h1 className="bento-title special-font max-w-64 text-black">
+            <div className="flex size-full flex-col justify-between bg-gradient-to-br from-[#3DA3FF] via-[#8A5CFF] to-[#FFB547] p-5">
+              <h1 className="bento-title special-font max-w-64 text-white">
                 M<b>o</b>re co<b>m</b>ing so<b>o</b>n!
               </h1>
 
-              <TiLocationArrow className="m-5 scale-[5] self-end" />
+              <TiLocationArrow className="m-5 scale-[5] self-end text-white" />
             </div>
           </BentoTilt>
 
