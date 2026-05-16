@@ -28,8 +28,8 @@ export const AboutSection = () => {
         </FadeIn>
 
         <AnimatedText
-          text="We started Vyzma because we were frustrated. Every time a small business owner in India wanted AI, they were quoted ₹50,000/month and handed a 40-page proposal. The gym owner, the clinic doctor, the restaurant family — they deserved better. Vyzma is the answer. We are a team of AI engineers, marketers, and designers based in Bangalore and Vizag. We build the same AI tools that Fortune 500 companies use — and we make them affordable for every Indian business. Starting ₹4,999/month. 50+ projects delivered. 2 offices. 1 mission: AI for every business."
-          className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px] text-[clamp(1rem,2vw,1.35rem)]"
+          text="Indian businesses deserved better AI. We said no to ₹50,000/month proposals and yes to results that actually matter. Starting at ₹4,999/month — fully managed, live in 7 days. 50+ businesses transformed. 1 mission: AI for every business in India."
+          className="text-[#D7E2EA] font-medium text-center leading-loose max-w-[780px] text-[clamp(1.1rem,2.2vw,1.5rem)]"
         />
 
         <div className="mt-16 sm:mt-20 md:mt-24">
