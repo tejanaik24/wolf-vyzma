@@ -5,7 +5,6 @@ import { About } from "@/components/about";
 import { Logos3 } from "@/components/ui/logos3";
 import { VyzmaParallaxSlides } from "@/components/ui/text-parallax-content-scroll";
 import { ProblemSection } from "@/components/problem-section";
-import { PricingSection } from "@/components/pricing-section";
 import { ServicesSection } from "@/components/services-section";
 import { IndustriesSection } from "@/components/industries-section";
 import { HowItWorks } from "@/components/how-it-works";
@@ -29,7 +28,6 @@ const App = () => {
         <Logos3 />
         <VyzmaParallaxSlides />
         <ProblemSection />
-        <PricingSection />
         <ServicesSection />
         <IndustriesSection />
         <HowItWorks />
