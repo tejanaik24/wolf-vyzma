@@ -5,7 +5,6 @@ import { TrustBar } from "@/components/trust-bar";
 import { About } from "@/components/about";
 import { Logos3 } from "@/components/ui/logos3";
 import { VyzmaParallaxSlides } from "@/components/ui/text-parallax-content-scroll";
-import { ProblemSection } from "@/components/problem-section";
 import { PainPointsSection } from "@/components/pain-points-section";
 import { ServicesSection } from "@/components/services-section";
 import { IndustriesSection } from "@/components/industries-section";
@@ -30,7 +29,6 @@ const App = () => {
         <About />
         <Logos3 />
         <VyzmaParallaxSlides />
-        <ProblemSection />
         <PainPointsSection />
         <ServicesSection />
         <IndustriesSection />
