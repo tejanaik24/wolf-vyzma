@@ -22,3 +22,7 @@ dist-ssr
 *.sw?
 .vercel
 bun.lockb
+
+# Large unused video files
+public/videos/vyzma-hero-1.mp4
+public/videos/feature-*.mp4
