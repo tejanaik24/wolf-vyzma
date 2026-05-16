@@ -197,29 +197,41 @@ export const ServicesSection = () => {
               background: "transparent",
             }}
           >
-            {/* Blue/purple radial glow behind wolf */}
+            {/* FIX 3 — Glow that blends into site bg */}
             <div style={{
               position: "absolute",
               width: "500px", height: "600px",
-              background: "radial-gradient(ellipse, rgba(30,144,255,0.2) 0%, rgba(123,47,190,0.1) 40%, transparent 70%)",
+              background: "radial-gradient(ellipse at center, rgba(30,144,255,0.15) 0%, rgba(6,1,15,0.8) 60%, #06010F 100%)",
               top: "50%", left: "50%",
               transform: "translate(-50%, -50%)",
               pointerEvents: "none", zIndex: 0,
             }} />
 
-            {/* Wolf image */}
-            <div style={{ background: "transparent", isolation: "isolate", position: "relative", zIndex: 1 }}>
+            {/* FIX 1 + FIX 4 — Wolf wrapper: transparent, no border, soft edge mask */}
+            <div style={{
+              background: "transparent",
+              isolation: "isolate",
+              position: "relative",
+              zIndex: 1,
+              border: "none",
+              boxShadow: "none",
+              borderRadius: 0,
+              WebkitMaskImage: "radial-gradient(ellipse 80% 90% at center, black 50%, transparent 100%)",
+              maskImage: "radial-gradient(ellipse 80% 90% at center, black 50%, transparent 100%)",
+            }}>
+              {/* FIX 2 — Fill space, crop to face + upper body */}
               <img
                 src="/img/service-wolf.png"
                 alt="Vyzma Service Wolf"
                 style={{
                   width: "100%",
-                  maxWidth: "420px",
-                  maxHeight: "80vh",
-                  objectFit: "contain",
+                  height: "70vh",
+                  objectFit: "cover",
+                  objectPosition: "center top",
                   mixBlendMode: "screen",
                   filter: "brightness(1.1) contrast(1.05)",
                   display: "block",
+                  background: "transparent",
                 }}
               />
             </div>
