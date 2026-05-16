@@ -207,19 +207,13 @@ export const ServicesSection = () => {
               pointerEvents: "none", zIndex: 0,
             }} />
 
-            {/* FIX 1 + FIX 4 — Wolf wrapper: transparent, no border, soft edge mask */}
+            {/* Wolf wrapper: mask for soft edges, NO isolation so screen blend reaches page bg */}
             <div style={{
-              background: "transparent",
-              isolation: "isolate",
               position: "relative",
               zIndex: 1,
-              border: "none",
-              boxShadow: "none",
-              borderRadius: 0,
-              WebkitMaskImage: "radial-gradient(ellipse 80% 90% at center, black 50%, transparent 100%)",
-              maskImage: "radial-gradient(ellipse 80% 90% at center, black 50%, transparent 100%)",
+              WebkitMaskImage: "radial-gradient(ellipse 80% 90% at center, black 45%, transparent 100%)",
+              maskImage: "radial-gradient(ellipse 80% 90% at center, black 45%, transparent 100%)",
             }}>
-              {/* FIX 2 — Fill space, crop to face + upper body */}
               <img
                 src="/img/service-wolf.png"
                 alt="Vyzma Service Wolf"
@@ -229,9 +223,8 @@ export const ServicesSection = () => {
                   objectFit: "cover",
                   objectPosition: "center top",
                   mixBlendMode: "screen",
-                  filter: "brightness(1.1) contrast(1.05)",
+                  filter: "brightness(1.15) contrast(1.1)",
                   display: "block",
-                  background: "transparent",
                 }}
               />
             </div>
