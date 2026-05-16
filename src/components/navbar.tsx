@@ -64,7 +64,7 @@ export const Navbar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
             <a href="#hero" className="transition hover:opacity-75">
-              <img src="/img/vyzma-logo.png" alt="Vyzma" className="h-16 w-auto" />
+              <img src="/img/vyzma-logo.png" alt="Vyzma" className="h-32 w-auto" />
             </a>
 
             <Button
