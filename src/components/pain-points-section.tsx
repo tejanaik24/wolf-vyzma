@@ -202,7 +202,7 @@ export const PainPointsSection = () => {
             }}
           />
           <img
-            src="/img/wolf-ai-automation.png"
+            src="/img/wolf-hero.png"
             alt="Vyzma AI Wolf"
             style={{
               width: "100%",
