@@ -63,6 +63,7 @@ vyzma-ai/
       |--- industries-section.tsx
       |--- navbar.tsx
       |--- offices.tsx
+      |--- pain-points-section.tsx
       |--- pilot-offer.tsx
       |--- problem-section.tsx
       |--- projects-section.tsx
