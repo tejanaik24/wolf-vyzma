@@ -55,9 +55,7 @@ vyzma-ai/
       |--- animated-title.tsx
       |--- button.tsx
       |--- contact-section.tsx
-      |--- contact.tsx
       |--- faq-section.tsx
-      |--- features.tsx
       |--- footer.tsx
       |--- hero.tsx
       |--- how-it-works.tsx
@@ -70,7 +68,6 @@ vyzma-ai/
       |--- projects-section.tsx
       |--- rounded-corners.tsx
       |--- services-section.tsx
-      |--- story.tsx
       |--- trust-bar.tsx
       |--- why-vyzma.tsx
     |-- constants/
