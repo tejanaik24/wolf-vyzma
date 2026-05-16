@@ -84,7 +84,6 @@ vyzma-ai/
   |- .gitignore
   |- .nvmrc
   |- .prettierrc
-  |- bun.lockb
   |- eslint.config.js
   |- index.html
   |- netlify.toml
