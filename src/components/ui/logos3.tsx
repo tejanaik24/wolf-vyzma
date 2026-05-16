@@ -16,16 +16,18 @@ interface Logos3Props {
 const Logos3 = ({
   heading = "Platforms we automate for you",
   logos = [
-    { id: "logo-1", description: "OpenAI", image: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", className: "h-8 w-auto brightness-0 invert" },
-    { id: "logo-2", description: "Google", image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", className: "h-7 w-auto brightness-0 invert" },
-    { id: "logo-3", description: "Meta", image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", className: "h-7 w-auto brightness-0 invert" },
-    { id: "logo-4", description: "WhatsApp", image: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg", className: "h-8 w-auto brightness-0 invert" },
-    { id: "logo-5", description: "Instagram", image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png", className: "h-8 w-auto brightness-0 invert" },
-    { id: "logo-6", description: "LinkedIn", image: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png", className: "h-8 w-auto brightness-0 invert" },
-    { id: "logo-7", description: "YouTube", image: "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg", className: "h-6 w-auto brightness-0 invert" },
-    { id: "logo-8", description: "Notion", image: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", className: "h-8 w-auto brightness-0 invert" },
-    { id: "logo-9", description: "Slack", image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg", className: "h-7 w-auto brightness-0 invert" },
-    { id: "logo-10", description: "Zapier", image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Zapier_logo.svg", className: "h-6 w-auto brightness-0 invert" },
+    { id: "logo-1",  description: "ChatGPT",    image: "https://cdn.simpleicons.org/openai/ffffff",     className: "h-7 w-auto" },
+    { id: "logo-2",  description: "Vercel",      image: "https://cdn.simpleicons.org/vercel/ffffff",     className: "h-6 w-auto" },
+    { id: "logo-3",  description: "Slack",       image: "https://cdn.simpleicons.org/slack/ffffff",      className: "h-7 w-auto" },
+    { id: "logo-4",  description: "WhatsApp",    image: "https://cdn.simpleicons.org/whatsapp/ffffff",   className: "h-7 w-auto" },
+    { id: "logo-5",  description: "Instagram",   image: "https://cdn.simpleicons.org/instagram/ffffff",  className: "h-7 w-auto" },
+    { id: "logo-6",  description: "n8n",         image: "https://cdn.simpleicons.org/n8n/ffffff",        className: "h-7 w-auto" },
+    { id: "logo-7",  description: "Make",        image: "https://cdn.simpleicons.org/make/ffffff",       className: "h-7 w-auto" },
+    { id: "logo-8",  description: "Zapier",      image: "https://cdn.simpleicons.org/zapier/ffffff",     className: "h-6 w-auto" },
+    { id: "logo-9",  description: "Notion",      image: "https://cdn.simpleicons.org/notion/ffffff",     className: "h-7 w-auto" },
+    { id: "logo-10", description: "HubSpot",     image: "https://cdn.simpleicons.org/hubspot/ffffff",    className: "h-7 w-auto" },
+    { id: "logo-11", description: "Anthropic",   image: "https://cdn.simpleicons.org/anthropic/ffffff",  className: "h-7 w-auto" },
+    { id: "logo-12", description: "Perplexity",  image: "https://cdn.simpleicons.org/perplexity/ffffff", className: "h-7 w-auto" },
   ],
 }: Logos3Props) => {
   return (
