@@ -38,23 +38,27 @@ export const ServicesSection = () => {
     }
   };
 
+  // rect offset so the fixed preview aligns with the container
+  const containerRect = containerRef.current?.getBoundingClientRect();
+
   return (
     <section
       id="services"
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 overflow-hidden"
+      className="relative bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
     >
-      {/* Floating image preview — follows cursor */}
+      {/* Floating image preview — fixed so it's never clipped */}
       <div
-        className="pointer-events-none absolute z-50 overflow-hidden rounded-2xl shadow-2xl"
+        className="pointer-events-none fixed z-[999] overflow-hidden rounded-2xl shadow-2xl"
         style={{
-          transform: `translate3d(${smoothPosition.x + 24}px, ${smoothPosition.y - 110}px, 0)`,
-          opacity: isVisible ? 1 : 0,
-          scale: isVisible ? "1" : "0.85",
-          transition: "opacity 0.25s cubic-bezier(0.4,0,0.2,1), scale 0.25s cubic-bezier(0.4,0,0.2,1)",
+          left: containerRect?.left ?? 0,
+          top: containerRect?.top ?? 0,
           width: 260,
           height: 170,
+          transform: `translate3d(${smoothPosition.x + 24}px, ${smoothPosition.y - 120}px, 0) scale(${isVisible ? 1 : 0.85})`,
+          opacity: isVisible ? 1 : 0,
+          transition: "opacity 0.25s cubic-bezier(0.4,0,0.2,1), transform 0.25s cubic-bezier(0.4,0,0.2,1)",
         }}
       >
         {SERVICES.map((service, index) => (
@@ -90,6 +94,7 @@ export const ServicesSection = () => {
             onMouseLeave={() => { setHoveredIndex(null); setIsVisible(false); }}
           >
             <div className="relative flex gap-6 sm:gap-8 md:gap-12 py-8 sm:py-10 md:py-12 border-b border-[rgba(12,12,12,0.12)] last:border-b-0">
+
               {/* Hover background highlight */}
               <div
                 className="absolute inset-0 -mx-4 rounded-xl bg-[#0C0C0C]/[0.04] transition-all duration-300"
@@ -99,7 +104,7 @@ export const ServicesSection = () => {
               {/* Number */}
               <span
                 className="relative text-[#0C0C0C] font-black leading-none text-[clamp(3rem,10vw,140px)] shrink-0 transition-all duration-300"
-                style={{ opacity: hoveredIndex === index ? 1 : 0.25 }}
+                style={{ opacity: hoveredIndex === index ? 1 : 0.2 }}
               >
                 {service.number}
               </span>
