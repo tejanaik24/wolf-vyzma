@@ -65,7 +65,6 @@ vyzma-ai/
       |--- offices.tsx
       |--- pain-points-section.tsx
       |--- pilot-offer.tsx
-      |--- problem-section.tsx
       |--- projects-section.tsx
       |--- rounded-corners.tsx
       |--- services-section.tsx
