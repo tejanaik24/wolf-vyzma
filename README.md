@@ -63,13 +63,13 @@ vyzma-ai/
       |--- navbar.tsx
       |--- offices.tsx
       |--- pilot-offer.tsx
-      |--- pricing-section.tsx
       |--- problem-section.tsx
       |--- projects-section.tsx
       |--- rounded-corners.tsx
       |--- services-section.tsx
       |--- trust-bar.tsx
       |--- why-vyzma.tsx
+      |--- wolf-slides-section.tsx
     |-- constants/
       |--- index.ts
     |-- lib/
