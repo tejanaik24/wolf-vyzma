@@ -74,7 +74,7 @@ vyzma-ai/
       |--- index.ts
     |-- lib/
       |--- utils.ts
-    |-- app.tsx
+    |-- App.tsx
     |-- index.css
     |-- main.tsx
     |-- vite-env.d.ts
