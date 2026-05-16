@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa6";
+import { IoMenu, IoClose } from "react-icons/io5";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 
@@ -17,6 +18,7 @@ export const Navbar = () => {
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const { y: currentScrollY } = useWindowScroll();
 
@@ -70,7 +72,7 @@ export const Navbar = () => {
               rightIcon={TiLocationArrow}
               containerClass="bg-[#3DA3FF] text-white md:flex hidden items-center justify-center gap-1"
             >
-              Get Started
+              Book Free Call
             </Button>
           </div>
 
@@ -84,6 +86,14 @@ export const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-4">
+              <button
+                onClick={() => setIsMobileOpen(!isMobileOpen)}
+                className="md:hidden p-2 text-white"
+                aria-label="Toggle menu"
+              >
+                {isMobileOpen ? <IoClose className="size-5" /> : <IoMenu className="size-5" />}
+              </button>
+
               <button
                 onClick={toggleAudioIndicator}
                 className="ml-10 flex items-center space-x-1 p-2 transition hover:opacity-75"
@@ -113,18 +123,42 @@ export const Navbar = () => {
               </button>
 
               <a
-                href={LINKS.sourceCode}
+                href={LINKS.whatsapp}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="transition hover:opacity-75"
-                title="Source Code"
+                title="WhatsApp"
               >
-                <FaGithub className="size-5 text-white" />
+                <FaWhatsapp className="size-5 text-white" />
               </a>
             </div>
           </div>
         </nav>
       </div>
+
+      {isMobileOpen && (
+        <div className="fixed inset-0 z-50 bg-black/95 md:hidden">
+          <div className="flex flex-col items-center justify-center h-full gap-8">
+            {NAV_ITEMS.map(({ label, href }) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setIsMobileOpen(false)}
+                className="text-white text-lg uppercase tracking-wider font-medium hover:text-[#3DA3FF] transition"
+              >
+                {label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setIsMobileOpen(false)}
+              className="bg-[#3DA3FF] text-white rounded-full px-8 py-3 font-medium text-sm uppercase tracking-wider mt-4"
+            >
+              Book Free Call
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

@@ -31,18 +31,20 @@ export const About = () => {
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          Welcome to Vyzma AI
+          Why Vyzma
         </p>
 
         <AnimatedTitle containerClass="mt-5 !text-white text-center">
           {
-            "The future of intell<b>i</b>gence <br /> is h<b>e</b>re"
+            "Built For India.<br />P<b>o</b>wered By <b>A</b>I."
           }
         </AnimatedTitle>
 
         <div className="about-subtext">
-          <p>We build AI-powered workflows, automate your growth, and rank where it counts</p>
-          <p>India's premier AI agency — built in Vizag &amp; Bangalore, competing globally</p>
+          <p>Most AI agencies charge ₹50,000/month and take 3 months to deliver.</p>
+          <p>We built Vyzma for the restaurant owner in Vizag, the gym in Bangalore,</p>
+          <p>the clinic in Hyderabad — businesses that deserve enterprise AI at</p>
+          <p>prices that make sense. Starting ₹4,999/month. Live in 7 days.</p>
         </div>
       </div>
 

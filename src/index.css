@@ -1,18 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/general-sans");
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap");
 @import "tailwindcss";
 
 @tailwind utilities;
 
+html, body, #root {
+  background-color: #0C0C0C;
+  font-family: 'Kanit', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: #0A0A0D;
-  font-family: "Satoshi", "General Sans", sans-serif;
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @theme {
-  /* Brand color tokens */
   --color-blue-50:   #F2F4F7;
   --color-blue-75:   #14151A;
   --color-blue-100:  #F2F4F7;
@@ -24,7 +41,6 @@ body {
   --color-yellow-100: #FFB547;
   --color-yellow-300: #FFB547;
 
-  /* Extended brand palette */
   --color-void-black:     #0A0A0D;
   --color-graphite:       #14151A;
   --color-dark-slate:     #23242B;
@@ -42,6 +58,7 @@ body {
   --font-robert-medium: "robert-medium", "sans-serif";
   --font-robert-regular: "robert-regular", "sans-serif";
   --font-satoshi: "Satoshi", "sans-serif";
+  --font-kanit: 'Kanit', sans-serif;
 }
 
 @layer base {
@@ -216,8 +233,6 @@ body {
   }
 }
 
-/* From Uiverse.io by G4b413l */
-/* https://uiverse.io/G4b413l/tidy-walrus-92 */
 .three-body {
   --uib-size: 35px;
   --uib-speed: 0.8s;
@@ -289,7 +304,6 @@ body {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
@@ -301,7 +315,6 @@ body {
     transform: translateY(0%) scale(1);
     opacity: 1;
   }
-
   50% {
     transform: translateY(-66%) scale(0.65);
     opacity: 0.8;
@@ -314,14 +327,11 @@ body {
     transform: translateY(0%) scale(1);
     opacity: 1;
   }
-
   50% {
     transform: translateY(66%) scale(0.65);
     opacity: 0.8;
   }
 }
-
-/* ─── Slide glowing border ───────────────────────────────────────────────── */
 
 @property --slide-angle {
   syntax: "<angle>";
@@ -329,7 +339,6 @@ body {
   initial-value: 0deg;
 }
 
-/* Outer wrapper — background IS the animated border */
 .slide-glow-border {
   position: relative;
   background: conic-gradient(
@@ -344,7 +353,6 @@ body {
   animation: slide-border-spin 5s linear infinite;
 }
 
-/* Soft outer glow aura */
 .slide-glow-border::after {
   content: "";
   position: absolute;
@@ -370,8 +378,6 @@ body {
     --slide-angle: 360deg;
   }
 }
-
-/* ─── GlowingShadow component ────────────────────────────────────────────── */
 
 @property --hue {
   syntax: "<number>";

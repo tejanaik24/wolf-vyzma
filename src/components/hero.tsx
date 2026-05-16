@@ -128,12 +128,13 @@ export const Hero = () => {
         <div className="absolute top-0 left-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-blue-100">
-              A<b>I</b>
+              AI That G<b>r</b>ows<br />Y<b>o</b>ur B<b>u</b>siness
             </h1>
 
-            <p className="font-robert-regular mb-5 max-w-64 text-blue-100">
-              Intelligence. Automation. Growth. —<br />
-              Built for businesses that refuse to stay still.
+            <p className="font-robert-regular mb-5 max-w-96 text-blue-100 text-sm leading-relaxed">
+              India's most affordable AI agency.<br />
+              Chatbots · Voice Agents · Automation<br />
+              Marketing & AI Films
             </p>
 
             <Button
@@ -141,8 +142,14 @@ export const Hero = () => {
               leftIcon={TiLocationArrow}
               containerClass="bg-[#3DA3FF] text-white flex-center gap-1"
             >
-              Start Your AI Journey
+              Start for ₹4,999/month
             </Button>
+
+            <div className="flex flex-wrap gap-3 mt-3">
+              <span className="text-xs text-white/50">✓ No setup fee</span>
+              <span className="text-xs text-white/50">✓ Cancel anytime</span>
+              <span className="text-xs text-white/50">✓ 7-day delivery</span>
+            </div>
           </div>
         </div>
       </div>
