@@ -50,16 +50,29 @@ vyzma-ai/
   |- src/
     |-- components/
       |--- ui/
+      |--- about-section.tsx
       |--- about.tsx
       |--- animated-title.tsx
       |--- button.tsx
+      |--- contact-section.tsx
       |--- contact.tsx
+      |--- faq-section.tsx
       |--- features.tsx
       |--- footer.tsx
       |--- hero.tsx
+      |--- how-it-works.tsx
+      |--- industries-section.tsx
       |--- navbar.tsx
+      |--- offices.tsx
+      |--- pilot-offer.tsx
+      |--- pricing-section.tsx
+      |--- problem-section.tsx
+      |--- projects-section.tsx
       |--- rounded-corners.tsx
+      |--- services-section.tsx
       |--- story.tsx
+      |--- trust-bar.tsx
+      |--- why-vyzma.tsx
     |-- constants/
       |--- index.ts
     |-- lib/
@@ -80,6 +93,7 @@ vyzma-ai/
   |- tsconfig.app.json
   |- tsconfig.json
   |- tsconfig.node.json
+  |- vercel.json
   |- vite.config.ts
 ```
 <!--- FOLDER_STRUCTURE_END --->
