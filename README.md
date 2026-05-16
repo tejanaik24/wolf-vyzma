@@ -82,6 +82,7 @@ vyzma-ai/
     |-- main.tsx
     |-- vite-env.d.ts
   |- .gitignore
+  |- .nvmrc
   |- .prettierrc
   |- bun.lockb
   |- eslint.config.js
