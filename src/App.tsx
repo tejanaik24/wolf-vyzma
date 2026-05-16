@@ -1,3 +1,4 @@
+import { CustomCursor } from "@/components/custom-cursor";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { TrustBar } from "@/components/trust-bar";
@@ -20,6 +21,7 @@ import { Footer } from "@/components/footer";
 const App = () => {
   return (
     <div className="relative min-h-screen w-screen overflow-x-clip">
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />

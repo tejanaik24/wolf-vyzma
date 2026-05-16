@@ -1,9 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.cdnfonts.com/css/general-sans");
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap");
 @import "tailwindcss";
 
 @tailwind utilities;
+
+:root {
+  --wolf-blue:    #1E90FF;
+  --wolf-gold:    #FFB800;
+  --wolf-purple:  #7B2FBE;
+  --wolf-magenta: #C026D3;
+  --bg-primary:   #06010F;
+  --bg-secondary: #080418;
+  --card-bg:      rgba(255, 255, 255, 0.03);
+  --card-border:  rgba(30, 144, 255, 0.15);
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0d; }
+::-webkit-scrollbar-thumb {
+  background: var(--wolf-blue);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover { background: #4aa8ff; }
+* { scrollbar-width: thin; scrollbar-color: var(--wolf-blue) #0a0a0d; }
+
+/* ── Custom cursor ── */
+body { cursor: none; }
+#cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: var(--wolf-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px var(--wolf-blue), 0 0 12px var(--wolf-blue);
+}
+#cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 30px; height: 30px;
+  border: 1.5px solid rgba(30, 144, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
 
 html, body, #root {
   background-color: #0C0C0C;
@@ -59,6 +105,8 @@ body {
   --font-robert-regular: "robert-regular", "sans-serif";
   --font-satoshi: "Satoshi", "sans-serif";
   --font-kanit: 'Kanit', sans-serif;
+  --font-bebas: 'Bebas Neue', cursive;
+  --font-rajdhani: 'Rajdhani', sans-serif;
 }
 
 @layer base {
