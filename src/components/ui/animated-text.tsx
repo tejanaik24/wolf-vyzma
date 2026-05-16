@@ -21,6 +21,11 @@ export const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
         const start = i / characters.length;
         const end = (i + 1) / characters.length;
         const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1]);
+
+        if (char === " ") {
+          return <span key={i}>&nbsp;</span>;
+        }
+
         return (
           <span key={i} className="relative inline-block">
             <span className="invisible">{char}</span>

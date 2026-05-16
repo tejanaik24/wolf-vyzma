@@ -127,11 +127,11 @@ export const Hero = () => {
 
         <div className="absolute top-0 left-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading text-blue-100">
+            <h1 className="special-font font-zentry font-black uppercase text-blue-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] mb-4">
               AI That G<b>r</b>ows<br />Y<b>o</b>ur B<b>u</b>siness
             </h1>
 
-            <p className="font-robert-regular mb-5 max-w-96 text-blue-100 text-sm leading-relaxed">
+            <p className="font-robert-regular mb-5 max-w-72 text-blue-100 text-sm leading-relaxed">
               India's most affordable AI agency.<br />
               Chatbots · Voice Agents · Automation<br />
               Marketing & AI Films
