@@ -203,7 +203,7 @@ export const ServicesSection = () => {
             {/* Wolf image */}
             <div style={{ background: "transparent", isolation: "isolate", position: "relative", zIndex: 1 }}>
               <img
-                src="/img/wolf-hero.png"
+                src="/img/service-wolf.png"
                 alt="Vyzma Service Wolf"
                 style={{
                   width: "100%",
