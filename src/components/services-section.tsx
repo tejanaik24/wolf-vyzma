@@ -84,7 +84,7 @@ export const ServicesSection = () => {
         style={{ maxWidth: "1200px" }}
       >
         {/* ── LEFT: service rows (55%) ── */}
-        <div ref={rowsRef} style={{ flex: "0 0 55%" }}>
+        <div ref={rowsRef} style={{ flex: "0 0 55%", minHeight: "100vh" }}>
           {SERVICES.map((service, index) => {
             const isHovered = hovered === index;
             return (
@@ -184,11 +184,18 @@ export const ServicesSection = () => {
 
         {/* ── RIGHT: Wolf sticky (45%) ── */}
         <div
-          style={{ flex: "0 0 45%", position: "sticky", top: "10vh", alignSelf: "flex-start" }}
+          style={{ flex: "0 0 45%", alignSelf: "flex-start", height: "100%" }}
         >
           <div
             ref={wolfRef}
-            style={{ position: "relative", display: "flex", justifyContent: "center", background: "transparent" }}
+            style={{
+              position: "sticky",
+              top: "50%",
+              transform: "translateY(-50%)",
+              display: "flex",
+              justifyContent: "center",
+              background: "transparent",
+            }}
           >
             {/* Blue/purple radial glow behind wolf */}
             <div style={{
@@ -208,7 +215,8 @@ export const ServicesSection = () => {
                 style={{
                   width: "100%",
                   maxWidth: "420px",
-                  height: "auto",
+                  maxHeight: "80vh",
+                  objectFit: "contain",
                   mixBlendMode: "screen",
                   filter: "brightness(1.1) contrast(1.05)",
                   display: "block",
