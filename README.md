@@ -55,6 +55,7 @@ vyzma-ai/
       |--- animated-title.tsx
       |--- button.tsx
       |--- contact-section.tsx
+      |--- custom-cursor.tsx
       |--- faq-section.tsx
       |--- footer.tsx
       |--- hero.tsx
