@@ -121,20 +121,36 @@ export const Hero = () => {
           />
         </div>
 
-        <h1 className="special-font hero-heading text-white absolute right-5 bottom-5 z-40">
+        {/* Bottom-left gradient so text is always readable over video */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/70 via-black/30 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+        {/* VYZMA accent — bottom right */}
+        <h1 className="special-font hero-heading text-white/20 absolute right-5 bottom-5 z-30 select-none">
           V<b>y</b>zma
         </h1>
 
-        <div className="absolute top-0 left-0 z-40 size-full">
-          <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font font-zentry font-black uppercase text-blue-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] mb-4">
+        {/* Main content — bottom left */}
+        <div className="absolute bottom-0 left-0 z-40 w-full">
+          <div className="px-5 sm:px-10 pb-10 sm:pb-14 max-w-xl">
+
+            {/* Eyebrow label */}
+            <p className="font-general text-[10px] uppercase tracking-[0.25em] text-[#3DA3FF] mb-3">
+              India's Most Affordable AI Agency
+            </p>
+
+            {/* Headline — clamped so it never overflows */}
+            <h1
+              className="special-font font-zentry font-black uppercase text-white leading-[0.88] mb-4"
+              style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
+            >
               AI That G<b>r</b>ows<br />Y<b>o</b>ur B<b>u</b>siness
             </h1>
 
-            <p className="font-robert-regular mb-5 max-w-72 text-blue-100 text-sm leading-relaxed">
-              India's most affordable AI agency.<br />
-              Chatbots · Voice Agents · Automation<br />
-              Marketing & AI Films
+            {/* Subline */}
+            <p className="font-robert-regular mb-6 text-white/60 text-sm leading-relaxed">
+              Chatbots · Voice Agents · Automation · AI Films<br />
+              Starting ₹4,999/month. Live in 7 days.
             </p>
 
             <Button
@@ -145,18 +161,14 @@ export const Hero = () => {
               Start for ₹4,999/month
             </Button>
 
-            <div className="flex flex-wrap gap-3 mt-3">
-              <span className="text-xs text-white/50">✓ No setup fee</span>
-              <span className="text-xs text-white/50">✓ Cancel anytime</span>
-              <span className="text-xs text-white/50">✓ 7-day delivery</span>
+            <div className="flex flex-wrap gap-4 mt-3">
+              <span className="text-xs text-white/40">✓ No setup fee</span>
+              <span className="text-xs text-white/40">✓ Cancel anytime</span>
+              <span className="text-xs text-white/40">✓ 7-day delivery</span>
             </div>
           </div>
         </div>
       </div>
-
-      <h1 className="special-font hero-heading absolute right-5 bottom-5 brand-gradient-text">
-        V<b>y</b>zma
-      </h1>
     </section>
   );
 };
