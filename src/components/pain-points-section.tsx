@@ -34,8 +34,8 @@ const PainCard = ({
       width: "100%",
       marginBottom: "16px",
       background: "rgba(255,255,255,0.03)",
-      border: "1px solid rgba(30,144,255,0.12)",
-      borderLeft: "2px solid rgba(30,144,255,0.5)",
+      backgroundClip: "padding-box",
+      border: "1px solid transparent",
       borderRadius: "12px",
       padding: "24px",
     }}
@@ -361,6 +361,29 @@ export const PainPointsSection = () => {
           0%   { background-position: 0 0; }
           100% { background-position: 0 100px; }
         }
+
+        /* Gradient border via ::before pseudo-element */
+        .pain-card::before {
+          content: '';
+          position: absolute;
+          inset: -1px;
+          border-radius: 13px;
+          background: linear-gradient(
+            135deg,
+            #FF6B35 0%,
+            #C026D3 35%,
+            #7B2FBE 65%,
+            #1E90FF 100%
+          );
+          z-index: -1;
+          opacity: 0.6;
+          transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+        .pain-card:hover::before {
+          opacity: 1;
+          filter: brightness(1.2);
+        }
+
         @media (max-width: 768px) {
           .pain-grid { grid-template-columns: 1fr !important; }
         }
