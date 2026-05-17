@@ -47,7 +47,7 @@ export const ServicesSection = () => {
       id="services"
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: "#06010F", padding: "100px 40px" }}
+      style={{ background: "#06010F", padding: "60px 40px" }}
     >
       {/* Ambient bg glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
@@ -55,11 +55,11 @@ export const ServicesSection = () => {
       }} />
 
       {/* ── Heading ── */}
-      <div className="relative z-10 text-center mb-16">
+      <div className="relative z-10 text-center mb-8">
         <h2
           style={{
             fontFamily: "'Bebas Neue', cursive",
-            fontSize: "clamp(2.75rem, 7vw, 72px)",
+            fontSize: "clamp(2rem, 5vw, 52px)",
             lineHeight: 1,
             letterSpacing: "0.02em",
             margin: "0 0 16px",
@@ -82,7 +82,7 @@ export const ServicesSection = () => {
         style={{ maxWidth: "1200px" }}
       >
         {/* ── LEFT: service rows (55%) ── */}
-        <div ref={rowsRef} style={{ flex: "0 0 55%", minHeight: "100vh" }}>
+        <div ref={rowsRef} style={{ flex: "0 0 55%" }}>
           {SERVICES.map((service, index) => {
             const isHovered = hovered === index;
             return (
@@ -95,8 +95,8 @@ export const ServicesSection = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "24px",
-                  padding: isHovered ? "20px 20px 20px 20px" : "20px 0",
+                  gap: "16px",
+                  padding: isHovered ? "10px 12px" : "10px 0",
                   borderTop: "1px solid rgba(255,255,255,0.06)",
                   borderLeft: isHovered ? "3px solid #1E90FF" : "3px solid transparent",
                   background: isHovered ? "rgba(30,144,255,0.04)" : "transparent",
@@ -108,11 +108,11 @@ export const ServicesSection = () => {
                 {/* Number */}
                 <span style={{
                   fontFamily: "'Bebas Neue', cursive",
-                  fontSize: "48px",
+                  fontSize: "32px",
                   lineHeight: 1,
                   color: isHovered ? "#1E90FF" : "rgba(255,255,255,0.07)",
                   transition: "color 0.3s",
-                  minWidth: "64px",
+                  minWidth: "44px",
                   flexShrink: 0,
                 }}>
                   {service.number}
@@ -126,7 +126,7 @@ export const ServicesSection = () => {
                       style={{
                         fontFamily: "'Rajdhani', sans-serif",
                         fontWeight: 700,
-                        fontSize: "22px",
+                        fontSize: "17px",
                         margin: 0,
                         ...(isHovered
                           ? {
