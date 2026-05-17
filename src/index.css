@@ -632,3 +632,30 @@ body {
   0%   { --hue: 0;   }
   100% { --hue: 360; }
 }
+
+/* Wolf Claw Crawl — ambient upward drift */
+@keyframes claw-crawl {
+  0%   { transform: translateY(100vh); }
+  100% { transform: translateY(-110%); }
+}
+
+.claw-crawl {
+  animation: claw-crawl linear infinite;
+  will-change: transform;
+}
+
+/* Fade edges of the ambient claw layer */
+.claw-bg-layer {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+/* Pulse glow on entrance slash claws */
+@keyframes claw-pulse {
+  0%, 100% { opacity: 0.85; filter: brightness(1); }
+  50%       { opacity: 1;    filter: brightness(1.4); }
+}
+
+.slash-claw-glow {
+  animation: claw-pulse 3s ease-in-out infinite;
+}
