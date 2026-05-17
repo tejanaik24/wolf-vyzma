@@ -103,9 +103,11 @@ export const ServicesSection = () => {
           zIndex: 1,
         }}
       >
-        <img
-          src="/img/service-wolf.png"
-          alt="Vyzma Service Wolf"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           style={{
             width: "100%",
             height: "100%",
@@ -115,7 +117,9 @@ export const ServicesSection = () => {
             filter: "brightness(1.3) contrast(1.1) saturate(1.2)",
             display: "block",
           }}
-        />
+        >
+          <source src="/img/service-wolf.mp4" type="video/mp4" />
+        </video>
         {/* Left fade — blends wolf edge into dark bg */}
         <div style={{
           position: "absolute", inset: 0,
