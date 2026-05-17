@@ -46,7 +46,7 @@ const industries = [
     title: "E-commerce",
     problem: "Abandoned carts, unanswered product questions, no repeat orders.",
     solution: "AI recovers carts, answers questions, drives repeat purchases 24/7",
-    left: "82%", top: "52%",
+    left: "77%", top: "52%",
   },
   {
     icon: "🏪",
