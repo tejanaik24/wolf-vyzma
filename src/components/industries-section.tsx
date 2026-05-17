@@ -8,141 +8,143 @@ gsap.registerPlugin(ScrollTrigger);
 const industries = [
   {
     icon: "🏥",
-    title: "Clinics & Hospitals",
+    title: "Clinics",
     problem: "Patients call at 10pm for appointments. Your staff has gone home.",
     solution: "AI answers, books, follows up — zero missed patients",
-    left: "9%", top: "12%",
+    left: "10%", top: "5%",
   },
   {
     icon: "📚",
-    title: "Coaching & EdTech",
+    title: "EdTech",
     problem: "Students ask about your course at 10pm — you miss the admission.",
     solution: "AI explains, answers objections, sends payment link automatically",
-    left: "80%", top: "12%",
+    left: "73%", top: "5%",
   },
   {
     icon: "🍽️",
-    title: "Restaurants & Cafes",
+    title: "Restaurants",
     problem: "WhatsApp orders pile up during peak hours. Staff can't keep up.",
     solution: "AI takes orders, confirms bookings, sends daily specials automatically",
-    left: "3%", top: "38%",
+    left: "19%", top: "21%",
   },
   {
     icon: "🏠",
     title: "Real Estate",
     problem: "Property inquiries come at all hours. You can't follow up on all of them.",
     solution: "AI captures every lead, qualifies them, books site visits automatically",
-    left: "86%", top: "38%",
+    left: "65%", top: "21%",
   },
   {
     icon: "💪",
-    title: "Gyms & Fitness Studios",
+    title: "Gyms",
     problem: "67% of gym inquiries come after 6pm when nobody is at the desk.",
     solution: "AI responds instantly, shares plans, books trial sessions 24/7",
-    left: "8%", top: "62%",
+    left: "1%", top: "38%",
   },
   {
     icon: "🛍️",
-    title: "D2C & E-commerce",
+    title: "E-commerce",
     problem: "Abandoned carts, unanswered product questions, no repeat orders.",
     solution: "AI recovers carts, answers questions, drives repeat purchases 24/7",
-    left: "82%", top: "62%",
+    left: "84%", top: "38%",
   },
   {
     icon: "🏪",
-    title: "Retail & Local Shops",
+    title: "Retail",
     problem: "Your WhatsApp is full of same questions asked 20 times a day.",
     solution: "AI answers every question, takes orders, brings customers back",
-    left: "20%", top: "80%",
+    left: "13%", top: "66%",
   },
   {
     icon: "🚀",
     title: "Startups",
     problem: "Moving fast but losing leads because your team is too small.",
     solution: "AI handles support, follow-ups and onboarding so team focuses on growth",
-    left: "70%", top: "80%",
+    left: "69%", top: "66%",
   },
 ];
 
-const HEX_W = 110;
-const HEX_H = 127;
-const VB = "0 0 110 127";
-const OUTER = "55,1 109,28 109,99 55,126 1,99 1,28";
-const INNER = "55,4 106,30 106,97 55,123 4,97 4,30";
+const HEX_W = 120;
+const HEX_H = 138;
+const VB    = "0 0 120 138";
+const OUTER = "60,1 119,31 119,107 60,137 1,107 1,31";
+const INNER = "60,5 115,33 115,105 60,133 5,105 5,33";
 
 const PARTICLE_DIRS = [
-  [40, 0], [20, -34], [-20, -34],
-  [-40, 0], [-20, 34], [20, 34],
+  [50, 0], [25, -43], [-25, -43],
+  [-50, 0], [-25, 43], [25, 43],
 ];
 
 type Industry = typeof industries[0];
 
-const IndustryHex = ({
-  item,
-  index,
-}: {
-  item: Industry;
-  index: number;
-}) => {
-  const id = `ihex-${index}`;
-  const borderRef  = useRef<SVGPolygonElement>(null);
-  const innerRef   = useRef<SVGPolygonElement>(null);
-  const r1Ref      = useRef<SVGPolygonElement>(null);
-  const r2Ref      = useRef<SVGPolygonElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const pRefs      = useRef<(SVGCircleElement | null)[]>(Array(6).fill(null));
-  const setPRef    = (i: number) => (el: SVGCircleElement | null) => { pRefs.current[i] = el; };
+const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
+  const id        = `ihex-${index}`;
+  const borderRef = useRef<SVGPolygonElement>(null);
+  const innerRef  = useRef<SVGPolygonElement>(null);
+  const r1Ref     = useRef<SVGPolygonElement>(null);
+  const r2Ref     = useRef<SVGPolygonElement>(null);
+  const tooltipRef= useRef<HTMLDivElement>(null);
+  const iconRef   = useRef<HTMLSpanElement>(null);
+  const pRefs     = useRef<(SVGCircleElement | null)[]>(Array(6).fill(null));
+  const setPRef   = (i: number) => (el: SVGCircleElement | null) => { pRefs.current[i] = el; };
 
   const killAll = useCallback(() => {
-    [borderRef, innerRef, r1Ref, r2Ref].forEach(r => {
+    [borderRef, innerRef, r1Ref, r2Ref, iconRef].forEach(r => {
       if (r.current) gsap.killTweensOf(r.current);
     });
     pRefs.current.forEach(p => { if (p) gsap.killTweensOf(p); });
     if (tooltipRef.current) gsap.killTweensOf(tooltipRef.current);
 
-    if (borderRef.current) gsap.set(borderRef.current, { opacity: 0.45, filter: "none" });
-    if (innerRef.current)  gsap.set(innerRef.current,  { fillOpacity: 0 });
-    if (r1Ref.current)     gsap.set(r1Ref.current,     { scale: 1, opacity: 0, transformOrigin: "55px 63px" });
-    if (r2Ref.current)     gsap.set(r2Ref.current,     { scale: 1, opacity: 0, transformOrigin: "55px 63px" });
-    pRefs.current.forEach(p => { if (p) gsap.set(p, { opacity: 0, cx: 55, cy: 63 }); });
+    if (borderRef.current)  gsap.set(borderRef.current,  { opacity: 1,    filter: "none" });
+    if (innerRef.current)   gsap.set(innerRef.current,   { fillOpacity: 0 });
+    if (r1Ref.current)      gsap.set(r1Ref.current,      { scale: 1, opacity: 0, transformOrigin: "60px 69px" });
+    if (r2Ref.current)      gsap.set(r2Ref.current,      { scale: 1, opacity: 0, transformOrigin: "60px 69px" });
+    if (iconRef.current)    gsap.set(iconRef.current,    { scale: 1, filter: "none" });
+    pRefs.current.forEach(p => { if (p) gsap.set(p, { opacity: 0, cx: 60, cy: 69 }); });
     if (tooltipRef.current) gsap.set(tooltipRef.current, { opacity: 0, y: 15, scale: 0.9 });
   }, []);
 
   const runEnter = useCallback(() => {
-    // 1. Electric border glow
+    // Electric border glow
     gsap.to(borderRef.current, {
-      opacity: 1,
       filter: "drop-shadow(0 0 12px #1E90FF) drop-shadow(0 0 25px #1E90FF)",
       duration: 0.3, ease: "power2.out",
     });
 
-    // 2. Inner fill
-    gsap.to(innerRef.current, { fillOpacity: 0.15, duration: 0.3 });
+    // Inner fill pulse
+    gsap.to(innerRef.current, { fillOpacity: 0.18, duration: 0.3 });
 
-    // 3. Ripple rings
+    // Icon glow + scale
+    gsap.to(iconRef.current, {
+      scale: 1.25,
+      filter: "drop-shadow(0 0 10px rgba(30,144,255,0.9))",
+      duration: 0.3, ease: "back.out(1.5)",
+    });
+
+    // Ripple rings
     const ripple = gsap.timeline({ repeat: -1 });
     ripple.fromTo(r1Ref.current,
-      { scale: 1, opacity: 0.8, transformOrigin: "55px 63px" },
-      { scale: 1.5, opacity: 0, duration: 0.8, ease: "power2.out" }, 0
+      { scale: 1, opacity: 0.8, transformOrigin: "60px 69px" },
+      { scale: 1.6, opacity: 0, duration: 0.9, ease: "power2.out" }, 0
     );
     ripple.fromTo(r2Ref.current,
-      { scale: 1, opacity: 0.8, transformOrigin: "55px 63px" },
-      { scale: 1.5, opacity: 0, duration: 0.8, ease: "power2.out" }, 0.2
+      { scale: 1, opacity: 0.8, transformOrigin: "60px 69px" },
+      { scale: 1.6, opacity: 0, duration: 0.9, ease: "power2.out" }, 0.22
     );
 
-    // 4. Particles
+    // Particle burst
     const ptl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
     pRefs.current.forEach((p, i) => {
       if (!p) return;
       const [dx, dy] = PARTICLE_DIRS[i];
       ptl.fromTo(p,
-        { opacity: 0.8, cx: 55, cy: 63 },
-        { opacity: 0, cx: 55 + dx, cy: 63 + dy, duration: 0.6, ease: "power2.out" },
+        { opacity: 0.9, cx: 60, cy: 69 },
+        { opacity: 0, cx: 60 + dx, cy: 69 + dy, duration: 0.6, ease: "power2.out" },
         i * 0.05
       );
     });
 
-    // 5. Tooltip
+    // Tooltip
     gsap.fromTo(tooltipRef.current,
       { opacity: 0, y: 15, scale: 0.9 },
       { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.5)" }
@@ -169,6 +171,7 @@ const IndustryHex = ({
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
+      {/* SVG hexagon */}
       <svg viewBox={VB} width={HEX_W} height={HEX_H} style={{ display: "block", overflow: "visible" }}>
         <defs>
           <linearGradient id={`${id}-grad`} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -179,35 +182,58 @@ const IndustryHex = ({
           </linearGradient>
         </defs>
 
-        {/* Ripple rings */}
+        {/* Ripple rings — expand on hover */}
         <polygon ref={r1Ref} points={OUTER} fill="none" stroke="#1E90FF" strokeWidth="1" opacity="0" />
         <polygon ref={r2Ref} points={OUTER} fill="none" stroke="#FFB800" strokeWidth="1" opacity="0" />
 
-        {/* Border — dimly visible by default, glows on hover */}
+        {/* Main border — full opacity, gradient */}
         <polygon
           ref={borderRef}
           points={OUTER}
           fill="none"
           stroke={`url(#${id}-grad)`}
           strokeWidth="1.5"
-          opacity="0.45"
+          opacity="1"
         />
 
-        {/* Inner fill — transparent by default */}
-        <polygon
-          ref={innerRef}
-          points={INNER}
-          fill="#1E90FF"
-          fillOpacity="0"
-        />
+        {/* Inner fill — transparent default, blue tint on hover */}
+        <polygon ref={innerRef} points={INNER} fill="#1E90FF" fillOpacity="0" />
 
         {/* Particles */}
         {Array.from({ length: 6 }).map((_, i) => (
-          <circle key={i} ref={setPRef(i)} cx="55" cy="63" r="1.5" fill="#1E90FF" opacity="0" />
+          <circle key={i} ref={setPRef(i)} cx="60" cy="69" r="1.5" fill="#1E90FF" opacity="0" />
         ))}
       </svg>
 
-      {/* Tooltip */}
+      {/* Icon + label — always visible inside hexagon */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        pointerEvents: "none",
+        zIndex: 2,
+      }}>
+        <span ref={iconRef} style={{ fontSize: 28, lineHeight: 1, display: "block" }}>
+          {item.icon}
+        </span>
+        <p style={{
+          fontFamily: "'Rajdhani', sans-serif",
+          fontWeight: 700,
+          fontSize: 11,
+          color: "#ffffff",
+          textAlign: "center",
+          margin: "5px 0 0",
+          lineHeight: 1.2,
+          textShadow: "0 0 8px rgba(30,144,255,0.8)",
+        }}>
+          {item.title}
+        </p>
+      </div>
+
+      {/* Tooltip — appears above on hover */}
       <div
         ref={tooltipRef}
         style={{
@@ -229,8 +255,8 @@ const IndustryHex = ({
           whiteSpace: "normal",
         }}
       >
-        <div style={{ fontSize: 24, marginBottom: 6 }}>{item.icon}</div>
-        <p style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 18, color: "#fff", margin: "0 0 6px", lineHeight: 1.2 }}>
+        <div style={{ fontSize: 22, marginBottom: 6 }}>{item.icon}</div>
+        <p style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 17, color: "#fff", margin: "0 0 6px", lineHeight: 1.2 }}>
           {item.title}
         </p>
         <p style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 13, color: "#A0A0B8", margin: "6px 0", lineHeight: 1.4 }}>
@@ -247,28 +273,14 @@ const IndustryHex = ({
 export const IndustriesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef      = useRef<HTMLDivElement>(null);
-  const hexRefs    = useRef<(HTMLDivElement | null)[]>(Array(8).fill(null));
 
   useGSAP(() => {
-    // Background scale entrance
     if (bgRef.current) {
       gsap.fromTo(bgRef.current,
         { scale: 1.05 },
         {
           scale: 1, duration: 1.2, ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 80%", toggleActions: "play none none none" },
-        }
-      );
-    }
-
-    // Hexagon stagger fade in
-    const hexEls = hexRefs.current.filter(Boolean);
-    if (hexEls.length) {
-      gsap.fromTo(hexEls,
-        { opacity: 0 },
-        {
-          opacity: 1, stagger: 0.1, duration: 0.6, ease: "power2.out",
-          scrollTrigger: { trigger: sectionRef.current, start: "top 75%", toggleActions: "play none none none" },
         }
       );
     }
@@ -304,41 +316,30 @@ export const IndustriesSection = () => {
       </div>
 
       {/* Desktop: wolf bg + interactive hexagons */}
-      <div
-        className="industries-desktop"
-        style={{ position: "relative", width: "100%", minHeight: "100vh" }}
-      >
-        {/* Background image */}
+      <div className="industries-desktop" style={{ position: "relative", width: "100%" }}>
         <div
           ref={bgRef}
           style={{
-            position: "absolute", inset: 0,
+            position: "relative",
+            width: "100%",
+            paddingBottom: "56.25%", /* 16:9 ratio to match image */
             backgroundImage: "url('/img/industries-wolf.png')",
             backgroundSize: "cover",
             backgroundPosition: "center center",
-            width: "100%", height: "100%",
           }}
         />
 
         {/* Dark overlay */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "rgba(0,0,0,0.25)",
+          background: "rgba(0,0,0,0.2)",
           pointerEvents: "none",
         }} />
 
-        {/* 8 interactive hexagons */}
+        {/* 8 interactive hexagons — % positioned over circuit line endpoints */}
         {industries.map((item, i) => (
-          <div
-            key={item.title}
-            ref={el => { hexRefs.current[i] = el; }}
-          >
-            <IndustryHex item={item} index={i} />
-          </div>
+          <IndustryHex key={item.title} item={item} index={i} />
         ))}
-
-        {/* Spacer so section has height */}
-        <div style={{ height: "100vh" }} />
       </div>
 
       {/* Mobile: card grid */}
