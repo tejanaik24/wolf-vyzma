@@ -31,15 +31,15 @@ const steps = [
 // Ambient crawl claws — slow upward drift, different sizes / positions / glows
 const ambientClaws = [
   // Left side
-  { left: "-7%",  w: 560, opacity: 0.13, rotate: -22, duration: 20, delay:   0, glow: "#3DA3FF" },
-  { left:  "4%",  w: 320, opacity: 0.08, rotate: -18, duration: 24, delay: -11, glow: "#3DA3FF" },
-  // Center — the "tearing through" claws (new)
-  { left: "36%",  w: 480, opacity: 0.13, rotate: -14, duration: 22, delay:  -6, glow: "#3DA3FF" },
-  { left: "50%",  w: 300, opacity: 0.09, rotate: -10, duration: 18, delay:  -2, glow: "#8A5CFF" },
+  { left: "-5%",  w: 580, opacity: 0.30, rotate: -22, duration: 20, delay:   0, glow: "#3DA3FF" },
+  { left:  "5%",  w: 340, opacity: 0.20, rotate: -18, duration: 24, delay: -11, glow: "#3DA3FF" },
+  // Center — tearing through the middle
+  { left: "35%",  w: 500, opacity: 0.28, rotate: -14, duration: 22, delay:  -6, glow: "#3DA3FF" },
+  { left: "48%",  w: 320, opacity: 0.22, rotate: -10, duration: 18, delay:  -2, glow: "#8A5CFF" },
   // Right side
-  { right: "-5%", w: 380, opacity: 0.10, rotate:  18, duration: 26, delay:  -9, glow: "#8A5CFF" },
-  { right: "14%", w: 450, opacity: 0.11, rotate:  11, duration: 23, delay:  -5, glow: "#FFB547" },
-  { left:  "75%", w: 210, opacity: 0.06, rotate: -30, duration: 19, delay: -18, glow: "#3DA3FF" },
+  { right: "-4%", w: 400, opacity: 0.25, rotate:  18, duration: 26, delay:  -9, glow: "#8A5CFF" },
+  { right: "12%", w: 460, opacity: 0.28, rotate:  11, duration: 23, delay:  -5, glow: "#FFB547" },
+  { left:  "73%", w: 230, opacity: 0.18, rotate: -30, duration: 19, delay: -15, glow: "#3DA3FF" },
 ];
 
 export const HowItWorks = () => {
