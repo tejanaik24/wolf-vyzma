@@ -222,7 +222,7 @@ const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
         <p style={{
           fontFamily: "'Rajdhani', sans-serif",
           fontWeight: 700,
-          fontSize: 13,
+          fontSize: 16,
           color: "#ffffff",
           textAlign: "center",
           margin: "5px 0 0",
