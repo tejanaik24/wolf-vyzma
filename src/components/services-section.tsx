@@ -98,7 +98,7 @@ export const ServicesSection = () => {
           right: 0,
           top: 0,
           bottom: 0,
-          width: "58%",
+          width: "48%",
           pointerEvents: "none",
           zIndex: 1,
         }}
@@ -112,8 +112,7 @@ export const ServicesSection = () => {
             objectFit: "cover",
             objectPosition: "center",
             mixBlendMode: "screen",
-            opacity: 0.35,
-            filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
+            filter: "brightness(1.3) contrast(1.1) saturate(1.2)",
             display: "block",
           }}
         />
@@ -219,13 +218,13 @@ export const ServicesSection = () => {
         </div>
       </div>
 
-      {/* ── Floating preview card — right area, over wolf bg ── */}
+      {/* ── Floating preview card — anchored above wolf's hand/lightning ── */}
       <div
         ref={previewRef}
         style={{
           position: "absolute",
-          right: "8%",
-          top: "22%",
+          right: "33%",
+          top: "18%",
           width: "220px",
           height: "150px",
           zIndex: 20,
