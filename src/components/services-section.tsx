@@ -209,7 +209,7 @@ export const ServicesSection = () => {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  objectFit: "contain",
                   objectPosition: "center top",
                   mixBlendMode: "screen",
                   filter: "brightness(1.3) contrast(1.1) saturate(1.2)",
