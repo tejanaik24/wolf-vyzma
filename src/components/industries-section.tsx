@@ -96,7 +96,7 @@ const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
     if (tooltipRef.current) gsap.killTweensOf(tooltipRef.current);
 
     if (borderRef.current)  gsap.set(borderRef.current,  { opacity: 1,    filter: "none" });
-    if (innerRef.current)   gsap.set(innerRef.current,   { fillOpacity: 0 });
+    if (innerRef.current)   gsap.set(innerRef.current,   { fill: "#000000", fillOpacity: 1 });
     if (r1Ref.current)      gsap.set(r1Ref.current,      { scale: 1, opacity: 0, transformOrigin: "60px 69px" });
     if (r2Ref.current)      gsap.set(r2Ref.current,      { scale: 1, opacity: 0, transformOrigin: "60px 69px" });
     if (iconRef.current)    gsap.set(iconRef.current,    { scale: 1, filter: "none" });
@@ -111,8 +111,8 @@ const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
       duration: 0.3, ease: "power2.out",
     });
 
-    // Inner fill pulse
-    gsap.to(innerRef.current, { fillOpacity: 0.18, duration: 0.3 });
+    // Inner fill — shift to dark blue tint on hover
+    gsap.to(innerRef.current, { fill: "#0a1a3a", fillOpacity: 1, duration: 0.3 });
 
     // Icon glow + scale
     gsap.to(iconRef.current, {
@@ -196,8 +196,8 @@ const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
           opacity="1"
         />
 
-        {/* Inner fill — transparent default, blue tint on hover */}
-        <polygon ref={innerRef} points={INNER} fill="#1E90FF" fillOpacity="0" />
+        {/* Inner fill — solid black default, blue tint on hover */}
+        <polygon ref={innerRef} points={INNER} fill="#000000" fillOpacity="1" />
 
         {/* Particles */}
         {Array.from({ length: 6 }).map((_, i) => (
