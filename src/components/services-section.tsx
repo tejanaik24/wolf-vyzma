@@ -35,8 +35,8 @@ export const ServicesSection = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: 0,
+        justifyContent: "flex-start",
+        padding: "60px 40px 0",
       }}
     >
       {/* ── Full-screen wolf video ── */}
