@@ -26,50 +26,10 @@ export const ServicesSection = () => {
     <section
       id="services"
       ref={sectionRef}
-      style={{
-        position: "relative",
-        width: "100%",
-        minHeight: "100vh",
-        background: "#06010F",
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "60px 40px 0",
-      }}
+      style={{ background: "#06010F", width: "100%", overflow: "hidden" }}
     >
-      {/* ── Full-screen wolf video ── */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center",
-          display: "block",
-          opacity: 0,
-        }}
-      >
-        <source src="/img/service-wolf.mp4" type="video/mp4" />
-      </video>
-
-      {/* Dark overlay so heading text pops */}
-      <div style={{
-        position: "absolute", inset: 0,
-        background: "linear-gradient(to bottom, rgba(6,1,15,0.45) 0%, rgba(6,1,15,0.2) 50%, rgba(6,1,15,0.55) 100%)",
-        pointerEvents: "none",
-        zIndex: 1,
-      }} />
-
-      {/* ── Heading ── */}
-      <div style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
+      {/* ── Heading — sits in its own dark band, no video behind it ── */}
+      <div style={{ textAlign: "center", padding: "60px 40px 40px" }}>
         <h2 style={{
           fontFamily: "'Bebas Neue', cursive",
           fontSize: "clamp(2.5rem, 6vw, 64px)",
@@ -83,6 +43,29 @@ export const ServicesSection = () => {
         <p style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: "18px", color: "#A0A0B8", margin: 0 }}>
           9 weapons. One pack. Zero excuses.
         </p>
+      </div>
+
+      {/* ── Full-width wolf video below the heading ── */}
+      <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+            display: "block",
+            opacity: 0,
+          }}
+        >
+          <source src="/img/service-wolf.mp4" type="video/mp4" />
+        </video>
       </div>
     </section>
   );
