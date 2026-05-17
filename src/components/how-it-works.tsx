@@ -30,11 +30,16 @@ const steps = [
 
 // Ambient crawl claws — slow upward drift, different sizes / positions / glows
 const ambientClaws = [
-  { left: "-7%",  w: 560, opacity: 0.09, rotate: -22, duration: 20, delay:   0, glow: "#3DA3FF" },
-  { right: "-5%", w: 380, opacity: 0.07, rotate:  18, duration: 26, delay:  -9, glow: "#8A5CFF" },
-  { left:  "28%", w: 270, opacity: 0.05, rotate:  -6, duration: 17, delay: -14, glow: "#3DA3FF" },
-  { right: "14%", w: 450, opacity: 0.08, rotate:  11, duration: 23, delay:  -5, glow: "#FFB547" },
-  { left:  "55%", w: 210, opacity: 0.04, rotate: -30, duration: 19, delay: -18, glow: "#3DA3FF" },
+  // Left side
+  { left: "-7%",  w: 560, opacity: 0.13, rotate: -22, duration: 20, delay:   0, glow: "#3DA3FF" },
+  { left:  "4%",  w: 320, opacity: 0.08, rotate: -18, duration: 24, delay: -11, glow: "#3DA3FF" },
+  // Center — the "tearing through" claws (new)
+  { left: "36%",  w: 480, opacity: 0.13, rotate: -14, duration: 22, delay:  -6, glow: "#3DA3FF" },
+  { left: "50%",  w: 300, opacity: 0.09, rotate: -10, duration: 18, delay:  -2, glow: "#8A5CFF" },
+  // Right side
+  { right: "-5%", w: 380, opacity: 0.10, rotate:  18, duration: 26, delay:  -9, glow: "#8A5CFF" },
+  { right: "14%", w: 450, opacity: 0.11, rotate:  11, duration: 23, delay:  -5, glow: "#FFB547" },
+  { left:  "75%", w: 210, opacity: 0.06, rotate: -30, duration: 19, delay: -18, glow: "#3DA3FF" },
 ];
 
 export const HowItWorks = () => {
@@ -136,7 +141,7 @@ export const HowItWorks = () => {
         {ambientClaws.map((c, i) => (
           <div
             key={i}
-            className="claw-crawl absolute"
+            className={`${i === 2 || i === 3 ? "claw-crawl-tear" : "claw-crawl"} absolute`}
             style={{
               left:             "left"  in c ? (c as any).left  : undefined,
               right:            "right" in c ? (c as any).right : undefined,

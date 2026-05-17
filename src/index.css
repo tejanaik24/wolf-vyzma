@@ -653,9 +653,21 @@ body {
 /* Pulse glow on entrance slash claws */
 @keyframes claw-pulse {
   0%, 100% { opacity: 0.85; filter: brightness(1); }
-  50%       { opacity: 1;    filter: brightness(1.4); }
+  50%       { opacity: 1;    filter: brightness(1.6); }
 }
 
 .slash-claw-glow {
-  animation: claw-pulse 3s ease-in-out infinite;
+  animation: claw-pulse 2.8s ease-in-out infinite;
+}
+
+/* Tearing shimmer — bright edge on ambient claws to feel like ripping */
+@keyframes claw-tear {
+  0%        { transform: translateY(100vh) scaleX(1);    }
+  48%, 52%  { transform: translateY(0vh)   scaleX(1.04); }
+  100%      { transform: translateY(-110%) scaleX(1);    }
+}
+
+.claw-crawl-tear {
+  animation: claw-tear linear infinite;
+  will-change: transform;
 }
