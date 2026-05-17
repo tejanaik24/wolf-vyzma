@@ -184,49 +184,49 @@ export const ServicesSection = () => {
 
         {/* ── RIGHT: Wolf sticky (45%) ── */}
         <div
-          style={{ flex: "0 0 45%", alignSelf: "flex-start", height: "100%" }}
+          style={{ flex: "0 0 45%", alignSelf: "stretch" }}
         >
           <div
             ref={wolfRef}
             style={{
               position: "sticky",
-              top: "15vh",
+              top: 0,
+              height: "100vh",
               display: "flex",
+              alignItems: "center",
               justifyContent: "center",
               background: "transparent",
             }}
           >
-            {/* FIX 3 — Glow that blends into site bg */}
+            {/* Glow behind wolf */}
             <div style={{
               position: "absolute",
-              width: "500px", height: "600px",
-              background: "radial-gradient(ellipse at center, rgba(30,144,255,0.15) 0%, rgba(6,1,15,0.8) 60%, #06010F 100%)",
-              top: "50%", left: "50%",
-              transform: "translate(-50%, -50%)",
+              width: "500px", height: "100%",
+              background: "radial-gradient(ellipse at center 40%, rgba(30,144,255,0.15) 0%, rgba(6,1,15,0.6) 65%, transparent 100%)",
               pointerEvents: "none", zIndex: 0,
             }} />
 
-            {/* Wolf image — large, no isolation, multiply removes any light bg */}
+            {/* Wolf image — fills viewport height, screen blend removes black bg */}
             <div style={{
               position: "relative",
               zIndex: 1,
               width: "100%",
+              height: "100%",
             }}>
               <img
                 src="/img/service-wolf.png"
                 alt="Vyzma Service Wolf"
                 style={{
-                  width: "500px",
-                  height: "600px",
+                  width: "100%",
+                  height: "100%",
                   objectFit: "contain",
-                  objectPosition: "center top",
+                  objectPosition: "center center",
                   mixBlendMode: "screen",
                   filter: "brightness(1.3) contrast(1.1) saturate(1.2)",
                   display: "block",
-                  margin: "0 auto",
                 }}
               />
-              {/* Dark overlay fades bottom edge into bg */}
+              {/* Fade bottom edge into bg */}
               <div style={{
                 position: "absolute",
                 bottom: 0, left: 0, right: 0,
