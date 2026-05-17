@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,10 +9,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const ServicesSection = () => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const [rowsHeight, setRowsHeight] = useState(0);
 
   const sectionRef  = useRef<HTMLElement>(null);
   const wolfRef     = useRef<HTMLDivElement>(null);
   const rowsRef     = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const measure = () => {
+      if (rowsRef.current) setRowsHeight(rowsRef.current.offsetHeight);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   /* ── GSAP animations ──────────────────────────────────────── */
   useGSAP(() => {
@@ -180,15 +190,15 @@ export const ServicesSection = () => {
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} />
         </div>
 
-        {/* ── RIGHT: Wolf (45%) — matches full left column height ── */}
+        {/* ── RIGHT: Wolf (45%) — exact same height as left rows column ── */}
         <div
-          style={{ flex: "0 0 45%", alignSelf: "stretch", position: "relative" }}
+          style={{ flex: "0 0 45%", alignSelf: "flex-start" }}
         >
           <div
             ref={wolfRef}
             style={{
               width: "100%",
-              height: "100%",
+              height: rowsHeight || "auto",
               display: "flex",
               alignItems: "flex-start",
               justifyContent: "center",
@@ -196,7 +206,7 @@ export const ServicesSection = () => {
               position: "relative",
             }}
           >
-            {/* Wolf image — full column height, screen blend removes black bg */}
+            {/* Wolf image — measured exact height, screen blend removes black bg */}
             <div style={{
               position: "relative",
               zIndex: 1,
