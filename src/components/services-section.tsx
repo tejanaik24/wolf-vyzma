@@ -32,15 +32,13 @@ export const ServicesSection = () => {
 
     if (wolf) {
       gsap.fromTo(wolf,
-        { opacity: 0, scale: 0.9, y: 30 },
+        { opacity: 0, x: 40 },
         {
-          opacity: 1, scale: 1, y: 0,
+          opacity: 1, x: 0,
           duration: 1.2, ease: "power4.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 70%", toggleActions: "play none none none" },
         }
       );
-      /* Infinite float */
-      gsap.to(wolf, { y: -12, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
     }
   }, { scope: sectionRef });
 
@@ -182,31 +180,23 @@ export const ServicesSection = () => {
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} />
         </div>
 
-        {/* ── RIGHT: Wolf sticky (45%) ── */}
+        {/* ── RIGHT: Wolf (45%) — matches full left column height ── */}
         <div
-          style={{ flex: "0 0 45%", alignSelf: "stretch" }}
+          style={{ flex: "0 0 45%", alignSelf: "stretch", position: "relative" }}
         >
           <div
             ref={wolfRef}
             style={{
-              position: "sticky",
-              top: 0,
-              height: "100vh",
+              width: "100%",
+              height: "100%",
               display: "flex",
-              alignItems: "center",
+              alignItems: "flex-start",
               justifyContent: "center",
               background: "transparent",
+              position: "relative",
             }}
           >
-            {/* Glow behind wolf */}
-            <div style={{
-              position: "absolute",
-              width: "500px", height: "100%",
-              background: "radial-gradient(ellipse at center 40%, rgba(30,144,255,0.15) 0%, rgba(6,1,15,0.6) 65%, transparent 100%)",
-              pointerEvents: "none", zIndex: 0,
-            }} />
-
-            {/* Wolf image — fills viewport height, screen blend removes black bg */}
+            {/* Wolf image — full column height, screen blend removes black bg */}
             <div style={{
               position: "relative",
               zIndex: 1,
@@ -219,18 +209,25 @@ export const ServicesSection = () => {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "contain",
-                  objectPosition: "center center",
+                  objectFit: "cover",
+                  objectPosition: "center top",
                   mixBlendMode: "screen",
                   filter: "brightness(1.3) contrast(1.1) saturate(1.2)",
                   display: "block",
                 }}
               />
+              {/* Blue glow overlay */}
+              <div style={{
+                position: "absolute",
+                inset: 0,
+                background: "radial-gradient(ellipse at 50% 40%, rgba(30,144,255,0.12) 0%, transparent 70%)",
+                pointerEvents: "none",
+              }} />
               {/* Fade bottom edge into bg */}
               <div style={{
                 position: "absolute",
                 bottom: 0, left: 0, right: 0,
-                height: "180px",
+                height: "200px",
                 background: "linear-gradient(to top, #06010F 0%, transparent 100%)",
                 pointerEvents: "none",
               }} />
