@@ -28,25 +28,11 @@ const steps = [
   },
 ];
 
-// Ambient crawl claws — slow upward drift, different sizes / positions / glows
-const ambientClaws = [
-  // Left side
-  { left: "-5%",  w: 580, opacity: 0.30, rotate: -22, duration: 20, delay:   0, glow: "#3DA3FF" },
-  { left:  "5%",  w: 340, opacity: 0.20, rotate: -18, duration: 24, delay: -11, glow: "#3DA3FF" },
-  // Center — tearing through the middle
-  { left: "35%",  w: 500, opacity: 0.28, rotate: -14, duration: 22, delay:  -6, glow: "#3DA3FF" },
-  { left: "48%",  w: 320, opacity: 0.22, rotate: -10, duration: 18, delay:  -2, glow: "#8A5CFF" },
-  // Right side
-  { right: "-4%", w: 400, opacity: 0.25, rotate:  18, duration: 26, delay:  -9, glow: "#8A5CFF" },
-  { right: "12%", w: 460, opacity: 0.28, rotate:  11, duration: 23, delay:  -5, glow: "#FFB547" },
-  { left:  "73%", w: 230, opacity: 0.18, rotate: -30, duration: 19, delay: -15, glow: "#3DA3FF" },
-];
-
 export const HowItWorks = () => {
   const containerRef  = useRef<HTMLDivElement>(null);
   const mouseLayerRef = useRef<HTMLDivElement>(null);
 
-  // Mouse parallax — each slash claw shifts at a different depth rate
+  // Mouse parallax depth effect on all slash claws
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
       if (!mouseLayerRef.current) return;
@@ -64,7 +50,6 @@ export const HowItWorks = () => {
   }, []);
 
   useGSAP(() => {
-    // ── SCROLL ENTRANCE TIMELINE ──────────────────────────────────────
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -73,10 +58,10 @@ export const HowItWorks = () => {
       },
     });
 
-    // Heading slams down with slight over-scale
+    // Heading slams down
     tl.fromTo(".hiw-title",
       { opacity: 0, y: -70, scale: 1.12 },
-      { opacity: 1,  y:   0, scale: 1,    duration: 0.85, ease: "expo.out" }
+      { opacity: 1,  y:   0, scale: 1, duration: 0.85, ease: "expo.out" }
     );
     tl.fromTo(".hiw-sub",
       { opacity: 0 },
@@ -84,24 +69,22 @@ export const HowItWorks = () => {
       "-=0.25"
     );
 
-    // SLASH 1 — tears in from top-left corner
+    // SLASH 1 — top-left → lands top-left (blue)
     tl.fromTo(".slash-1",
       { x: "-160%", y: "-160%", rotation: -55, opacity: 0, scale: 2.8 },
-      { x: "0%",    y: "0%",    rotation: -22, opacity: 1, scale: 1,
-        duration: 0.65, ease: "expo.out" },
+      { x: "0%",    y: "0%",    rotation: -22, opacity: 1, scale: 1, duration: 0.65, ease: "expo.out" },
       "-=0.05"
     );
     tl.fromTo(".how-step-0",
       { opacity: 0, x: -50 },
-      { opacity: 1,  x:   0, duration: 0.5, ease: "power3.out" },
+      { opacity: 1, x:   0, duration: 0.5, ease: "power3.out" },
       "-=0.35"
     );
 
-    // SLASH 2 — tears in from right
+    // SLASH 2 — right → lands right-center (purple)
     tl.fromTo(".slash-2",
-      { x: "180%", y:  "40%", rotation:  55, opacity: 0, scale: 2.2 },
-      { x:   "0%", y:   "0%", rotation:  18, opacity: 1, scale: 1,
-        duration: 0.65, ease: "expo.out" },
+      { x: "180%", y: "40%", rotation:  55, opacity: 0, scale: 2.2 },
+      { x:   "0%", y:  "0%", rotation:  18, opacity: 1, scale: 1, duration: 0.65, ease: "expo.out" },
       "-=0.1"
     );
     tl.fromTo(".how-step-1",
@@ -110,24 +93,30 @@ export const HowItWorks = () => {
       "-=0.35"
     );
 
-    // SLASH 3 — tears in from bottom-left
+    // SLASH 3 — bottom-left → lands bottom-left (amber)
     tl.fromTo(".slash-3",
       { x: "-100%", y: "180%", rotation: -45, opacity: 0, scale: 1.9 },
-      { x:    "0%", y:   "0%", rotation:  -8, opacity: 1, scale: 1,
-        duration: 0.65, ease: "expo.out" },
+      { x:    "0%", y:   "0%", rotation:  -8, opacity: 1, scale: 1, duration: 0.65, ease: "expo.out" },
       "-=0.1"
     );
     tl.fromTo(".how-step-2",
       { opacity: 0, x: 50 },
-      { opacity: 1,  x:  0, duration: 0.5, ease: "power3.out" },
+      { opacity: 1, x:  0, duration: 0.5, ease: "power3.out" },
       "-=0.35"
+    );
+
+    // SLASH 4 (NEW BIG ONE) — top-center → lands center-top (blue, biggest)
+    tl.fromTo(".slash-4",
+      { x: "20%", y: "-220%", rotation: -60, opacity: 0, scale: 3.0 },
+      { x:  "0%", y:    "0%", rotation: -16, opacity: 1, scale: 1, duration: 0.75, ease: "expo.out" },
+      "-=0.5"
     );
 
     // Button
     tl.fromTo(".hiw-btn",
       { opacity: 0, y: 24 },
       { opacity: 1,  y:  0, duration: 0.45, ease: "power3.out" },
-      "-=0.1"
+      "-=0.15"
     );
   }, { scope: containerRef });
 
@@ -136,73 +125,55 @@ export const HowItWorks = () => {
       ref={containerRef}
       className="relative overflow-hidden bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
     >
-      {/* ── AMBIENT CRAWL LAYER ─────────────────────────────────────── */}
-      <div className="claw-bg-layer absolute inset-0 pointer-events-none select-none overflow-hidden">
-        {ambientClaws.map((c, i) => (
-          <div
-            key={i}
-            className={`${i === 2 || i === 3 ? "claw-crawl-tear" : "claw-crawl"} absolute`}
-            style={{
-              left:             "left"  in c ? (c as any).left  : undefined,
-              right:            "right" in c ? (c as any).right : undefined,
-              width:            c.w,
-              animationDuration: `${c.duration}s`,
-              animationDelay:    `${c.delay}s`,
-            }}
-          >
-            <img
-              src={CLAW}
-              alt=""
-              className="w-full"
-              style={{
-                opacity: c.opacity,
-                transform: `rotate(${c.rotate}deg)`,
-                filter: `drop-shadow(0 0 28px ${c.glow}) drop-shadow(0 0 60px ${c.glow}55)`,
-              }}
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* ── ENTRANCE SLASH + MOUSE-PARALLAX LAYER ───────────────────── */}
+      {/* ── 4 SLASH CLAWS — full opacity, mouse parallax depth ───────── */}
       <div ref={mouseLayerRef} className="absolute inset-0 pointer-events-none select-none">
-        {/* Slash 1 — blue, top-left, depth 2 (moves most with mouse) */}
+
+        {/* Slash 1 — large, top-left, blue glow */}
         <div
-          className="slash-1 slash-claw-glow absolute w-[460px]"
+          className="slash-1 slash-claw-glow absolute w-[500px]"
           data-depth="2"
           style={{
-            left: "0%", top: "0%",
-            opacity: 0,
+            left: "0%", top: "0%", opacity: 0,
             filter: "drop-shadow(0 0 50px #3DA3FF) drop-shadow(0 0 100px #1A6FFF) drop-shadow(0 0 160px #0A3FFF)",
           }}
         >
           <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(-22deg)" }} />
         </div>
 
-        {/* Slash 2 — purple, right side, depth 1.3 */}
+        {/* Slash 2 — medium, right-center, purple glow */}
         <div
-          className="slash-2 slash-claw-glow absolute w-[320px]"
+          className="slash-2 slash-claw-glow absolute w-[340px]"
           data-depth="1.3"
           style={{
-            right: "3%", top: "28%",
-            opacity: 0,
+            right: "3%", top: "28%", opacity: 0,
             filter: "drop-shadow(0 0 40px #8A5CFF) drop-shadow(0 0 80px #6A3CFF)",
           }}
         >
           <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(18deg)" }} />
         </div>
 
-        {/* Slash 3 — amber, bottom-left, depth 0.7 (moves least) */}
+        {/* Slash 3 — medium, bottom-left, amber glow */}
         <div
-          className="slash-3 slash-claw-glow absolute w-[250px]"
+          className="slash-3 slash-claw-glow absolute w-[270px]"
           data-depth="0.7"
           style={{
-            left: "22%", bottom: "6%",
-            opacity: 0,
+            left: "22%", bottom: "6%", opacity: 0,
             filter: "drop-shadow(0 0 30px #FFB547) drop-shadow(0 0 60px #FF8A0088)",
           }}
         >
           <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(-8deg)" }} />
+        </div>
+
+        {/* Slash 4 — BIG, center-top, blue glow (user requested) */}
+        <div
+          className="slash-4 slash-claw-glow absolute w-[620px]"
+          data-depth="1.6"
+          style={{
+            left: "28%", top: "-2%", opacity: 0,
+            filter: "drop-shadow(0 0 60px #3DA3FF) drop-shadow(0 0 120px #1A6FFF) drop-shadow(0 0 200px #0A3FFF)",
+          }}
+        >
+          <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(-16deg)" }} />
         </div>
       </div>
 
