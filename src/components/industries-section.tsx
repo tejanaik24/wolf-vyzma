@@ -64,8 +64,8 @@ const industries = [
   },
 ];
 
-const HEX_W = 120;
-const HEX_H = 138;
+const HEX_W = 160;
+const HEX_H = 184;
 const VB    = "0 0 120 138";
 const OUTER = "60,1 119,31 119,107 60,137 1,107 1,31";
 const INNER = "60,5 115,33 115,105 60,133 5,105 5,33";
@@ -192,7 +192,7 @@ const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
           points={OUTER}
           fill="none"
           stroke={`url(#${id}-grad)`}
-          strokeWidth="1.5"
+          strokeWidth="3"
           opacity="1"
         />
 
@@ -216,13 +216,13 @@ const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
         pointerEvents: "none",
         zIndex: 2,
       }}>
-        <span ref={iconRef} style={{ fontSize: 28, lineHeight: 1, display: "block" }}>
+        <span ref={iconRef} style={{ fontSize: 36, lineHeight: 1, display: "block" }}>
           {item.icon}
         </span>
         <p style={{
           fontFamily: "'Rajdhani', sans-serif",
           fontWeight: 700,
-          fontSize: 11,
+          fontSize: 13,
           color: "#ffffff",
           textAlign: "center",
           margin: "5px 0 0",
