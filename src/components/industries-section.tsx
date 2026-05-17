@@ -100,7 +100,7 @@ const IndustryHex = ({
     pRefs.current.forEach(p => { if (p) gsap.killTweensOf(p); });
     if (tooltipRef.current) gsap.killTweensOf(tooltipRef.current);
 
-    if (borderRef.current) gsap.set(borderRef.current, { opacity: 0, filter: "none" });
+    if (borderRef.current) gsap.set(borderRef.current, { opacity: 0.45, filter: "none" });
     if (innerRef.current)  gsap.set(innerRef.current,  { fillOpacity: 0 });
     if (r1Ref.current)     gsap.set(r1Ref.current,     { scale: 1, opacity: 0, transformOrigin: "55px 63px" });
     if (r2Ref.current)     gsap.set(r2Ref.current,     { scale: 1, opacity: 0, transformOrigin: "55px 63px" });
@@ -183,14 +183,14 @@ const IndustryHex = ({
         <polygon ref={r1Ref} points={OUTER} fill="none" stroke="#1E90FF" strokeWidth="1" opacity="0" />
         <polygon ref={r2Ref} points={OUTER} fill="none" stroke="#FFB800" strokeWidth="1" opacity="0" />
 
-        {/* Border — invisible by default */}
+        {/* Border — dimly visible by default, glows on hover */}
         <polygon
           ref={borderRef}
           points={OUTER}
           fill="none"
           stroke={`url(#${id}-grad)`}
-          strokeWidth="2"
-          opacity="0"
+          strokeWidth="1.5"
+          opacity="0.45"
         />
 
         {/* Inner fill — transparent by default */}
@@ -332,7 +332,6 @@ export const IndustriesSection = () => {
           <div
             key={item.title}
             ref={el => { hexRefs.current[i] = el; }}
-            style={{ opacity: 0 }}
           >
             <IndustryHex item={item} index={i} />
           </div>
