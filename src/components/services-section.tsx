@@ -190,8 +190,7 @@ export const ServicesSection = () => {
             ref={wolfRef}
             style={{
               position: "sticky",
-              top: "50%",
-              transform: "translateY(-50%)",
+              top: "15vh",
               display: "flex",
               justifyContent: "center",
               background: "transparent",
@@ -207,26 +206,34 @@ export const ServicesSection = () => {
               pointerEvents: "none", zIndex: 0,
             }} />
 
-            {/* Wolf wrapper: mask for soft edges, NO isolation so screen blend reaches page bg */}
+            {/* Wolf image — large, no isolation, multiply removes any light bg */}
             <div style={{
               position: "relative",
               zIndex: 1,
-              WebkitMaskImage: "radial-gradient(ellipse 80% 90% at center, black 45%, transparent 100%)",
-              maskImage: "radial-gradient(ellipse 80% 90% at center, black 45%, transparent 100%)",
+              width: "100%",
             }}>
               <img
                 src="/img/service-wolf.png"
                 alt="Vyzma Service Wolf"
                 style={{
-                  width: "100%",
-                  height: "70vh",
-                  objectFit: "cover",
+                  width: "500px",
+                  height: "600px",
+                  objectFit: "contain",
                   objectPosition: "center top",
                   mixBlendMode: "screen",
-                  filter: "brightness(1.15) contrast(1.1)",
+                  filter: "brightness(1.3) contrast(1.1) saturate(1.2)",
                   display: "block",
+                  margin: "0 auto",
                 }}
               />
+              {/* Dark overlay fades bottom edge into bg */}
+              <div style={{
+                position: "absolute",
+                bottom: 0, left: 0, right: 0,
+                height: "180px",
+                background: "linear-gradient(to top, #06010F 0%, transparent 100%)",
+                pointerEvents: "none",
+              }} />
             </div>
 
             {/* ── Floating service preview — near wolf's top-right hand area ── */}
