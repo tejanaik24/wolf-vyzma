@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const ServicesSection = () => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const [rowsRect, setRowsRect] = useState({ height: 0, top: 0 });
 
   const sectionRef    = useRef<HTMLElement>(null);
   const wolfRef       = useRef<HTMLDivElement>(null);
@@ -16,6 +17,20 @@ export const ServicesSection = () => {
   const previewRef    = useRef<HTMLDivElement>(null);
   const previewImgRef = useRef<HTMLImageElement>(null);
   const isVisible     = useRef(false);
+
+  /* ── Measure rows height + top offset relative to section ── */
+  useLayoutEffect(() => {
+    const measure = () => {
+      if (rowsRef.current && sectionRef.current) {
+        const rowsTop = rowsRef.current.getBoundingClientRect().top
+          - sectionRef.current.getBoundingClientRect().top;
+        setRowsRect({ height: rowsRef.current.offsetHeight, top: rowsTop });
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   /* ── Preview show / hide / crossfade ─────────────────────────── */
   useEffect(() => {
@@ -96,9 +111,9 @@ export const ServicesSection = () => {
         style={{
           position: "absolute",
           right: "2%",
-          top: 0,
-          bottom: 0,
-          width: "52%",
+          top: rowsRect.top || 0,
+          width: "60%",
+          height: rowsRect.height || "auto",
           pointerEvents: "none",
           zIndex: 1,
         }}
