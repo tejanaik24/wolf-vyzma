@@ -140,8 +140,8 @@ export const ServicesSection = () => {
             zIndex: 2,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            padding: "0 40px",
+            justifyContent: "space-between",
+            padding: "16px 40px 16px",
           }}
         >
           {SERVICES.map((service, index) => {
@@ -166,9 +166,9 @@ export const ServicesSection = () => {
                 }}
               >
                 <span style={{
-                  fontFamily: "'Bebas Neue', cursive", fontSize: "28px", lineHeight: 1,
+                  fontFamily: "'Bebas Neue', cursive", fontSize: "36px", lineHeight: 1,
                   color: isHovered ? "#1E90FF" : "rgba(255,255,255,0.35)",
-                  transition: "color 0.3s", minWidth: "40px", flexShrink: 0,
+                  transition: "color 0.3s", minWidth: "48px", flexShrink: 0,
                 }}>
                   {service.number}
                 </span>
@@ -176,7 +176,7 @@ export const ServicesSection = () => {
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                     <h3 style={{
-                      fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "16px", margin: 0,
+                      fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "22px", margin: 0,
                       ...(isHovered
                         ? { background: "linear-gradient(90deg,#FFFFFF,#1E90FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }
                         : { color: "rgba(255,255,255,0.8)" }),
