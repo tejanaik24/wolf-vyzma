@@ -122,15 +122,17 @@ export const ServicesSection = () => {
         </video>
 
         {/* Dark overlay on left so cards are readable */}
-        <div style={{
+        <div className="svc-overlay" style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(to right, rgba(6,1,15,0.82) 0%, rgba(6,1,15,0.55) 38%, transparent 60%)",
           pointerEvents: "none", zIndex: 1,
         }} />
+        <style>{`.svc-overlay { background: linear-gradient(to right, rgba(6,1,15,0.82) 0%, rgba(6,1,15,0.55) 38%, transparent 60%); } @media (max-width: 767px) { .svc-overlay { background: rgba(6,1,15,0.88) !important; } }`}</style>
 
         {/* ── 9 Service cards — left side (red box area) ── */}
         <div
           ref={rowsRef}
+          className="svc-rows-col"
           style={{
             position: "absolute",
             left: 0,
@@ -203,9 +205,10 @@ export const ServicesSection = () => {
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }} />
         </div>
 
-        {/* ── Hover preview card — at wolf's hand / green box area ── */}
+        {/* ── Hover preview card — at wolf's hand / green box area — desktop only ── */}
         <div
           ref={previewRef}
+          className="svc-preview-card"
           style={{
             position: "absolute",
             left: "42%",
@@ -228,6 +231,9 @@ export const ServicesSection = () => {
               ref={previewImgRef}
               src={SERVICES[0].image}
               alt="Service preview"
+              loading="lazy"
+              width="210"
+              height="145"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
             />
             <div style={{
@@ -250,6 +256,13 @@ export const ServicesSection = () => {
         @keyframes svcPulse {
           0%,100% { transform: scaleX(1);   opacity: 0.85; }
           50%      { transform: scaleX(1.5); opacity: 0.25; }
+        }
+        @media (max-width: 767px) {
+          .svc-rows-col {
+            width: 100% !important;
+            padding: 12px 20px 12px !important;
+          }
+          .svc-preview-card { display: none !important; }
         }
       `}</style>
     </section>

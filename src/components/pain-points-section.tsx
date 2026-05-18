@@ -208,6 +208,7 @@ export const PainPointsSection = () => {
   return (
     <section
       ref={sectionRef}
+      id="pain-points"
       className="relative overflow-hidden"
       style={{ background: "#06010F", padding: "100px 40px" }}
     >
@@ -267,7 +268,7 @@ export const PainPointsSection = () => {
 
       {/* 3-col grid */}
       <div
-        className="relative z-10 mx-auto grid items-center"
+        className="pain-3col relative z-10 mx-auto grid items-center"
         style={{ maxWidth: "1200px", gridTemplateColumns: "1fr 380px 1fr", gap: "32px" }}
       >
         {/* Left cards */}
@@ -283,7 +284,7 @@ export const PainPointsSection = () => {
         {/* FIX 1 + FIX 5 — Wolf center */}
         <div
           ref={wolfRef}
-          className="flex items-center justify-center"
+          className="pain-wolf flex items-center justify-center"
           style={{ position: "relative", background: "transparent" }}
         >
           {/* Blue radial glow */}
@@ -300,6 +301,9 @@ export const PainPointsSection = () => {
               ref={wolfImgRef}
               src="/img/wolf-hero.png"
               alt="Vyzma AI Wolf"
+              loading="lazy"
+              width="380"
+              height="380"
               style={{
                 width: "100%", maxWidth: "380px", height: "auto",
                 mixBlendMode: "lighten",
@@ -385,7 +389,12 @@ export const PainPointsSection = () => {
         }
 
         @media (max-width: 768px) {
-          .pain-grid { grid-template-columns: 1fr !important; }
+          .pain-3col {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .pain-wolf { display: none !important; }
+          [id="pain-points"] { padding: 60px 16px !important; }
         }
       `}</style>
     </section>

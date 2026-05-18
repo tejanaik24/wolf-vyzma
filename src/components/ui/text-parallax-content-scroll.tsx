@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,7 +124,10 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
             <img
               src={imgUrl}
               alt=""
-              className="h-full w-full object-contain"
+              loading="lazy"
+              width="800"
+              height="600"
+              className="h-full w-full object-cover object-center"
             />
           </div>
         </div>
@@ -148,7 +151,7 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
 
 export const VyzmaParallaxSlides = () => {
   return (
-    <div className="bg-[#0A0A0D]">
+    <div id="slides" className="bg-[#0A0A0D]">
       {SLIDES.map((slide) => (
         <ParallaxSlide key={slide.imgUrl} {...slide} />
       ))}
