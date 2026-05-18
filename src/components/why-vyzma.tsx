@@ -176,7 +176,7 @@ export const WhyVyzma = () => {
 
       {/* Card stack */}
       <div
-        className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6 flex-1"
+        className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6 flex-1 overflow-hidden"
         style={{ maxHeight: "calc(100vh - 240px)" }}
       >
         {cards.map((card, i) => (
