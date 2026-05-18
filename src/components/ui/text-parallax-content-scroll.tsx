@@ -93,22 +93,22 @@ export const VyzmaParallaxSlides = () => {
     <section
       ref={sectionRef}
       id="slides"
-      className="relative h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-8 sm:pt-12"
+      className="relative h-auto sm:h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-8 sm:pt-12"
       style={{ overflow: "hidden" }}
     >
       {/* Heading */}
-      <div className="relative z-10 text-center px-4 mb-6 sm:mb-8 shrink-0">
+      <div className="relative z-10 text-center px-4 mb-4 sm:mb-8 shrink-0">
         <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-[#3DA3FF]/60 mb-2">
           What we do
         </p>
-        <h2 className="font-zentry font-black uppercase text-white text-[clamp(1.6rem,4.5vw,48px)] leading-[0.92]">
+        <h2 className="font-zentry font-black uppercase text-white text-[clamp(1.4rem,4.5vw,48px)] leading-[0.92]">
           INTELLIGENCE IN ACTION
         </h2>
       </div>
 
-      {/* Card stack — explicitly sized so inset-0 children have a real height */}
+      {/* Card stack — landscape ratio on mobile, fill-remaining on desktop */}
       <div
-        className="relative w-full max-w-5xl mx-auto px-3 sm:px-6 min-h-0 flex-1"
+        className="relative w-full max-w-5xl mx-auto px-3 sm:px-6 aspect-video sm:aspect-auto sm:min-h-0 sm:flex-1"
       >
         <div className="absolute inset-0 mx-3 sm:mx-6">
           {SLIDES.map((slide, i) => (
