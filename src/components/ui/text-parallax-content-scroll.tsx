@@ -121,7 +121,7 @@ export const VyzmaParallaxSlides = () => {
                 src={slide.imgUrl}
                 alt=""
                 loading="lazy"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-top"
               />
               {/* Bottom gradient so caption is readable */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
