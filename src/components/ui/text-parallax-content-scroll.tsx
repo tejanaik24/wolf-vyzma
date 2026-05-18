@@ -52,6 +52,10 @@ export const VyzmaParallaxSlides = () => {
     gsap.set(".vps-card", { transformPerspective: 1400 });
 
     const isMobile = window.innerWidth < 640;
+    // On mobile cards are 16:9 landscape — use card height (not full vh) × 2 per slide
+    const slideScrollDist = isMobile
+      ? window.innerWidth * (9 / 16) * 2
+      : window.innerHeight;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -60,8 +64,8 @@ export const VyzmaParallaxSlides = () => {
         pinType: isMobile ? "transform" : "fixed",
         anticipatePin: 1,
         start: "top top",
-        end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
-        scrub: isMobile ? 1 : 0.7,
+        end: () => `+=${(cardEls.length - 1) * slideScrollDist}`,
+        scrub: isMobile ? 0.5 : 0.7,
         invalidateOnRefresh: true,
       },
     });
@@ -98,7 +102,7 @@ export const VyzmaParallaxSlides = () => {
     <section
       ref={sectionRef}
       id="slides"
-      className="relative h-auto sm:h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-8 sm:pt-12"
+      className="relative h-auto sm:h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-20 sm:pt-12"
       style={{ overflow: "hidden", willChange: "transform" }}
     >
       {/* Heading */}
@@ -136,7 +140,7 @@ export const VyzmaParallaxSlides = () => {
       </div>
 
       {/* Caption — sits below the card stack, cross-fades per slide */}
-      <div className="relative z-20 w-full max-w-2xl mx-auto px-6 py-4 text-center shrink-0" style={{ height: 80 }}>
+      <div className="relative z-20 w-full max-w-2xl mx-auto px-4 py-3 text-center shrink-0" style={{ height: 72 }}>
         {SLIDES.map((slide) => (
           <div
             key={slide.imgUrl}
