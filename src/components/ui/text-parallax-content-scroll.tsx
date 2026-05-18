@@ -51,13 +51,18 @@ export const VyzmaParallaxSlides = () => {
 
     gsap.set(".vps-card", { transformPerspective: 1400 });
 
+    const isMobile = window.innerWidth < 640;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
         pin: true,
+        pinType: isMobile ? "transform" : "fixed",
+        anticipatePin: 1,
         start: "top top",
         end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
-        scrub: 0.7,
+        scrub: isMobile ? 1 : 0.7,
+        invalidateOnRefresh: true,
       },
     });
 
@@ -94,7 +99,7 @@ export const VyzmaParallaxSlides = () => {
       ref={sectionRef}
       id="slides"
       className="relative h-auto sm:h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-8 sm:pt-12"
-      style={{ overflow: "hidden" }}
+      style={{ overflow: "hidden", willChange: "transform" }}
     >
       {/* Heading */}
       <div className="relative z-10 text-center px-4 mb-4 sm:mb-8 shrink-0">
