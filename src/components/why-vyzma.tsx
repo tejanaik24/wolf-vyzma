@@ -200,7 +200,7 @@ export const WhyVyzma = () => {
         {cards.map((card, i) => (
           <div
             key={card.num}
-            className="peel-card absolute inset-0 rounded-3xl overflow-hidden"
+            className="peel-card absolute inset-0 rounded-3xl overflow-hidden peel-card-item"
             style={{ zIndex: cards.length - i }}
           >
             {/* Card surface — bold vibrant gradient */}
@@ -282,10 +282,32 @@ export const WhyVyzma = () => {
       </div>
 
       {/* Scroll hint — fades out after first card peels */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 opacity-40">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 opacity-40 hidden sm:flex">
         <p className="text-white text-[10px] uppercase tracking-[0.3em]">Scroll</p>
         <div className="w-px h-8 bg-white/30" />
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          #why-vyzma {
+            height: auto !important;
+            overflow: visible !important;
+            padding-bottom: 40px;
+          }
+          .peel-cards-wrap {
+            height: auto !important;
+            overflow: visible !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+          .peel-card-item {
+            position: relative !important;
+            inset: auto !important;
+            height: 320px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

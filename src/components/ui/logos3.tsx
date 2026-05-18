@@ -37,10 +37,10 @@ const Logos3 = ({ heading = "Platforms we automate for you" }: Logos3Props) => {
         </h2>
       </div>
       <div className="relative mx-auto flex items-center justify-center max-w-5xl">
-        <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true, speed: 1.5 })]}>
+        <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true, speed: 1.5, stopOnInteraction: false, stopOnMouseEnter: false })]}>
           <CarouselContent className="ml-0">
             {LOGOS.map(({ id, Icon, label }) => (
-              <CarouselItem key={id} className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6">
+              <CarouselItem key={id} className="flex basis-1/4 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6">
                 <div className="mx-8 flex shrink-0 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-300">
                   <Icon className="text-white text-3xl" />
                   <span className="text-white/60 text-[10px] uppercase tracking-widest">{label}</span>
