@@ -147,7 +147,7 @@ export const WhyVyzma = () => {
     <section
       ref={sectionRef}
       id="why-vyzma"
-      className="relative h-screen bg-[#0C0C0C] flex flex-col items-center justify-start pt-16 overflow-hidden"
+      className="relative h-screen bg-[#0C0C0C] flex flex-col items-center justify-start pt-8 sm:pt-16 overflow-hidden"
     >
       {/* Heading */}
       <div className="relative z-10 text-center px-4 mb-10 shrink-0">
@@ -162,7 +162,7 @@ export const WhyVyzma = () => {
       {/* Card stack */}
       <div
         className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6"
-        style={{ height: "calc(100vh - 240px)", overflow: "hidden" }}
+        style={{ height: "calc(100vh - 200px)", overflow: "visible" }}
       >
         {cards.map((card, i) => (
           <div
@@ -209,7 +209,7 @@ export const WhyVyzma = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex flex-col justify-center px-10 sm:px-14 py-10">
+            <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-14 py-6 sm:py-10">
               <Icon num={card.num} accent={card.accent} />
 
               <h3
