@@ -1,10 +1,8 @@
-import AutoScroll from "embla-carousel-auto-scroll";
 import {
   SiOpenai, SiVercel, SiSlack, SiWhatsapp, SiInstagram,
   SiZapier, SiNotion, SiHubspot, SiMake, SiAnthropic,
   SiPerplexity, SiYoutube, SiTelegram, SiGooglegemini,
 } from "react-icons/si";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const LOGOS = [
   { id: "1",  Icon: SiOpenai,       label: "ChatGPT" },
@@ -23,6 +21,9 @@ const LOGOS = [
   { id: "14", Icon: SiVercel,       label: "Vercel" },
 ];
 
+// Double the list so the CSS marquee loops seamlessly
+const MARQUEE_LOGOS = [...LOGOS, ...LOGOS];
+
 interface Logos3Props {
   heading?: string;
 }
@@ -36,22 +37,35 @@ const Logos3 = ({ heading = "Platforms we automate for you" }: Logos3Props) => {
           {heading}
         </h2>
       </div>
-      <div className="relative mx-auto flex items-center justify-center max-w-5xl">
-        <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true, speed: 1.5, stopOnInteraction: false, stopOnMouseEnter: false })]}>
-          <CarouselContent className="ml-0">
-            {LOGOS.map(({ id, Icon, label }) => (
-              <CarouselItem key={id} className="flex basis-1/4 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6">
-                <div className="mx-8 flex shrink-0 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-300">
-                  <Icon className="text-white text-3xl" />
-                  <span className="text-white/60 text-[10px] uppercase tracking-widest">{label}</span>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+
+      <div className="relative overflow-hidden">
+        {/* Left fade */}
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
+        {/* Right fade */}
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
+
+        <div
+          className="flex"
+          style={{ animation: "logos-marquee 28s linear infinite", width: "max-content" }}
+        >
+          {MARQUEE_LOGOS.map(({ id, Icon, label }, idx) => (
+            <div
+              key={`${id}-${idx}`}
+              className="mx-8 flex shrink-0 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-300"
+            >
+              <Icon className="text-white text-3xl" />
+              <span className="text-white/60 text-[10px] uppercase tracking-widest">{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
+
+      <style>{`
+        @keyframes logos-marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 };

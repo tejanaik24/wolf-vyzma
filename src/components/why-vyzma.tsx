@@ -100,80 +100,47 @@ export const WhyVyzma = () => {
     const dotEls  = gsap.utils.toArray<HTMLElement>(".prog-dot");
     if (!cardEls.length) return;
 
-    const mm = gsap.matchMedia();
-
-    // Desktop (≥768px): pin + peel effect
-    mm.add("(min-width: 768px)", () => {
-      cardEls.forEach((card, i) => {
-        if (i === 0) return;
-        gsap.set(card, { y: i * 22, scale: 1 - i * 0.025 });
-      });
-
-      dotEls.forEach((dot, i) => {
-        if (i !== 0) gsap.set(dot, { scale: 0.55, opacity: 0.25 });
-      });
-
-      gsap.set(".peel-card", { transformPerspective: 1400 });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          start: "top top",
-          end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
-          scrub: 0.7,
-        },
-      });
-
-      cardEls.forEach((card, i) => {
-        if (i === cardEls.length - 1) return;
-        const nextCards = cardEls.slice(i + 1);
-
-        tl.to(card, {
-          y: "-118%", rotationX: -14, opacity: 0,
-          transformOrigin: "50% 0%", duration: 1, ease: "none",
-        });
-        tl.to(nextCards[0], { y: 0, scale: 1, duration: 1, ease: "none" }, "<");
-        nextCards.slice(1).forEach((futureCard, j) => {
-          if (!futureCard) return;
-          tl.to(futureCard, {
-            y: (j + 1) * 22, scale: 1 - (j + 1) * 0.025,
-            duration: 1, ease: "none",
-          }, "<");
-        });
-        tl.to(dotEls[i],     { scale: 0.55, opacity: 0.25, duration: 0.4 }, "<");
-        tl.to(dotEls[i + 1], { scale: 1,    opacity: 1,    duration: 0.4 }, "<");
-      });
+    // Same peel effect on ALL screen sizes
+    cardEls.forEach((card, i) => {
+      if (i === 0) return;
+      gsap.set(card, { y: i * 22, scale: 1 - i * 0.025 });
     });
 
-    // Mobile (<768px): staggered scroll-reveal (no pin, no perspective)
-    mm.add("(max-width: 767px)", () => {
-      gsap.set(cardEls, { opacity: 0, y: 60 });
-      gsap.set(cardEls[0], { opacity: 1, y: 0 });
-
-      const sts: ScrollTrigger[] = [];
-      cardEls.forEach((card, i) => {
-        if (i === 0) return;
-        const st = ScrollTrigger.create({
-          trigger: card,
-          start: "top 85%",
-          onEnter: () => {
-            gsap.to(card, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" });
-            if (dotEls[i]) {
-              gsap.to(dotEls[i], { scale: 1, opacity: 1, duration: 0.3 });
-            }
-            if (i > 0 && dotEls[i - 1]) {
-              gsap.to(dotEls[i - 1], { scale: 0.55, opacity: 0.25, duration: 0.3 });
-            }
-          },
-        });
-        sts.push(st);
-      });
-
-      return () => sts.forEach((st) => st.kill());
+    dotEls.forEach((dot, i) => {
+      if (i !== 0) gsap.set(dot, { scale: 0.55, opacity: 0.25 });
     });
 
-    return () => mm.revert();
+    gsap.set(".peel-card", { transformPerspective: 1400 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        pin: true,
+        start: "top top",
+        end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
+        scrub: 0.7,
+      },
+    });
+
+    cardEls.forEach((card, i) => {
+      if (i === cardEls.length - 1) return;
+      const nextCards = cardEls.slice(i + 1);
+
+      tl.to(card, {
+        y: "-118%", rotationX: -14, opacity: 0,
+        transformOrigin: "50% 0%", duration: 1, ease: "none",
+      });
+      tl.to(nextCards[0], { y: 0, scale: 1, duration: 1, ease: "none" }, "<");
+      nextCards.slice(1).forEach((futureCard, j) => {
+        if (!futureCard) return;
+        tl.to(futureCard, {
+          y: (j + 1) * 22, scale: 1 - (j + 1) * 0.025,
+          duration: 1, ease: "none",
+        }, "<");
+      });
+      tl.to(dotEls[i],     { scale: 0.55, opacity: 0.25, duration: 0.4 }, "<");
+      tl.to(dotEls[i + 1], { scale: 1,    opacity: 1,    duration: 0.4 }, "<");
+    });
   }, { scope: sectionRef });
 
   return (
@@ -287,27 +254,6 @@ export const WhyVyzma = () => {
         <div className="w-px h-8 bg-white/30" />
       </div>
 
-      <style>{`
-        @media (max-width: 767px) {
-          #why-vyzma {
-            height: auto !important;
-            overflow: visible !important;
-            padding-bottom: 40px;
-          }
-          .peel-cards-wrap {
-            height: auto !important;
-            overflow: visible !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 16px !important;
-          }
-          .peel-card-item {
-            position: relative !important;
-            inset: auto !important;
-            height: 320px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };
