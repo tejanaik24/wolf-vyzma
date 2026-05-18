@@ -108,12 +108,11 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
   );
 
   return (
-    // 110vh: sticky card pins for ~10vh, entrance/exit tied to viewport edges
-    <div ref={outerRef} style={{ minHeight: "110vh" }}>
+    <div ref={outerRef} className="parallax-slide-outer" style={{ minHeight: "110vh" }}>
       <div style={{ paddingLeft: PAD, paddingRight: PAD }}>
         {/* Outer: sticky + animated conic-gradient border */}
         <div
-          className="sticky slide-glow-border rounded-3xl"
+          className="sticky parallax-slide-sticky slide-glow-border rounded-3xl"
           style={{ top: PAD, height: `calc(100vh - ${PAD * 2}px)` }}
         >
           {/* Inner: 2px inset so the border shows, overflow-hidden clips image */}
@@ -127,7 +126,7 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
               loading="lazy"
               width="800"
               height="600"
-              className="h-full w-full object-contain object-center md:object-cover"
+              className="h-full w-full object-cover object-center"
             />
           </div>
         </div>
@@ -152,6 +151,24 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
 export const VyzmaParallaxSlides = () => {
   return (
     <div id="slides" className="bg-[#0A0A0D]">
+      <style>{`
+        @media (max-width: 767px) {
+          .parallax-slide-outer {
+            min-height: auto !important;
+            margin-bottom: 16px;
+          }
+          .parallax-slide-sticky {
+            position: relative !important;
+            top: 0 !important;
+            height: auto !important;
+            aspect-ratio: 16 / 9;
+          }
+          .parallax-slide-sticky > div {
+            position: relative !important;
+            inset: 2px !important;
+          }
+        }
+      `}</style>
       {SLIDES.map((slide) => (
         <ParallaxSlide key={slide.imgUrl} {...slide} />
       ))}
