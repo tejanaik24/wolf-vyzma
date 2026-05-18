@@ -5,173 +5,151 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface SlideData {
-  imgUrl: string;
-  caption: string;
-  sub: string;
-}
-
-const SLIDES: SlideData[] = [
+const SLIDES = [
   {
     imgUrl: "/img/slide-1.png",
     sub: "Always watching. Always working.",
-    caption:
-      "Our AI agents run 24/7 — qualifying leads, responding to messages, and updating your CRM while you sleep.",
+    caption: "Our AI agents run 24/7 — qualifying leads, responding to messages, and updating your CRM while you sleep.",
   },
   {
     imgUrl: "/img/slide-3.png",
     sub: "The upgrade is non-negotiable.",
-    caption:
-      "Traditional marketing burns budget with guesswork. AI Digital Marketing targets precisely, moves fast, and compounds results every month.",
+    caption: "Traditional marketing burns budget with guesswork. AI Digital Marketing targets precisely, moves fast, and compounds results every month.",
   },
   {
     imgUrl: "/img/slide-4.png",
     sub: "Stand out or fade out.",
-    caption:
-      "In a market full of noise, we make your brand the signal — unmistakable, memorable, and built to dominate its niche.",
+    caption: "In a market full of noise, we make your brand the signal — unmistakable, memorable, and built to dominate its niche.",
   },
   {
     imgUrl: "/img/slide-2.png",
     sub: "You focus on the business.",
-    caption:
-      "Hand us the marketing wheel. Strategy, content, ads, and automation — fully managed so you never have to think about it again.",
+    caption: "Hand us the marketing wheel. Strategy, content, ads, and automation — fully managed so you never have to think about it again.",
   },
 ];
 
-const PAD = 12;
+export const VyzmaParallaxSlides = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
-  const outerRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const captionRef = useRef<HTMLDivElement>(null);
+  useGSAP(() => {
+    if (!sectionRef.current) return;
 
-  useGSAP(
-    () => {
-      const card = cardRef.current;
-      const outer = outerRef.current;
-      const cap = captionRef.current;
-      if (!card || !outer || !cap) return;
+    const cardEls = gsap.utils.toArray<HTMLElement>(".vps-card");
+    const captEls = gsap.utils.toArray<HTMLElement>(".vps-caption");
+    if (!cardEls.length) return;
 
-      // ── 3D entrance — NO opacity change, images always fully bright ──────
-      // Only scale + rotationX for the floating depth feel
-      gsap.fromTo(
-        card,
-        {
-          scale: 0.92,
-          rotationX: 12,
-          transformPerspective: 1000,
-          transformOrigin: "50% 50%",
-        },
-        {
-          scale: 1,
-          rotationX: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: outer,
-            start: "top 90%",   // starts the moment card appears from below
-            end: "top 10%",     // fully in by the time it's near the top
-            scrub: 0.6,         // fast, locked to scroll
-          },
-        }
-      );
+    // Stack cards behind each other — same as WhyVyzma peel effect
+    cardEls.forEach((card, i) => {
+      if (i === 0) return;
+      gsap.set(card, { y: i * 20, scale: 1 - i * 0.03 });
+    });
 
-      // ── Subtle exit — scale down only, no opacity (keeps images visible) ─
-      gsap.to(card, {
-        scale: 0.88,
-        ease: "none",
-        scrollTrigger: {
-          trigger: outer,
-          start: "bottom 90%",  // card starts shrinking as next slide comes
-          end: "bottom 20%",
-          scrub: 0.6,
-        },
+    // Show only first caption at start
+    captEls.forEach((cap, i) => {
+      if (i !== 0) gsap.set(cap, { opacity: 0, y: 12 });
+    });
+
+    gsap.set(".vps-card", { transformPerspective: 1400 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        pin: true,
+        start: "top top",
+        end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
+        scrub: 0.7,
+      },
+    });
+
+    cardEls.forEach((card, i) => {
+      if (i === cardEls.length - 1) return;
+      const nextCards = cardEls.slice(i + 1);
+
+      // Current card peels away
+      tl.to(card, {
+        y: "-118%", rotationX: -14, opacity: 0,
+        transformOrigin: "50% 0%", duration: 1, ease: "none",
       });
 
-      // ── Caption floats up ─────────────────────────────────────────────────
-      gsap.fromTo(
-        cap,
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: cap,
-            start: "top 100%",
-            end: "top 60%",
-            scrub: 0.6,
-          },
-        }
-      );
-    },
-    { scope: outerRef }
-  );
+      // Next card comes to front
+      tl.to(nextCards[0], { y: 0, scale: 1, duration: 1, ease: "none" }, "<");
+
+      // Remaining cards shift up in the stack
+      nextCards.slice(1).forEach((futureCard, j) => {
+        if (!futureCard) return;
+        tl.to(futureCard, {
+          y: (j + 1) * 20, scale: 1 - (j + 1) * 0.03,
+          duration: 1, ease: "none",
+        }, "<");
+      });
+
+      // Caption cross-fade
+      tl.to(captEls[i],     { opacity: 0, y: -10, duration: 0.4 }, "<");
+      tl.to(captEls[i + 1], { opacity: 1, y: 0,   duration: 0.4 }, "<0.1");
+    });
+  }, { scope: sectionRef });
 
   return (
-    <div ref={outerRef} className="parallax-slide-outer" style={{ minHeight: "110vh" }}>
-      <div style={{ paddingLeft: PAD, paddingRight: PAD }}>
-        {/* Outer: sticky + animated conic-gradient border */}
-        <div
-          className="sticky parallax-slide-sticky slide-glow-border rounded-3xl"
-          style={{ top: PAD, height: `calc(100vh - ${PAD * 2}px)` }}
-        >
-          {/* Inner: 2px inset so the border shows, overflow-hidden clips image */}
+    <section
+      ref={sectionRef}
+      id="slides"
+      className="relative h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-8 sm:pt-12 overflow-hidden"
+    >
+      {/* Heading */}
+      <div className="relative z-10 text-center px-4 mb-6 sm:mb-8 shrink-0">
+        <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-[#3DA3FF]/60 mb-2">
+          What we do
+        </p>
+        <h2 className="font-zentry font-black uppercase text-white text-[clamp(1.6rem,4.5vw,48px)] leading-[0.92]">
+          INTELLIGENCE IN ACTION
+        </h2>
+      </div>
+
+      {/* Card stack — full width, fills remaining screen height */}
+      <div
+        className="relative w-full max-w-5xl mx-auto px-3 sm:px-6 flex-1"
+        style={{ overflow: "visible" }}
+      >
+        {SLIDES.map((slide, i) => (
           <div
-            ref={cardRef}
-            className="absolute inset-[2px] overflow-hidden rounded-[22px] bg-[#0A0A0D] flex items-center justify-center"
+            key={slide.imgUrl}
+            className="vps-card absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden"
+            style={{ zIndex: SLIDES.length - i }}
           >
             <img
-              src={imgUrl}
+              src={slide.imgUrl}
               alt=""
               loading="lazy"
-              width="800"
-              height="600"
-              className="h-full w-full object-cover object-center"
+              className="w-full h-full object-cover object-center"
             />
+            {/* Bottom gradient so caption is readable */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>
-        </div>
+        ))}
       </div>
 
-      {/* Caption — tight strip below image, no dead space */}
-      <div
-        ref={captionRef}
-        className="mx-auto max-w-2xl px-6 py-4 text-center"
-      >
-        <p className="font-general mb-1 text-[10px] uppercase tracking-[0.3em] text-[#3DA3FF]">
-          {sub}
-        </p>
-        <p className="font-circular-web text-sm leading-relaxed text-[#D0D2D6] md:text-base">
-          {caption}
-        </p>
+      {/* Caption — sits below the card stack, cross-fades per slide */}
+      <div className="relative z-20 w-full max-w-2xl mx-auto px-6 py-4 text-center shrink-0" style={{ height: 80 }}>
+        {SLIDES.map((slide, i) => (
+          <div
+            key={slide.imgUrl}
+            className="vps-caption absolute inset-0 flex flex-col items-center justify-center px-6"
+          >
+            <p className="font-general text-[10px] uppercase tracking-[0.3em] text-[#3DA3FF] mb-1">
+              {slide.sub}
+            </p>
+            <p className="font-circular-web text-xs sm:text-sm leading-relaxed text-[#D0D2D6] max-w-lg">
+              {slide.caption}
+            </p>
+          </div>
+        ))}
       </div>
-    </div>
-  );
-};
 
-export const VyzmaParallaxSlides = () => {
-  return (
-    <div id="slides" className="bg-[#0A0A0D]">
-      <style>{`
-        @media (max-width: 767px) {
-          .parallax-slide-outer {
-            min-height: auto !important;
-            margin-bottom: 16px;
-          }
-          .parallax-slide-sticky {
-            position: relative !important;
-            top: 0 !important;
-            height: auto !important;
-            aspect-ratio: 16 / 9;
-          }
-          .parallax-slide-sticky > div {
-            position: relative !important;
-            inset: 2px !important;
-          }
-        }
-      `}</style>
-      {SLIDES.map((slide) => (
-        <ParallaxSlide key={slide.imgUrl} {...slide} />
-      ))}
-    </div>
+      {/* Scroll hint */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 opacity-30 hidden sm:flex">
+        <p className="text-white text-[10px] uppercase tracking-[0.3em]">Scroll</p>
+        <div className="w-px h-6 bg-white/30" />
+      </div>
+    </section>
   );
 };
