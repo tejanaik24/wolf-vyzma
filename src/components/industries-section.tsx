@@ -342,11 +342,27 @@ export const IndustriesSection = () => {
         ))}
       </div>
 
-      {/* Mobile: card grid */}
+      {/* Mobile: wolf image + card grid */}
       <div
         className="industries-mobile"
         style={{ display: "none", gridTemplateColumns: "1fr 1fr", gap: 12, padding: "0 0 60px" }}
       >
+        {/* Wolf image — full width, top of mobile section */}
+        <div style={{ gridColumn: "1 / -1", borderRadius: 16, overflow: "hidden", marginBottom: 4 }}>
+          <img
+            src="/img/industries-wolf.png"
+            alt="Vyzma AI industries"
+            loading="lazy"
+            style={{
+              width: "100%",
+              maxHeight: "220px",
+              objectFit: "cover",
+              objectPosition: "center top",
+              display: "block",
+            }}
+          />
+        </div>
+
         {industries.map((item) => (
           <div key={item.title} style={{
             position: "relative", background: "rgba(255,255,255,0.03)",
