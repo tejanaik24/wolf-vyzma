@@ -391,10 +391,7 @@ export const IndustriesSection = () => {
 
       <style>{`
         @media (max-width: 767px) {
-          #industries { overflow: visible !important; }
-          .industries-wolf-bg { padding-bottom: 62% !important; background-position: center center !important; }
-          .ind-hex { transform: scale(0.38); transform-origin: top left; }
-          .industries-mobile { display: none !important; }
+          #industries { display: none !important; }
         }
       `}</style>
     </section>
