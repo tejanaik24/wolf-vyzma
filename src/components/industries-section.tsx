@@ -159,6 +159,7 @@ const IndustryHex = ({ item, index }: { item: Industry; index: number }) => {
 
   return (
     <div
+      className="ind-hex"
       style={{
         position: "absolute",
         left: item.left,
@@ -315,14 +316,15 @@ export const IndustriesSection = () => {
         </p>
       </div>
 
-      {/* Desktop: wolf bg + interactive hexagons */}
+      {/* Wolf bg + interactive hexagons — same layout on all screens */}
       <div className="industries-desktop" style={{ position: "relative", width: "100%" }}>
         <div
           ref={bgRef}
+          className="industries-wolf-bg"
           style={{
             position: "relative",
             width: "100%",
-            paddingBottom: "56.25%", /* 16:9 ratio to match image */
+            paddingBottom: "56.25%",
             backgroundImage: "url('/img/industries-wolf.png')",
             backgroundSize: "cover",
             backgroundPosition: "center center",
@@ -389,8 +391,9 @@ export const IndustriesSection = () => {
 
       <style>{`
         @media (max-width: 767px) {
-          .industries-desktop { display: none !important; }
-          .industries-mobile  { display: grid !important; }
+          .industries-wolf-bg { padding-bottom: 135% !important; }
+          .ind-hex { transform: scale(0.55); transform-origin: top left; }
+          .industries-mobile { display: none !important; }
         }
       `}</style>
     </section>
