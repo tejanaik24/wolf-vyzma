@@ -181,15 +181,6 @@ export const Hero = () => {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 767px) {
-          .hero-section,
-          .hero-video-frame {
-            height: 56.25vw !important;
-            min-height: 220px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };
