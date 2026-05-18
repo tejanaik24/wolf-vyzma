@@ -167,7 +167,7 @@ export const ServicesSection = () => {
                   textDecoration: "none",
                 }}
               >
-                <span style={{
+                <span className="svc-number" style={{
                   fontFamily: "'Bebas Neue', cursive", fontSize: "36px", lineHeight: 1,
                   color: isHovered ? "#1E90FF" : "rgba(255,255,255,0.35)",
                   transition: "color 0.3s", minWidth: "48px", flexShrink: 0,
@@ -177,7 +177,7 @@ export const ServicesSection = () => {
 
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <h3 style={{
+                    <h3 className="svc-name" style={{
                       fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "22px", margin: 0,
                       ...(isHovered
                         ? { background: "linear-gradient(90deg,#FFFFFF,#1E90FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }
@@ -260,9 +260,11 @@ export const ServicesSection = () => {
         @media (max-width: 767px) {
           .svc-rows-col {
             width: 100% !important;
-            padding: 12px 20px 12px !important;
+            padding: 12px 16px 12px !important;
           }
           .svc-preview-card { display: none !important; }
+          .svc-number { font-size: 22px !important; min-width: 32px !important; }
+          .svc-name { font-size: 15px !important; }
         }
       `}</style>
     </section>

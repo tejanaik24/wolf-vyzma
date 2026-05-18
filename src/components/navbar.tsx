@@ -64,16 +64,18 @@ export const Navbar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
             <a href="#hero" className="transition hover:opacity-75">
-              <img src="/img/vyzma-logo.png" alt="Vyzma" className="h-32 w-auto" />
+              <img src="/img/vyzma-logo.png" alt="Vyzma" loading="eager" width="128" height="128" className="h-32 w-auto" />
             </a>
 
-            <Button
-              id="product-button"
-              rightIcon={TiLocationArrow}
-              containerClass="bg-[#3DA3FF] text-white md:flex hidden items-center justify-center gap-1"
-            >
-              Book Free Call
-            </Button>
+            <a href="#contact" className="md:flex hidden">
+              <Button
+                id="product-button"
+                rightIcon={TiLocationArrow}
+                containerClass="bg-[#3DA3FF] text-white items-center justify-center gap-1"
+              >
+                Book Free Call
+              </Button>
+            </a>
           </div>
 
           <div className="flex h-full items-center">

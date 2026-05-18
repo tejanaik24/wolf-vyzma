@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { AnimatedTitle } from "./animated-title";
 
@@ -9,27 +9,36 @@ gsap.registerPlugin(useGSAP);
 
 export const About = () => {
   useGSAP(() => {
-    const clipAnimation = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#clip",
-        start: "center center",
-        end: "+=800 center",
-        scrub: 0.5,
-        pin: true,
-        pinSpacing: true,
-      },
+    const clip = document.querySelector("#clip");
+    if (!clip) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const clipAnimation = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#clip",
+          start: "center center",
+          end: "+=800 center",
+          scrub: 0.5,
+          pin: true,
+          pinSpacing: true,
+        },
+      });
+
+      clipAnimation.to(".mask-clip-path", {
+        width: "100vw",
+        height: "100vh",
+        borderRadius: 0,
+      });
     });
 
-    clipAnimation.to(".mask-clip-path", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: 0,
-    });
+    return () => mm.revert();
   });
 
   return (
     <div id="about" className="min-h-screen w-screen">
-      <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
+      <div className="relative mt-16 md:mt-36 mb-8 flex flex-col items-center gap-5">
         <p className="font-general text-sm uppercase md:text-[10px]">
           Why Vyzma
         </p>

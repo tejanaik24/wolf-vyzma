@@ -19,7 +19,7 @@ const offices = [
 
 export const Offices = () => {
   return (
-    <section className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20">
+    <section id="offices" className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20">
       <h2 className="font-zentry font-black uppercase text-center text-[clamp(2rem,8vw,80px)] leading-[0.9] hero-gradient mb-12">
         Two Offices.<br />All of India.
       </h2>

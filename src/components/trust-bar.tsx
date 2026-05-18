@@ -8,7 +8,7 @@ export const TrustBar = () => {
   ];
 
   return (
-    <section className="w-full bg-[#14151A] border-y border-white/10 py-4 overflow-hidden">
+    <section id="stats" className="w-full bg-[#14151A] border-y border-white/10 py-4 overflow-hidden">
       <div className="hidden sm:flex items-center justify-center gap-8 md:gap-12 mx-auto max-w-5xl px-5">
         {stats.map((stat, i) => (
           <div key={stat.label} className="flex items-center gap-8 md:gap-12">

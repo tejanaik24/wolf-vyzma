@@ -38,7 +38,7 @@ export const FaqSection = () => {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
+    <section id="faq" className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
       <h2 className="font-zentry font-black uppercase text-center text-[clamp(2rem,8vw,80px)] leading-[0.9] hero-gradient mb-16">
         QUESTIONS YOU'RE<br />PROBABLY THINKING<br />RIGHT NOW
       </h2>

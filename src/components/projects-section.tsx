@@ -41,12 +41,18 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0]; index: n
             <img
               src={project.col1Image1}
               alt=""
+              loading="lazy"
+              width="400"
+              height="230"
               className="w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] object-cover"
               style={{ height: "clamp(130px, 16vw, 230px)" }}
             />
             <img
               src={project.col1Image2}
               alt=""
+              loading="lazy"
+              width="400"
+              height="340"
               className="w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] object-cover"
               style={{ height: "clamp(160px, 22vw, 340px)" }}
             />
@@ -55,6 +61,9 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0]; index: n
             <img
               src={project.col2Image}
               alt=""
+              loading="lazy"
+              width="600"
+              height="400"
               className="w-full h-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] object-cover"
             />
           </div>

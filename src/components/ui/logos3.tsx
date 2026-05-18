@@ -29,7 +29,7 @@ interface Logos3Props {
 
 const Logos3 = ({ heading = "Platforms we automate for you" }: Logos3Props) => {
   return (
-    <section className="py-16 bg-black border-t border-white/[0.06]">
+    <section id="integrations" className="py-16 bg-black border-t border-white/[0.06]">
       <div className="flex flex-col items-center text-center mb-10 px-6">
         <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/35 mb-3">Integrations</p>
         <h2 className="font-zentry text-2xl font-bold brand-gradient-text lg:text-3xl">

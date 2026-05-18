@@ -94,74 +94,92 @@ export const WhyVyzma = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    if (!sectionRef.current) return;
+
     const cardEls = gsap.utils.toArray<HTMLElement>(".peel-card");
     const dotEls  = gsap.utils.toArray<HTMLElement>(".prog-dot");
+    if (!cardEls.length) return;
 
-    // Stack: cards below peek out boldly so colors are visible
-    cardEls.forEach((card, i) => {
-      if (i === 0) return;
-      gsap.set(card, { y: i * 22, scale: 1 - i * 0.025 });
-    });
+    const mm = gsap.matchMedia();
 
-    // Initial dot states
-    dotEls.forEach((dot, i) => {
-      if (i !== 0) gsap.set(dot, { scale: 0.55, opacity: 0.25 });
-    });
-
-    // Perspective applied per-card (not on wrapper — wrapper perspective breaks overflow:hidden)
-    gsap.set(".peel-card", { transformPerspective: 1400 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        start: "top top",
-        end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
-        scrub: 0.7,
-      },
-    });
-
-    cardEls.forEach((card, i) => {
-      if (i === cardEls.length - 1) return;
-      const nextCards = cardEls.slice(i + 1);
-
-      // Top card peels up and away (3D flip at top edge)
-      tl.to(card, {
-        y: "-118%",
-        rotationX: -14,
-        opacity: 0,
-        transformOrigin: "50% 0%",
-        duration: 1,
-        ease: "none",
+    // Desktop (≥768px): pin + peel effect
+    mm.add("(min-width: 768px)", () => {
+      cardEls.forEach((card, i) => {
+        if (i === 0) return;
+        gsap.set(card, { y: i * 22, scale: 1 - i * 0.025 });
       });
 
-      // Next card rises to full size
-      tl.to(nextCards[0], {
-        y: 0,
-        scale: 1,
-        duration: 1,
-        ease: "none",
-      }, "<");
-
-      // Remaining cards shift up in the stack
-      nextCards.slice(1).forEach((futureCard, j) => {
-        tl.to(futureCard, {
-          y: (j + 1) * 22,
-          scale: 1 - (j + 1) * 0.025,
-          duration: 1,
-          ease: "none",
-        }, "<");
+      dotEls.forEach((dot, i) => {
+        if (i !== 0) gsap.set(dot, { scale: 0.55, opacity: 0.25 });
       });
 
-      // Progress dot update
-      tl.to(dotEls[i],     { scale: 0.55, opacity: 0.25, duration: 0.4 }, "<");
-      tl.to(dotEls[i + 1], { scale: 1,    opacity: 1,    duration: 0.4 }, "<");
+      gsap.set(".peel-card", { transformPerspective: 1400 });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          start: "top top",
+          end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
+          scrub: 0.7,
+        },
+      });
+
+      cardEls.forEach((card, i) => {
+        if (i === cardEls.length - 1) return;
+        const nextCards = cardEls.slice(i + 1);
+
+        tl.to(card, {
+          y: "-118%", rotationX: -14, opacity: 0,
+          transformOrigin: "50% 0%", duration: 1, ease: "none",
+        });
+        tl.to(nextCards[0], { y: 0, scale: 1, duration: 1, ease: "none" }, "<");
+        nextCards.slice(1).forEach((futureCard, j) => {
+          if (!futureCard) return;
+          tl.to(futureCard, {
+            y: (j + 1) * 22, scale: 1 - (j + 1) * 0.025,
+            duration: 1, ease: "none",
+          }, "<");
+        });
+        tl.to(dotEls[i],     { scale: 0.55, opacity: 0.25, duration: 0.4 }, "<");
+        tl.to(dotEls[i + 1], { scale: 1,    opacity: 1,    duration: 0.4 }, "<");
+      });
     });
+
+    // Mobile (<768px): staggered scroll-reveal (no pin, no perspective)
+    mm.add("(max-width: 767px)", () => {
+      gsap.set(cardEls, { opacity: 0, y: 60 });
+      gsap.set(cardEls[0], { opacity: 1, y: 0 });
+
+      const sts: ScrollTrigger[] = [];
+      cardEls.forEach((card, i) => {
+        if (i === 0) return;
+        const st = ScrollTrigger.create({
+          trigger: card,
+          start: "top 85%",
+          onEnter: () => {
+            gsap.to(card, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" });
+            if (dotEls[i]) {
+              gsap.to(dotEls[i], { scale: 1, opacity: 1, duration: 0.3 });
+            }
+            if (i > 0 && dotEls[i - 1]) {
+              gsap.to(dotEls[i - 1], { scale: 0.55, opacity: 0.25, duration: 0.3 });
+            }
+          },
+        });
+        sts.push(st);
+      });
+
+      return () => sts.forEach((st) => st.kill());
+    });
+
+    return () => mm.revert();
   }, { scope: sectionRef });
 
   return (
     <section
       ref={sectionRef}
+      id="why-vyzma"
       className="relative h-screen bg-[#0C0C0C] flex flex-col items-center justify-start pt-16 overflow-hidden"
     >
       {/* Heading */}
@@ -176,8 +194,8 @@ export const WhyVyzma = () => {
 
       {/* Card stack */}
       <div
-        className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6 flex-1"
-        style={{ height: "calc(100vh - 240px)", maxHeight: "calc(100vh - 240px)", overflow: "hidden" }}
+        className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6"
+        style={{ height: "calc(100vh - 240px)", overflow: "hidden" }}
       >
         {cards.map((card, i) => (
           <div
@@ -248,8 +266,8 @@ export const WhyVyzma = () => {
         ))}
       </div>
 
-      {/* Progress dots — right side */}
-      <div className="absolute right-5 sm:right-8 top-1/2 -translate-y-1/2 flex flex-col gap-[10px] z-30">
+      {/* Progress dots — right side, hidden on mobile */}
+      <div className="hidden sm:flex absolute right-5 sm:right-8 top-1/2 -translate-y-1/2 flex-col gap-[10px] z-30">
         {cards.map((card, i) => (
           <div
             key={i}

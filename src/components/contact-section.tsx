@@ -15,6 +15,14 @@ export const ContactSection = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const msg = encodeURIComponent(
+      `Hi Vyzma! I'm ${form.name} from ${form.city}. I run a ${form.businessType} business. My WhatsApp is ${form.whatsapp}. My biggest challenge: ${form.challenge}`
+    );
+    window.open(`https://wa.me/918886720908?text=${msg}`, "_blank");
+  };
+
   return (
     <section id="contact" className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
@@ -48,7 +56,7 @@ export const ContactSection = () => {
 
         <FadeIn delay={0.2} x={30}>
           <div className="bg-[#14151A] border border-white/10 rounded-2xl p-6 sm:p-8">
-            <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 name="name"
                 placeholder="Your Name"
@@ -95,10 +103,10 @@ export const ContactSection = () => {
                 rows={4}
                 className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30 resize-none"
               />
-              <button className="w-full bg-[#3DA3FF] text-white rounded-full px-6 py-3 font-medium text-sm uppercase tracking-wider hover:bg-[#3DA3FF]/90 transition">
+              <button type="submit" className="w-full bg-[#3DA3FF] text-white rounded-full px-6 py-3 font-medium text-sm uppercase tracking-wider hover:bg-[#3DA3FF]/90 transition">
                 Send Message →
               </button>
-            </div>
+            </form>
           </div>
         </FadeIn>
       </div>

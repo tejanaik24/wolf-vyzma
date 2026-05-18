@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,7 +75,7 @@ const WolfSlide = ({ imgUrl, caption, sub }: typeof WOLF_SLIDES[0]) => {
       <div style={{ paddingLeft: PAD, paddingRight: PAD }}>
         <div className="sticky slide-glow-border rounded-3xl" style={{ top: PAD, height: `calc(100vh - ${PAD * 2}px)` }}>
           <div ref={cardRef} className="absolute inset-[2px] overflow-hidden rounded-[22px] bg-[#0A0A0D] flex items-center justify-center">
-            <img src={imgUrl} alt="" className="h-full w-full object-contain" />
+            <img src={imgUrl} alt="" loading="lazy" width="800" height="600" className="h-full w-full object-contain" />
           </div>
         </div>
       </div>

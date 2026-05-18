@@ -10,21 +10,29 @@ export const Footer = () => {
   const socialIcons = [FaInstagram, FaLinkedin, FaYoutube, FaWhatsapp];
 
   return (
-    <footer className="bg-[#0A0A0D] border-t border-white/5 px-5 sm:px-8 md:px-10 pt-16 pb-8">
+    <footer id="footer" className="bg-[#0A0A0D] border-t border-white/5 px-5 sm:px-8 md:px-10 pt-16 pb-8">
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <div>
-          <img src="/img/vyzma-logo.png" alt="Vyzma" className="h-12 w-auto mb-4" />
+          <img src="/img/vyzma-logo.png" alt="Vyzma" loading="lazy" width="96" height="48" className="h-12 w-auto mb-4" />
           <p className="text-white/40 text-sm leading-relaxed mb-6">
             India's most affordable AI agency.<br />
             Helping businesses grow with AI.<br />
             Starting at ₹4,999/month.
           </p>
           <div className="flex gap-3">
-            {socialIcons.map((Icon, i) => (
-              <a key={i} href="#" className="text-white/30 hover:text-white transition text-lg">
-                <Icon />
-              </a>
-            ))}
+            {socialIcons.map((Icon, i) => {
+              const links = [
+                "https://instagram.com/vyzmaai",
+                "https://linkedin.com/company/vyzmaai",
+                "https://youtube.com/@vyzmaai",
+                "https://wa.me/918886720908",
+              ];
+              return (
+                <a key={i} href={links[i]} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition text-lg">
+                  <Icon />
+                </a>
+              );
+            })}
           </div>
         </div>
 

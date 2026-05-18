@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const CLAW = "/img/wolf-claw.png";
+// ⚠ FLAG: wolf-claw.png is 1.47 MB — compress to <200KB for production
 
 const steps = [
   {
@@ -32,8 +33,10 @@ export const HowItWorks = () => {
   const containerRef  = useRef<HTMLDivElement>(null);
   const mouseLayerRef = useRef<HTMLDivElement>(null);
 
-  // Mouse parallax depth effect on all slash claws
+  // Mouse parallax depth effect on all slash claws (disabled on touch devices)
   useEffect(() => {
+    if (window.matchMedia("(hover: none)").matches) return;
+
     const onMove = (e: MouseEvent) => {
       if (!mouseLayerRef.current) return;
       const xPct = e.clientX / window.innerWidth  - 0.5;
@@ -50,6 +53,8 @@ export const HowItWorks = () => {
   }, []);
 
   useGSAP(() => {
+    if (!containerRef.current) return;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -58,7 +63,6 @@ export const HowItWorks = () => {
       },
     });
 
-    // Heading slams down
     tl.fromTo(".hiw-title",
       { opacity: 0, y: -70, scale: 1.12 },
       { opacity: 1,  y:   0, scale: 1, duration: 0.85, ease: "expo.out" }
@@ -68,8 +72,6 @@ export const HowItWorks = () => {
       { opacity: 1, duration: 0.35 },
       "-=0.25"
     );
-
-    // SLASH 1 — top-left → lands top-left (blue)
     tl.fromTo(".slash-1",
       { x: "-160%", y: "-160%", rotation: -55, opacity: 0, scale: 2.8 },
       { x: "0%",    y: "0%",    rotation: -22, opacity: 1, scale: 1, duration: 0.65, ease: "expo.out" },
@@ -80,8 +82,6 @@ export const HowItWorks = () => {
       { opacity: 1, x:   0, duration: 0.5, ease: "power3.out" },
       "-=0.35"
     );
-
-    // SLASH 2 — right → lands right-center (purple)
     tl.fromTo(".slash-2",
       { x: "180%", y: "40%", rotation:  55, opacity: 0, scale: 2.2 },
       { x:   "0%", y:  "0%", rotation:  18, opacity: 1, scale: 1, duration: 0.65, ease: "expo.out" },
@@ -92,8 +92,6 @@ export const HowItWorks = () => {
       { opacity: 1,  y:  0, duration: 0.5, ease: "power3.out" },
       "-=0.35"
     );
-
-    // SLASH 3 — bottom-left → lands bottom-left (amber)
     tl.fromTo(".slash-3",
       { x: "-100%", y: "180%", rotation: -45, opacity: 0, scale: 1.9 },
       { x:    "0%", y:   "0%", rotation:  -8, opacity: 1, scale: 1, duration: 0.65, ease: "expo.out" },
@@ -104,15 +102,11 @@ export const HowItWorks = () => {
       { opacity: 1, x:  0, duration: 0.5, ease: "power3.out" },
       "-=0.35"
     );
-
-    // SLASH 4 (NEW BIG ONE) — top-center → lands center-top (blue, biggest)
     tl.fromTo(".slash-4",
       { x: "20%", y: "-220%", rotation: -60, opacity: 0, scale: 3.0 },
       { x:  "0%", y:    "0%", rotation: -16, opacity: 1, scale: 1, duration: 0.75, ease: "expo.out" },
       "-=0.5"
     );
-
-    // Button
     tl.fromTo(".hiw-btn",
       { opacity: 0, y: 24 },
       { opacity: 1,  y:  0, duration: 0.45, ease: "power3.out" },
@@ -123,6 +117,7 @@ export const HowItWorks = () => {
   return (
     <section
       ref={containerRef}
+      id="how-it-works"
       className="relative overflow-hidden bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
     >
       {/* ── 4 SLASH CLAWS — full opacity, mouse parallax depth ───────── */}
@@ -130,50 +125,50 @@ export const HowItWorks = () => {
 
         {/* Slash 1 — large, top-left, blue glow */}
         <div
-          className="slash-1 slash-claw-glow absolute w-[500px]"
+          className="slash-1 slash-claw-glow absolute w-[500px] max-sm:max-w-[50vw]"
           data-depth="2"
           style={{
             left: "0%", top: "0%", opacity: 0,
             filter: "drop-shadow(0 0 50px #3DA3FF) drop-shadow(0 0 100px #1A6FFF) drop-shadow(0 0 160px #0A3FFF)",
           }}
         >
-          <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(-22deg)" }} />
+          <img src={CLAW} alt="" loading="lazy" width="500" height="300" className="w-full" style={{ transform: "rotate(-22deg)" }} />
         </div>
 
         {/* Slash 2 — medium, right-center, purple glow */}
         <div
-          className="slash-2 slash-claw-glow absolute w-[340px]"
+          className="slash-2 slash-claw-glow absolute w-[340px] max-sm:max-w-[50vw]"
           data-depth="1.3"
           style={{
             right: "3%", top: "28%", opacity: 0,
             filter: "drop-shadow(0 0 40px #8A5CFF) drop-shadow(0 0 80px #6A3CFF)",
           }}
         >
-          <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(18deg)" }} />
+          <img src={CLAW} alt="" loading="lazy" width="340" height="200" className="w-full" style={{ transform: "rotate(18deg)" }} />
         </div>
 
         {/* Slash 3 — medium, bottom-left, amber glow */}
         <div
-          className="slash-3 slash-claw-glow absolute w-[270px]"
+          className="slash-3 slash-claw-glow absolute w-[270px] max-sm:max-w-[50vw]"
           data-depth="0.7"
           style={{
             left: "22%", bottom: "6%", opacity: 0,
             filter: "drop-shadow(0 0 30px #FFB547) drop-shadow(0 0 60px #FF8A0088)",
           }}
         >
-          <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(-8deg)" }} />
+          <img src={CLAW} alt="" loading="lazy" width="270" height="160" className="w-full" style={{ transform: "rotate(-8deg)" }} />
         </div>
 
         {/* Slash 4 — BIG, center-top, blue glow (user requested) */}
         <div
-          className="slash-4 slash-claw-glow absolute w-[620px]"
+          className="slash-4 slash-claw-glow absolute w-[620px] max-sm:max-w-[50vw]"
           data-depth="1.6"
           style={{
             left: "28%", top: "-2%", opacity: 0,
             filter: "drop-shadow(0 0 60px #3DA3FF) drop-shadow(0 0 120px #1A6FFF) drop-shadow(0 0 200px #0A3FFF)",
           }}
         >
-          <img src={CLAW} alt="" className="w-full" style={{ transform: "rotate(-16deg)" }} />
+          <img src={CLAW} alt="" loading="lazy" width="620" height="370" className="w-full" style={{ transform: "rotate(-16deg)" }} />
         </div>
       </div>
 
