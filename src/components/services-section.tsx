@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const ServicesSection = () => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const [tapped, setTapped] = useState<number | null>(null);
 
   const sectionRef    = useRef<HTMLElement>(null);
   const videoRef      = useRef<HTMLVideoElement>(null);
@@ -155,21 +156,22 @@ export const ServicesSection = () => {
                 className="svc-row"
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
+                onTouchStart={(e) => { e.preventDefault(); setTapped(tapped === index ? null : index); }}
                 style={{
                   display: "flex", alignItems: "center", gap: "16px",
-                  padding: isHovered ? "10px 12px" : "10px 0",
+                  padding: (isHovered || tapped === index) ? "10px 12px" : "10px 0",
                   borderTop: "1px solid rgba(255,255,255,0.07)",
-                  borderLeft: isHovered ? "3px solid #1E90FF" : "3px solid transparent",
-                  background: isHovered ? "rgba(6,1,15,0.6)" : "transparent",
-                  backdropFilter: isHovered ? "blur(8px)" : "none",
-                  WebkitBackdropFilter: isHovered ? "blur(8px)" : "none",
+                  borderLeft: (isHovered || tapped === index) ? "3px solid #1E90FF" : "3px solid transparent",
+                  background: (isHovered || tapped === index) ? "rgba(6,1,15,0.6)" : "transparent",
+                  backdropFilter: (isHovered || tapped === index) ? "blur(8px)" : "none",
+                  WebkitBackdropFilter: (isHovered || tapped === index) ? "blur(8px)" : "none",
                   transition: "all 0.3s ease",
                   textDecoration: "none",
                 }}
               >
                 <span className="svc-number" style={{
                   fontFamily: "'Bebas Neue', cursive", fontSize: "36px", lineHeight: 1,
-                  color: isHovered ? "#1E90FF" : "rgba(255,255,255,0.35)",
+                  color: (isHovered || tapped === index) ? "#1E90FF" : "rgba(255,255,255,0.35)",
                   transition: "color 0.3s", minWidth: "48px", flexShrink: 0,
                 }}>
                   {service.number}
@@ -179,7 +181,7 @@ export const ServicesSection = () => {
                   <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                     <h3 className="svc-name" style={{
                       fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "22px", margin: 0,
-                      ...(isHovered
+                      ...((isHovered || tapped === index)
                         ? { background: "linear-gradient(90deg,#FFFFFF,#1E90FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }
                         : { color: "rgba(255,255,255,0.8)" }),
                     }}>
@@ -187,13 +189,13 @@ export const ServicesSection = () => {
                     </h3>
                     <ArrowUpRight size={16} style={{
                       color: "#1E90FF",
-                      opacity: isHovered ? 1 : 0,
-                      transform: isHovered ? "translate(0,0)" : "translate(-4px,4px)",
+                      opacity: (isHovered || tapped === index) ? 1 : 0,
+                      transform: (isHovered || tapped === index) ? "translate(0,0)" : "translate(-4px,4px)",
                       transition: "opacity 0.3s, transform 0.3s",
                       flexShrink: 0,
                     }} />
                   </div>
-                  <div className="svc-desc" style={{ maxHeight: isHovered ? "50px" : "0", opacity: isHovered ? 1 : 0, overflow: "hidden", transition: "max-height 0.3s, opacity 0.3s" }}>
+                  <div className={`svc-desc${(isHovered || tapped === index) ? " svc-desc-active" : ""}`} style={{ maxHeight: (isHovered || tapped === index) ? "80px" : "0", opacity: (isHovered || tapped === index) ? 1 : 0, overflow: "hidden", transition: "max-height 0.3s, opacity 0.3s" }}>
                     <p style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: "13px", color: "#A0A0B8", margin: "3px 0 0", lineHeight: 1.4 }}>
                       {service.description}
                     </p>
@@ -260,15 +262,13 @@ export const ServicesSection = () => {
         @media (max-width: 767px) {
           .svc-video-wrap {
             height: auto !important;
-          }
-          .svc-video-wrap video {
-            display: none !important;
+            min-height: 100vh;
           }
           .svc-rows-col {
             width: 100% !important;
-            position: relative !important;
-            top: auto !important; bottom: auto !important;
-            padding: 8px 16px 16px !important;
+            position: absolute !important;
+            top: 0 !important; bottom: auto !important;
+            padding: 8px 16px 24px !important;
             justify-content: flex-start !important;
             gap: 0 !important;
           }
@@ -276,7 +276,7 @@ export const ServicesSection = () => {
             padding: 10px 10px !important;
             align-items: flex-start !important;
           }
-          .svc-desc {
+          .svc-desc-active {
             max-height: 80px !important;
             opacity: 1 !important;
           }
