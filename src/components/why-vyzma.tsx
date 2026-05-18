@@ -10,31 +10,41 @@ const cards = [
     num: "01",
     title: "Prices You Can See Before You Call",
     body: "₹4,999/month. Right here on the website. No 'contact us for pricing.' No surprise invoices. No 6-month contracts. Pay monthly, cancel anytime.",
-    accent: "#3DA3FF",
+    accent: "#60C0FF",
+    bg: "linear-gradient(135deg, #0A1F6E 0%, #0D3DB5 50%, #1A6FFF 100%)",
+    peek: "#1A6FFF",
   },
   {
     num: "02",
     title: "We Do 100% of the Work",
     body: "You don't need a tech team. You don't need to understand AI. You approve — we build, run, and manage everything for you from day one.",
-    accent: "#8A5CFF",
+    accent: "#C9A6FF",
+    bg: "linear-gradient(135deg, #1A0545 0%, #4A10C4 50%, #8A2BE2 100%)",
+    peek: "#8A2BE2",
   },
   {
     num: "03",
     title: "AI + Marketing Under One Roof",
     body: "Most agencies do either AI or marketing. We do both. One team handles your chatbot, Google ads, Instagram reels, and SEO. One invoice. No confusion.",
-    accent: "#3DA3FF",
+    accent: "#6EEEFF",
+    bg: "linear-gradient(135deg, #052535 0%, #0A5A7A 50%, #0EA5C9 100%)",
+    peek: "#0EA5C9",
   },
   {
     num: "04",
     title: "AEO + GEO — The Future of Search",
     body: "We don't just rank you on Google. We get your business cited in ChatGPT, Perplexity, and Google AI Overviews. Your competitors haven't discovered this yet.",
-    accent: "#FFB547",
+    accent: "#FFD97A",
+    bg: "linear-gradient(135deg, #3D1A00 0%, #A04A00 50%, #F07D00 100%)",
+    peek: "#F07D00",
   },
   {
     num: "05",
     title: "We Understand Indian Businesses",
     body: "Diwali campaigns. Regional languages. WhatsApp-first customers. Indian pricing. We're from Bangalore and Vizag — your customers are our neighbors.",
-    accent: "#3DA3FF",
+    accent: "#6EFFC9",
+    bg: "linear-gradient(135deg, #012A18 0%, #056A3A 50%, #10B981 100%)",
+    peek: "#10B981",
   },
 ];
 
@@ -87,10 +97,10 @@ export const WhyVyzma = () => {
     const cardEls = gsap.utils.toArray<HTMLElement>(".peel-card");
     const dotEls  = gsap.utils.toArray<HTMLElement>(".prog-dot");
 
-    // Stack: cards below peek out with slight offset + scale down
+    // Stack: cards below peek out boldly so colors are visible
     cardEls.forEach((card, i) => {
       if (i === 0) return;
-      gsap.set(card, { y: i * 12, scale: 1 - i * 0.03 });
+      gsap.set(card, { y: i * 22, scale: 1 - i * 0.025 });
     });
 
     // Initial dot states
@@ -136,8 +146,8 @@ export const WhyVyzma = () => {
       // Remaining cards shift up in the stack
       nextCards.slice(1).forEach((futureCard, j) => {
         tl.to(futureCard, {
-          y: (j + 1) * 12,
-          scale: 1 - (j + 1) * 0.03,
+          y: (j + 1) * 22,
+          scale: 1 - (j + 1) * 0.025,
           duration: 1,
           ease: "none",
         }, "<");
@@ -175,28 +185,30 @@ export const WhyVyzma = () => {
             className="peel-card absolute inset-0 rounded-3xl"
             style={{ zIndex: cards.length - i }}
           >
-            {/* Card surface */}
+            {/* Card surface — bold vibrant gradient */}
             <div
               className="absolute inset-0 rounded-3xl"
               style={{
-                background: "linear-gradient(145deg, #161616 0%, #111111 100%)",
-                border: "1px solid rgba(255,255,255,0.07)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05), 0 40px 80px rgba(0,0,0,0.6)",
+                background: card.bg,
+                boxShadow: `0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.10)`,
               }}
             />
 
-            {/* Top glow accent line */}
+            {/* Noise texture overlay for depth */}
             <div
-              className="absolute top-0 left-10 right-10 h-px rounded-full"
+              className="absolute inset-0 rounded-3xl opacity-[0.03]"
               style={{
-                background: `linear-gradient(90deg, transparent, ${card.accent}99, transparent)`,
+                backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
+                backgroundSize: "128px",
               }}
             />
 
-            {/* Left accent bar */}
+            {/* Top shine */}
             <div
-              className="absolute left-0 top-8 bottom-8 w-[3px] rounded-r-full"
-              style={{ background: card.accent, opacity: 0.8 }}
+              className="absolute top-0 left-0 right-0 h-32 rounded-t-3xl"
+              style={{
+                background: "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 100%)",
+              }}
             />
 
             {/* Faded background number */}
@@ -204,8 +216,8 @@ export const WhyVyzma = () => {
               className="absolute right-6 bottom-2 font-zentry font-black select-none pointer-events-none leading-none"
               style={{
                 fontSize: "clamp(7rem, 18vw, 12rem)",
-                color: card.accent,
-                opacity: 0.045,
+                color: "white",
+                opacity: 0.07,
               }}
             >
               {card.num}
@@ -222,7 +234,7 @@ export const WhyVyzma = () => {
                 {card.title}
               </h3>
 
-              <p className="text-white/55 text-sm sm:text-[15px] leading-relaxed max-w-lg">
+              <p className="text-white/70 text-sm sm:text-[15px] leading-relaxed max-w-lg">
                 {card.body}
               </p>
 
@@ -245,7 +257,7 @@ export const WhyVyzma = () => {
             style={{
               width: 8,
               height: 8,
-              background: card.accent,
+              background: card.peek,
             }}
           />
         ))}
