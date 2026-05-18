@@ -108,8 +108,8 @@ export const WhyVyzma = () => {
       if (i !== 0) gsap.set(dot, { scale: 0.55, opacity: 0.25 });
     });
 
-    // 3D perspective on the container
-    gsap.set(".peel-cards-wrap", { perspective: 1400 });
+    // Perspective applied per-card (not on wrapper — wrapper perspective breaks overflow:hidden)
+    gsap.set(".peel-card", { transformPerspective: 1400 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -176,13 +176,13 @@ export const WhyVyzma = () => {
 
       {/* Card stack */}
       <div
-        className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6 flex-1 overflow-hidden"
-        style={{ maxHeight: "calc(100vh - 240px)" }}
+        className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6 flex-1"
+        style={{ height: "calc(100vh - 240px)", maxHeight: "calc(100vh - 240px)", overflow: "hidden" }}
       >
         {cards.map((card, i) => (
           <div
             key={card.num}
-            className="peel-card absolute inset-0 rounded-3xl"
+            className="peel-card absolute inset-0 rounded-3xl overflow-hidden"
             style={{ zIndex: cards.length - i }}
           >
             {/* Card surface — bold vibrant gradient */}
