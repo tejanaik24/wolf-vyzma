@@ -390,11 +390,16 @@ export const PainPointsSection = () => {
 
         @media (max-width: 768px) {
           .pain-3col {
-            grid-template-columns: 1fr !important;
-            gap: 16px !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 12px !important;
           }
-          .pain-wolf { display: none !important; }
-          [id="pain-points"] { padding: 60px 16px !important; }
+          .pain-wolf {
+            grid-column: 1 / -1 !important;
+            order: -1 !important;
+            max-width: 260px !important;
+            margin: 0 auto !important;
+          }
+          [id="pain-points"] { padding: 60px 12px !important; }
         }
       `}</style>
     </section>

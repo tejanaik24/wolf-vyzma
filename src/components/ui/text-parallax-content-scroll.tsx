@@ -127,7 +127,7 @@ const ParallaxSlide = ({ imgUrl, caption, sub }: SlideData) => {
               loading="lazy"
               width="800"
               height="600"
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-contain object-center md:object-cover"
             />
           </div>
         </div>
