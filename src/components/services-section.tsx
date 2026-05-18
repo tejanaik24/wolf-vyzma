@@ -98,7 +98,7 @@ export const ServicesSection = () => {
       </div>
 
       {/* ── Video + service cards overlay ── */}
-      <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+      <div className="svc-video-wrap" style={{ position: "relative", width: "100%", height: "100vh" }}>
 
         {/* Full-screen wolf video */}
         <video
@@ -193,7 +193,7 @@ export const ServicesSection = () => {
                       flexShrink: 0,
                     }} />
                   </div>
-                  <div style={{ maxHeight: isHovered ? "50px" : "0", opacity: isHovered ? 1 : 0, overflow: "hidden", transition: "max-height 0.3s, opacity 0.3s" }}>
+                  <div className="svc-desc" style={{ maxHeight: isHovered ? "50px" : "0", opacity: isHovered ? 1 : 0, overflow: "hidden", transition: "max-height 0.3s, opacity 0.3s" }}>
                     <p style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: "13px", color: "#A0A0B8", margin: "3px 0 0", lineHeight: 1.4 }}>
                       {service.description}
                     </p>
@@ -258,12 +258,30 @@ export const ServicesSection = () => {
           50%      { transform: scaleX(1.5); opacity: 0.25; }
         }
         @media (max-width: 767px) {
+          .svc-video-wrap {
+            height: auto !important;
+          }
+          .svc-video-wrap video {
+            display: none !important;
+          }
           .svc-rows-col {
             width: 100% !important;
-            padding: 12px 16px 12px !important;
+            position: relative !important;
+            top: auto !important; bottom: auto !important;
+            padding: 8px 16px 16px !important;
+            justify-content: flex-start !important;
+            gap: 0 !important;
+          }
+          .svc-row {
+            padding: 10px 10px !important;
+            align-items: flex-start !important;
+          }
+          .svc-desc {
+            max-height: 80px !important;
+            opacity: 1 !important;
           }
           .svc-preview-card { display: none !important; }
-          .svc-number { font-size: 22px !important; min-width: 32px !important; }
+          .svc-number { font-size: 20px !important; min-width: 28px !important; padding-top: 2px !important; }
           .svc-name { font-size: 15px !important; }
         }
       `}</style>
