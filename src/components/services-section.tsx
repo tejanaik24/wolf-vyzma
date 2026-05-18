@@ -262,27 +262,31 @@ export const ServicesSection = () => {
         @media (max-width: 767px) {
           .svc-video-wrap {
             height: auto !important;
-            min-height: 100vh;
+            min-height: auto !important;
+          }
+          .svc-overlay {
+            background: linear-gradient(to right, rgba(6,1,15,0.90) 0%, rgba(6,1,15,0.70) 55%, rgba(6,1,15,0.25) 100%) !important;
           }
           .svc-rows-col {
-            width: 100% !important;
-            position: absolute !important;
-            top: 0 !important; bottom: auto !important;
-            padding: 8px 16px 24px !important;
+            width: 65% !important;
+            position: relative !important;
+            top: auto !important; bottom: auto !important;
+            left: 0 !important;
+            padding: 16px 12px 24px 16px !important;
             justify-content: flex-start !important;
             gap: 0 !important;
           }
           .svc-row {
-            padding: 10px 10px !important;
+            padding: 8px 6px !important;
             align-items: flex-start !important;
           }
           .svc-desc-active {
-            max-height: 80px !important;
+            max-height: 100px !important;
             opacity: 1 !important;
           }
           .svc-preview-card { display: none !important; }
-          .svc-number { font-size: 20px !important; min-width: 28px !important; padding-top: 2px !important; }
-          .svc-name { font-size: 15px !important; }
+          .svc-number { font-size: 18px !important; min-width: 26px !important; padding-top: 2px !important; }
+          .svc-name { font-size: 14px !important; }
         }
       `}</style>
     </section>
