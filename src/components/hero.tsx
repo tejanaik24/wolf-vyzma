@@ -91,7 +91,7 @@ export const Hero = () => {
   });
 
   return (
-    <section id="hero" className="relative h-dvh w-screen overflow-x-hidden">
+    <section id="hero" className="relative h-dvh w-screen overflow-x-hidden hero-section">
       {isLoading && (
         <div className="flex-center absolute z-100 h-dvh w-screen overflow-hidden bg-[#0A0A0D]">
           <div className="three-body">
@@ -104,7 +104,7 @@ export const Hero = () => {
 
       <div
         id="video-frame"
-        className="bg-blue-75 relative z-10 h-dvh w-screen overflow-hidden rounded-lg"
+        className="bg-blue-75 relative z-10 h-dvh w-screen overflow-hidden rounded-lg hero-video-frame"
       >
         <div>
           <video
@@ -180,6 +180,16 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .hero-section,
+          .hero-video-frame {
+            height: 56.25vw !important;
+            min-height: 220px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
