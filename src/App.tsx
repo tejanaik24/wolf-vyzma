@@ -11,9 +11,7 @@ import { IndustriesSection } from "@/components/industries-section";
 import { HowItWorks } from "@/components/how-it-works";
 import { WhyVyzma } from "@/components/why-vyzma";
 import { AboutSection } from "@/components/about-section";
-import { PilotOffer } from "@/components/pilot-offer";
 import { FaqSection } from "@/components/faq-section";
-import { ProjectsSection } from "@/components/projects-section";
 import { ContactSection } from "@/components/contact-section";
 import { Offices } from "@/components/offices";
 import { Footer } from "@/components/footer";
@@ -35,9 +33,7 @@ const App = () => {
         <HowItWorks />
         <WhyVyzma />
         <AboutSection />
-        <PilotOffer />
         <FaqSection />
-        <ProjectsSection />
         <ContactSection />
         <Offices />
         <Footer />
