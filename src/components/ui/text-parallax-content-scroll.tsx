@@ -93,7 +93,8 @@ export const VyzmaParallaxSlides = () => {
     <section
       ref={sectionRef}
       id="slides"
-      className="relative h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-8 sm:pt-12 overflow-hidden"
+      className="relative h-screen bg-[#0A0A0D] flex flex-col items-center justify-start pt-8 sm:pt-12"
+      style={{ overflow: "hidden" }}
     >
       {/* Heading */}
       <div className="relative z-10 text-center px-4 mb-6 sm:mb-8 shrink-0">
@@ -105,32 +106,33 @@ export const VyzmaParallaxSlides = () => {
         </h2>
       </div>
 
-      {/* Card stack — full width, fills remaining screen height */}
+      {/* Card stack — explicitly sized so inset-0 children have a real height */}
       <div
-        className="relative w-full max-w-5xl mx-auto px-3 sm:px-6 flex-1"
-        style={{ overflow: "visible" }}
+        className="relative w-full max-w-5xl mx-auto px-3 sm:px-6 min-h-0 flex-1"
       >
-        {SLIDES.map((slide, i) => (
-          <div
-            key={slide.imgUrl}
-            className="vps-card absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden"
-            style={{ zIndex: SLIDES.length - i }}
-          >
-            <img
-              src={slide.imgUrl}
-              alt=""
-              loading="lazy"
-              className="w-full h-full object-cover object-center"
-            />
-            {/* Bottom gradient so caption is readable */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          </div>
-        ))}
+        <div className="absolute inset-0 mx-3 sm:mx-6">
+          {SLIDES.map((slide, i) => (
+            <div
+              key={slide.imgUrl}
+              className="vps-card absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden"
+              style={{ zIndex: SLIDES.length - i }}
+            >
+              <img
+                src={slide.imgUrl}
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+              {/* Bottom gradient so caption is readable */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Caption — sits below the card stack, cross-fades per slide */}
       <div className="relative z-20 w-full max-w-2xl mx-auto px-6 py-4 text-center shrink-0" style={{ height: 80 }}>
-        {SLIDES.map((slide, i) => (
+        {SLIDES.map((slide) => (
           <div
             key={slide.imgUrl}
             className="vps-caption absolute inset-0 flex flex-col items-center justify-center px-6"
