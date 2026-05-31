@@ -94,7 +94,7 @@ export const ServicesSection = () => {
           WHAT THE PACK DELIVERS
         </h2>
         <p style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: "18px", color: "#A0A0B8", margin: 0 }}>
-          9 weapons. One pack. Zero excuses.
+          Core Solutions. Zero excuses.
         </p>
       </div>
 

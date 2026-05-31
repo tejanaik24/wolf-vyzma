@@ -63,11 +63,11 @@ export const Navbar = () => {
       <div className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <a href="#hero" className="transition hover:opacity-75">
+            <a href="/#hero" className="transition hover:opacity-75">
               <img src="/img/vyzma-logo.png" alt="Vyzma" loading="eager" width="128" height="128" className="h-32 w-auto" />
             </a>
 
-            <a href="#contact" className="md:flex hidden">
+            <a href="/#contact" className="md:flex hidden">
               <Button
                 id="product-button"
                 rightIcon={TiLocationArrow}
@@ -152,7 +152,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setIsMobileOpen(false)}
               className="bg-[#3DA3FF] text-white rounded-full px-8 py-3 font-medium text-sm uppercase tracking-wider mt-4"
             >

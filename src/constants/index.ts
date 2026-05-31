@@ -1,9 +1,9 @@
 export const NAV_ITEMS = [
-  { label: "Services", href: "#services" },
-  { label: "Industries", href: "#industries" },
-  { label: "Pricing", href: "#contact" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Industries", href: "/#industries" },
+  { label: "About", href: "/#about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const LINKS = {
@@ -26,56 +26,26 @@ export const SERVICES = [
   {
     number: "01",
     name: "AI Chatbots",
-    description: "Answers customer questions, books appointments, and captures leads on WhatsApp and your website — 24 hours a day, 7 days a week. Never miss an inquiry again.",
+    description: "Answers customer questions, books appointments, and captures leads on WhatsApp and your website — 24/7.",
     image: "/img/service-1.png",
   },
   {
     number: "02",
-    name: "AI Voice Agents",
-    description: "An AI that picks up your phone calls, answers questions, and takes bookings automatically. Works at 2am on a Sunday. Never puts a customer on hold.",
+    name: "Workflow Automation",
+    description: "Connect your apps and remove manual work. Your team stops copy-pasting data and starts doing real work.",
     image: "/img/service-2.png",
   },
   {
     number: "03",
-    name: "Workflow Automation",
-    description: "Connect your apps and remove manual work. Your team stops copy-pasting data and starts doing real work. Save 15-20 hours of staff time every week.",
+    name: "Answer Engine Optimisation",
+    description: "Rank on Google. Get cited in ChatGPT. Appear in Google AI Overviews. Ensure customers find you everywhere.",
     image: "/img/service-3.png",
   },
   {
     number: "04",
-    name: "AI Film Making",
-    description: "Professional AI-generated videos and reels for Instagram, YouTube, and ads. 4 per month. No camera crew, no studio, no ₹10,000-per-video production costs.",
+    name: "R&D Systems",
+    description: "Custom ML models, RAG systems, and fine-tuned language models trained on your proprietary data.",
     image: "/img/service-4.png",
-  },
-  {
-    number: "05",
-    name: "Website Design",
-    description: "Fast, modern, mobile-friendly websites that turn visitors into customers. Built in 7 days. Designed to rank on Google and convert every visitor who lands on it.",
-    image: "/img/service-5.png",
-  },
-  {
-    number: "06",
-    name: "SEO + AEO + GEO",
-    description: "Rank on Google. Get cited in ChatGPT. Appear in Google AI Overviews. Three types of search — all covered in one plan so customers find you everywhere.",
-    image: "/img/service-6.png",
-  },
-  {
-    number: "07",
-    name: "Meta Ads",
-    description: "Facebook and Instagram ads that bring real customers — not just likes and followers. Every rupee tracked. Every ad optimized for actual business results.",
-    image: "/img/service-7.png",
-  },
-  {
-    number: "08",
-    name: "Google Performance Marketing",
-    description: "Pay-per-click ads on Google that bring buyers, not browsers. Campaigns built around what your customers actually search before they make a decision.",
-    image: "/img/service-8.png",
-  },
-  {
-    number: "09",
-    name: "Digital Marketing",
-    description: "Full monthly management of your online presence — content, posting, strategy, and reporting. One team handles everything so you focus on running your business.",
-    image: "/img/service-9.png",
   },
 ];
 

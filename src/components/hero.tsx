@@ -145,7 +145,7 @@ export const Hero = () => {
 
             {/* Eyebrow label */}
             <p className="font-general text-[10px] uppercase tracking-[0.25em] text-[#3DA3FF] mb-3">
-              India's Most Affordable AI Agency
+              India's Premier AI Agency
             </p>
 
             {/* Headline — clamped so it never overflows */}
@@ -153,29 +153,28 @@ export const Hero = () => {
               className="special-font font-zentry font-black uppercase text-white leading-[0.88] mb-4"
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
             >
-              AI That G<b>r</b>ows<br />Y<b>o</b>ur B<b>u</b>siness
+              B<b>u</b>ilt f<b>o</b>r<br />Gr<b>o</b>wth
             </h1>
 
             {/* Subline */}
             <p className="font-robert-regular mb-6 text-white/60 text-sm leading-relaxed">
-              Chatbots · Voice Agents · Automation · AI Films<br />
-              Starting ₹4,999/month. Live in 7 days.
+              We build AI-powered workflows, automate your growth, and rank where it counts — so your business runs smarter with less effort.
             </p>
 
-            <a href="#contact">
+            <a href="/#contact">
               <Button
                 id="watch-trailer"
                 leftIcon={TiLocationArrow}
                 containerClass="bg-[#3DA3FF] text-white flex-center gap-1"
               >
-                Start for ₹4,999/month
+                Start a Project
               </Button>
             </a>
 
             <div className="flex flex-wrap gap-4 mt-3">
-              <span className="text-xs text-white/40">✓ No setup fee</span>
-              <span className="text-xs text-white/40">✓ Cancel anytime</span>
-              <span className="text-xs text-white/40">✓ 7-day delivery</span>
+              <span className="text-xs text-white/40">✓ Custom strategy</span>
+              <span className="text-xs text-white/40">✓ Priority access</span>
+              <span className="text-xs text-white/40">✓ Direct implementation</span>
             </div>
           </div>
         </div>

@@ -1,44 +1,27 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { TrustBar } from "@/components/trust-bar";
-import { About } from "@/components/about";
-import { Logos3 } from "@/components/ui/logos3";
-import { VyzmaParallaxSlides } from "@/components/ui/text-parallax-content-scroll";
-import { PainPointsSection } from "@/components/pain-points-section";
-import { ServicesSection } from "@/components/services-section";
-import { IndustriesSection } from "@/components/industries-section";
-import { HowItWorks } from "@/components/how-it-works";
-import { WhyVyzma } from "@/components/why-vyzma";
-import { AboutSection } from "@/components/about-section";
-import { FaqSection } from "@/components/faq-section";
-import { ContactSection } from "@/components/contact-section";
-import { Offices } from "@/components/offices";
 import { Footer } from "@/components/footer";
+import { HomePage } from "@/pages/HomePage";
+import { BlogListingPage } from "@/pages/BlogListingPage";
+import { BlogPostPage } from "@/pages/BlogPostPage";
 
 const App = () => {
   return (
-    <div className="relative min-h-screen w-screen overflow-x-clip">
-      <CustomCursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <TrustBar />
-        <About />
-        <Logos3 />
-        <VyzmaParallaxSlides />
-        <PainPointsSection />
-        <ServicesSection />
-        <IndustriesSection />
-        <HowItWorks />
-        <WhyVyzma />
-        <AboutSection />
-        <FaqSection />
-        <ContactSection />
-        <Offices />
+    <Router>
+      <div className="relative min-h-screen w-screen overflow-x-clip">
+        <CustomCursor />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/blog" element={<BlogListingPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+          </Routes>
+        </main>
         <Footer />
-      </main>
-    </div>
+      </div>
+    </Router>
   );
 };
 export default App;
