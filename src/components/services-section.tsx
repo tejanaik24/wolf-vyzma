@@ -99,7 +99,7 @@ export const ServicesSection = () => {
       </div>
 
       {/* ── Video + service cards overlay ── */}
-      <div className="svc-video-wrap" style={{ position: "relative", width: "100%", height: "100vh" }}>
+      <div className="svc-video-wrap" style={{ position: "relative", width: "100%", height: "100dvh" }}>
 
         {/* Full-screen wolf video */}
         <video

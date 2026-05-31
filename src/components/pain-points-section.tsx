@@ -269,7 +269,7 @@ export const PainPointsSection = () => {
       {/* 3-col grid */}
       <div
         className="pain-3col relative z-10 mx-auto grid items-center"
-        style={{ maxWidth: "1200px", gridTemplateColumns: "1fr 380px 1fr", gap: "32px" }}
+        style={{ maxWidth: "min(1200px, 100%)", gridTemplateColumns: "1fr 380px 1fr", gap: "32px" }}
       >
         {/* Left cards */}
         <div ref={leftRef}>

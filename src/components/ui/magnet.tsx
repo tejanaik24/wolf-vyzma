@@ -1,4 +1,5 @@
 import { useRef, useState, type ReactNode } from "react";
+import { isTouch } from "@/lib/is-mobile";
 
 interface MagnetProps {
   children: ReactNode;
@@ -16,7 +17,10 @@ export const Magnet = ({
   const ref = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState("");
 
+  if (isTouch()) return <>{children}</>;
+
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (isTouch()) return;
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -33,6 +37,7 @@ export const Magnet = ({
   };
 
   const handleMouseLeave = () => {
+    if (isTouch()) return;
     setTransform("");
   };
 

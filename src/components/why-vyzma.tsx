@@ -119,8 +119,14 @@ export const WhyVyzma = () => {
         start: "top top",
         end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
         scrub: 0.7,
+        invalidateOnRefresh: true,
       },
     });
+
+    ScrollTrigger.refresh();
+    const onResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
 
     cardEls.forEach((card, i) => {
       if (i === cardEls.length - 1) return;
@@ -147,7 +153,7 @@ export const WhyVyzma = () => {
     <section
       ref={sectionRef}
       id="why-vyzma"
-      className="relative h-screen bg-[#0C0C0C] flex flex-col items-center justify-start pt-8 sm:pt-16 overflow-hidden"
+      className="relative h-[100dvh] bg-[#0C0C0C] flex flex-col items-center justify-start pt-8 sm:pt-16 overflow-hidden"
     >
       {/* Heading */}
       <div className="relative z-10 text-center px-4 mb-10 shrink-0">
@@ -162,7 +168,7 @@ export const WhyVyzma = () => {
       {/* Card stack */}
       <div
         className="peel-cards-wrap relative w-full max-w-3xl mx-auto px-4 sm:px-6"
-        style={{ height: "calc(100vh - 200px)", overflow: "visible" }}
+        style={{ height: "calc(100dvh - 200px)", overflow: "visible" }}
       >
         {cards.map((card, i) => (
           <div

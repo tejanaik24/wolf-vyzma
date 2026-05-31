@@ -59,6 +59,8 @@ html, body, #root {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 *, *::before, *::after {
@@ -637,7 +639,7 @@ body {
 
 /* Wolf Claw Crawl — ambient upward drift */
 @keyframes claw-crawl {
-  0%   { transform: translateY(100vh); }
+  0%   { transform: translateY(100dvh); }
   100% { transform: translateY(-110%); }
 }
 
@@ -664,8 +666,8 @@ body {
 
 /* Tearing shimmer — bright edge on ambient claws to feel like ripping */
 @keyframes claw-tear {
-  0%        { transform: translateY(100vh) scaleX(1);    }
-  48%, 52%  { transform: translateY(0vh)   scaleX(1.04); }
+  0%        { transform: translateY(100dvh) scaleX(1);    }
+  48%, 52%  { transform: translateY(0dvh)   scaleX(1.04); }
   100%      { transform: translateY(-110%) scaleX(1);    }
 }
 

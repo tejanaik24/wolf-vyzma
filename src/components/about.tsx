@@ -23,21 +23,30 @@ export const About = () => {
           scrub: 0.5,
           pin: true,
           pinSpacing: true,
+          invalidateOnRefresh: true,
         },
       });
 
       clipAnimation.to(".mask-clip-path", {
         width: "100vw",
-        height: "100vh",
+        height: "100dvh",
         borderRadius: 0,
       });
+
+      ScrollTrigger.refresh();
+      const onResize = () => ScrollTrigger.refresh();
+      window.addEventListener("resize", onResize);
+      return () => {
+        window.removeEventListener("resize", onResize);
+        mm.revert();
+      };
     });
 
     return () => mm.revert();
   });
 
   return (
-    <div id="about" className="min-h-screen w-screen">
+    <div id="about" className="min-h-[100dvh] w-screen">
       <div className="relative mt-16 md:mt-36 mb-8 flex flex-col items-center gap-5">
         <p className="font-general text-sm uppercase md:text-[10px]">
           Why Vyzma

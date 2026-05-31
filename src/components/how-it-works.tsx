@@ -125,7 +125,7 @@ export const HowItWorks = () => {
 
         {/* Slash 1 — large, top-left, blue glow */}
         <div
-          className="slash-1 slash-claw-glow absolute w-[500px] max-sm:max-w-[50vw]"
+          className="slash-1 slash-claw-glow absolute w-full max-w-[500px] max-sm:max-w-[50vw]"
           data-depth="2"
           style={{
             left: "0%", top: "0%", opacity: 0,
@@ -161,7 +161,7 @@ export const HowItWorks = () => {
 
         {/* Slash 4 — BIG, center-top, blue glow (user requested) */}
         <div
-          className="slash-4 slash-claw-glow absolute w-[620px] max-sm:max-w-[50vw]"
+          className="slash-4 slash-claw-glow absolute w-full max-w-[620px] max-sm:max-w-[50vw]"
           data-depth="1.6"
           style={{
             left: "28%", top: "-2%", opacity: 0,

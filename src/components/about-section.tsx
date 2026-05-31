@@ -3,7 +3,7 @@ import { AnimatedText } from "@/components/ui/animated-text";
 
 export const AboutSection = () => {
   return (
-    <section id="about-us" className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20 bg-[#0C0C0C] overflow-hidden">
+    <section id="about-us" className="relative min-h-[100dvh] flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20 bg-[#0C0C0C] overflow-hidden">
       <FadeIn delay={0.1} x={-80} duration={0.9} className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%]">
         <div className="w-[120px] sm:w-[160px] md:w-[210px] aspect-square rounded-full bg-gradient-to-br from-[#3DA3FF]/15 to-[#8A5CFF]/15 blur-sm" />
       </FadeIn>
