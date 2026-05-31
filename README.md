@@ -74,7 +74,12 @@ vyzma-ai/
     |-- constants/
       |--- index.ts
     |-- lib/
+      |--- blog-data.ts
       |--- utils.ts
+    |-- pages/
+      |--- BlogListingPage.tsx
+      |--- BlogPostPage.tsx
+      |--- HomePage.tsx
     |-- App.tsx
     |-- index.css
     |-- main.tsx
@@ -94,6 +99,7 @@ vyzma-ai/
   |- tsconfig.node.json
   |- vercel.json
   |- vite.config.ts
+  |- vyzma-character-carousel.html
 ```
 <!--- FOLDER_STRUCTURE_END --->
 
@@ -161,6 +167,7 @@ Useful resources and dependencies that are used in Nova.
 - [react](https://www.npmjs.com/package/react): ^19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.3.0
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom): ^7.16.0
 - [react-use](https://www.npmjs.com/package/react-use): ^17.5.1
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.4.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.1.18
