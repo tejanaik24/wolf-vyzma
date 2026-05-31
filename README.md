@@ -75,6 +75,7 @@ vyzma-ai/
       |--- index.ts
     |-- lib/
       |--- blog-data.ts
+      |--- is-mobile.ts
       |--- utils.ts
     |-- pages/
       |--- BlogListingPage.tsx
