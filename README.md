@@ -47,6 +47,8 @@ Here is the folder structure of this app.
 ```bash
 vyzma-ai/
   |- public/
+  |- scripts/
+    |-- generate-blog-images.cjs
   |- src/
     |-- components/
       |--- ui/
@@ -75,11 +77,13 @@ vyzma-ai/
       |--- index.ts
     |-- lib/
       |--- blog-data.ts
+      |--- city-data.ts
       |--- is-mobile.ts
       |--- utils.ts
     |-- pages/
       |--- BlogListingPage.tsx
       |--- BlogPostPage.tsx
+      |--- CityHubPage.tsx
       |--- HomePage.tsx
     |-- App.tsx
     |-- index.css
@@ -95,6 +99,7 @@ vyzma-ai/
   |- package-lock.json
   |- package.json
   |- postcss.config.mjs
+  |- prerender.cjs
   |- tsconfig.app.json
   |- tsconfig.json
   |- tsconfig.node.json
