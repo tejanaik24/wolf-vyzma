@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs><linearGradient id="g9" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1a1a2e"/><stop offset="100%" style="stop-color:#16213e"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#g9)"/>
+  <text x="400" y="40" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">AI Agency Pricing Comparison</text>
+  <g transform="translate(60,70)">
+    <rect x="0" y="0" width="200" height="35" rx="6" fill="#e94560"/><text x="100" y="23" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Service</text>
+    <rect x="0" y="45" width="200" height="35" rx="4" fill="#0f3460"/><text x="15" y="67" font-family="Arial,sans-serif" font-size="13" fill="#fff">AI Chatbot Setup</text>
+    <rect x="0" y="90" width="200" height="35" rx="4" fill="#0f3460"/><text x="15" y="112" font-family="Arial,sans-serif" font-size="13" fill="#fff">Workflow Automation</text>
+    <rect x="0" y="135" width="200" height="35" rx="4" fill="#0f3460"/><text x="15" y="157" font-family="Arial,sans-serif" font-size="13" fill="#fff">SEO + GEO Package</text>
+    <rect x="0" y="180" width="200" height="35" rx="4" fill="#0f3460"/><text x="15" y="202" font-family="Arial,sans-serif" font-size="13" fill="#fff">Voice AI Agent</text>
+    <rect x="0" y="225" width="200" height="35" rx="4" fill="#0f3460"/><text x="15" y="247" font-family="Arial,sans-serif" font-size="13" fill="#fff">Google Ads Management</text>
+    <rect x="0" y="270" width="200" height="35" rx="4" fill="#0f3460"/><text x="15" y="292" font-family="Arial,sans-serif" font-size="13" fill="#fff">Website + AI</text>
+  </g>
+  <g transform="translate(300,70)">
+    <rect x="0" y="0" width="200" height="35" rx="6" fill="#e94560"/><text x="100" y="23" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Enterprise Agency</text>
+    <rect x="0" y="45" width="200" height="35" rx="4" fill="#0f3460"/><text x="100" y="67" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0" text-anchor="middle">₹3-10 Lakhs</text>
+    <rect x="0" y="90" width="200" height="35" rx="4" fill="#0f3460"/><text x="100" y="112" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0" text-anchor="middle">₹5-20 Lakhs</text>
+    <rect x="0" y="135" width="200" height="35" rx="4" fill="#0f3460"/><text x="100" y="157" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0" text-anchor="middle">₹2-8 Lakhs/mo</text>
+    <rect x="0" y="180" width="200" height="35" rx="4" fill="#0f3460"/><text x="100" y="202" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0" text-anchor="middle">₹5-15 Lakhs</text>
+    <rect x="0" y="225" width="200" height="35" rx="4" fill="#0f3460"/><text x="100" y="247" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0" text-anchor="middle">₹1-5 Lakhs/mo</text>
+    <rect x="0" y="270" width="200" height="35" rx="4" fill="#0f3460"/><text x="100" y="292" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0" text-anchor="middle">₹5-15 Lakhs</text>
+  </g>
+  <g transform="translate(540,70)">
+    <rect x="0" y="0" width="200" height="35" rx="6" fill="#e94560"/><text x="100" y="23" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Vyzma AI (SMB)</text>
+    <rect x="0" y="45" width="200" height="35" rx="4" fill="#1a3a5c"/><text x="100" y="67" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#4ade80" text-anchor="middle">₹50K-1L</text>
+    <rect x="0" y="90" width="200" height="35" rx="4" fill="#1a3a5c"/><text x="100" y="112" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#4ade80" text-anchor="middle">₹75K-5L</text>
+    <rect x="0" y="135" width="200" height="35" rx="4" fill="#1a3a5c"/><text x="100" y="157" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#4ade80" text-anchor="middle">₹15K-35K/mo</text>
+    <rect x="0" y="180" width="200" height="35" rx="4" fill="#1a3a5c"/><text x="100" y="202" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#4ade80" text-anchor="middle">₹50K-2L</text>
+    <rect x="0" y="225" width="200" height="35" rx="4" fill="#1a3a5c"/><text x="100" y="247" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#4ade80" text-anchor="middle">₹15K-50K/mo</text>
+    <rect x="0" y="270" width="200" height="35" rx="4" fill="#1a3a5c"/><text x="100" y="292" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#4ade80" text-anchor="middle">₹35K-1.5L</text>
+  </g>
+</svg>

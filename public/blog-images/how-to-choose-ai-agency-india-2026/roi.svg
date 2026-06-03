@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs><linearGradient id="g7" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1a1a2e"/><stop offset="100%" style="stop-color:#16213e"/></linearGradient></defs>
+  <rect width="800" height="400" fill="url(#g7)"/>
+  <text x="400" y="45" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Real ROI from AI for Indian SMBs</text>
+  <g transform="translate(60, 80)">
+    <rect width="320" height="110" rx="10" fill="#0f3460"/>
+    <text x="20" y="30" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#e94560">Chatbots</text>
+    <text x="20" y="55" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 80% of routine inquiries automated</text>
+    <text x="20" y="75" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 3x more leads captured after hours</text>
+    <text x="20" y="95" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 40-60% reduction in support costs</text>
+  </g>
+  <g transform="translate(420, 80)">
+    <rect width="320" height="110" rx="10" fill="#0f3460"/>
+    <text x="20" y="30" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#e94560">Workflow Automation</text>
+    <text x="20" y="55" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 50% reduction in ops time</text>
+    <text x="20" y="75" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 35% faster lead-to-close cycle</text>
+    <text x="20" y="95" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 99% reduction in data entry errors</text>
+  </g>
+  <g transform="translate(60, 220)">
+    <rect width="320" height="110" rx="10" fill="#0f3460"/>
+    <text x="20" y="30" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#e94560">SEO + GEO</text>
+    <text x="20" y="55" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 200%+ organic traffic growth in 6 months</text>
+    <text x="20" y="75" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• Featured in AI search responses</text>
+    <text x="20" y="95" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• Cost per lead drops 60-80%</text>
+  </g>
+  <g transform="translate(420, 220)">
+    <rect width="320" height="110" rx="10" fill="#0f3460"/>
+    <text x="20" y="30" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#e94560">Voice AI + Ads</text>
+    <text x="20" y="55" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 24/7 voice agent handling calls</text>
+    <text x="20" y="75" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• 3x ROAS on AI-optimized ad campaigns</text>
+    <text x="20" y="95" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">• Pay-per-lead vs pay-per-click savings</text>
+  </g>
+</svg>

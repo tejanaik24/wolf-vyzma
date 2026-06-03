@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
@@ -19,6 +20,14 @@ function formatDate(dateStr: string) {
 }
 
 export const BlogListingPage = () => {
+  useEffect(() => {
+    document.title = "Vyzma AI Blog — SEO, GEO, AEO & AI Automation Insights";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'SEO, GEO, AEO, and AI automation insights for Indian businesses. Practical guides on AI chatbots, workflow automation, voice AI, and digital growth.');
+    }
+  }, []);
+
   return (
     <div className="pt-24 min-h-screen bg-[#0C0C0C] text-white">
       {/* Header */}

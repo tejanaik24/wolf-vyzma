@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { HomePage } from "@/pages/HomePage";
 import { BlogListingPage } from "@/pages/BlogListingPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
+import { CityHubPage, CityServicePage } from "@/pages/CityHubPage";
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<BlogListingPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/:city/:service" element={<CityServicePage />} />
+            <Route path="/:city" element={<CityHubPage />} />
           </Routes>
         </main>
         <Footer />

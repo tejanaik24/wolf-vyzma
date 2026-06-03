@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs><linearGradient id="g5" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1a1a2e"/><stop offset="100%" style="stop-color:#16213e"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#g5)"/>
+  <text x="400" y="45" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">Red Flags When Choosing an AI Agency</text>
+  <g transform="translate(60,80)">
+    <text x="0" y="20" font-family="Arial,sans-serif" font-size="18" fill="#e94560">🚩</text><text x="35" y="20" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">No portfolio you can verify</text>
+    <text x="35" y="42" font-family="Arial,sans-serif" font-size="14" fill="#a0aec0">If every case study is "confidential," something is wrong.</text>
+  </g>
+  <g transform="translate(60,140)">
+    <text x="0" y="20" font-family="Arial,sans-serif" font-size="18" fill="#e94560">🚩</text><text x="35" y="20" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Claims to be the "best" at everything</text>
+    <text x="35" y="42" font-family="Arial,sans-serif" font-size="14" fill="#a0aec0">No agency excels at everything. Specialists outperform generalists.</text>
+  </g>
+  <g transform="translate(60,200)">
+    <text x="0" y="20" font-family="Arial,sans-serif" font-size="18" fill="#e94560">🚩</text><text x="35" y="20" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">No pricing on website</text>
+    <text x="35" y="42" font-family="Arial,sans-serif" font-size="14" fill="#a0aec0">If you have to "book a call" to see any pricing, expect surprises.</text>
+  </g>
+  <g transform="translate(60,260)">
+    <text x="0" y="20" font-family="Arial,sans-serif" font-size="18" fill="#e94560">🚩</text><text x="35" y="20" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Promises AGI or "fully autonomous" AI</text>
+    <text x="35" y="42" font-family="Arial,sans-serif" font-size="14" fill="#a0aec0">Real AI agencies are honest about what AI can and cannot do.</text>
+  </g>
+  <g transform="translate(60,320)">
+    <text x="0" y="20" font-family="Arial,sans-serif" font-size="18" fill="#e94560">🚩</text><text x="35" y="20" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">No post-launch support plan</text>
+    <text x="35" y="42" font-family="Arial,sans-serif" font-size="14" fill="#a0aec0">AI systems need monitoring. If there's no retainer option, run.</text>
+  </g>
+</svg>

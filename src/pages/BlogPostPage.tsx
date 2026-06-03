@@ -64,9 +64,11 @@ function renderContent(content: string) {
       return (
         <ListTag key={i} className={`my-4 space-y-2 pl-6 ${listClass}`}>
           {items.map((item, j) => (
-            <li key={j} className="text-white/70 leading-relaxed pl-2 font-robert-regular">
-              {item.replace(/^[\d]+\. /, '').replace(/^- /, '')}
-            </li>
+            <li key={j} className="text-white/70 leading-relaxed pl-2 font-robert-regular"
+                dangerouslySetInnerHTML={{
+                  __html: item.replace(/^[\d]+\. /, '').replace(/^- /, '')
+                    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                }} />
           ))}
         </ListTag>
       );
@@ -75,11 +77,11 @@ function renderContent(content: string) {
       const match = block.match(/!\[(.+?)\]\((.+?)\)/);
       if (match) {
         return (
-          <div key={i} className="my-8 overflow-hidden rounded-lg border border-white/[0.08]">
+          <div key={i} className="my-8 overflow-hidden rounded-lg border border-white/[0.08] bg-[#0d0d1a]">
             <img
               src={match[2]}
               alt={match[1]}
-              className="w-full object-cover"
+              className="w-full object-contain" style={{ aspectRatio: '16/9' }}
               loading="lazy"
             />
             <p className="px-3 py-2 text-xs text-white/30 italic font-robert-regular">{match[1]}</p>
@@ -113,18 +115,93 @@ function renderContent(content: string) {
   });
 }
 
+function setMeta(selector: string, attr: string, value: string) {
+  let el = document.querySelector(selector) as HTMLElement | null;
+  if (!el) {
+    el = document.createElement('meta');
+    const parts = selector.match(/\[([\w-]+)=['"](.+?)['"]\]/);
+    if (parts) { el.setAttribute(parts[1], parts[2]); }
+    document.head.appendChild(el);
+  }
+  el.setAttribute(attr, value);
+}
+
 export const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
-  // Simple title update for SEO
+  // Dynamic SEO updates for JS-executing crawlers
   useEffect(() => {
     if (post) {
       document.title = post.metaTitle;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', post.metaDescription);
+      setMeta('meta[name="description"]', 'content', post.metaDescription);
+      setMeta('meta[property="og:title"]', 'content', post.metaTitle);
+      setMeta('meta[property="og:description"]', 'content', post.metaDescription);
+      setMeta('meta[property="og:url"]', 'content', `https://vyzma.in/blog/${post.slug}`);
+      setMeta('meta[name="twitter:title"]', 'content', post.metaTitle);
+      setMeta('meta[name="twitter:description"]', 'content', post.metaDescription);
+      setMeta('link[rel="canonical"]', 'href', `https://vyzma.in/blog/${post.slug}`);
+
+      // Remove old schemas, inject fresh ones
+      document.querySelectorAll('script[data-dynamic]').forEach((s) => s.remove());
+
+      const schemas: Record<string, unknown>[] = [];
+
+      // BlogPosting schema
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        '@id': `https://vyzma.in/blog/${post.slug}#blogposting`,
+        headline: post.title,
+        description: post.excerpt,
+        url: `https://vyzma.in/blog/${post.slug}`,
+        datePublished: post.date,
+        author: {
+          '@type': 'Organization',
+          name: post.author?.name ?? 'Vyzma AI',
+          url: 'https://vyzma.in/',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Vyzma AI',
+          url: 'https://vyzma.in/',
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://vyzma.in/blog/${post.slug}`,
+        },
+      });
+
+      // BreadcrumbList schema
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vyzma.in/' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://vyzma.in/blog' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `https://vyzma.in/blog/${post.slug}` },
+        ],
+      });
+
+      // FAQPage schema (if the post has FAQ data)
+      if (post.faq && post.faq.length > 0) {
+        schemas.push({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          '@id': `https://vyzma.in/blog/${post.slug}#faq`,
+          mainEntity: post.faq.map((f) => ({
+            '@type': 'Question',
+            name: f.question,
+            acceptedAnswer: { '@type': 'Answer', text: f.answer },
+          })),
+        });
       }
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-dynamic', '');
+      script.textContent = JSON.stringify(schemas.length === 1 ? schemas[0] : { '@graph': schemas });
+      document.head.appendChild(script);
     }
   }, [post]);
 
@@ -166,7 +243,9 @@ export const BlogPostPage = () => {
               <span key={i}>
                 {word.includes('o') || word.includes('O') ? (
                   <>
-                    {word.replace(/o/i, '')}<b>{word.match(/o/i)?.[0]}</b>
+                    {word.split('').map((char, j) =>
+                      char.toLowerCase() === 'o' ? <b key={j}>{char}</b> : char
+                    )}
                   </>
                 ) : (
                   word
@@ -184,9 +263,10 @@ export const BlogPostPage = () => {
           </div>
 
           <div className="mt-12 border-t border-white/[0.06] pt-8 text-center">
-            <p className="mb-2 text-[10px] font-general uppercase tracking-widest text-white/40">Published by</p>
-            <p className="font-semibold text-white font-robert-medium">Vyzma AI</p>
-            <p className="text-xs text-white/30 font-robert-regular">India's Premier AI Agency · Bangalore & Vizag</p>
+            <p className="mb-2 text-[10px] font-general uppercase tracking-widest text-white/40">{post.author ? 'Written by' : 'Published by'}</p>
+            <p className="font-semibold text-white font-robert-medium">{post.author ? post.author.name : 'Vyzma AI'}</p>
+            {post.author?.title && <p className="text-xs text-white/30 font-robert-regular">{post.author.title}</p>}
+            {!post.author && <p className="text-xs text-white/30 font-robert-regular">India's Premier AI Agency · Bangalore & Vizag</p>}
           </div>
         </div>
       </article>

@@ -1,0 +1,29 @@
+# Vyzma AI — llms.txt
+# This file helps AI engines discover and cite our content.
+# https://llmstxt.org/
+
+## About
+Vyzma AI is India's premier AI agency headquartered in Visakhapatnam and Bangalore. We build AI chatbots, workflow automation, SEO/AEO/GEO, voice AI, and performance marketing systems for Indian businesses.
+
+## Pages
+- https://vyzma.in/ : Vyzma AI — India's Premier AI Agency - AI chatbots, automation, SEO, and performance marketing for Indian businesses.
+- https://vyzma.in/blog : Blog — SEO, GEO, AEO & AI automation insights for Indian businesses.
+- https://vyzma.in/#contact : Contact Vyzma AI — Get in touch for AI chatbots, automation, and digital growth.
+- https://vyzma.in/pricing : Pricing — Affordable AI services for Indian businesses starting at ₹15,000/month.
+
+## Blog Posts
+- https://vyzma.in/blog/what-is-vyzma-ai : What is Vyzma AI? — Complete overview of India's premier AI agency, services, locations, and results.
+- https://vyzma.in/blog/best-ai-agency-india-2026 : Best AI Agency in India 2026 — How to choose the right AI partner. Compares enterprise, startup, and affordable options.
+- https://vyzma.in/blog/best-ai-agency-visakhapatnam-2026 : Best AI Agency Visakhapatnam 2026 — Guide for Vizag businesses choosing an AI partner.
+- https://vyzma.in/blog/best-ai-agency-bangalore-2026 : Best AI Agency Bangalore 2026 — How to choose an AI partner in India's tech capital.
+- https://vyzma.in/blog/seo-agency-visakhapatnam-2026 : SEO Agency Visakhapatnam 2026 — AI-powered search optimization for Vizag businesses.
+- https://vyzma.in/blog/ai-chatbots-visakhapatnam-2026 : AI Chatbots Visakhapatnam 2026 — Complete guide for local businesses.
+- https://vyzma.in/blog/ai-automation-vizag-businesses-2026 : AI Automation Vizag Businesses 2026 — Workflow automation guide with real ROI data.
+- https://vyzma.in/blog/ai-for-real-estate-vizag-2026 : AI for Real Estate Vizag 2026 — Property sales automation with AI chatbots and predictive pricing.
+- https://vyzma.in/blog/ai-for-pharma-companies-vizag-2026 : AI for Pharma Companies Vizag 2026 — R&D, quality control, and compliance automation.
+- https://vyzma.in/blog/google-ai-hub-vizag-businesses-2026 : Google AI Hub Vizag 2026 — How businesses leverage Gemini, AI Overviews, and Google Cloud AI.
+- https://vyzma.in/blog/digital-marketing-agency-visakhapatnam-2026 : Digital Marketing Agency Visakhapatnam 2026 — AI-powered digital marketing for Vizag.
+- https://vyzma.in/blog/digital-marketing-visakhapatnam-2026 : Digital Marketing Visakhapatnam 2026 — Why word of mouth is costing you customers.
+- https://vyzma.in/blog/google-ads-agency-visakhapatnam-2026 : Google Ads Agency Visakhapatnam 2026 — AI-powered PPC for Vizag businesses.
+- https://vyzma.in/blog/website-design-visakhapatnam-2026 : Website Design Visakhapatnam 2026 — Modern, AI-powered Next.js sites for Vizag.
+- https://vyzma.in/blog/whatsapp-marketing-vizag-2026 : WhatsApp Marketing Vizag 2026 — AI-powered messaging and chatbot campaigns.

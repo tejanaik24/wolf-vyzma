@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#010103" />
+
+    <title>Vyzma AI | India's Premier AI Agency — AI Chatbots, Automation & SEO for Indian Businesses</title>
+    <meta name="description" content="Vyzma AI is India's premier AI agency headquartered in Visakhapatnam and Bangalore. We build AI chatbots, workflow automation, voice AI, GEO/SEO, and performance marketing for Indian businesses. 8,000+ hours automated, 95% customer query resolution, 2x ROI for clients across India." />
+    <meta name="keywords" content="vyzma ai, ai agency india, ai agency visakhapatnam, ai chatbots india, ai automation agency, ai marketing agency india, best ai agency india, ai seo agency, ai agency bangalore, ai agency vizag" />
+
+    <link rel="canonical" href="https://vyzma.in" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vyzma.in" />
+    <meta property="og:title" content="Vyzma AI | India's Premier AI Agency — AI Chatbots, Automation & SEO" />
+    <meta property="og:description" content="India's premier AI agency in Visakhapatnam & Bangalore. AI chatbots, workflow automation, voice AI, GEO/SEO, and performance marketing. 8,000+ hours automated, 2x ROI." />
+    <meta property="og:image" content="https://vyzma.in/og-vyzma-homepage.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vyzma AI | India's Premier AI Agency — AI Chatbots, Automation & SEO" />
+    <meta name="twitter:description" content="India's premier AI agency in Visakhapatnam & Bangalore. AI chatbots, workflow automation, voice AI, GEO/SEO, and performance marketing. 8,000+ hours automated, 2x ROI." />
+    <meta name="twitter:image" content="https://vyzma.in/og-vyzma-homepage.png" />
+
+    <link rel="alternate" hreflang="en-IN" href="https://vyzma.in" />
+    <link rel="alternate" hreflang="x-default" href="https://vyzma.in" />
+    <script type="module" crossorigin src="/assets/index-B0bqpYdH.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BYbx6iT9.js">
+    <link rel="modulepreload" crossorigin href="/assets/gsap-DONBkEWZ.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-Cdxx_Ml-.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Enable JavaScript to run this Vite.js application.</noscript>
+  </body>
+</html>

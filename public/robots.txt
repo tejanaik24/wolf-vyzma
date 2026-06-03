@@ -1,0 +1,27 @@
+# robots.txt for vyzma.in
+# Allow all AI crawlers for citation
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /assets/
+
+Sitemap: https://vyzma.in/sitemap.xml

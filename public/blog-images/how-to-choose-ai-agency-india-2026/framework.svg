@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs><linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1a1a2e"/><stop offset="100%" style="stop-color:#16213e"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#g2)"/>
+  <text x="400" y="50" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">5-Point Decision Framework</text>
+  <g transform="translate(80,90)">
+    <circle cx="30" cy="0" r="20" fill="#e94560"/><text x="30" y="5" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+    <text x="65" y="5" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Portfolio Depth</text>
+    <text x="65" y="28" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">Have they built real AI systems, not just websites?</text>
+  </g>
+  <g transform="translate(80,170)">
+    <circle cx="30" cy="0" r="20" fill="#e94560"/><text x="30" y="5" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">2</text>
+    <text x="65" y="5" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Technical Depth</text>
+    <text x="65" y="28" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">Can they build AI agents, RAG, voice AI — or just chatbots?</text>
+  </g>
+  <g transform="translate(80,250)">
+    <circle cx="30" cy="0" r="20" fill="#e94560"/><text x="30" y="5" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">3</text>
+    <text x="65" y="5" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Industry Fit</text>
+    <text x="65" y="28" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">Do they understand YOUR business sector deeply?</text>
+  </g>
+  <g transform="translate(80,330)">
+    <circle cx="30" cy="0" r="20" fill="#e94560"/><text x="30" y="5" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">4</text>
+    <text x="65" y="5" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Pricing Transparency</text>
+    <text x="65" y="28" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">Are they upfront about costs or hiding them?</text>
+  </g>
+  <g transform="translate(80,410)">
+    <circle cx="30" cy="0" r="20" fill="#e94560"/><text x="30" y="5" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">5</text>
+    <text x="65" y="5" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Post-Launch Support</text>
+    <text x="65" y="28" font-family="Arial,sans-serif" font-size="13" fill="#a0aec0">Will they be there after the system goes live?</text>
+  </g>
+</svg>
