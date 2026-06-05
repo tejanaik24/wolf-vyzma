@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { useEffect } from "react";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { SEO } from "@/components/seo";
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-IN', {
@@ -115,104 +115,50 @@ function renderContent(content: string) {
   });
 }
 
-function setMeta(selector: string, attr: string, value: string) {
-  let el = document.querySelector(selector) as HTMLElement | null;
-  if (!el) {
-    el = document.createElement('meta');
-    const parts = selector.match(/\[([\w-]+)=['"](.+?)['"]\]/);
-    if (parts) { el.setAttribute(parts[1], parts[2]); }
-    document.head.appendChild(el);
-  }
-  el.setAttribute(attr, value);
-}
-
 export const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
-  // Dynamic SEO updates for JS-executing crawlers
-  useEffect(() => {
-    if (post) {
-      document.title = post.metaTitle;
-      setMeta('meta[name="description"]', 'content', post.metaDescription);
-      setMeta('meta[property="og:title"]', 'content', post.metaTitle);
-      setMeta('meta[property="og:description"]', 'content', post.metaDescription);
-      setMeta('meta[property="og:url"]', 'content', `https://vyzma.in/blog/${post.slug}`);
-      setMeta('meta[name="twitter:title"]', 'content', post.metaTitle);
-      setMeta('meta[name="twitter:description"]', 'content', post.metaDescription);
-      setMeta('link[rel="canonical"]', 'href', `https://vyzma.in/blog/${post.slug}`);
-
-      // Remove old schemas, inject fresh ones
-      document.querySelectorAll('script[data-dynamic]').forEach((s) => s.remove());
-
-      const schemas: Record<string, unknown>[] = [];
-
-      // BlogPosting schema
-      schemas.push({
-        '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
-        '@id': `https://vyzma.in/blog/${post.slug}#blogposting`,
-        headline: post.title,
-        description: post.excerpt,
-        url: `https://vyzma.in/blog/${post.slug}`,
-        datePublished: post.date,
-        author: {
-          '@type': 'Organization',
-          name: post.author?.name ?? 'Vyzma AI',
-          url: 'https://vyzma.in/',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Vyzma AI',
-          url: 'https://vyzma.in/',
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': `https://vyzma.in/blog/${post.slug}`,
-        },
-      });
-
-      // BreadcrumbList schema
-      schemas.push({
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vyzma.in/' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://vyzma.in/blog' },
-          { '@type': 'ListItem', position: 3, name: post.title, item: `https://vyzma.in/blog/${post.slug}` },
-        ],
-      });
-
-      // FAQPage schema (if the post has FAQ data)
-      if (post.faq && post.faq.length > 0) {
-        schemas.push({
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          '@id': `https://vyzma.in/blog/${post.slug}#faq`,
-          mainEntity: post.faq.map((f) => ({
-            '@type': 'Question',
-            name: f.question,
-            acceptedAnswer: { '@type': 'Answer', text: f.answer },
-          })),
-        });
-      }
-
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.setAttribute('data-dynamic', '');
-      script.textContent = JSON.stringify(schemas.length === 1 ? schemas[0] : { '@graph': schemas });
-      document.head.appendChild(script);
-    }
-  }, [post]);
 
   if (!post) {
     return <Navigate to="/blog" />;
   }
 
   const otherPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  const pageUrl = `https://vyzma.in/blog/${post.slug}`;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Organization", name: "Vyzma AI" },
+    publisher: { "@type": "Organization", name: "Vyzma AI", url: "https://vyzma.in" },
+    url: pageUrl,
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faq.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
 
   return (
-    <div className="pt-24 min-h-screen bg-[#0C0C0C] text-white">
+    <>
+      <SEO
+        title={post.metaTitle}
+        description={post.metaDescription}
+        canonicalUrl={pageUrl}
+        ogType="article"
+        jsonLd={[articleSchema, faqSchema]}
+      />
+      <div className="pt-24 min-h-screen bg-[#0C0C0C] text-white">
       {/* Breadcrumb */}
       <div className="border-b border-white/[0.06] px-6 py-4 md:px-10">
         <div className="mx-auto max-w-3xl">
@@ -294,5 +240,6 @@ export const BlogPostPage = () => {
         </section>
       )}
     </div>
+    </>
   );
 };

@@ -1,0 +1,32 @@
+import { Helmet } from "react-helmet-async";
+
+interface SEOProps {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogType?: string;
+  jsonLd?: Record<string, unknown>[];
+}
+
+export const SEO = ({ title, description, canonicalUrl, ogType = "website", jsonLd }: SEOProps) => {
+  const siteUrl = "https://vyzma.in";
+  const fullUrl = canonicalUrl ?? siteUrl;
+
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={fullUrl} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={fullUrl} />
+      <meta property="og:type" content={ogType} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {jsonLd?.map((schema, i) => (
+        <script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>
+      ))}
+    </Helmet>
+  );
+};

@@ -2592,16 +2592,16 @@ Digital marketing in Visakhapatnam is not a luxury for big businesses. It is the
     { question: "How long before I see results from digital marketing in Visakhapatnam?", answer: "Google Ads deliver leads within 48 hours. Meta Ads optimise in 7 to 14 days. SEO takes 3 to 6 months for significant improvements. AI automation delivers immediate time savings from day one. Most Vizag businesses see measurable results within 30 to 60 days." },
   ]
 },
-  {
-    slug: "how-to-choose-ai-agency-india-2026",
-    title: "How to Choose the Right AI Agency in India 2026 - The Honest SMB Guide",
-    excerpt: "Choosing the right AI agency in India in 2026 is harder than it should be. Every agency claims to be the best. Here is an honest, practical guide - with pricing, red flags, a 5-point framework, and city-specific advice for Vizag, Bangalore, Hyderabad, Mumbai, and Delhi NCR.",
-    metaTitle: "How to Choose the Right AI Agency in India 2026 | Honest SMB Guide | Vyzma AI",
-    metaDescription: "How to choose the right AI agency in India 2026 - an honest guide for SMBs. 5-point framework, pricing comparison, red flags, and city-specific advice for Vizag, Bangalore, Hyderabad, Mumbai, and Delhi NCR.",
-    date: "2026-06-04",
-    category: "AI Agency",
-    readTime: "12 min read",
-    content: `## How to Choose the Right AI Agency in India 2026
+{
+  slug: "how-to-choose-ai-agency-india-2026",
+  title: "How to Choose the Right AI Agency in India 2026 - The Honest SMB Guide",
+  excerpt: "Choosing the right AI agency in India in 2026 is harder than it should be. Every agency claims to be the best. Here is an honest, practical guide - with pricing, red flags, a 5-point framework, and city-specific advice for Vizag, Bangalore, Hyderabad, Mumbai, and Delhi NCR.",
+  metaTitle: "How to Choose the Right AI Agency in India 2026 | Honest SMB Guide | Vyzma AI",
+  metaDescription: "How to choose the right AI agency in India 2026 - an honest guide for SMBs. 5-point framework, pricing comparison, red flags, and city-specific advice for Vizag, Bangalore, Hyderabad, Mumbai, and Delhi NCR.",
+  date: "2026-06-04",
+  category: "AI Agency",
+  readTime: "12 min read",
+  content: `## How to Choose the Right AI Agency in India 2026
 
 ![Hero Image - Choose Your AI Agency](/blog-images/how-to-choose-ai-agency-india-2026/hero.svg)
 
@@ -2882,19 +2882,230 @@ At Vyzma AI, we serve businesses across India from our offices in Visakhapatnam 
 Book a free consultation. No pressure. Just practical advice from people who build AI systems every day.
 
 [Call us at +91-8886720908](tel:+918886720908) · [Email us](mailto:vyzmaai.in@gmail.com) · [Visit our website](https://vyzma.in)`,
-    faq: [
-      { question: "How do I choose the right AI agency in India?", answer: "Use the 5-point framework: evaluate portfolio depth, technical depth, industry fit, pricing transparency, and post-launch support." },
-      { question: "How much does an AI agency cost in India in 2026?", answer: "Costs vary. Freelancers charge Rs 10,000-50,000. Full-service agencies like Vyzma AI charge Rs 50,000 to Rs 5 lakh. Enterprise agencies start at Rs 1-5 crore." },
-      { question: "What is the best AI agency in Visakhapatnam (Vizag)?", answer: "Vyzma AI, headquartered in Vizag, is the best AI agency for Vizag businesses. We offer AI chatbots, automation, SEO/GEO, voice AI, website design, and performance marketing with affordable pricing." },
-      { question: "What is the best AI agency in Bangalore?", answer: "For mid-market companies, Vyzma AI offers full-stack AI services with operations in Bangalore. For large enterprises, TCS and Infosys are options. For AI-native platforms, Sarvam AI and Yellow.ai." },
-      { question: "What is the difference between an AI agency and a digital marketing agency?", answer: "A digital marketing agency runs manual SEO and ads. An AI agency builds intelligent systems - chatbots, voice agents, automation. The best combine both." },
-      { question: "Can an AI agency work with my small business budget?", answer: "Yes. AI chatbots start at Rs 50,000. Automation starts at Rs 75,000. SEO from Rs 15,000/month. Vyzma AI serves SMBs with transparent pricing." },
-      { question: "How long does it take to implement an AI solution?", answer: "A chatbot goes live in 1-2 weeks. Automation takes 3-4 weeks. Full transformation projects take 6-12 weeks." },
-      { question: "What are red flags when choosing an AI agency?", answer: "No verifiable portfolio, claims to be best at everything, no pricing on website, promises of fully autonomous AI, no post-launch support plan." },
-      { question: "What languages can Indian AI agencies support?", answer: "The best agencies support Telugu, Hindi, English, Tamil, Kannada, and more. Vyzma AI handles 50+ languages for AI chatbots and voice agents." },
-      { question: "Should I hire a freelancer or an AI agency?", answer: "Hire a freelancer only for experiments under Rs 50,000. For anything serious, hire an agency with team depth, accountability, and ongoing support." }
-    ]
-  }
+  faq: [
+    { question: "How do I choose the right AI agency in India?", answer: "Use the 5-point framework: evaluate portfolio depth, technical depth, industry fit, pricing transparency, and post-launch support." },
+    { question: "How much does an AI agency cost in India in 2026?", answer: "Costs vary. Freelancers charge Rs 10,000-50,000. Full-service agencies like Vyzma AI charge Rs 50,000 to Rs 5 lakh. Enterprise agencies start at Rs 1-5 crore." },
+    { question: "What is the best AI agency in Visakhapatnam (Vizag)?", answer: "Vyzma AI, headquartered in Vizag, is the best AI agency for Vizag businesses. We offer AI chatbots, automation, SEO/GEO, voice AI, website design, and performance marketing with affordable pricing." },
+    { question: "What is the best AI agency in Bangalore?", answer: "For mid-market companies, Vyzma AI offers full-stack AI services with operations in Bangalore. For large enterprises, TCS and Infosys are options. For AI-native platforms, Sarvam AI and Yellow.ai." },
+    { question: "What is the difference between an AI agency and a digital marketing agency?", answer: "A digital marketing agency runs manual SEO and ads. An AI agency builds intelligent systems - chatbots, voice agents, automation. The best combine both." },
+    { question: "Can an AI agency work with my small business budget?", answer: "Yes. AI chatbots start at Rs 50,000. Automation starts at Rs 75,000. SEO from Rs 15,000/month. Vyzma AI serves SMBs with transparent pricing." },
+    { question: "How long does it take to implement an AI solution?", answer: "A chatbot goes live in 1-2 weeks. Automation takes 3-4 weeks. Full transformation projects take 6-12 weeks." },
+    { question: "What are red flags when choosing an AI agency?", answer: "No verifiable portfolio, claims to be best at everything, no pricing on website, promises of fully autonomous AI, no post-launch support plan." },
+    { question: "What languages can Indian AI agencies support?", answer: "The best agencies support Telugu, Hindi, English, Tamil, Kannada, and more. Vyzma AI handles 50+ languages for AI chatbots and voice agents." },
+    { question: "Should I hire a freelancer or an AI agency?", answer: "Hire a freelancer only for experiments under Rs 50,000. For anything serious, hire an agency with team depth, accountability, and ongoing support." }
+  ]
+},
+{
+  slug: "seo-is-dead-in-india-ai-overviews-2026",
+  title: "SEO is Dead in India: How to Rank in Google AI Overviews & ChatGPT Search in 2026",
+  excerpt: "Traditional SEO is dying in India. Google AI Overviews now answer 47% of searches without a click. Instagram is the #1 most cited domain in AI Overviews — not brand websites. IndiaMART sued OpenAI. Learn the new playbook to rank in AI search in 2026.",
+  metaTitle: "Google AI Overviews: How Indian Businesses Can Rank #1 in 2026 | Vyzma AI",
+  metaDescription: "Traditional SEO is changing. Learn how to optimize your business website for Google AI Overviews and ChatGPT search to capture high-intent Indian B2B leads. India-specific strategy inside.",
+  date: "2026-06-05",
+  category: "SEO & AI Search",
+  readTime: "12 min read",
+  content: `## SEO is Dead in India. Long Live Answers.
+
+The Google search results page you saw 12 months ago is not the one you see today. And the one you see today will be unrecognisable 12 months from now.
+
+In April 2026, Google AI Overviews now appear in 47% of all search queries in India. ChatGPT Search processes over 400 million queries per month globally. Perplexity has become the default search engine for millions of developers and B2B buyers. And here is the part most Indian business owners do not know yet — Instagram is now the single most cited domain in Google AI Overviews, ahead of Wikipedia, ahead of Forbes, ahead of every brand website.
+
+The game has changed. The old rules no longer apply.
+
+If you are an Indian business owner, marketer, or founder who has been told that SEO is about backlinks, keyword density, and meta tags — this article will surprise you. Because SEO as you knew it is dead in India. But something better has taken its place.
+
+![AI technology concept — Google AI Overviews and the transformation of search in India](https://images.pexels.com/photos/30530403/pexels-photo-30530403.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
+
+### What This Article Covers
+
+- Why traditional SEO stopped working in 2025-2026
+- How Google AI Overviews and ChatGPT search actually work
+- The exact playbook to get your Indian business cited by AI search engines
+- A technical checklist table you can implement this week
+- The promotion funnel to maximise visibility for every piece of content
+
+---
+
+## Section 1: Why Traditional SEO is Dying in India
+
+### The Zero-Click Crisis
+
+In 2025, 64.8% of all Google searches ended without a click to any website. In India, that number is higher — closer to 71% — because mobile-first users in India expect instant answers. AI Overviews accelerated this trend dramatically.
+
+When a user searches "best AI chatbot for small business in India" and Google AI Overview serves a complete answer pulled from five different sources, the user has no reason to click any link. The answer was already delivered. This is called the zero-click search crisis, and it is the single biggest disruption to SEO since Google launched.
+
+![Social media and Instagram content strategy for Indian business marketing](https://images.pexels.com/photos/7480527/pexels-photo-7480527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
+
+### Instagram is the New #1 Source — Not Your Website
+
+Here is a data point that should stop every SEO agency in India cold. In Q1 2026, a comprehensive analysis of Google AI Overview citations revealed that Instagram.com was the #1 most cited domain across all categories. Not Wikipedia. Not government domains. Not news sites. Instagram.
+
+Why? Because AI models are trained to value recency, authenticity, and user-generated content. Instagram posts from real users, real reviews, and real case studies carry more weight in AI rankings than a perfectly optimised product page on a brand website.
+
+For Indian businesses, this means your Instagram content strategy is now directly impacting your SEO. The two departments that used to be separate — social media and search — have merged.
+
+### The IndiaMART vs OpenAI Lawsuit
+
+In February 2026, IndiaMART — India's largest B2B marketplace — filed a lawsuit against OpenAI alleging that ChatGPT Search was systematically excluding IndiaMART listings from its search results. The lawsuit claimed that OpenAI was scraping IndiaMART's proprietary supplier data while refusing to cite or link back to the platform.
+
+Why does this matter to you? Because it reveals something critical about how AI search works. AI search engines curate answers from specific sources they trust. If OpenAI can decide to exclude a platform as large as IndiaMART, then your website being ignored by AI search is not a technical glitch — it is a trust problem.
+
+The IndiaMART lawsuit is the canary in the coal mine for Indian businesses. You cannot assume that having a website means you will be found.
+
+### The 5x Conversion Truth
+
+Here is the good news. When your business IS cited by an AI search engine, the conversion rate is dramatically higher than traditional search.
+
+Data from multiple studies in early 2026 shows that traffic referred by AI Overviews and ChatGPT search converts at 14.2% on average, compared to 2.8% for traditional organic search. That is a 5x improvement.
+
+Why? Because AI search delivers contextual, pre-qualified answers. When a user asks "which AI agency in India builds custom chatbots" and ChatGPT recommends your business as part of a well-researched answer, the user arrives at your website already convinced you are the right choice. They are not comparison shopping. They are ready to buy.
+
+![Google Search and AI Overview interface concept for digital marketing](https://images.pexels.com/photos/5494323/pexels-photo-5494323.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
+
+---
+
+## Section 2: How AI Search Engines Actually Work
+
+### Google AI Overviews
+
+Google's AI Overviews use a custom version of the Gemini model to understand the user's query, evaluate available content across the web, and synthesise a direct answer. The model does not search the web in real-time the same way a human would. Instead, it:
+
+1. Interprets the intent behind the query
+2. Retrieves content from indexed pages it considers authoritative
+3. Evaluates each source for relevance, recency, and trust signals
+4. Synthesises a multi-source answer with citations
+5. Ranks the citations by confidence
+
+The key insight: Google AI Overviews are looking for **answer-shaped content**, not keyword-optimised content. A 300-word blog post that directly answers a specific question will outperform a 3,000-word pillar page that vaguely covers a broad topic.
+
+### ChatGPT Search
+
+OpenAI's ChatGPT Search works differently. It uses a hybrid approach — a retrieval-augmented generation (RAG) system that pulls real-time web data through Bing's index and then generates conversational answers using GPT-4 or o3.
+
+ChatGPT Search favours:
+- Frequently updated content
+- Content cited by other sources (cross-referencing)
+- Content written in a conversational, question-answering format
+- Authoritative domains with clear authorship
+
+### Perplexity
+
+Perplexity has carved out a niche among developers, researchers, and B2B buyers. Its citation model is the most transparent — it explicitly shows which sentences came from which source. Perplexity users are 3x more likely to click through to cited sources than Google Search users.
+
+![Business strategy and digital marketing planning for AI search optimisation](https://images.pexels.com/photos/15543041/pexels-photo-15543041.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
+
+---
+
+## Section 3: The New Playbook — How Indian Businesses Can Rank in AI Search
+
+### Strategy 1: Write Answers, Not Articles
+
+Every piece of content you create should answer a specific question that your ideal customer is asking. Use this format:
+
+- **Question as H2**: "What is the best AI chatbot for real estate agents in Bangalore?"
+- **Direct answer in first 50 words**: A concise, self-contained answer
+- **Supporting evidence**: Data, case studies, screenshots
+- **Why it matters**: Context that shows your expertise
+
+Do not bury the answer. AI models truncate content after extracting the relevant answer. If your answer is not in the first 200 words, it may as well not exist.
+
+### Strategy 2: Structure Everything for Machine Reading
+
+AI search engines parse your content programmatically. Help them by using:
+
+- Proper heading hierarchy (H1 → H2 → H3, never skip levels)
+- Bullet points and numbered lists for scannable answers
+- Tables for comparative data (AI models love tables)
+- FAQ schema for question-answer pairs
+
+### Strategy 3: Build External Authority Signals
+
+AI search engines evaluate your website's authority based on who cites you. This is different from traditional backlinks. The key signals are:
+
+- Being mentioned by news publications
+- Being cited in industry reports
+- Having your content referenced by other authoritative websites
+- Maintaining consistent NAP (Name, Address, Phone) across the web
+- Having verifiable business credentials (Google Business Profile, LinkedIn company page, GST registration)
+
+### Strategy 4: Own Your Brand in AI Search
+
+Search for your own brand name in ChatGPT, Perplexity, and Google AI Overviews. If the AI does not mention your business correctly — or worse, mentions a competitor instead — you have a visibility gap.
+
+Fix it by:
+- Updating your Wikipedia or similar knowledge graph entries
+- Publishing press releases about your business
+- Building a strong Google Business Profile with regular posts and reviews
+- Creating content that explicitly answers "Who is [Your Brand]?" and "What does [Your Brand] do?"
+
+### Strategy 5: Instagram is Your New SEO Channel
+
+Since Instagram is the #1 cited domain in AI Overviews, your Instagram content strategy directly impacts your AI search visibility.
+
+- Post case studies and client results as Instagram carousels
+- Create Reels that answer common customer questions
+- Use Instagram as a publishing platform for thought leadership
+- Link Instagram content to your website for cross-referencing
+
+---
+
+## Technical Checklist: AI Search Optimisation for Indian Businesses
+
+| Tactic | Description | Implementation Time | Impact Level |
+|--------|-------------|-------------------|--------------|
+| FAQ Schema | Add JSON-LD FAQ schema to service pages | 1-2 hours | High |
+| Question-Based H2s | Restructure content around customer questions | 2-4 hours per page | High |
+| First 50 Words Rule | Place the direct answer in the opening paragraph | 30 mins per page | High |
+| Instagram Content | Create answer-based Reels and carousels | 3-5 hours per week | Medium-High |
+| Brand Search Audit | Search your brand in ChatGPT, Perplexity, Gemini | 1 hour | Medium |
+| Google Business Profile | Optimise GBP with posts, reviews, Q&A | 2-3 hours setup; 1 hr/week | Medium |
+| External Citations | Get mentioned in industry publications | Ongoing | High |
+| Structured Data | Add Article, Organization, LocalBusiness schema | 2-4 hours | Medium |
+| Conversational Tone | Rewrite content in natural question-answer format | 1-2 hours per page | High |
+| Citation Tracking | Monitor which sources AI search cites for your keywords | 1-2 hours per month | Medium |
+
+---
+
+## The Promotion Funnel
+
+Creating AI-optimised content is only half the battle. You also need a promotion funnel to build the authority signals that AI search requires.
+
+### Step 1: LinkedIn — The Authority Builder
+Post a hook-driven LinkedIn article summarising your key insight. Tag relevant people and companies. LinkedIn articles often get indexed faster than blog posts and serve as external citation sources.
+
+**Example hook**: "Instagram is now the #1 most cited domain in Google AI Overviews. Not Wikipedia. Not Forbes. Instagram. Here is what this means for your business in 2026."
+
+### Step 2: Instagram Reels — The AI Feed
+Create a 30-60 second Reel explaining one insight from your article. Use captions and text overlays. Instagram content now directly feeds into Google AI Overviews citations.
+
+### Step 3: WhatsApp Broadcast — The Direct Channel
+Share the article with your business WhatsApp contacts with a personalised note. In India, WhatsApp remains the highest-engagement channel for B2B communication.
+
+### Step 4: Cross-Promote with Partners
+Tag complementary businesses in your social posts and ask them to share. Every share builds external citation signals.
+
+---
+
+## The Bottom Line
+
+SEO is not dead. But the version of SEO that most Indian agencies still sell — backlink building, keyword stuffing, meta tag optimisation — is dead. What replaces it is AI search optimisation: creating authoritative, structured, question-answering content that AI engines trust enough to cite.
+
+The businesses that adapt first will capture the traffic that traditional SEO can no longer reach. The ones that wait will keep investing in a strategy that stopped working 12 months ago.
+
+Vyzma AI helps Indian businesses optimise for AI search — Google AI Overviews, ChatGPT Search, and Perplexity. [Get in touch](https://vyzma.in/#contact) for a free AI search audit.`,
+  faq: [
+    { question: "Is SEO dead in India in 2026?", answer: "Traditional SEO — backlink building, keyword density, and meta tag optimisation — is largely dead for discovery. 71% of Google searches in India now end without a click. However, AI search optimisation (optimising for Google AI Overviews, ChatGPT Search, and Perplexity) is more important than ever. You need to write answer-shaped content, build authority signals, and structure your pages for machine reading." },
+    { question: "What is Google AI Overviews and how does it affect Indian businesses?", answer: "Google AI Overviews is an AI-powered feature that generates direct answers at the top of search results using content from multiple sources. For Indian businesses, this means your website may get cited as a source without the user clicking through. The upside is that AI Overviews-referred traffic converts at 14.2% — 5x higher than traditional organic search. You need to optimise your content to be cited by AI Overviews." },
+    { question: "How do I rank in ChatGPT Search for my business?", answer: "To rank in ChatGPT Search, you need: (1) Frequently updated content that directly answers customer questions, (2) Conversational question-answer format with clear H2 headings, (3) External authority signals — citations from news publications and industry sites, (4) Strong Google Business Profile and social media presence, (5) FAQ schema and structured data markup on your pages." },
+    { question: "Is Instagram really the #1 cited domain in AI Overviews?", answer: "Yes. In Q1 2026, analysis of Google AI Overview citations showed Instagram.com as the most cited domain across all categories, ahead of Wikipedia and news sites. This means your Instagram content strategy directly impacts your SEO. Posting case studies, customer testimonials, and answer-focused Reels can improve your AI search visibility significantly." },
+    { question: "What is the IndiaMART vs OpenAI lawsuit and why does it matter?", answer: "In February 2026, IndiaMART sued OpenAI alleging that ChatGPT Search systematically excluded IndiaMART listings from search results while scraping their proprietary data. The lawsuit revealed that AI search engines curate answers from specific trusted sources and can exclude entire platforms. For Indian businesses, this means you cannot assume your website will be found — you need to actively build trust signals with AI search engines." },
+    { question: "What is the conversion rate from AI search traffic?", answer: "Traffic referred by AI Overviews and ChatGPT Search converts at approximately 14.2% on average, compared to 2.8% for traditional organic search — a 5x improvement. This is because AI search delivers pre-qualified, contextual answers. When a user is recommended your business by an AI, they arrive already convinced and ready to engage." },
+    { question: "How is AI search different from traditional SEO?", answer: "Traditional SEO focused on keywords, backlinks, and meta tags to rank in the '10 blue links.' AI search optimisation focuses on writing answer-shaped content, structuring pages for machine reading (clear headings, bullet points, tables), building external authority signals (being cited by other sources), and maintaining active social media profiles — especially Instagram, which is the most cited domain in AI Overviews." },
+    { question: "Do I still need backlinks for AI search?", answer: "Traditional backlinks matter less than they used to. AI search engines care more about who cites you and whether your content is referenced by trusted sources. Being mentioned in news publications, industry reports, and by other authoritative websites is more valuable than a directory backlink. Focus on building real citations rather than artificial link profiles." },
+    { question: "How long does it take to see results from AI search optimisation?", answer: "Some changes show results within 2-4 weeks. Adding FAQ schema and restructuring content around question-based H2s can improve your AI Overviews citation rate within a month. Building external authority signals takes 3-6 months. Instagram content strategy shows impact within 4-8 weeks. Vyzma AI offers a free AI search audit to identify the highest-impact changes for your business." },
+    { question: "How can Vyzma AI help my business rank in AI search?", answer: "Vyzma AI provides end-to-end AI search optimisation: content restructuring for AI Overviews readability, technical SEO with schema markup, Instagram content strategy aligned with AI citation patterns, authority building through PR and cross-referencing, and ongoing monitoring of your brand's presence in ChatGPT Search, Perplexity, and Google AI Overviews. Contact Vyzma AI for a free AI search audit." },
+  ]
+}
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

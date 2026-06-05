@@ -1,9 +1,6 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
   {
@@ -93,61 +90,65 @@ const Icon = ({ num, accent }: { num: string; accent: string }) => {
 export const WhyVyzma = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     if (!sectionRef.current) return;
+    const ctx = gsap.context(() => {
+      const cardEls = gsap.utils.toArray<HTMLElement>(".peel-card");
+      const dotEls  = gsap.utils.toArray<HTMLElement>(".prog-dot");
+      if (!cardEls.length) return;
 
-    const cardEls = gsap.utils.toArray<HTMLElement>(".peel-card");
-    const dotEls  = gsap.utils.toArray<HTMLElement>(".prog-dot");
-    if (!cardEls.length) return;
+      cardEls.forEach((card, i) => {
+        if (i === 0) return;
+        gsap.set(card, { y: i * 22, scale: 1 - i * 0.025 });
+      });
 
-    // Same peel effect on ALL screen sizes
-    cardEls.forEach((card, i) => {
-      if (i === 0) return;
-      gsap.set(card, { y: i * 22, scale: 1 - i * 0.025 });
-    });
+      dotEls.forEach((dot, i) => {
+        if (i !== 0) gsap.set(dot, { scale: 0.55, opacity: 0.25 });
+      });
 
-    dotEls.forEach((dot, i) => {
-      if (i !== 0) gsap.set(dot, { scale: 0.55, opacity: 0.25 });
-    });
+      gsap.set(".peel-card", { transformPerspective: 1400 });
 
-    gsap.set(".peel-card", { transformPerspective: 1400 });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          start: "top top",
+          end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
+          scrub: 0.7,
+          invalidateOnRefresh: true,
+        },
+      });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        start: "top top",
-        end: () => `+=${(cardEls.length - 1) * window.innerHeight}`,
-        scrub: 0.7,
-        invalidateOnRefresh: true,
-      },
-    });
+      cardEls.forEach((card, i) => {
+        if (i === cardEls.length - 1) return;
+        const nextCards = cardEls.slice(i + 1);
+
+        tl.to(card, {
+          y: "-118%", rotationX: -14, opacity: 0,
+          transformOrigin: "50% 0%", duration: 1, ease: "none",
+        });
+        tl.to(nextCards[0], { y: 0, scale: 1, duration: 1, ease: "none" }, "<");
+        nextCards.slice(1).forEach((futureCard, j) => {
+          if (!futureCard) return;
+          tl.to(futureCard, {
+            y: (j + 1) * 22, scale: 1 - (j + 1) * 0.025,
+            duration: 1, ease: "none",
+          }, "<");
+        });
+        tl.to(dotEls[i],     { scale: 0.55, opacity: 0.25, duration: 0.4 }, "<");
+        tl.to(dotEls[i + 1], { scale: 1,    opacity: 1,    duration: 0.4 }, "<");
+      });
+    }, sectionRef.current);
 
     ScrollTrigger.refresh();
     const onResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
 
-    cardEls.forEach((card, i) => {
-      if (i === cardEls.length - 1) return;
-      const nextCards = cardEls.slice(i + 1);
-
-      tl.to(card, {
-        y: "-118%", rotationX: -14, opacity: 0,
-        transformOrigin: "50% 0%", duration: 1, ease: "none",
-      });
-      tl.to(nextCards[0], { y: 0, scale: 1, duration: 1, ease: "none" }, "<");
-      nextCards.slice(1).forEach((futureCard, j) => {
-        if (!futureCard) return;
-        tl.to(futureCard, {
-          y: (j + 1) * 22, scale: 1 - (j + 1) * 0.025,
-          duration: 1, ease: "none",
-        }, "<");
-      });
-      tl.to(dotEls[i],     { scale: 0.55, opacity: 0.25, duration: 0.4 }, "<");
-      tl.to(dotEls[i + 1], { scale: 1,    opacity: 1,    duration: 0.4 }, "<");
-    });
-  }, { scope: sectionRef });
+    return () => {
+      ctx.revert();
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
 
   return (
     <section

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { SEO } from "@/components/seo";
 
 const categoryColors: Record<string, string> = {
   SEO: 'text-blue-400 bg-blue-400/10',
@@ -19,6 +20,15 @@ function formatDate(dateStr: string) {
   });
 }
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://vyzma.in" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://vyzma.in/blog" },
+  ],
+};
+
 export const BlogListingPage = () => {
   useEffect(() => {
     document.title = "Vyzma AI Blog — SEO, GEO, AEO & AI Automation Insights";
@@ -29,6 +39,13 @@ export const BlogListingPage = () => {
   }, []);
 
   return (
+    <>
+      <SEO
+        title="Blog — Vyzma AI | SEO, GEO, AEO & AI Automation Insights for Indian Businesses"
+        description="Practical SEO, GEO, AEO, and AI automation insights for Indian businesses. Learn how to rank in Google AI Overviews, ChatGPT Search, and grow with AI-powered marketing."
+        canonicalUrl="https://vyzma.in/blog"
+        jsonLd={[breadcrumbSchema]}
+      />
     <div className="pt-24 min-h-screen bg-[#0C0C0C] text-white">
       {/* Header */}
       <section className="border-b border-white/[0.06] px-6 py-20 md:px-10">
@@ -99,5 +116,6 @@ export const BlogListingPage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
