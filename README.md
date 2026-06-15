@@ -49,6 +49,7 @@ vyzma-ai/
   |- public/
   |- scripts/
     |-- generate-blog-images.cjs
+    |-- indexnow-submit.cjs
   |- src/
     |-- components/
       |--- ui/
