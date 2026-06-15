@@ -157,9 +157,11 @@ export const BlogPostPage = () => {
         url: `https://vyzma.in/blog/${post.slug}`,
         datePublished: post.date,
         author: {
-          '@type': 'Organization',
-          name: post.author?.name ?? 'Vyzma AI',
-          url: 'https://vyzma.in/',
+          '@type': 'Person',
+          name: post.author?.name ?? 'Teja Naik',
+          jobTitle: post.author?.title ?? 'Founder',
+          worksFor: { '@type': 'Organization', name: 'Vyzma AI', url: 'https://vyzma.in/' },
+          url: 'https://vyzma.in/about',
         },
         publisher: {
           '@type': 'Organization',
@@ -262,11 +264,17 @@ export const BlogPostPage = () => {
             {renderContent(post.content)}
           </div>
 
-          <div className="mt-12 border-t border-white/[0.06] pt-8 text-center">
-            <p className="mb-2 text-[10px] font-general uppercase tracking-widest text-white/40">{post.author ? 'Written by' : 'Published by'}</p>
-            <p className="font-semibold text-white font-robert-medium">{post.author ? post.author.name : 'Vyzma AI'}</p>
-            {post.author?.title && <p className="text-xs text-white/30 font-robert-regular">{post.author.title}</p>}
-            {!post.author && <p className="text-xs text-white/30 font-robert-regular">India's Premier AI Agency · Bangalore & Vizag</p>}
+          <div className="mt-12 border-t border-white/[0.06] pt-8">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#007BFF]/10 text-base font-bold text-[#007BFF] font-robert-medium">
+                TN
+              </div>
+              <div>
+                <p className="text-[10px] font-general uppercase tracking-widest text-white/40 mb-1">Written by</p>
+                <p className="font-semibold text-white font-robert-medium">{post.author?.name ?? 'Teja Naik'}</p>
+                <p className="text-xs text-white/30 font-robert-regular">{post.author?.title ?? 'Founder, Vyzma AI · Bangalore & Vizag'}</p>
+              </div>
+            </div>
           </div>
         </div>
       </article>
