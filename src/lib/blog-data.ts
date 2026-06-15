@@ -20,10 +20,10 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
 {
   slug: "what-is-vyzma-ai",
-  title: "Vyzma AI Review 2026: India's Best AI Agency or Just Hype?",
+  title: "Vyzma AI — AI Agency in Vizag & Bangalore for Chatbots, Automation & SEO",
   excerpt: "Vyzma AI is India's premier AI agency headquartered in Visakhapatnam and Bangalore. We build AI chatbots, workflow automation, SEO, voice AI, and performance marketing systems for Indian businesses. Here is everything you need to know about who we are, what we do, and why businesses across India choose Vyzma AI.",
   metaTitle: "Vyzma AI Review 2026: India's Best AI Agency? | Vyzma AI",
-  metaDescription: "Honest Vyzma AI review 2026. Services, pricing, real results, and how Vyzma compares to other Indian AI agencies serving Vizag, Bangalore, and beyond.",
+  metaDescription: "Vyzma AI is Visakhapatnam and Bangalore's leading AI agency. We build WhatsApp chatbots, AI automation systems, and SEO strategies for Indian businesses.",
   date: "2026-05-16",
   category: "About Vyzma AI",
   readTime: "11 min read",
@@ -156,10 +156,10 @@ Vyzma AI works with clients across India and responds to all enquiries within 24
 },
 {
   slug: "google-ai-hub-vizag-businesses-2026",
-  title: "Google AI Hub Vizag 2026: Latest Announcement, Location & What It Means for Local Businesses",
+  title: "Google Opens AI Hub in Vizag: What It Means for Local Businesses (2026)",
   excerpt: "Google AI Hub Vizag businesses 2026 is transforming how local companies operate. Learn how Vizag's growing tech ecosystem can leverage Gemini, AI Overviews, and Google Cloud AI to drive growth and efficiency across Rushikonda, Madhurawada, and beyond.",
   metaTitle: "Google AI Hub Vizag 2026: Latest Announcement & Location | Vyzma AI",
-  metaDescription: "Google AI Hub Vizag 2026 announcement: Location in Rushikonda IT corridor, what it offers Vizag businesses, and how your company can leverage Gemini AI, Cloud credits, and Google's infrastructure.",
+  metaDescription: "Google launched an AI Hub in Visakhapatnam. Here's exactly what happened, which industries benefit most, and how Vizag businesses can act on this now.",
   date: "2026-05-12",
   category: "AI Technology",
   readTime: "13 min read",
@@ -442,10 +442,10 @@ Last updated: May 2026
 
 {
   slug: "ai-automation-vizag-businesses-2026",
-  title: "Vizag Businesses Are Saving 30 Hours/Week With AI Automation (Here's How)",
+  title: "Save 20 Hours/Week: AI Automation for Vizag Businesses (2026 Guide)",
   excerpt: "Discover how AI automation Vizag businesses in 2026 are transforming operations across Rushikonda, Gajuwaka, and MVP Colony. From logistics dispatch to retail inventory management, learn which workflows deliver the fastest ROI.",
   metaTitle: "AI Automation Vizag 2026: Save 30 Hours/Week | Vyzma AI",
-  metaDescription: "Real Vizag businesses in logistics, retail, and manufacturing are using AI automation to save 30+ hours weekly. Step-by-step guide to automate your workflows in 2026.",
+  metaDescription: "Vizag business owners are cutting 20+ hours of manual work per week using AI automation. Here's what to automate first, what it costs, and how to start.",
   date: "2026-05-12",
   category: "AI Automation",
   readTime: "13 min read",
@@ -776,10 +776,10 @@ A7: The chatbot is trained to recognise its limits and escalate to a human team 
 
 {
   slug: "ai-for-real-estate-vizag-2026",
-  title: "Vizag Real Estate AI 2026: Sell Properties 35% Faster Without Extra Ad Spend",
+  title: "AI Chatbot for Vizag Real Estate: Never Miss a Property Inquiry Again",
   excerpt: "Discover how AI for real estate Vizag 2026 is reshaping property discovery, lead management, and sales automation. From Rushikonda beachfront villas to Kommadi's upcoming township projects, learn how developers and agents are using AI chatbots, predictive pricing, and virtual tours to close deals faster.",
   metaTitle: "AI for Real Estate Vizag 2026: Sell 35% Faster | Vyzma AI",
-  metaDescription: "Vizag builders and agents use AI to score leads, schedule site visits, run 24/7 property chatbots, and price properties smarter. Real results from Rushikonda to Kommadi.",
+  metaDescription: "Vizag real estate agents are losing leads to builders who respond in 60 seconds with AI. See how to set it up, what it costs, and which tools work best in 2026.",
   date: "2026-05-12",
   category: "Industry",
   readTime: "14 min read",
@@ -1627,10 +1627,10 @@ A10: Not always. Many agencies including Vyzma AI offer month-to-month engagemen
 
 {
   slug: "seo-agency-visakhapatnam-2026",
-  title: "Rank #1 on Google Vizag 2026: AI-Powered SEO That Actually Works",
+  title: "Best SEO Agency in Visakhapatnam 2026: Rank #1 on Google (Honest Guide)",
   excerpt: "Discover why an SEO agency Visakhapatnam 2026 needs to offer more than basic keyword stuffing. From MVP Colony clinics to Dwaraka Nagar restaurants, Vizag businesses are adopting AI-driven SEO, AEO, and GEO strategies to dominate local search rankings.",
   metaTitle: "SEO Vizag 2026: Rank #1 on Google With AI SEO | Vyzma AI",
-  metaDescription: "Stop guessing with SEO. Vizag businesses use AI-powered local SEO, technical SEO, and GEO to rank #1 on Google. Includes AI Overviews optimization for 2026.",
+  metaDescription: "Looking for an SEO agency in Vizag that actually delivers? Compare top agencies, pricing, what to ask before signing, and red flags to avoid in 2026.",
   date: "2026-05-12",
   category: "SEO",
   readTime: "13 min read",
@@ -2219,10 +2219,10 @@ A7: Vyzma AI combines cutting-edge technology (Next.js, AI integration, performa
 
 {
   slug: "whatsapp-marketing-vizag-2026",
-  title: "WhatsApp Marketing Vizag 2026: 98% Open Rate Strategy That Gets Real Results",
-  excerpt: "Discover how WhatsApp marketing Vizag 2026 is transforming local businesses. From Dwaraka Nagar restaurants to MVP Colony real estate firms â€” learn how AI chatbots and broadcast campaigns drive real revenue.",
+  title: "WhatsApp AI Chatbot for Vizag Businesses: Auto-Reply Leads 24/7 (2026)",
+  excerpt: "Discover how WhatsApp marketing Vizag 2026 is transforming local businesses. From Dwaraka Nagar restaurants to MVP Colony real estate firms — learn how AI chatbots and broadcast campaigns drive real revenue.",
   metaTitle: "WhatsApp Marketing Vizag 2026: 98% Open Rate Strategy | Vyzma AI",
-  metaDescription: "Vizag businesses use AI-powered WhatsApp marketing with 98% open rates. Broadcast campaigns, chatbot automation, and WhatsApp Business API strategies that actually work.",
+  metaDescription: "Vizag businesses using WhatsApp AI chatbots are booking leads at 2AM while they sleep. See real examples, setup steps, and costs for 2026.",
   date: "2026-05-12",
   category: "WhatsApp Marketing",
   readTime: "13 min read",
