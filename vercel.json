@@ -3,8 +3,32 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/googleffa0b9bc1bed52d3.html",
+      "destination": "/googleffa0b9bc1bed52d3.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/0a7b3c9d8e2f1a4b5c6d7e8f9a0b1c2d.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
     }
   ]
 }
