@@ -82,6 +82,7 @@ vyzma-ai/
       |--- is-mobile.ts
       |--- utils.ts
     |-- pages/
+      |--- AboutPage.tsx
       |--- BlogListingPage.tsx
       |--- BlogPostPage.tsx
       |--- CityHubPage.tsx
