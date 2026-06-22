@@ -43,7 +43,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Vyzma AI" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -66,16 +66,24 @@
             "url": "https://vyzma.in/",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://vyzma.in/favicon.svg"
+              "url": "https://vyzma.in/og-homepage.png",
+              "width": 1200,
+              "height": 630
             },
+            "foundingDate": "2024",
             "description": "Next-Generation AI Platform — intelligent agents, automation, and custom ML solutions.",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+918886720908",
               "contactType": "sales",
-              "availableLanguage": ["English"]
+              "availableLanguage": ["English", "Telugu", "Hindi"]
             },
-            "sameAs": ["https://github.com/vyzma-ai"]
+            "sameAs": [
+              "https://github.com/vyzma-ai",
+              "https://linkedin.com/company/vyzmaai",
+              "https://instagram.com/vyzmaai",
+              "https://youtube.com/@vyzmaai"
+            ]
           },
           {
             "@type": "WebSite",
@@ -86,53 +94,103 @@
             "publisher": {
               "@id": "https://vyzma.in/#organization"
             },
-            "inLanguage": "en-US"
+            "inLanguage": "en-IN"
           },
           {
-            "@type": "LocalBusiness",
-            "@id": "https://vyzma.in/#localbusiness",
-            "name": "Vyzma AI",
-            "description": "India's premier AI agency with offices in Visakhapatnam and Bangalore. AI chatbots, workflow automation, SEO, voice AI, and custom AI solutions.",
+            "@type": ["LocalBusiness", "ProfessionalService"],
+            "@id": "https://vyzma.in/#localbusiness-vizag",
+            "name": "Vyzma AI — Visakhapatnam",
+            "description": "India's premier AI agency. AI chatbots, workflow automation, SEO, voice AI, and custom AI solutions for Indian businesses.",
             "url": "https://vyzma.in/",
             "telephone": "+918886720908",
             "email": "vyzmaai.in@gmail.com",
             "image": "https://vyzma.in/og-homepage.png",
-            "sameAs": ["https://github.com/vyzma-ai"],
-            "address": [
+            "priceRange": "₹₹",
+            "openingHoursSpecification": [
               {
-                "@type": "PostalAddress",
-                "name": "Visakhapatnam Office",
-                "streetAddress": "Madhurawada",
-                "addressLocality": "Visakhapatnam",
-                "addressRegion": "Andhra Pradesh",
-                "postalCode": "530041",
-                "addressCountry": "IN"
-              },
-              {
-                "@type": "PostalAddress",
-                "name": "Bangalore Office",
-                "streetAddress": "Koramangala",
-                "addressLocality": "Bangalore",
-                "addressRegion": "Karnataka",
-                "postalCode": "560034",
-                "addressCountry": "IN"
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
               }
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madhurawada",
+              "addressLocality": "Visakhapatnam",
+              "addressRegion": "Andhra Pradesh",
+              "postalCode": "530041",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "17.7871",
+              "longitude": "83.3741"
+            },
+            "sameAs": [
+              "https://github.com/vyzma-ai",
+              "https://linkedin.com/company/vyzmaai",
+              "https://instagram.com/vyzmaai",
+              "https://youtube.com/@vyzmaai"
             ],
             "areaServed": [
+              { "@type": "City", "name": "Visakhapatnam", "addressRegion": "Andhra Pradesh", "addressCountry": "IN" },
+              { "@type": "City", "name": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+              { "@type": "City", "name": "Bangalore", "addressRegion": "Karnataka", "addressCountry": "IN" },
+              { "@type": "City", "name": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+              { "@type": "City", "name": "Delhi", "addressRegion": "Delhi", "addressCountry": "IN" },
+              { "@type": "City", "name": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
+              { "@type": "City", "name": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+              { "@type": "City", "name": "Kolkata", "addressRegion": "West Bengal", "addressCountry": "IN" },
+              { "@type": "City", "name": "Ahmedabad", "addressRegion": "Gujarat", "addressCountry": "IN" }
+            ],
+            "branchOf": { "@id": "https://vyzma.in/#organization" }
+          },
+          {
+            "@type": ["LocalBusiness", "ProfessionalService"],
+            "@id": "https://vyzma.in/#localbusiness-bangalore",
+            "name": "Vyzma AI — Bangalore",
+            "description": "India's premier AI agency. AI chatbots, workflow automation, SEO, voice AI, and custom AI solutions for Indian businesses.",
+            "url": "https://vyzma.in/",
+            "telephone": "+918886720908",
+            "email": "vyzmaai.in@gmail.com",
+            "image": "https://vyzma.in/og-homepage.png",
+            "priceRange": "₹₹",
+            "openingHoursSpecification": [
               {
-                "@type": "City",
-                "name": "Visakhapatnam",
-                "addressRegion": "Andhra Pradesh",
-                "addressCountry": "IN"
-              },
-              {
-                "@type": "City",
-                "name": "Bangalore",
-                "addressRegion": "Karnataka",
-                "addressCountry": "IN"
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
               }
             ],
-            "priceRange": "₹₹"
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Koramangala",
+              "addressLocality": "Bangalore",
+              "addressRegion": "Karnataka",
+              "postalCode": "560034",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "12.9352",
+              "longitude": "77.6245"
+            },
+            "sameAs": [
+              "https://github.com/vyzma-ai",
+              "https://linkedin.com/company/vyzmaai",
+              "https://instagram.com/vyzmaai",
+              "https://youtube.com/@vyzmaai"
+            ],
+            "areaServed": [
+              { "@type": "City", "name": "Bangalore", "addressRegion": "Karnataka", "addressCountry": "IN" },
+              { "@type": "City", "name": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+              { "@type": "City", "name": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
+              { "@type": "City", "name": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+              { "@type": "City", "name": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" }
+            ],
+            "branchOf": { "@id": "https://vyzma.in/#organization" }
           }
         ]
       }
