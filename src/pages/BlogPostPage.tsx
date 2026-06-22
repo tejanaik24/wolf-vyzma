@@ -138,6 +138,9 @@ export const BlogPostPage = () => {
       setMeta('meta[property="og:title"]', 'content', post.metaTitle);
       setMeta('meta[property="og:description"]', 'content', post.metaDescription);
       setMeta('meta[property="og:url"]', 'content', `https://vyzma.in/blog/${post.slug}`);
+      setMeta('meta[property="og:type"]', 'content', 'article');
+      setMeta('meta[property="og:image"]', 'content', post.image ?? `https://vyzma.in/og-${post.slug}.png`);
+      setMeta('meta[name="twitter:image"]', 'content', post.image ?? `https://vyzma.in/og-${post.slug}.png`);
       setMeta('meta[name="twitter:title"]', 'content', post.metaTitle);
       setMeta('meta[name="twitter:description"]', 'content', post.metaDescription);
       setMeta('link[rel="canonical"]', 'href', `https://vyzma.in/blog/${post.slug}`);
@@ -156,6 +159,13 @@ export const BlogPostPage = () => {
         description: post.excerpt,
         url: `https://vyzma.in/blog/${post.slug}`,
         datePublished: post.date,
+        dateModified: post.date,
+        image: {
+          '@type': 'ImageObject',
+          url: post.image ?? `https://vyzma.in/og-${post.slug}.png`,
+          width: 1200,
+          height: 630,
+        },
         author: {
           '@type': 'Person',
           name: post.author?.name ?? 'Teja Naik',
