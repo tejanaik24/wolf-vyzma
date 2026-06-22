@@ -4,6 +4,12 @@ const path = require("path");
 const SITE_URL = "https://vyzma.in";
 const OG_FALLBACK = `${SITE_URL}/og-homepage.png`;
 
+const cityOg = (slug) => {
+  const svg = path.join(__dirname, "public", `og-${slug}.svg`);
+  return fs.existsSync(svg) ? `${SITE_URL}/og-${slug}.svg` : OG_FALLBACK;
+};
+
+// Keep in sync with src/lib/city-data.ts
 const CITIES = [
   { slug: "mumbai", name: "Mumbai", state: "Maharashtra", tagline: "India's Financial & Commercial Capital", population: "12.6M+" },
   { slug: "delhi", name: "Delhi", state: "Delhi NCR", tagline: "India's Capital & Political Hub", population: "19M+" },
@@ -13,6 +19,18 @@ const CITIES = [
   { slug: "kolkata", name: "Kolkata", state: "West Bengal", tagline: "The City of Joy — Eastern India's Business Hub", population: "4.5M+" },
   { slug: "pune", name: "Pune", state: "Maharashtra", tagline: "India's Education & Automotive Hub", population: "3.1M+" },
   { slug: "ahmedabad", name: "Ahmedabad", state: "Gujarat", tagline: "India's Commercial & Industrial Powerhouse", population: "5.6M+" },
+  { slug: "vizag", name: "Visakhapatnam", state: "Andhra Pradesh", tagline: "The City of Destiny — Emerging Tech Hub", population: "2.0M+" },
+  { slug: "jaipur", name: "Jaipur", state: "Rajasthan", tagline: "The Pink City — Rajasthan's Business Capital", population: "3.0M+" },
+  { slug: "lucknow", name: "Lucknow", state: "Uttar Pradesh", tagline: "The City of Nawabs — Uttar Pradesh's Growth Engine", population: "2.8M+" },
+  { slug: "surat", name: "Surat", state: "Gujarat", tagline: "India's Diamond & Textile Capital", population: "4.5M+" },
+  { slug: "kochi", name: "Kochi", state: "Kerala", tagline: "The Queen of the Arabian Sea — Kerala's Tech Hub", population: "2.1M+" },
+  { slug: "bhopal", name: "Bhopal", state: "Madhya Pradesh", tagline: "The City of Lakes — Central India's Tech Hub", population: "1.8M+" },
+  { slug: "indore", name: "Indore", state: "Madhya Pradesh", tagline: "India's Cleanest City & Commercial Hub", population: "2.0M+" },
+  { slug: "chandigarh", name: "Chandigarh", state: "Chandigarh", tagline: "India's Best Planned City — IT & Innovation Hub", population: "1.0M+" },
+  { slug: "nagpur", name: "Nagpur", state: "Maharashtra", tagline: "The Orange City — India's Geographic Center", population: "2.4M+" },
+  { slug: "coimbatore", name: "Coimbatore", state: "Tamil Nadu", tagline: "The Manchester of South India", population: "1.0M+" },
+  { slug: "bhubaneswar", name: "Bhubaneswar", state: "Odisha", tagline: "The Temple City — Eastern India's Tech Hub", population: "1.0M+" },
+  { slug: "guwahati", name: "Guwahati", state: "Assam", tagline: "The Gateway to Northeast India", population: "1.0M+" },
 ];
 
 const CITY_SERVICES = [
@@ -26,12 +44,23 @@ const CITY_SERVICES = [
   { slug: "whatsapp-marketing", name: "WhatsApp Marketing", shortName: "WhatsApp Marketing", keywords: "WhatsApp marketing" },
 ];
 
+const SERVICE_PAGES = [
+  { slug: "ai-chatbots", name: "AI Chatbots", description: "Custom AI chatbot development for Indian businesses. Website chatbots, WhatsApp bots, and AI-powered customer support automation." },
+  { slug: "workflow-automation", name: "Workflow Automation", description: "AI-powered workflow automation for Indian businesses. Automate repetitive tasks, connect tools, and scale operations." },
+  { slug: "voice-ai", name: "Voice AI", description: "Voice AI solutions for Indian businesses. Multi-language voice assistants, IVR replacement, and AI phone agents." },
+  { slug: "seo", name: "SEO & AI Search", description: "SEO and AI search optimization for Indian businesses. Rank in Google, AI Overviews, ChatGPT, and Perplexity." },
+  { slug: "website-design", name: "Website Design", description: "Next.js website design and development for Indian businesses. High-performance, AI-powered websites." },
+  { slug: "google-ads", name: "Google Ads", description: "Google Ads management for Indian businesses. AI-optimized PPC campaigns, Local Services Ads, and smart bidding." },
+  { slug: "whatsapp-marketing", name: "WhatsApp Marketing", description: "WhatsApp marketing for Indian businesses. AI-powered broadcast campaigns, chatbots, and Business API integration." },
+  { slug: "performance-marketing", name: "Performance Marketing", description: "Performance marketing for Indian businesses. Meta Ads, Google Ads, and AI-optimized digital advertising." },
+];
+
 const BLOG_POSTS = [
   {
     slug: "what-is-vyzma-ai",
-    title: "What is Vyzma AI? India's Premier AI Agency — Services, Locations & Results",
-    metaTitle: "What is Vyzma AI? India's Premier AI Agency | Vyzma AI",
-    metaDescription: "Vyzma AI is India's premier AI agency based in Visakhapatnam & Bangalore. We build AI chatbots, automation, SEO, and performance marketing for Indian businesses. Learn about our services and results.",
+    title: "Vyzma AI Review 2026: India's Best AI Agency or Just Hype?",
+    metaTitle: "Vyzma AI Review 2026: India's Best AI Agency? | Vyzma AI",
+    metaDescription: "Honest Vyzma AI review 2026. Services, pricing, real results, and how Vyzma compares to other Indian AI agencies serving Vizag, Bangalore, and beyond.",
     date: "2026-05-16",
     category: "About Vyzma AI",
     faq: [
@@ -44,9 +73,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "google-ai-hub-vizag-businesses-2026",
-    title: "Google AI Hub Vizag: How Businesses Can Leverage AI in 2026",
-    metaTitle: "Google AI Hub Vizag Businesses 2026 | Vyzma AI",
-    metaDescription: "Google AI Hub Vizag businesses 2026 guide. Learn how Vizag companies leverage Gemini, AI Overviews and Google Cloud AI for growth. Practical insights from Rushikonda IT corridor to Madhurawada tech parks.",
+    title: "Google AI Hub Vizag 2026: Latest Announcement, Location & What It Means for Local Businesses",
+    metaTitle: "Google AI Hub Vizag 2026: Latest Announcement & Location | Vyzma AI",
+    metaDescription: "Google AI Hub Vizag 2026 announcement: Location in Rushikonda IT corridor, what it offers Vizag businesses, and how your company can leverage Gemini AI, Cloud credits, and Google's infrastructure.",
     date: "2026-05-12",
     category: "AI Technology",
     faq: [
@@ -57,9 +86,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "best-ai-agency-visakhapatnam-2026",
-    title: "Best AI Agency Visakhapatnam 2026: How to Choose the Right Partner",
-    metaTitle: "Best AI Agency Visakhapatnam 2026 | Vyzma AI",
-    metaDescription: "Best AI agency Visakhapatnam 2026 guide. Compare local AI agencies for Vizag businesses. See real scenarios from Jagadamba Centre retail to Gajuwaka export firms.",
+    title: "Hiring an AI Agency in Vizag? Avoid These 5 Costly Mistakes (2026)",
+    metaTitle: "AI Agency Vizag 2026: Avoid These 5 Costly Mistakes | Vyzma AI",
+    metaDescription: "Stop hiring the wrong AI partner. 5 mistakes Vizag businesses make when choosing an AI agency — and how to pick the right one for your budget and goals.",
     date: "2026-05-12",
     category: "AI Agency",
     faq: [
@@ -70,9 +99,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "ai-automation-vizag-businesses-2026",
-    title: "AI Automation Vizag Businesses 2026 — The Complete Guide to Workflow Automation",
-    metaTitle: "AI Automation Vizag 2026 | Workflow Automation Guide | Vyzma AI",
-    metaDescription: "AI automation Vizag businesses in 2026: Complete guide to workflow automation for logistics, retail, and manufacturing. Real ROI data from Gajuwaka, MVP Colony, and Pendurthi companies.",
+    title: "Vizag Businesses Are Saving 30 Hours/Week With AI Automation (Here's How)",
+    metaTitle: "AI Automation Vizag 2026: Save 30 Hours/Week | Vyzma AI",
+    metaDescription: "Real Vizag businesses in logistics, retail, and manufacturing are using AI automation to save 30+ hours weekly. Step-by-step guide to automate your workflows in 2026.",
     date: "2026-05-12",
     category: "AI Automation",
     faq: [
@@ -83,9 +112,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "ai-chatbots-visakhapatnam-2026",
-    title: "AI Chatbots Visakhapatnam 2026 — The Complete Guide for Local Businesses",
-    metaTitle: "AI Chatbots Visakhapatnam 2026 | Business Guide | Vyzma AI",
-    metaDescription: "AI chatbots Visakhapatnam 2026: Complete guide for local businesses. Learn how clinics in MVP Colony, resorts in Rushikonda, and e-commerce stores in Dwaraka Nagar use AI chatbots.",
+    title: "AI Chatbots Vizag 2026: 3 Local Businesses That Cut Support Costs by 60%",
+    metaTitle: "AI Chatbots Vizag 2026: Cut Support Costs 60% | Vyzma AI",
+    metaDescription: "How clinics in MVP Colony, resorts in Rushikonda, and e-commerce stores in Dwaraka Nagar use AI chatbots to automate support, bookings, and WhatsApp marketing.",
     date: "2026-05-12",
     category: "AI Chatbots",
     faq: [
@@ -96,9 +125,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "ai-for-real-estate-vizag-2026",
-    title: "AI for Real Estate Vizag 2026: Transforming Property Sales with Intelligent Automation",
-    metaTitle: "AI for Real Estate Vizag 2026 | Vyzma AI",
-    metaDescription: "Explore how AI for real estate Vizag 2026 helps builders and agents automate lead scoring, schedule site visits, and run 24/7 property chatbots across Rushikonda, Madhurawada, and Kommadi.",
+    title: "Vizag Real Estate AI 2026: Sell Properties 35% Faster Without Extra Ad Spend",
+    metaTitle: "AI for Real Estate Vizag 2026: Sell 35% Faster | Vyzma AI",
+    metaDescription: "Vizag builders and agents use AI to score leads, schedule site visits, run 24/7 property chatbots, and price properties smarter. Real results from Rushikonda to Kommadi.",
     date: "2026-05-12",
     category: "Industry",
     faq: [
@@ -109,9 +138,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "ai-for-pharma-companies-vizag-2026",
-    title: "AI for Pharma Companies Vizag 2026: Accelerating R&D, Quality Control, and Compliance",
-    metaTitle: "AI for Pharma Companies Vizag 2026 | Vyzma AI",
-    metaDescription: "Explore how AI for pharma companies Vizag 2026 helps Vizag-based pharmaceutical manufacturers automate quality control, optimize supply chains, and ensure regulatory compliance at Parawada and JNPC.",
+    title: "AI in Pharma Vizag 2026: Cut Quality Control Time by 70% With Computer Vision",
+    metaTitle: "AI for Pharma Vizag 2026: Cut QC Time 70% | Vyzma AI",
+    metaDescription: "Vizag pharma manufacturers at Parawada and JNPC use AI computer vision to automate quality control, optimize supply chains, and stay compliant with USFDA and MHRA regulations.",
     date: "2026-05-12",
     category: "Industry",
     faq: [
@@ -122,8 +151,8 @@ const BLOG_POSTS = [
   },
   {
     slug: "best-ai-agency-bangalore-2026",
-    title: "Best AI Agency Bangalore 2026: How to Choose the Right AI Partner for Your Business",
-    metaTitle: "Best AI Agency Bangalore 2026 | Vyzma AI",
+    title: "Best AI Agency Bangalore 2026: 7 Questions to Ask Before You Hire",
+    metaTitle: "Best AI Agency Bangalore 2026: 7 Questions to Ask | Vyzma AI",
     metaDescription: "Looking for the best AI agency Bangalore 2026? Here is how to evaluate AI partners in India's tech capital, from Koramangala startups to Whitefield enterprises.",
     date: "2026-05-12",
     category: "AI Agency",
@@ -135,9 +164,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "digital-marketing-agency-visakhapatnam-2026",
-    title: "Digital Marketing Agency Visakhapatnam 2026: Why Local Businesses Need Expert Digital Marketing",
-    metaTitle: "Digital Marketing Agency Visakhapatnam 2026 | Vyzma AI",
-    metaDescription: "Need a digital marketing agency Visakhapatnam 2026? Local businesses in Vizag are winning with SEO, Google Ads, and social media. See how from Rushikonda to Gajuwaka.",
+    title: "Stop Wasting Money: How to Pick the Right Digital Marketing Agency in Vizag (2026)",
+    metaTitle: "Digital Marketing Agency Vizag 2026: How to Pick the Right One | Vyzma AI",
+    metaDescription: "Most Vizag businesses overpay for digital marketing. Here's exactly how much you should spend on SEO, Google Ads, and social media in Visakhapatnam.",
     date: "2026-05-12",
     category: "Digital Marketing",
     faq: [
@@ -148,9 +177,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "seo-agency-visakhapatnam-2026",
-    title: "SEO Agency Visakhapatnam 2026: Why Local Businesses in Vizag Are Choosing AI-Powered Search Optimization",
-    metaTitle: "SEO Agency Visakhapatnam 2026 | AI-Powered Search Optimization | Vyzma AI",
-    metaDescription: "Top SEO agency Visakhapatnam 2026 offering AI-driven local SEO, technical SEO, and GEO services. Helping Vizag businesses rank #1 on Google.",
+    title: "Rank #1 on Google Vizag 2026: AI-Powered SEO That Actually Works",
+    metaTitle: "SEO Vizag 2026: Rank #1 on Google With AI SEO | Vyzma AI",
+    metaDescription: "Stop guessing with SEO. Vizag businesses use AI-powered local SEO, technical SEO, and GEO to rank #1 on Google. Includes AI Overviews optimization for 2026.",
     date: "2026-05-12",
     category: "SEO",
     faq: [
@@ -161,9 +190,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "google-ads-agency-visakhapatnam-2026",
-    title: "Google Ads Agency Visakhapatnam 2026: Maximising ROI for Vizag Businesses with AI-Powered PPC Campaigns",
-    metaTitle: "Google Ads Agency Visakhapatnam 2026 | AI-Powered PPC Management | Vyzma AI",
-    metaDescription: "Top Google Ads agency Visakhapatnam 2026 offering AI-driven PPC, Local Services Ads, Shopping campaigns, and remarketing for Vizag businesses.",
+    title: "Google Ads Vizag 2026: Cut Cost Per Lead by 40% With These AI Tactics",
+    metaTitle: "Google Ads Vizag 2026: Cut Cost Per Lead 40% | Vyzma AI",
+    metaDescription: "Vizag businesses waste 40% on Google Ads. AI-powered PPC, Local Services Ads, and smart bidding strategies that actually reduce cost per lead and increase ROI.",
     date: "2026-05-12",
     category: "Google Ads",
     faq: [
@@ -174,9 +203,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "website-design-visakhapatnam-2026",
-    title: "The Complete Guide to Website Design Visakhapatnam 2026: Why Your Business Needs a Modern, AI-Powered Site",
-    metaTitle: "Website Design Visakhapatnam 2026 | Vyzma AI",
-    metaDescription: "Complete guide to website design Visakhapatnam 2026. From AI-powered Next.js sites to SEO-first architecture — discover why Vizag businesses choose Vyzma AI.",
+    title: "Web Design Vizag 2026: Why Local Businesses Are Switching From WordPress to AI Websites",
+    metaTitle: "Web Design Vizag 2026: AI Websites vs WordPress | Vyzma AI",
+    metaDescription: "Why Vizag businesses are ditching WordPress for AI-powered Next.js websites. Faster loading, better SEO, built-in chatbots — the future of web design in Visakhapatnam.",
     date: "2026-05-12",
     category: "Web Design",
     faq: [
@@ -187,9 +216,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "whatsapp-marketing-vizag-2026",
-    title: "WhatsApp Marketing Vizag 2026: The Complete Guide to Growing Your Business with AI-Powered Messaging",
-    metaTitle: "WhatsApp Marketing Vizag 2026 | Vyzma AI",
-    metaDescription: "Complete guide to WhatsApp marketing Vizag 2026. Learn how Vizag businesses use AI chatbots, broadcast campaigns, and WhatsApp Business API to grow revenue.",
+    title: "WhatsApp Marketing Vizag 2026: 98% Open Rate Strategy That Gets Real Results",
+    metaTitle: "WhatsApp Marketing Vizag 2026: 98% Open Rate Strategy | Vyzma AI",
+    metaDescription: "Vizag businesses use AI-powered WhatsApp marketing with 98% open rates. Broadcast campaigns, chatbot automation, and WhatsApp Business API strategies that actually work.",
     date: "2026-05-12",
     category: "WhatsApp Marketing",
     faq: [
@@ -200,9 +229,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "digital-marketing-visakhapatnam-2026",
-    title: "Digital Marketing Visakhapatnam 2026: Why Word of Mouth Is Costing You Customers",
-    metaTitle: "Digital Marketing Visakhapatnam 2026 | AI-Powered Growth Guide | Vyzma AI",
-    metaDescription: "Vizag businesses are losing customers to competitors using Meta Ads, Google Ads, AI automation and chatbots. Complete digital marketing guide for Visakhapatnam businesses 2026.",
+    title: "Word of Mouth Is Costing You Customers: Digital Marketing Vizag 2026 Truth",
+    metaTitle: "Digital Marketing Vizag 2026: Word of Mouth Costing You | Vyzma AI",
+    metaDescription: "Vizag businesses lose customers daily to competitors using Meta Ads, Google Ads, SEO, and AI automation. Complete digital marketing guide for Visakhapatnam 2026.",
     date: "2026-05-12",
     category: "Digital Marketing",
     faq: [
@@ -213,9 +242,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "best-ai-agency-india-2026",
-    title: "Best AI Agency in India 2026: How to Choose the Right AI Partner for Your Business",
-    metaTitle: "Best AI Agency in India 2026 | Vyzma AI",
-    metaDescription: "Best AI agency in India 2026 guide. Compare enterprise giants, AI-native startups, mid-market agencies, and affordable full-service options. Real scenarios and pricing comparison.",
+    title: "Best AI Agency India 2026: 5 Agencies Compared (Pricing, Services & Reviews)",
+    metaTitle: "Best AI Agency India 2026: 5 Compared | Vyzma AI",
+    metaDescription: "Compare India's top 5 AI agencies in 2026. Enterprise giants vs AI-native startups vs mid-market full-service. Pricing, services, real reviews — who actually delivers?",
     date: "2026-06-02",
     category: "AI Agency",
     faq: [
@@ -226,9 +255,9 @@ const BLOG_POSTS = [
   },
   {
     slug: "how-to-choose-ai-agency-india-2026",
-    title: "How to Choose the Right AI Agency in India 2026 - The Honest SMB Guide",
-    metaTitle: "How to Choose the Right AI Agency in India 2026 | Honest SMB Guide | Vyzma AI",
-    metaDescription: "How to choose the right AI agency in India 2026 - an honest guide for SMBs. 5-point framework, pricing comparison, red flags, and city-specific advice for Vizag, Bangalore, Hyderabad, Mumbai, and Delhi NCR.",
+    title: "How to Choose an AI Agency in India 2026: The SMB's Honest Playbook",
+    metaTitle: "Choose an AI Agency India 2026: SMB Honest Playbook | Vyzma AI",
+    metaDescription: "5-point framework to pick the right AI agency in India. Pricing comparison, red flags, and city-specific advice for Vizag, Bangalore, Hyderabad, Mumbai, and Delhi NCR.",
     date: "2026-06-04",
     category: "AI Agency",
     faq: [
@@ -242,6 +271,75 @@ const BLOG_POSTS = [
       { question: "What are red flags when choosing an AI agency?", answer: "No verifiable portfolio, claims to be best at everything, no pricing on website, promises of fully autonomous AI, no post-launch support plan." },
       { question: "What languages can Indian AI agencies support?", answer: "The best agencies support Telugu, Hindi, English, Tamil, Kannada, and more. Vyzma AI handles 50+ languages." },
       { question: "Should I hire a freelancer or an AI agency?", answer: "Hire a freelancer only for experiments under Rs 50,000. For anything serious, hire an agency with team depth and accountability." }
+    ]
+  },
+  {
+    slug: "ad-spend-trap-2026-meta-google-lead-form-bots",
+    title: "Meta & Google Lead Form Bots Are Stealing 40% of Your Ad Budget (2026 Fix)",
+    metaTitle: "Lead Form Bots Stealing 40% of Ad Budget? 2026 Fix | Vyzma AI",
+    metaDescription: "Fake lead form submissions from bots waste 40% of Indian ad budgets. Learn how to detect bot traffic, stop fake leads, and build a Next.js custom funnel that eliminates them.",
+    date: "2026-06-05",
+    category: "Digital Marketing",
+    faq: [
+      { question: "How do I know if bots are submitting my lead forms?", answer: "Run the call-back test — call your last 50 leads and track how many answer, remember submitting, and are genuine prospects. Also check for burst submissions at odd hours and identical form fill times under 3 seconds." },
+      { question: "Does Meta or Google refund money for bot clicks?", answer: "Rarely. Their fraud detection targets large-scale operations, not the 30-50 fake leads a small business gets daily. The most reliable solution is to prevent bots from submitting with a custom funnel." },
+      { question: "Will a CAPTCHA solve the bot problem?", answer: "Partially. CAPTCHAs block some bots but reduce conversion rates by 3-10%. Honeypot + time-gating + behaviour analysis is more effective and does not hurt conversion." },
+      { question: "How much does a Next.js custom funnel cost to build?", answer: "A basic Next.js landing page with honeypot + time-gating starts from Rs 35,000-50,000. For businesses spending over Rs 1 lakh/month on ads, it pays for itself in the first month." },
+      { question: "What is the typical ROI for businesses that switch to a custom funnel?", answer: "Most businesses see the funnel pay for itself in 2-4 weeks. Bot waste drops from 30-40% to under 2%, and cost per qualified lead falls by 50%+." }
+    ]
+  },
+  {
+    slug: "seo-is-dead-in-india-ai-overviews-2026",
+    title: "SEO is Dead in India: How to Rank in Google AI Overviews & ChatGPT Search in 2026",
+    metaTitle: "Google AI Overviews: How Indian Businesses Can Rank #1 in 2026 | Vyzma AI",
+    metaDescription: "Traditional SEO is changing. Learn how to optimize your business website for Google AI Overviews and ChatGPT search to capture high-intent Indian B2B leads. India-specific strategy inside.",
+    date: "2026-06-05",
+    category: "SEO & AI Search",
+    faq: [
+      { question: "Is SEO dead in India in 2026?", answer: "Traditional SEO — backlink building, keyword density, and meta tag optimisation — is largely dead for discovery. 71% of Google searches in India now end without a click. However, AI search optimisation (optimising for Google AI Overviews, ChatGPT Search, and Perplexity) is more important than ever." },
+      { question: "What is Google AI Overviews and how does it affect Indian businesses?", answer: "Google AI Overviews is an AI-powered feature that generates direct answers at the top of search results using content from multiple sources. For Indian businesses, this means your website may get cited as a source without the user clicking through." },
+      { question: "How do I rank in ChatGPT Search for my business?", answer: "To rank in ChatGPT Search, you need frequently updated content, conversational question-answer format, external authority signals, strong Google Business Profile, and FAQ schema on your pages." },
+      { question: "Is Instagram really the #1 cited domain in AI Overviews?", answer: "Yes. In Q1 2026, analysis of Google AI Overview citations showed Instagram.com as the most cited domain across all categories, ahead of Wikipedia and news sites." },
+      { question: "What is the 5x conversion truth about AI search traffic?", answer: "Traffic referred by AI Overviews and ChatGPT Search converts at approximately 14.2% on average, compared to 2.8% for traditional organic search — a 5x improvement." },
+      { question: "How long does it take to see results from AI search optimisation?", answer: "Some changes show results within 2-4 weeks. Adding FAQ schema and restructuring content around question-based H2s can improve your AI Overviews citation rate within a month." }
+    ]
+  },
+  {
+    slug: "best-ai-agency-hyderabad-2026",
+    title: "Best AI Agency Hyderabad 2026: 7 Questions to Ask Before You Hire",
+    metaTitle: "Best AI Agency Hyderabad 2026: 7 Questions to Ask | Vyzma AI",
+    metaDescription: "Hiring an AI agency in Hyderabad? Ask these 7 questions before signing. From HITEC City startups to Banjara Hills enterprises — find the right AI partner for your business in 2026.",
+    date: "2026-06-15",
+    category: "AI Agency",
+    faq: [
+      { question: "How is the best AI agency Hyderabad 2026 different from a regular IT services company?", answer: "A regular IT services company builds what you ask for. The best AI agency Hyderabad 2026 advises you on what you actually need, builds it with the right modern technology stack, and supports it long-term." },
+      { question: "How much does it cost to hire an AI agency in Hyderabad?", answer: "A well-built AI chatbot typically ranges from Rs 50,000 to Rs 1,50,000 one-time setup plus a monthly retainer. Full-stack AI automation ranges from Rs 3,00,000 to Rs 15,00,000 or more." },
+      { question: "How long does it take to deploy an AI solution for a Hyderabad business?", answer: "A focused chatbot implementation typically takes 2 to 3 weeks. Complex multi-system automation takes 4 to 8 weeks." },
+      { question: "Do I need technical knowledge to work with an AI agency?", answer: "Not at all. A good agency handles all technical aspects and communicates with you in business terms." },
+      { question: "What industries does the best AI agency Hyderabad 2026 serve?", answer: "Technology, financial services, logistics, retail, real estate, education, healthcare, and manufacturing." },
+      { question: "How do you ensure data security when working with an AI agency?", answer: "Enterprise-grade data security includes encrypted storage, secure API connections, role-based access control, and compliance with India's DPDP Act." },
+      { question: "Can an AI agency help with existing tools like Zoho, Salesforce, or Tally?", answer: "Yes. The best AI agency Hyderabad 2026 specialises in integrating AI with your existing technology stack." },
+      { question: "What is the difference between AI automation and traditional software automation?", answer: "Traditional automation follows fixed rules. AI automation learns from data, adapts to new situations, and improves over time." },
+      { question: "How does AI handle Indian languages and Hyderabad's multilingual environment?", answer: "Modern AI models handle Telugu, Hindi, Urdu, and English effectively. Voice AI systems can be trained on Indian accents." },
+      { question: "What ongoing support does the best AI agency Hyderabad 2026 provide after deployment?", answer: "Ongoing support includes model monitoring, retraining, performance optimisation, integration updates, and SLA-backed support." }
+    ]
+  },
+  {
+    slug: "openclaw-vs-hermes-agent-india-2026",
+    title: "OpenClaw vs Hermes Agent: We Set Up Both in India - Honest Comparison 2026",
+    metaTitle: "OpenClaw vs Hermes Agent India 2026: Full Comparison | Vyzma AI",
+    metaDescription: "OpenClaw vs Hermes Agent - which free AI agent should Indian businesses use in 2026? We set up both in India. WhatsApp, local setup, privacy, pricing - full honest comparison by Vyzma AI.",
+    date: "2026-06-15",
+    category: "AI Agents",
+    faq: [
+      { question: "Is OpenClaw completely free for Indian businesses?", answer: "The OpenClaw software itself is completely free and open-source. If you use a free local AI model, your total monthly cost is zero rupees." },
+      { question: "Can Hermes Agent reply in Telugu, Hindi, Kannada, or Tamil?", answer: "Yes. Hermes Agent supports over 300 AI models through Nous Portal. Many handle Indian languages effectively." },
+      { question: "Do I need a powerful computer or server to run these agents?", answer: "For OpenClaw, any standard laptop with 8GB RAM works. For Hermes Agent, a small Indian VPS for Rs 500-1,000/month is recommended." },
+      { question: "Is my customer data safe if I run OpenClaw or Hermes Agent locally?", answer: "Yes. Your data is processed on your own computer. It never travels to a foreign server. This helps with DPDPA compliance." },
+      { question: "How long does Vyzma AI take to set up a custom agent for my business?", answer: "Simple setups take 2-3 business days. Complex setups with multiple channels and subagents take 3-5 business days." },
+      { question: "Can these agents handle WhatsApp Business API?", answer: "Yes, both agents support WhatsApp integration. WhatsApp Business API setup is part of our service." },
+      { question: "What is the difference between using OpenClaw and just using ChatGPT for my business?", answer: "ChatGPT answers questions. OpenClaw runs your business with persistent memory, scheduled automations, and platform integration." },
+      { question: "Can I run both OpenClaw and Hermes Agent together for my business?", answer: "Yes, and many of our clients do exactly this. OpenClaw for simple tasks, Hermes for complex business operations." }
     ]
   }
 ];
@@ -301,6 +399,11 @@ for (const post of BLOG_POSTS) {
   );
 
   page = page.replace(
+    /<meta property="og:type"[^>]*\/?>/,
+    `<meta property="og:type" content="article" />`
+  );
+
+  page = page.replace(
     /<meta property="og:image"[^>]*\/?>/,
     `<meta property="og:image" content="${ogImage}" />`
   );
@@ -356,10 +459,11 @@ for (const city of CITIES) {
   page = page.replace(/<meta property="og:url"[^>]*\/?>/, `<meta property="og:url" content="${SITE_URL}/${city.slug}/" />`);
   page = page.replace(/<meta property="og:title"[^>]*\/?>/, `<meta property="og:title" content="${escapeAttr(title)}" />`);
   page = page.replace(/<meta\s+property="og:description"[\s\S]*?\/?>/, `<meta property="og:description" content="${escapeAttr(desc)}" />`);
-  page = page.replace(/<meta property="og:image"[^>]*\/?>/, `<meta property="og:image" content="${OG_FALLBACK}" />`);
+  const ogImage = cityOg(city.slug);
+  page = page.replace(/<meta property="og:image"[^>]*\/?>/, `<meta property="og:image" content="${ogImage}" />`);
   page = page.replace(/<meta name="twitter:title"[^>]*\/?>/, `<meta name="twitter:title" content="${escapeAttr(title)}" />`);
   page = page.replace(/<meta\s+name="twitter:description"[\s\S]*?\/?>/, `<meta name="twitter:description" content="${escapeAttr(desc)}" />`);
-  page = page.replace(/<meta name="twitter:image"[^>]*\/?>/, `<meta name="twitter:image" content="${OG_FALLBACK}" />`);
+  page = page.replace(/<meta name="twitter:image"[^>]*\/?>/, `<meta name="twitter:image" content="${ogImage}" />`);
 
   const hubSchema = {
     "@context": "https://schema.org",
@@ -395,10 +499,11 @@ for (const city of CITIES) {
     page = page.replace(/<meta property="og:url"[^>]*\/?>/, `<meta property="og:url" content="${SITE_URL}/${city.slug}/${service.slug}" />`);
     page = page.replace(/<meta property="og:title"[^>]*\/?>/, `<meta property="og:title" content="${escapeAttr(title)}" />`);
     page = page.replace(/<meta\s+property="og:description"[\s\S]*?\/?>/, `<meta property="og:description" content="${escapeAttr(desc)}" />`);
-    page = page.replace(/<meta property="og:image"[^>]*\/?>/, `<meta property="og:image" content="${OG_FALLBACK}" />`);
+    const ogImage = cityOg(city.slug);
+    page = page.replace(/<meta property="og:image"[^>]*\/?>/, `<meta property="og:image" content="${ogImage}" />`);
     page = page.replace(/<meta name="twitter:title"[^>]*\/?>/, `<meta name="twitter:title" content="${escapeAttr(title)}" />`);
     page = page.replace(/<meta\s+name="twitter:description"[\s\S]*?\/?>/, `<meta name="twitter:description" content="${escapeAttr(desc)}" />`);
-    page = page.replace(/<meta name="twitter:image"[^>]*\/?>/, `<meta name="twitter:image" content="${OG_FALLBACK}" />`);
+    page = page.replace(/<meta name="twitter:image"[^>]*\/?>/, `<meta name="twitter:image" content="${ogImage}" />`);
 
     const serviceSchema = {
       "@context": "https://schema.org",
@@ -427,8 +532,60 @@ for (const city of CITIES) {
 }
 
 const totalCityPages = CITIES.length * CITY_SERVICES.length;
+const totalCityHubs = CITIES.length;
 console.log(`  OK  ${totalCityPages} city-service pages prerendered.`);
-console.log(`\nDone — ${BLOG_POSTS.length} blog + ${totalCityPages} city pages prerendered.`);
+console.log(`  OK  ${totalCityHubs} city hub pages prerendered.`);
+
+// === Generate Sitemap ===
+const sitemapUrls = [
+  { loc: `${SITE_URL}/`, priority: "1.0", changefreq: "weekly", lastmod: "2026-06-04" },
+  { loc: `${SITE_URL}/blog`, priority: "0.9", changefreq: "weekly", lastmod: "2026-06-04" },
+  ...SERVICE_PAGES.map(s => ({
+    loc: `${SITE_URL}/services/${s.slug}`,
+    priority: "0.9",
+    changefreq: "monthly",
+    lastmod: "2026-06-15",
+  })),
+  ...BLOG_POSTS.map(p => ({
+    loc: `${SITE_URL}/blog/${p.slug}`,
+    priority: "0.7",
+    changefreq: "monthly",
+    lastmod: p.date,
+  })),
+  ...CITIES.map(c => ({
+    loc: `${SITE_URL}/${c.slug}/`,
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: "2026-06-04",
+  })),
+  ...CITIES.flatMap(c =>
+    CITY_SERVICES.map(s => ({
+      loc: `${SITE_URL}/${c.slug}/${s.slug}`,
+      priority: "0.6",
+      changefreq: "monthly",
+      lastmod: "2026-06-04",
+    }))
+  ),
+];
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${u.lastmod}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join("\n")}
+</urlset>
+`;
+
+const sitemapPath = path.join(distDir, "sitemap.xml");
+fs.writeFileSync(sitemapPath, sitemap, "utf-8");
+console.log(`  OK  sitemap.xml (${sitemapUrls.length} URLs)`);
+
+const totalServicePages = SERVICE_PAGES.length;
+console.log(`  OK  ${totalServicePages} service pages in sitemap.`);
+console.log(`\nDone — ${BLOG_POSTS.length} blog + ${totalCityHubs} city hubs + ${totalCityPages} city-service = ${BLOG_POSTS.length + totalCityHubs + totalCityPages + 1} total pages prerendered.`);
 
 function buildSchema(post, url) {
   const schema = {
