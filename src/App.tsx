@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -25,6 +26,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <Analytics />
       </div>
     </Router>
   );
