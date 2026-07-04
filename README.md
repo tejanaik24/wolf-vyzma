@@ -49,6 +49,7 @@ vyzma-ai/
   |- public/
   |- scripts/
     |-- generate-blog-images.cjs
+    |-- indexnow-submit.cjs
   |- src/
     |-- components/
       |--- ui/
@@ -81,6 +82,7 @@ vyzma-ai/
       |--- is-mobile.ts
       |--- utils.ts
     |-- pages/
+      |--- AboutPage.tsx
       |--- BlogListingPage.tsx
       |--- BlogPostPage.tsx
       |--- CityHubPage.tsx

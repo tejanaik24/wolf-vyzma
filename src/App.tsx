@@ -6,6 +6,7 @@ import { HomePage } from "@/pages/HomePage";
 import { BlogListingPage } from "@/pages/BlogListingPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
 import { CityHubPage, CityServicePage } from "@/pages/CityHubPage";
+import { AboutPage } from "@/pages/AboutPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/blog" element={<BlogListingPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/:city/:service" element={<CityServicePage />} />

@@ -10,6 +10,12 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
@@ -22,6 +28,5 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /assets/
 
 Sitemap: https://vyzma.in/sitemap.xml

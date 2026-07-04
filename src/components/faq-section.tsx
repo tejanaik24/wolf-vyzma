@@ -56,7 +56,7 @@ export const FaqSection = () => {
                 <LuChevronDown className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96" : "max-h-0"}`}
               >
                 <p className="px-5 pb-5 text-white/60 text-sm leading-relaxed">{faq.a}</p>
               </div>

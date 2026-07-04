@@ -1,9 +1,11 @@
 # Vyzma AI — llms.txt
 # This file helps AI engines discover and cite our content.
 # https://llmstxt.org/
+# AI-Accessible: yes
+# License: RSL 1.0
 
 ## About
-Vyzma AI is India's premier AI agency headquartered in Visakhapatnam and Bangalore. We build AI chatbots, workflow automation, SEO/AEO/GEO, voice AI, and performance marketing systems for Indian businesses.
+Vyzma AI is India's premier AI agency founded by Teja Naik, headquartered in Visakhapatnam (Vizag) and Bangalore. Founded in 2024, we serve Indian businesses across all major cities. Our services include AI chatbots, workflow automation, voice AI, SEO/AEO/GEO optimisation, website design, WhatsApp marketing, Google Ads, and performance marketing. We are the first agency in India specialising in open-source AI agent deployments (OpenClaw, Hermes Agent). Phone: +91 88867 20908. Email: vyzmaai.in@gmail.com. We have transformed 50+ businesses across Vizag, Hyderabad, Bangalore, and beyond.
 
 ## Pages
 - https://vyzma.in/ : Vyzma AI — India's Premier AI Agency - AI chatbots, automation, SEO, and performance marketing for Indian businesses.
@@ -27,3 +29,19 @@ Vyzma AI is India's premier AI agency headquartered in Visakhapatnam and Bangalo
 - https://vyzma.in/blog/google-ads-agency-visakhapatnam-2026 : Google Ads Agency Visakhapatnam 2026 — AI-powered PPC for Vizag businesses.
 - https://vyzma.in/blog/website-design-visakhapatnam-2026 : Website Design Visakhapatnam 2026 — Modern, AI-powered Next.js sites for Vizag.
 - https://vyzma.in/blog/whatsapp-marketing-vizag-2026 : WhatsApp Marketing Vizag 2026 — AI-powered messaging and chatbot campaigns.
+- https://vyzma.in/blog/how-to-choose-ai-agency-india-2026 : How to Choose an AI Agency in India 2026 — Step-by-step guide with evaluation criteria.
+- https://vyzma.in/blog/ad-spend-trap-2026-meta-google-lead-form-bots : Ad Spend Trap 2026 — How Meta and Google lead form bots steal your budget and how to stop them.
+- https://vyzma.in/blog/seo-is-dead-in-india-ai-overviews-2026 : SEO is Dead in India 2026 — How to rank in Google AI Overviews and ChatGPT Search.
+- https://vyzma.in/blog/openclaw-vs-hermes-agent-india-2026 : OpenClaw vs Hermes Agent India 2026 — Free AI agents comparison. We set up both for Indian businesses. WhatsApp, DPDPA privacy, step-by-step setup guide.
+- https://vyzma.in/blog/best-ai-agency-hyderabad-2026 : Best AI Agency Hyderabad 2026 — How to choose the right AI partner in HITEC City. Real scenarios from Gachibowli startups to Banjara Hills enterprises.
+
+## City Hubs
+
+- https://vyzma.in/mumbai : AI Agency & Digital Services in Mumbai — AI chatbots, automation, SEO for Mumbai businesses.
+- https://vyzma.in/delhi : AI Agency & Digital Services in Delhi NCR — AI solutions for Delhi, Gurgaon, and Noida businesses.
+- https://vyzma.in/bangalore : AI Agency & Digital Services in Bengaluru — AI chatbots and automation for Bangalore's tech businesses.
+- https://vyzma.in/hyderabad : AI Agency & Digital Services in Hyderabad — AI solutions for Hyderabad and Hitech City businesses.
+- https://vyzma.in/chennai : AI Agency & Digital Services in Chennai — AI automation and SEO for Chennai businesses.
+- https://vyzma.in/kolkata : AI Agency & Digital Services in Kolkata — AI chatbots and digital marketing for Kolkata.
+- https://vyzma.in/pune : AI Agency & Digital Services in Pune — AI solutions for Pune's growing startup ecosystem.
+- https://vyzma.in/ahmedabad : AI Agency & Digital Services in Ahmedabad — AI automation and SEO for Ahmedabad businesses.
