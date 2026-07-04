@@ -496,6 +496,20 @@ function buildBlogPost(template: string, post: (typeof BLOG_POSTS)[0]): string {
           <h1 class="mb-6 text-3xl font-bold leading-tight text-white md:text-5xl">${escapeHtml(post.title)}</h1>
           <p class="mb-10 text-lg text-white/50 leading-relaxed border-l-2 border-[#3DA3FF] pl-4">${escapeHtml(post.excerpt)}</p>
           <div class="prose-content">${contentHtml}</div>
+          ${post.faq.length > 0 ? `
+          <div class="mt-16 border-t border-white/[0.06] pt-12">
+            <p class="text-[10px] font-general uppercase tracking-widest text-[#3DA3FF] mb-2">FAQ</p>
+            <h2 class="text-2xl md:text-3xl font-black text-white mb-8">FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="space-y-4">
+              ${post.faq.map((f) => `
+              <div class="rounded-lg border border-white/[0.08] bg-white/[0.02] p-6">
+                <h3 class="text-white font-semibold mb-2 text-sm">${escapeHtml(f.question)}</h3>
+                <p class="text-white/50 text-sm leading-relaxed">${escapeHtml(f.answer)}</p>
+              </div>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
           <div class="mt-12 border-t border-white/[0.06] pt-8 text-center">
             <p class="mb-2 text-[10px] font-general uppercase tracking-widest text-white/40">Published by</p>
             <p class="font-semibold text-white">Vyzma AI</p>

@@ -208,6 +208,21 @@ export const BlogPostPage = () => {
             {renderContent(post.content)}
           </div>
 
+          {post.faq.length > 0 && (
+            <div className="mt-16 border-t border-white/[0.06] pt-12">
+              <p className="text-[10px] font-general uppercase tracking-widest text-[#3DA3FF] mb-2">FAQ</p>
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-8 font-zentry">FREQUENTLY ASKED QUESTIONS</h2>
+              <div className="space-y-4">
+                {post.faq.map((f, i) => (
+                  <div key={i} className="rounded-lg border border-white/[0.08] bg-white/[0.02] p-6">
+                    <h3 className="text-white font-semibold mb-2 text-sm font-robert-medium">{f.question}</h3>
+                    <p className="text-white/50 text-sm leading-relaxed font-robert-regular">{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="mt-12 border-t border-white/[0.06] pt-8 text-center">
             <p className="mb-2 text-[10px] font-general uppercase tracking-widest text-white/40">{post.author ? 'Written by' : 'Published by'}</p>
             <p className="font-semibold text-white font-robert-medium">{post.author ? post.author.name : 'Vyzma AI'}</p>

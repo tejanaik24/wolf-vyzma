@@ -1,0 +1,59 @@
+name: Daily Blog Scheduler
+
+on:
+  schedule:
+    # Runs at 4:30 AM UTC every day = 10:00 AM IST
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Set Git identity
+        run: |
+          git config user.name "Vyzma AI Bot"
+          git config user.email "bot@vyzma.in"
+
+      - name: Run scheduler
+        run: node scripts/schedule-blog.cjs
+
+      - name: Check if queue had items
+        id: check
+        run: |
+          if git diff --quiet; then
+            echo "No changes — queue is empty."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Blog published. Changes detected."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git add src/lib/blog-data.ts
+          git diff --cached --quiet || git commit -m "auto-publish blog: $(date +'%Y-%m-%d')"
+          git push
+
+      - name: Build and deploy to Vercel
+        if: steps.check.outputs.changed == 'true'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm install --legacy-peer-deps
+          npm run build
+          npx vercel deploy --prod --token=$VERCEL_TOKEN --yes 2>&1 || echo "Deploy skipped — add VERCEL_TOKEN/ORG_ID/PROJECT_ID secrets to GitHub"

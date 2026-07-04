@@ -243,6 +243,120 @@ const BLOG_POSTS = [
       { question: "What languages can Indian AI agencies support?", answer: "The best agencies support Telugu, Hindi, English, Tamil, Kannada, and more. Vyzma AI handles 50+ languages." },
       { question: "Should I hire a freelancer or an AI agency?", answer: "Hire a freelancer only for experiments under Rs 50,000. For anything serious, hire an agency with team depth and accountability." }
     ]
+  },
+  {
+    slug: "top-website-building-agency-vizag",
+    title: "Top Website Building Agency in Vizag: Why Vyzma AI Builds the Best Websites",
+    metaTitle: "Top Website Building Agency in Vizag | Vyzma AI Website Design",
+    metaDescription: "Top website building agency in Vizag. Vyzma AI builds high-performance Next.js websites with AI integration, sub-2 second load times, and SEO-first architecture for Vizag businesses.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "How much does a website cost in Vizag?", answer: "Website costs in Vizag vary based on complexity. A basic 5-page business website from Vyzma AI starts at Rs 35,000. E-commerce sites start at Rs 1,25,000, and corporate portals start at Rs 1,50,000+." },
+      { question: "How long does it take to build a website?", answer: "A standard business website typically takes 2-4 weeks from concept to launch. E-commerce sites take 3-5 weeks, and complex corporate portals can take 6-8 weeks." },
+      { question: "Why Next.js over WordPress?", answer: "Next.js offers significantly better performance, superior SEO capabilities with built-in server-side rendering, better security, and native AI integration. WordPress requires constant plugin updates and security patches." },
+      { question: "Do you offer website maintenance?", answer: "Yes. Vyzma AI offers ongoing maintenance packages that include security updates, performance monitoring, content updates, SEO optimisation, and technical support." },
+      { question: "Do you do SEO too?", answer: "Yes. SEO is a core part of every Vyzma AI website build. We structure every page for search engines with semantic HTML, proper heading hierarchy, schema markup, optimised meta tags, and clean URLs." }
+    ]
+  },
+  {
+    slug: "ecommerce-website-development-vizag",
+    title: "E-commerce Website Development in Vizag: Build an Online Store That Actually Sells",
+    metaTitle: "E-commerce Website Development Vizag | Online Store Builder | Vyzma AI",
+    metaDescription: "E-commerce website development in Vizag. Vyzma AI builds online stores with WhatsApp integration, secure payments, inventory management, and AI-powered product recommendations for Vizag businesses.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "How much does an e-commerce website cost in Vizag?", answer: "E-commerce website development in Vizag starts at Rs 1,25,000 for a standard online store. Complex stores with advanced features may range from Rs 2,00,000 to Rs 5,00,000." },
+      { question: "Which payment gateways do you integrate?", answer: "Vyzma AI integrates Razorpay, PhonePe for Business, Paytm, and Cashfree — all supporting UPI, credit/debit cards, net banking, and EMI options." },
+      { question: "Can you connect WhatsApp to my e-commerce store?", answer: "Yes. WhatsApp integration is a standard feature in every Vyzma AI e-commerce build via WhatsApp Business API." },
+      { question: "How long does it take to build an e-commerce website?", answer: "A standard e-commerce website takes 3-5 weeks including design, development, payment integration, product upload, testing, and deployment." },
+      { question: "Is the e-commerce site mobile responsive?", answer: "Absolutely. Every e-commerce site we build is mobile-first, as over 80% of e-commerce traffic in Vizag comes from mobile devices." }
+    ]
+  },
+  {
+    slug: "b2b-corporate-website-design-vizag",
+    title: "B2B & Corporate Website Design in Vizag: Sites That Generate Leads, Not Just Looks",
+    metaTitle: "B2B Corporate Website Design Vizag | Lead Generation Sites | Vyzma AI",
+    metaDescription: "B2B and corporate website design in Vizag. Vyzma AI builds professional business websites with lead generation, CRM integration, client portals, and SEO-optimised architecture for Vizag B2B companies.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "How much does a corporate website cost in Vizag?", answer: "Corporate website design in Vizag starts at Rs 65,000 for a standard business website. Complex sites with CRM integration and client portals range from Rs 1,50,000 to Rs 3,00,000." },
+      { question: "Do you include CRM integration?", answer: "Yes. Vyzma AI integrates with Zoho CRM, Salesforce, HubSpot, Freshsales, or custom CRM systems via API." },
+      { question: "Can you build client portals?", answer: "Absolutely. Vyzma AI builds secure client portals with document management, project tracking, invoice history, and messaging." },
+      { question: "How long does it take to build a corporate website?", answer: "A standard corporate website with 10-15 pages takes 3-5 weeks. Complex sites take 6-8 weeks." },
+      { question: "Do you include chatbot integration?", answer: "Yes. Vyzma AI includes AI chatbot integration in every corporate website for prospect qualification and lead routing." }
+    ]
+  },
+  {
+    slug: "startup-website-packages-vizag",
+    title: "Startup Website Packages Vizag: All-in-One Websites for Early-Stage Companies",
+    metaTitle: "Startup Website Packages Vizag | All-in-One Launch Sites | Vyzma AI",
+    metaDescription: "Startup website packages Vizag for early-stage companies. All-in-one packages including branding, Next.js development, SEO setup, and AI chatbot from Rs 35,000. Launch your startup website in 2 weeks.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "What's included in the Rs 35,000 starter package?", answer: "5 custom pages, Next.js development, mobile responsiveness, basic SEO, AI chatbot, WhatsApp integration, contact form, domain setup, and 1 month hosting. Timeline: 10-14 days." },
+      { question: "Can I upgrade from Starter to Growth?", answer: "Yes. Vyzma AI builds every website with scalability in mind. Upgrades are seamless without rebuilding from scratch." },
+      { question: "Do I need separate hosting?", answer: "No. All packages include hosting on Vercel's global CDN. Ongoing hosting after the included period is Rs 500-1,000 per month." },
+      { question: "What about SEO for startups?", answer: "Every package includes SEO — from basic meta tags to comprehensive SEO strategies depending on the package." }
+    ]
+  },
+  {
+    slug: "nextjs-vs-wordpress-website-development",
+    title: "Next.js vs WordPress 2026: Why Indian Businesses Are Switching to Modern Web Development",
+    metaTitle: "Next.js vs WordPress 2026 for Indian Businesses | Vyzma AI",
+    metaDescription: "Next.js vs WordPress 2026 comparison for Indian businesses. Performance, SEO, security, scalability, and cost analysis. Why Vizag and Bangalore businesses are switching from WordPress to Next.js.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "Is WordPress dying?", answer: "No, WordPress still powers 43% of websites globally and is viable for simple sites. However, for businesses needing performance and scalability, Next.js is increasingly preferred." },
+      { question: "Which is better for SEO?", answer: "Next.js has a clear SEO advantage with SSR guaranteeing Google sees complete page content immediately and superior Core Web Vitals scores." },
+      { question: "Which is cheaper overall?", answer: "WordPress has lower upfront costs but over 2-3 years, Next.js often becomes cheaper due to lower hosting costs, no plugin subscriptions, and less maintenance." },
+      { question: "Can I migrate from WordPress to Next.js?", answer: "Yes. Vyzma AI specialises in WordPress to Next.js migrations, preserving SEO equity and rebuilding with modern technology in 2-4 weeks." }
+    ]
+  },
+  {
+    slug: "website-design-company-visakhapatnam",
+    title: "Website Design Company Visakhapatnam: Professional Web Development for Vizag Businesses",
+    metaTitle: "Website Design Company Visakhapatnam | Vizag Web Development | Vyzma AI",
+    metaDescription: "Website design company Visakhapatnam serving Vizag businesses. Professional web development with local SEO, WhatsApp integration, Telugu support. Serving Rushikonda, MVP Colony, Dwaraka Nagar and all Vizag areas.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "How much does a website cost in Vizag?", answer: "Vyzma AI's Vizag website packages start from Rs 35,000 for a basic site, Rs 65,000 for a comprehensive site, and Rs 1,25,000+ for e-commerce or corporate websites." },
+      { question: "Do you support Telugu language on websites?", answer: "Yes. Full Telugu content support including fonts, navigation, UI elements, and AI chatbot responses in Telugu." },
+      { question: "Do you have a physical office in Visakhapatnam?", answer: "Yes. Vyzma AI has an office in Vizag available for in-person consultations and meetings." }
+    ]
+  },
+  {
+    slug: "web-development-agency-bangalore",
+    title: "Web Development Agency Bangalore: Modern Websites for India's Tech Capital",
+    metaTitle: "Web Development Agency Bangalore | Next.js Website Development | Vyzma AI",
+    metaDescription: "Web development agency Bangalore. Vyzma AI builds high-performance Next.js websites for Bangalore startups and enterprises. AI chatbots, SEO, and conversion design. Serving Koramangala, Whitefield, Indiranagar.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "How much does a website cost in Bangalore?", answer: "A standard 5-page site starts at Rs 35,000. Comprehensive site with blog and SEO is Rs 65,000. E-commerce starts at Rs 1,25,000 — significantly below typical Bangalore agency rates." },
+      { question: "Do you work with startups?", answer: "Yes. Vyzma AI specialises in Bangalore startups at all stages with packages starting at Rs 35,000." },
+      { question: "What is your tech stack?", answer: "Next.js with TypeScript, React, and Tailwind CSS. Hosted on Vercel with global CDN. AI features use GPT-4o and Claude." },
+      { question: "Do you have a Bangalore office?", answer: "Yes. Vyzma AI has an Innovation Hub in Bangalore available for in-person client meetings." }
+    ]
+  },
+  {
+    slug: "web-design-real-estate-vizag",
+    title: "Web Design for Real Estate in Vizag: Property Websites That Sell Homes Faster",
+    metaTitle: "Web Design for Real Estate Vizag | Property Website Design | Vyzma AI",
+    metaDescription: "Web design for real estate in Vizag. Vyzma AI builds property websites with virtual tours, MLS integration, lead capture, and AI chatbots. Help Vizag real estate agents and builders sell properties faster.",
+    date: "2099-01-01",
+    category: "Web Design",
+    faq: [
+      { question: "How much does a real estate website cost?", answer: "A real estate website starts at Rs 65,000 for a standard agent/builder site. Comprehensive platforms range from Rs 1,25,000 to Rs 2,50,000." },
+      { question: "Can you integrate 99acres and MagicBricks?", answer: "Yes. Vyzma AI builds websites that integrate with 99acres and MagicBricks, automatically syncing property listings." },
+      { question: "Do you include an AI chatbot for property enquiries?", answer: "Yes. The AI chatbot answers questions, suggests listings, qualifies leads, and schedules site visits 24/7." },
+      { question: "Is the website mobile-friendly?", answer: "Absolutely. Mobile-first design recognising that most property buyers start their search on phones." }
+    ]
   }
 ];
 
