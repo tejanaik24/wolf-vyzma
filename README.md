@@ -50,6 +50,8 @@ vyzma-ai/
   |- scripts/
     |-- generate-blog-images.cjs
     |-- indexnow-submit.cjs
+    |-- prerender.ts
+    |-- schedule-blog.cjs
   |- src/
     |-- components/
       |--- ui/
@@ -70,6 +72,7 @@ vyzma-ai/
       |--- pilot-offer.tsx
       |--- projects-section.tsx
       |--- rounded-corners.tsx
+      |--- seo.tsx
       |--- services-section.tsx
       |--- trust-bar.tsx
       |--- why-vyzma.tsx
@@ -174,11 +177,13 @@ Useful resources and dependencies that are used in Nova.
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.0
 - [react](https://www.npmjs.com/package/react): ^19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [react-helmet-async](https://www.npmjs.com/package/react-helmet-async): ^3.0.0
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.3.0
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom): ^7.16.0
 - [react-use](https://www.npmjs.com/package/react-use): ^17.5.1
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.4.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.1.18
+- [tsx](https://www.npmjs.com/package/tsx): ^4.22.4
 - [typescript](https://www.npmjs.com/package/typescript): ~6.0.2
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.54.0
 - [vite](https://www.npmjs.com/package/vite): ^8.0.0
