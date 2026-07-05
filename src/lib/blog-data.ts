@@ -3106,26 +3106,14 @@ Vyzma AI helps Indian businesses optimise for AI search — Google AI Overviews,
     { question: "How can Vyzma AI help my business rank in AI search?", answer: "Vyzma AI provides end-to-end AI search optimisation: content restructuring for AI Overviews readability, technical SEO with schema markup, Instagram content strategy aligned with AI citation patterns, authority building through PR and cross-referencing, and ongoing monitoring of your brand's presence in ChatGPT Search, Perplexity, and Google AI Overviews. Contact Vyzma AI for a free AI search audit." },
   ]
 }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-  // ===== BLOG 1 — P1: Pillar (Website Design) =====
-  {
+,
+{
     slug: "top-website-building-agency-vizag",
     title: "Top Website Building Agency in Vizag: Why Vyzma AI Builds the Best Websites",
     excerpt: "Looking for the top website building agency in Vizag? Vyzma AI builds high-performance Next.js websites with AI integration, sub-2 second load times, and conversion-focused design. See why Vizag businesses choose us.",
     metaTitle: "Top Website Building Agency in Vizag | Vyzma AI Website Design",
     metaDescription: "Top website building agency in Vizag. Vyzma AI builds high-performance Next.js websites with AI integration, sub-2 second load times, and SEO-first architecture for Vizag businesses.",
-    date: "2099-01-01",
+    date: "2026-07-05",
     category: "Web Design",
     readTime: "12 min read",
     content: `## Why Vizag Businesses Need a Top Website Building Agency
@@ -3233,8 +3221,20 @@ Yes. SEO is a core part of every Vyzma AI website build. We structure every page
       { question: "Do you offer website maintenance?", answer: "Yes. Vyzma AI offers ongoing maintenance packages that include security updates, performance monitoring, content updates, SEO optimisation, and technical support." },
       { question: "Do you do SEO too?", answer: "Yes. SEO is a core part of every Vyzma AI website build. We structure every page for search engines with semantic HTML, proper heading hierarchy, schema markup, optimised meta tags, and clean URLs." }
     ]
-  },
-  // ===== BLOG 2 — I1: E-commerce =====
+  }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
+// ===== BLOG 2 — I1: E-commerce =====
   {
     slug: "ecommerce-website-development-vizag",
     title: "E-commerce Website Development in Vizag: Build an Online Store That Actually Sells",
