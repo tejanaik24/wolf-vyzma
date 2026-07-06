@@ -3222,26 +3222,14 @@ Yes. SEO is a core part of every Vyzma AI website build. We structure every page
       { question: "Do you do SEO too?", answer: "Yes. SEO is a core part of every Vyzma AI website build. We structure every page for search engines with semantic HTML, proper heading hierarchy, schema markup, optimised meta tags, and clean URLs." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-// ===== BLOG 2 — I1: E-commerce =====
-  {
+,
+{
     slug: "ecommerce-website-development-vizag",
     title: "E-commerce Website Development in Vizag: Build an Online Store That Actually Sells",
     excerpt: "E-commerce website development in Vizag by Vyzma AI. Build online stores with WhatsApp integration, secure payments, inventory management, and AI-powered product recommendations. Launch your Vizag online store in 3-5 weeks.",
     metaTitle: "E-commerce Website Development Vizag | Online Store Builder | Vyzma AI",
     metaDescription: "E-commerce website development in Vizag. Vyzma AI builds online stores with WhatsApp integration, secure payments, inventory management, and AI-powered product recommendations for Vizag businesses.",
-    date: "2099-01-01",
+    date: "2026-07-06",
     category: "Web Design",
     readTime: "11 min read",
     content: `## Why E-commerce is Growing Fast in Vizag
@@ -3345,8 +3333,20 @@ Absolutely. Every e-commerce site we build is mobile-first, as over 80% of e-com
       { question: "How long does it take to build an e-commerce website?", answer: "A standard e-commerce website takes 3-5 weeks including design, development, payment integration, product upload, testing, and deployment." },
       { question: "Is the e-commerce site mobile responsive?", answer: "Absolutely. Every e-commerce site we build is mobile-first, as over 80% of e-commerce traffic in Vizag comes from mobile devices." }
     ]
-  },
-  // ===== BLOG 3 — I3: B2B / Corporate =====
+  }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
+// ===== BLOG 3 — I3: B2B / Corporate =====
   {
     slug: "b2b-corporate-website-design-vizag",
     title: "B2B & Corporate Website Design in Vizag: Sites That Generate Leads, Not Just Looks",
