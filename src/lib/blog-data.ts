@@ -3334,26 +3334,14 @@ Absolutely. Every e-commerce site we build is mobile-first, as over 80% of e-com
       { question: "Is the e-commerce site mobile responsive?", answer: "Absolutely. Every e-commerce site we build is mobile-first, as over 80% of e-commerce traffic in Vizag comes from mobile devices." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-// ===== BLOG 3 — I3: B2B / Corporate =====
-  {
+,
+{
     slug: "b2b-corporate-website-design-vizag",
     title: "B2B & Corporate Website Design in Vizag: Sites That Generate Leads, Not Just Looks",
     excerpt: "B2B and corporate website design in Vizag by Vyzma AI. Professional business websites with lead generation, CRM integration, client portals, and SEO-optimised architecture for Vizag B2B companies.",
     metaTitle: "B2B Corporate Website Design Vizag | Lead Generation Sites | Vyzma AI",
     metaDescription: "B2B and corporate website design in Vizag. Vyzma AI builds professional business websites with lead generation, CRM integration, client portals, and SEO-optimised architecture for Vizag B2B companies.",
-    date: "2099-01-01",
+    date: "2026-07-07",
     category: "Web Design",
     readTime: "10 min read",
     content: `## Why B2B Companies in Vizag Need Professional Websites
@@ -3460,8 +3448,20 @@ Yes. Vyzma AI includes AI chatbot integration in every corporate website for pro
       { question: "How long does it take to build a corporate website?", answer: "A standard corporate website with 10-15 pages takes 3-5 weeks. Complex sites take 6-8 weeks." },
       { question: "Do you include chatbot integration?", answer: "Yes. Vyzma AI includes AI chatbot integration in every corporate website for prospect qualification and lead routing." }
     ]
-  },
-  // ===== BLOG 4 — B1: Budget / Startup =====
+  }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
+// ===== BLOG 4 — B1: Budget / Startup =====
   {
     slug: "startup-website-packages-vizag",
     title: "Startup Website Packages Vizag: All-in-One Websites for Early-Stage Companies",
