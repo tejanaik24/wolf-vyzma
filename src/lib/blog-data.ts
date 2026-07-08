@@ -3449,26 +3449,14 @@ Yes. Vyzma AI includes AI chatbot integration in every corporate website for pro
       { question: "Do you include chatbot integration?", answer: "Yes. Vyzma AI includes AI chatbot integration in every corporate website for prospect qualification and lead routing." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-// ===== BLOG 4 — B1: Budget / Startup =====
-  {
+,
+{
     slug: "startup-website-packages-vizag",
     title: "Startup Website Packages Vizag: All-in-One Websites for Early-Stage Companies",
     excerpt: "Startup website packages Vizag by Vyzma AI for early-stage companies. All-in-one packages including branding, Next.js development, SEO setup, and AI chatbot from Rs 35,000. Launch your startup website in 2 weeks.",
     metaTitle: "Startup Website Packages Vizag | All-in-One Launch Sites | Vyzma AI",
     metaDescription: "Startup website packages Vizag for early-stage companies. All-in-one packages including branding, Next.js development, SEO setup, and AI chatbot from Rs 35,000. Launch your startup website in 2 weeks.",
-    date: "2099-01-01",
+    date: "2026-07-08",
     category: "Web Design",
     readTime: "10 min read",
     content: `## Why Startups in Vizag Need a Professional Website
@@ -3592,8 +3580,20 @@ Absolutely. Contact us for a portfolio showcasing startup websites across indust
       { question: "Do I need separate hosting?", answer: "No. All packages include hosting on Vercel's global CDN. Ongoing hosting after the included period is Rs 500-1,000 per month." },
       { question: "What about SEO for startups?", answer: "Every package includes SEO — from basic meta tags to comprehensive SEO strategies depending on the package." }
     ]
-  },
-  // ===== BLOG 5 — T1: Next.js vs WordPress =====
+  }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
+// ===== BLOG 5 — T1: Next.js vs WordPress =====
   {
     slug: "nextjs-vs-wordpress-website-development",
     title: "Next.js vs WordPress 2026: Why Indian Businesses Are Switching to Modern Web Development",
