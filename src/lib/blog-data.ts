@@ -3581,26 +3581,14 @@ Absolutely. Contact us for a portfolio showcasing startup websites across indust
       { question: "What about SEO for startups?", answer: "Every package includes SEO — from basic meta tags to comprehensive SEO strategies depending on the package." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-// ===== BLOG 5 — T1: Next.js vs WordPress =====
-  {
+,
+{
     slug: "nextjs-vs-wordpress-website-development",
     title: "Next.js vs WordPress 2026: Why Indian Businesses Are Switching to Modern Web Development",
     excerpt: "Next.js vs WordPress 2026 comparison for Indian businesses. Performance, SEO, security, scalability, and cost analysis. Why Vizag and Bangalore businesses are switching from WordPress to Next.js.",
     metaTitle: "Next.js vs WordPress 2026 for Indian Businesses | Vyzma AI",
     metaDescription: "Next.js vs WordPress 2026 comparison for Indian businesses. Performance, SEO, security, scalability, and cost analysis. Why Vizag and Bangalore businesses are switching from WordPress to Next.js.",
-    date: "2099-01-01",
+    date: "2026-07-09",
     category: "Web Design",
     readTime: "13 min read",
     content: `## The Great Debate: Next.js vs WordPress
@@ -3732,8 +3720,20 @@ Content updates can be managed through a headless CMS or Markdown files with a s
       { question: "Which is cheaper overall?", answer: "WordPress has lower upfront costs but over 2-3 years, Next.js often becomes cheaper due to lower hosting costs, no plugin subscriptions, and less maintenance." },
       { question: "Can I migrate from WordPress to Next.js?", answer: "Yes. Vyzma AI specialises in WordPress to Next.js migrations, preserving SEO equity and rebuilding with modern technology in 2-4 weeks." }
     ]
-  },
-  // ===== BLOG 6 — L1: Vizag (Location) =====
+  }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
+// ===== BLOG 6 — L1: Vizag (Location) =====
   {
     slug: "website-design-company-visakhapatnam",
     title: "Website Design Company Visakhapatnam: Professional Web Development for Vizag Businesses",
