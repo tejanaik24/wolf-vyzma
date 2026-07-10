@@ -3721,26 +3721,14 @@ Content updates can be managed through a headless CMS or Markdown files with a s
       { question: "Can I migrate from WordPress to Next.js?", answer: "Yes. Vyzma AI specialises in WordPress to Next.js migrations, preserving SEO equity and rebuilding with modern technology in 2-4 weeks." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-// ===== BLOG 6 — L1: Vizag (Location) =====
-  {
+,
+{
     slug: "website-design-company-visakhapatnam",
     title: "Website Design Company Visakhapatnam: Professional Web Development for Vizag Businesses",
     excerpt: "Website design company in Visakhapatnam serving Vizag businesses. Professional web development with local SEO, WhatsApp integration, Telugu support, and AI chatbot. Serving Rushikonda, MVP Colony, Dwaraka Nagar and all Vizag areas.",
     metaTitle: "Website Design Company Visakhapatnam | Vizag Web Development | Vyzma AI",
     metaDescription: "Website design company Visakhapatnam serving Vizag businesses. Professional web development with local SEO, WhatsApp integration, Telugu support. Serving Rushikonda, MVP Colony, Dwaraka Nagar and all Vizag areas.",
-    date: "2099-01-01",
+    date: "2026-07-10",
     category: "Web Design",
     readTime: "11 min read",
     content: `## Finding the Right Website Design Company in Visakhapatnam
@@ -3837,8 +3825,20 @@ Yes. Every website we build includes comprehensive SEO — local SEO for Vizag, 
       { question: "Do you support Telugu language on websites?", answer: "Yes. Full Telugu content support including fonts, navigation, UI elements, and AI chatbot responses in Telugu." },
       { question: "Do you have a physical office in Visakhapatnam?", answer: "Yes. Vyzma AI has an office in Vizag's Rushikonda area, available for in-person consultations and meetings." }
     ]
-  },
-  // ===== BLOG 7 — L2: Bangalore (Location) =====
+  }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
+// ===== BLOG 7 — L2: Bangalore (Location) =====
   {
     slug: "web-development-agency-bangalore",
     title: "Web Development Agency Bangalore: Modern Websites for India's Tech Capital",
