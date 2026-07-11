@@ -3826,26 +3826,14 @@ Yes. Every website we build includes comprehensive SEO — local SEO for Vizag, 
       { question: "Do you have a physical office in Visakhapatnam?", answer: "Yes. Vyzma AI has an office in Vizag's Rushikonda area, available for in-person consultations and meetings." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-// ===== BLOG 7 — L2: Bangalore (Location) =====
-  {
+,
+{
     slug: "web-development-agency-bangalore",
     title: "Web Development Agency Bangalore: Modern Websites for India's Tech Capital",
     excerpt: "Web development agency Bangalore by Vyzma AI. High-performance Next.js websites for Bangalore startups and enterprises. AI chatbots, SEO, and conversion design. Serving Koramangala, Whitefield, Indiranagar, and all Bangalore areas.",
     metaTitle: "Web Development Agency Bangalore | Next.js Website Development | Vyzma AI",
     metaDescription: "Web development agency Bangalore. Vyzma AI builds high-performance Next.js websites for Bangalore startups and enterprises. AI chatbots, SEO, and conversion design. Serving Koramangala, Whitefield, Indiranagar.",
-    date: "2099-01-01",
+    date: "2026-07-11",
     category: "Web Design",
     readTime: "11 min read",
     content: `## Why Bangalore Businesses Need a Modern Web Development Agency
@@ -3947,8 +3935,20 @@ A standard business website takes 2-4 weeks. Complex projects with custom featur
       { question: "What is your tech stack?", answer: "Next.js with TypeScript, React, and Tailwind CSS. Hosted on Vercel with global CDN. AI features use GPT-4o and Claude." },
       { question: "Do you have a Bangalore office?", answer: "Yes. Vyzma AI has an Innovation Hub in Bangalore available for in-person client meetings." }
     ]
-  },
-  // ===== BLOG 8 — I2: Real Estate (Industry) =====
+  }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
+// ===== BLOG 8 — I2: Real Estate (Industry) =====
   {
     slug: "web-design-real-estate-vizag",
     title: "Web Design for Real Estate in Vizag: Property Websites That Sell Homes Faster",
