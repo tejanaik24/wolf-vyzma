@@ -3936,26 +3936,14 @@ A standard business website takes 2-4 weeks. Complex projects with custom featur
       { question: "Do you have a Bangalore office?", answer: "Yes. Vyzma AI has an Innovation Hub in Bangalore available for in-person client meetings." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
-// ===== BLOG 8 — I2: Real Estate (Industry) =====
-  {
+,
+{
     slug: "web-design-real-estate-vizag",
     title: "Web Design for Real Estate in Vizag: Property Websites That Sell Homes Faster",
     excerpt: "Web design for real estate in Vizag by Vyzma AI. Build property websites with virtual tours, MLS integration, lead capture, and AI chatbots. Help Vizag real estate agents and builders sell properties faster.",
     metaTitle: "Web Design for Real Estate Vizag | Property Website Design | Vyzma AI",
     metaDescription: "Web design for real estate in Vizag. Vyzma AI builds property websites with virtual tours, MLS integration, lead capture, and AI chatbots. Help Vizag real estate agents and builders sell properties faster.",
-    date: "2099-01-01",
+    date: "2026-07-12",
     category: "Web Design",
     readTime: "10 min read",
     content: `## Why Real Estate Needs Professional Websites in Vizag
@@ -4069,4 +4057,16 @@ Yes. Every listing gets unique meta tags, property schema markup, location-speci
       { question: "Do you optimise property listings for SEO?", answer: "Yes. Every listing gets unique meta tags, property schema markup, location-specific keywords, and image SEO." }
     ]
   }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
 ];
