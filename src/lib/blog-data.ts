@@ -22,8 +22,8 @@ export const BLOG_POSTS: BlogPost[] = [
   slug: "what-is-vyzma-ai",
   title: "What is Vyzma AI? India's Premier AI Agency — Services, Locations & Results",
   excerpt: "Vyzma AI is India's premier AI agency headquartered in Visakhapatnam and Bangalore. We build AI chatbots, workflow automation, SEO, voice AI, and performance marketing systems for Indian businesses. Here is everything you need to know about who we are, what we do, and why businesses across India choose Vyzma AI.",
-  metaTitle: "Vyzma AI Review 2026: Is It India's Best AI Agency? (Honest Answer)",
-  metaDescription: "Unbiased Vyzma AI review 2026. Services, pricing, real client results, and how Vyzma compares to other AI agencies in Vizag and Bangalore. Read before you hire.",
+  metaTitle: "What is Vyzma AI? India's Premier AI Agency | Vyzma AI",
+  metaDescription: "Vyzma AI is India's premier AI agency based in Visakhapatnam & Bangalore. We build AI chatbots, automation, SEO, and performance marketing for Indian businesses. Learn about our services and results.",
   date: "2026-05-16",
   category: "About Vyzma AI",
   readTime: "11 min read",
@@ -131,7 +131,7 @@ Getting started with Vyzma AI takes one conversation. Every engagement begins wi
 
 There is no minimum commitment. No complex onboarding. No upfront technology costs for most services.
 
-To start a conversation with Vyzma AI: [contact the team here](https://vyzma.in/#contact) or         WhatsApp directly at +91-91393-93097.
+To start a conversation with Vyzma AI: [contact the team here](https://vyzma.in/#contact) or WhatsApp directly at +91-8886720908.
 
 Vyzma AI works with clients across India and responds to all enquiries within 24 hours.
 
@@ -139,7 +139,7 @@ Vyzma AI works with clients across India and responds to all enquiries within 24
 
 - **Website:** https://vyzma.in
 - **Email:** vyzmaai.in@gmail.com
-- **Phone / WhatsApp:** +91-91393-93097
+- **Phone / WhatsApp:** +91-8886720908
 - **Offices:** Visakhapatnam (Vizag) & Bangalore, India
 
 [Start a project with Vyzma AI](https://vyzma.in/#contact)`,
@@ -150,7 +150,7 @@ Vyzma AI works with clients across India and responds to all enquiries within 24
     { question: "Is Vyzma AI the same as Vizmo AI or Vimo AI?", answer: "No. Vyzma AI is a completely separate company from Vizmo AI or Vimo AI. Vyzma AI is an Indian AI agency based in Visakhapatnam and Bangalore that provides AI and digital marketing services to businesses. Vizmo AI and Vimo AI are unrelated video generation applications." },
     { question: "How much does Vyzma AI charge?", answer: "Vyzma AI pricing varies by service. AI chatbot setup starts from ₹50,000 one-time with monthly retainers based on usage. Workflow automation projects range from ₹75,000 to ₹5L depending on complexity. SEO and ads are monthly retainers. Contact Vyzma AI for a free consultation and custom quote." },
     { question: "Can Vyzma AI work with Telugu-language businesses?", answer: "Yes. Vyzma AI was founded in Visakhapatnam and has deep expertise in Telugu-language AI deployments. Our AI chatbots and voice agents handle Telugu, English, Hindi, and 50+ languages — critical for businesses serving Andhra Pradesh and Telangana markets." },
-    { question: "How do I contact Vyzma AI?", answer: "You can contact Vyzma AI via the website at vyzma.in, by email at vyzmaai.in@gmail.com, or by WhatsApp at +91-91393-93097. Vyzma AI responds to all enquiries within 24 hours and offers free initial strategy consultations." },
+    { question: "How do I contact Vyzma AI?", answer: "You can contact Vyzma AI via the website at vyzma.in, by email at vyzmaai.in@gmail.com, or by WhatsApp at +91-8886720908. Vyzma AI responds to all enquiries within 24 hours and offers free initial strategy consultations." },
     { question: "What results does Vyzma AI deliver?", answer: "Vyzma AI clients typically see AI chatbots handling 80-95% of customer queries within 2 weeks of deployment, workflow automation recovering 15-30 hours of manual work per week, and SEO improvements showing measurable rank increases within 60-90 days. Exact results depend on the service and business context." }
   ]
 },
@@ -158,8 +158,8 @@ Vyzma AI works with clients across India and responds to all enquiries within 24
   slug: "google-ai-hub-vizag-businesses-2026",
   title: "Google AI Hub Vizag: How Businesses Can Leverage AI in 2026",
   excerpt: "Google AI Hub Vizag businesses 2026 is transforming how local companies operate. Learn how Vizag's growing tech ecosystem can leverage Gemini, AI Overviews, and Google Cloud AI to drive growth and efficiency across Rushikonda, Madhurawada, and beyond.",
-  metaTitle: "Google AI Hub Vizag 2026: What It Means for Your Business (Free Access Inside)",
-  metaDescription: "Google is setting up an AI Hub in Visakhapatnam. Here's exactly what it offers Vizag businesses — free Gemini credits, Cloud tools, and AI training. Full breakdown inside.",
+  metaTitle: "Google AI Hub Vizag Businesses 2026 | Vyzma AI",
+  metaDescription: "Google AI Hub Vizag businesses 2026 guide. Learn how Vizag companies leverage Gemini, AI Overviews and Google Cloud AI for growth. Practical insights from Rushikonda IT corridor to Madhurawada tech parks.",
   date: "2026-05-12",
   category: "AI Technology",
   readTime: "13 min read",
@@ -444,8 +444,8 @@ Last updated: May 2026
   slug: "ai-automation-vizag-businesses-2026",
   title: "AI Automation Vizag Businesses 2026 — The Complete Guide to Workflow Automation",
   excerpt: "Discover how AI automation Vizag businesses in 2026 are transforming operations across Rushikonda, Gajuwaka, and MVP Colony. From logistics dispatch to retail inventory management, learn which workflows deliver the fastest ROI.",
-  metaTitle: "AI Automation Vizag: Save 30 Hours Every Week — Real Business Examples (2026)",
-  metaDescription: "3 Vizag businesses in logistics, retail and manufacturing are saving 30+ hours every week using AI automation. See exactly what they automated and how much it cost.",
+  metaTitle: "AI Automation Vizag 2026 | Workflow Automation Guide | Vyzma AI",
+  metaDescription: "AI automation Vizag businesses in 2026: Complete guide to workflow automation for logistics, retail, and manufacturing. Real ROI data from Gajuwaka, MVP Colony, and Pendurthi companies.",
   date: "2026-05-12",
   category: "AI Automation",
   readTime: "13 min read",
@@ -616,8 +616,8 @@ A7: Not necessarily. Vyzma AI provides ongoing management and monitoring for all
   slug: "ai-chatbots-visakhapatnam-2026",
   title: "AI Chatbots Visakhapatnam 2026 — The Complete Guide for Local Businesses",
   excerpt: "Discover how AI chatbots Visakhapatnam 2026 are transforming customer support, lead generation, and booking systems. Real examples from MVP Colony clinics, Rushikonda resorts, and Dwaraka Nagar e-commerce stores.",
-  metaTitle: "AI Chatbots Vizag 2026: Cut Customer Support Costs by 60% (Real Examples)",
-  metaDescription: "3 Vizag businesses cut support costs by 60% using AI chatbots. Clinics, resorts, and e-commerce stores explain exactly how — with WhatsApp bot setup included.",
+  metaTitle: "AI Chatbots Visakhapatnam 2026 | Business Guide | Vyzma AI",
+  metaDescription: "AI chatbots Visakhapatnam 2026: Complete guide for local businesses. Learn how clinics in MVP Colony, resorts in Rushikonda, and e-commerce stores in Dwaraka Nagar use AI chatbots for support, bookings, and WhatsApp automation.",
   date: "2026-05-12",
   category: "AI Chatbots",
   readTime: "13 min read",
@@ -778,8 +778,8 @@ A7: The chatbot is trained to recognise its limits and escalate to a human team 
   slug: "ai-for-real-estate-vizag-2026",
   title: "AI for Real Estate Vizag 2026: Transforming Property Sales with Intelligent Automation",
   excerpt: "Discover how AI for real estate Vizag 2026 is reshaping property discovery, lead management, and sales automation. From Rushikonda beachfront villas to Kommadi's upcoming township projects, learn how developers and agents are using AI chatbots, predictive pricing, and virtual tours to close deals faster.",
-  metaTitle: "AI for Real Estate Vizag: Sell Properties 35% Faster Without Extra Ad Spend",
-  metaDescription: "Vizag property dealers using AI chatbots close 35% more deals without spending more on ads. See how — WhatsApp bot, lead scoring, and follow-up automation explained.",
+  metaTitle: "AI for Real Estate Vizag 2026 | Vyzma AI",
+  metaDescription: "Explore how AI for real estate Vizag 2026 helps builders and agents automate lead scoring, schedule site visits, and run 24/7 property chatbots. Real applications across Rushikonda, Madhurawada, Gajuwaka, and Kommadi.",
   date: "2026-05-12",
   category: "Industry",
   readTime: "14 min read",
@@ -1629,8 +1629,8 @@ A10: Not always. Many agencies including Vyzma AI offer month-to-month engagemen
   slug: "seo-agency-visakhapatnam-2026",
   title: "SEO Agency Visakhapatnam 2026: Why Local Businesses in Vizag Are Choosing AI-Powered Search Optimization",
   excerpt: "Discover why an SEO agency Visakhapatnam 2026 needs to offer more than basic keyword stuffing. From MVP Colony clinics to Dwaraka Nagar restaurants, Vizag businesses are adopting AI-driven SEO, AEO, and GEO strategies to dominate local search rankings.",
-  metaTitle: "Best SEO Agency Visakhapatnam 2026 — AI-Powered Results in 90 Days",
-  metaDescription: "Looking for an SEO agency in Visakhapatnam? Vyzma AI uses AI-powered SEO to rank Vizag businesses on Google in 90 days. See pricing, process and real results.",
+  metaTitle: "SEO Agency Visakhapatnam 2026 | AI-Powered Search Optimization | Vyzma AI",
+  metaDescription: "Top SEO agency Visakhapatnam 2026 offering AI-driven local SEO, technical SEO, and GEO services. Helping Vizag businesses rank #1 on Google. Get your free audit today.",
   date: "2026-05-12",
   category: "SEO",
   readTime: "13 min read",
@@ -2221,8 +2221,8 @@ A7: Vyzma AI combines cutting-edge technology (Next.js, AI integration, performa
   slug: "whatsapp-marketing-vizag-2026",
   title: "WhatsApp Marketing Vizag 2026: The Complete Guide to Growing Your Business with AI-Powered Messaging",
   excerpt: "Discover how WhatsApp marketing Vizag 2026 is transforming local businesses. From Dwaraka Nagar restaurants to MVP Colony real estate firms — learn how AI chatbots and broadcast campaigns drive real revenue.",
-  metaTitle: "WhatsApp Marketing Vizag: Get 5x More Replies With AI Chatbots (2026 Guide)",
-  metaDescription: "Vizag businesses using AI-powered WhatsApp marketing get 5x more customer replies than regular broadcasts. Step-by-step guide for local businesses. Free strategy inside.",
+  metaTitle: "WhatsApp Marketing Vizag 2026 | Vyzma AI",
+  metaDescription: "Complete guide to WhatsApp marketing Vizag 2026. Learn how Vizag businesses use AI chatbots, broadcast campaigns, and WhatsApp Business API to grow revenue.",
   date: "2026-05-12",
   category: "WhatsApp Marketing",
   readTime: "13 min read",
@@ -2881,7 +2881,7 @@ At Vyzma AI, we serve businesses across India from our offices in Visakhapatnam 
 
 Book a free consultation. No pressure. Just practical advice from people who build AI systems every day.
 
-[Call us at +91-91393-93097](tel:+919139393097) · [Email us](mailto:vyzmaai.in@gmail.com) · [Visit our website](https://vyzma.in)`,
+[Call us at +91-8886720908](tel:+918886720908) · [Email us](mailto:vyzmaai.in@gmail.com) · [Visit our website](https://vyzma.in)`,
   faq: [
     { question: "How do I choose the right AI agency in India?", answer: "Use the 5-point framework: evaluate portfolio depth, technical depth, industry fit, pricing transparency, and post-launch support." },
     { question: "How much does an AI agency cost in India in 2026?", answer: "Costs vary. Freelancers charge Rs 10,000-50,000. Full-service agencies like Vyzma AI charge Rs 50,000 to Rs 5 lakh. Enterprise agencies start at Rs 1-5 crore." },
@@ -3107,7 +3107,7 @@ Vyzma AI helps Indian businesses optimise for AI search — Google AI Overviews,
   ]
 }
 ,
-  {
+{
     slug: "top-website-building-agency-vizag",
     title: "Top Website Building Agency in Vizag: Why Vyzma AI Builds the Best Websites",
     excerpt: "Looking for the top website building agency in Vizag? Vyzma AI builds high-performance Next.js websites with AI integration, sub-2 second load times, and conversion-focused design. See why Vizag businesses choose us.",
@@ -3221,8 +3221,9 @@ Yes. SEO is a core part of every Vyzma AI website build. We structure every page
       { question: "Do you offer website maintenance?", answer: "Yes. Vyzma AI offers ongoing maintenance packages that include security updates, performance monitoring, content updates, SEO optimisation, and technical support." },
       { question: "Do you do SEO too?", answer: "Yes. SEO is a core part of every Vyzma AI website build. We structure every page for search engines with semantic HTML, proper heading hierarchy, schema markup, optimised meta tags, and clean URLs." }
     ]
-  },
-  {
+  }
+,
+{
     slug: "ecommerce-website-development-vizag",
     title: "E-commerce Website Development in Vizag: Build an Online Store That Actually Sells",
     excerpt: "E-commerce website development in Vizag by Vyzma AI. Build online stores with WhatsApp integration, secure payments, inventory management, and AI-powered product recommendations. Launch your Vizag online store in 3-5 weeks.",
@@ -3332,8 +3333,9 @@ Absolutely. Every e-commerce site we build is mobile-first, as over 80% of e-com
       { question: "How long does it take to build an e-commerce website?", answer: "A standard e-commerce website takes 3-5 weeks including design, development, payment integration, product upload, testing, and deployment." },
       { question: "Is the e-commerce site mobile responsive?", answer: "Absolutely. Every e-commerce site we build is mobile-first, as over 80% of e-commerce traffic in Vizag comes from mobile devices." }
     ]
-  },
-  {
+  }
+,
+{
     slug: "b2b-corporate-website-design-vizag",
     title: "B2B & Corporate Website Design in Vizag: Sites That Generate Leads, Not Just Looks",
     excerpt: "B2B and corporate website design in Vizag by Vyzma AI. Professional business websites with lead generation, CRM integration, client portals, and SEO-optimised architecture for Vizag B2B companies.",
@@ -3446,8 +3448,9 @@ Yes. Vyzma AI includes AI chatbot integration in every corporate website for pro
       { question: "How long does it take to build a corporate website?", answer: "A standard corporate website with 10-15 pages takes 3-5 weeks. Complex sites take 6-8 weeks." },
       { question: "Do you include chatbot integration?", answer: "Yes. Vyzma AI includes AI chatbot integration in every corporate website for prospect qualification and lead routing." }
     ]
-  },
-  {
+  }
+,
+{
     slug: "startup-website-packages-vizag",
     title: "Startup Website Packages Vizag: All-in-One Websites for Early-Stage Companies",
     excerpt: "Startup website packages Vizag by Vyzma AI for early-stage companies. All-in-one packages including branding, Next.js development, SEO setup, and AI chatbot from Rs 35,000. Launch your startup website in 2 weeks.",
@@ -3578,25 +3581,14 @@ Absolutely. Contact us for a portfolio showcasing startup websites across indust
       { question: "What about SEO for startups?", answer: "Every package includes SEO — from basic meta tags to comprehensive SEO strategies depending on the package." }
     ]
   }
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
-}
-
-export function getAllSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug);
-}
-
-// Queue of website-design blog posts to be published one per day by the scheduler
-export const BLOG_QUEUE: BlogPost[] = [
+,
 {
     slug: "nextjs-vs-wordpress-website-development",
     title: "Next.js vs WordPress 2026: Why Indian Businesses Are Switching to Modern Web Development",
     excerpt: "Next.js vs WordPress 2026 comparison for Indian businesses. Performance, SEO, security, scalability, and cost analysis. Why Vizag and Bangalore businesses are switching from WordPress to Next.js.",
     metaTitle: "Next.js vs WordPress 2026 for Indian Businesses | Vyzma AI",
     metaDescription: "Next.js vs WordPress 2026 comparison for Indian businesses. Performance, SEO, security, scalability, and cost analysis. Why Vizag and Bangalore businesses are switching from WordPress to Next.js.",
-    date: "2099-01-01",
+    date: "2026-07-09",
     category: "Web Design",
     readTime: "13 min read",
     content: `## The Great Debate: Next.js vs WordPress
@@ -3728,15 +3720,15 @@ Content updates can be managed through a headless CMS or Markdown files with a s
       { question: "Which is cheaper overall?", answer: "WordPress has lower upfront costs but over 2-3 years, Next.js often becomes cheaper due to lower hosting costs, no plugin subscriptions, and less maintenance." },
       { question: "Can I migrate from WordPress to Next.js?", answer: "Yes. Vyzma AI specialises in WordPress to Next.js migrations, preserving SEO equity and rebuilding with modern technology in 2-4 weeks." }
     ]
-  },
-  // ===== BLOG 6 — L1: Vizag (Location) =====
-  {
+  }
+,
+{
     slug: "website-design-company-visakhapatnam",
     title: "Website Design Company Visakhapatnam: Professional Web Development for Vizag Businesses",
     excerpt: "Website design company in Visakhapatnam serving Vizag businesses. Professional web development with local SEO, WhatsApp integration, Telugu support, and AI chatbot. Serving Rushikonda, MVP Colony, Dwaraka Nagar and all Vizag areas.",
     metaTitle: "Website Design Company Visakhapatnam | Vizag Web Development | Vyzma AI",
     metaDescription: "Website design company Visakhapatnam serving Vizag businesses. Professional web development with local SEO, WhatsApp integration, Telugu support. Serving Rushikonda, MVP Colony, Dwaraka Nagar and all Vizag areas.",
-    date: "2099-01-01",
+    date: "2026-07-10",
     category: "Web Design",
     readTime: "11 min read",
     content: `## Finding the Right Website Design Company in Visakhapatnam
@@ -3833,15 +3825,15 @@ Yes. Every website we build includes comprehensive SEO — local SEO for Vizag, 
       { question: "Do you support Telugu language on websites?", answer: "Yes. Full Telugu content support including fonts, navigation, UI elements, and AI chatbot responses in Telugu." },
       { question: "Do you have a physical office in Visakhapatnam?", answer: "Yes. Vyzma AI has an office in Vizag's Rushikonda area, available for in-person consultations and meetings." }
     ]
-  },
-  // ===== BLOG 7 — L2: Bangalore (Location) =====
-  {
+  }
+,
+{
     slug: "web-development-agency-bangalore",
     title: "Web Development Agency Bangalore: Modern Websites for India's Tech Capital",
     excerpt: "Web development agency Bangalore by Vyzma AI. High-performance Next.js websites for Bangalore startups and enterprises. AI chatbots, SEO, and conversion design. Serving Koramangala, Whitefield, Indiranagar, and all Bangalore areas.",
     metaTitle: "Web Development Agency Bangalore | Next.js Website Development | Vyzma AI",
     metaDescription: "Web development agency Bangalore. Vyzma AI builds high-performance Next.js websites for Bangalore startups and enterprises. AI chatbots, SEO, and conversion design. Serving Koramangala, Whitefield, Indiranagar.",
-    date: "2099-01-01",
+    date: "2026-07-11",
     category: "Web Design",
     readTime: "11 min read",
     content: `## Why Bangalore Businesses Need a Modern Web Development Agency
@@ -3943,15 +3935,15 @@ A standard business website takes 2-4 weeks. Complex projects with custom featur
       { question: "What is your tech stack?", answer: "Next.js with TypeScript, React, and Tailwind CSS. Hosted on Vercel with global CDN. AI features use GPT-4o and Claude." },
       { question: "Do you have a Bangalore office?", answer: "Yes. Vyzma AI has an Innovation Hub in Bangalore available for in-person client meetings." }
     ]
-  },
-  // ===== BLOG 8 — I2: Real Estate (Industry) =====
-  {
+  }
+,
+{
     slug: "web-design-real-estate-vizag",
     title: "Web Design for Real Estate in Vizag: Property Websites That Sell Homes Faster",
     excerpt: "Web design for real estate in Vizag by Vyzma AI. Build property websites with virtual tours, MLS integration, lead capture, and AI chatbots. Help Vizag real estate agents and builders sell properties faster.",
     metaTitle: "Web Design for Real Estate Vizag | Property Website Design | Vyzma AI",
     metaDescription: "Web design for real estate in Vizag. Vyzma AI builds property websites with virtual tours, MLS integration, lead capture, and AI chatbots. Help Vizag real estate agents and builders sell properties faster.",
-    date: "2099-01-01",
+    date: "2026-07-12",
     category: "Web Design",
     readTime: "10 min read",
     content: `## Why Real Estate Needs Professional Websites in Vizag
@@ -4065,4 +4057,16 @@ Yes. Every listing gets unique meta tags, property schema markup, location-speci
       { question: "Do you optimise property listings for SEO?", answer: "Yes. Every listing gets unique meta tags, property schema markup, location-specific keywords, and image SEO." }
     ]
   }
+];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return BLOG_POSTS.map((post) => post.slug);
+}
+
+// Queue of website-design blog posts to be published one per day by the scheduler
+export const BLOG_QUEUE: BlogPost[] = [
 ];
