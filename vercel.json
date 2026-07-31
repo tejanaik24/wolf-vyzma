@@ -3,6 +3,12 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.vyzma.in" }],
+      "destination": "https://vyzma.in/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.vyzma.in" }],
       "destination": "https://vyzma.in/:path*",
