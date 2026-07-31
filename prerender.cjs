@@ -347,7 +347,7 @@ const BLOG_POSTS = [
     title: "Next.js vs WordPress 2026: Why Indian Businesses Are Switching to Modern Web Development",
     metaTitle: "Next.js vs WordPress 2026 for Indian Businesses | Vyzma AI",
     metaDescription: "Next.js vs WordPress 2026 comparison for Indian businesses. Performance, SEO, security, scalability, and cost analysis. Why Vizag and Bangalore businesses are switching from WordPress to Next.js.",
-    date: "2099-01-01",
+    date: "2026-07-09",
     category: "Web Design",
     faq: [
       { question: "Is WordPress dying?", answer: "No, WordPress still powers 43% of websites globally and is viable for simple sites. However, for businesses needing performance and scalability, Next.js is increasingly preferred." },
@@ -361,7 +361,7 @@ const BLOG_POSTS = [
     title: "Website Design Company Visakhapatnam: Professional Web Development for Vizag Businesses",
     metaTitle: "Website Design Company Visakhapatnam | Vizag Web Development | Vyzma AI",
     metaDescription: "Website design company Visakhapatnam serving Vizag businesses. Professional web development with local SEO, WhatsApp integration, Telugu support. Serving Rushikonda, MVP Colony, Dwaraka Nagar and all Vizag areas.",
-    date: "2099-01-01",
+    date: "2026-07-10",
     category: "Web Design",
     faq: [
       { question: "How much does a website cost in Vizag?", answer: "Vyzma AI's Vizag website packages start from Rs 35,000 for a basic site, Rs 65,000 for a comprehensive site, and Rs 1,25,000+ for e-commerce or corporate websites." },
@@ -374,7 +374,7 @@ const BLOG_POSTS = [
     title: "Web Development Agency Bangalore: Modern Websites for India's Tech Capital",
     metaTitle: "Web Development Agency Bangalore | Next.js Website Development | Vyzma AI",
     metaDescription: "Web development agency Bangalore. Vyzma AI builds high-performance Next.js websites for Bangalore startups and enterprises. AI chatbots, SEO, and conversion design. Serving Koramangala, Whitefield, Indiranagar.",
-    date: "2099-01-01",
+    date: "2026-07-11",
     category: "Web Design",
     faq: [
       { question: "How much does a website cost in Bangalore?", answer: "A standard 5-page site starts at Rs 35,000. Comprehensive site with blog and SEO is Rs 65,000. E-commerce starts at Rs 1,25,000 — significantly below typical Bangalore agency rates." },
@@ -388,7 +388,7 @@ const BLOG_POSTS = [
     title: "Web Design for Real Estate in Vizag: Property Websites That Sell Homes Faster",
     metaTitle: "Web Design for Real Estate Vizag | Property Website Design | Vyzma AI",
     metaDescription: "Web design for real estate in Vizag. Vyzma AI builds property websites with virtual tours, MLS integration, lead capture, and AI chatbots. Help Vizag real estate agents and builders sell properties faster.",
-    date: "2099-01-01",
+    date: "2026-07-12",
     category: "Web Design",
     faq: [
       { question: "How much does a real estate website cost?", answer: "A real estate website starts at Rs 65,000 for a standard agent/builder site. Comprehensive platforms range from Rs 1,25,000 to Rs 2,50,000." },
