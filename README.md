@@ -51,6 +51,7 @@ vyzma-ai/
     |-- generate-blog-images.cjs
     |-- indexnow-submit.cjs
     |-- prerender.ts
+    |-- sanitize-utf8.cjs
     |-- schedule-blog.cjs
   |- src/
     |-- components/
