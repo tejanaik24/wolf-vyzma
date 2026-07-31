@@ -20,7 +20,7 @@ export const ContactSection = () => {
     const msg = encodeURIComponent(
       `Hi Vyzma! I'm ${form.name} from ${form.city}. I run a ${form.businessType} business. My WhatsApp is ${form.whatsapp}. My biggest challenge: ${form.challenge}`
     );
-    window.open(`https://wa.me/918886720908?text=${msg}`, "_blank");
+    window.open(`https://wa.me/919139393097?text=${msg}`, "_blank");
   };
 
   return (
@@ -36,13 +36,13 @@ export const ContactSection = () => {
           </p>
 
           <a
-            href="https://wa.me/918886720908"
+            href="https://wa.me/919139393097"
             target="_blank"
             rel="noreferrer noopener"
             className="inline-flex items-center gap-3 bg-[#25D366] text-white rounded-full px-6 py-3 font-medium text-sm mb-6 hover:opacity-90 transition"
           >
             <FaWhatsapp className="text-lg" />
-            WhatsApp: 8886720908
+            WhatsApp: 9139393097
           </a>
 
           <p className="text-white/60 text-sm mb-2">

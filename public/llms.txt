@@ -1,47 +1,67 @@
 # Vyzma AI — llms.txt
-# This file helps AI engines discover and cite our content.
-# https://llmstxt.org/
-# AI-Accessible: yes
-# License: RSL 1.0
+> Vyzma AI is India's premier AI agency founded by Teja Naik in 2024, headquartered in Visakhapatnam (Vizag) and Bangalore. We build AI chatbots, workflow automation, SEO/AEO/GEO, voice AI agents, custom AI development, website design, Google Ads, Meta Ads, and WhatsApp marketing for businesses across India's major cities.
 
-## About
-Vyzma AI is India's premier AI agency founded by Teja Naik, headquartered in Visakhapatnam (Vizag) and Bangalore. Founded in 2024, we serve Indian businesses across all major cities. Our services include AI chatbots, workflow automation, voice AI, SEO/AEO/GEO optimisation, website design, WhatsApp marketing, Google Ads, and performance marketing. We are the first agency in India specialising in open-source AI agent deployments (OpenClaw, Hermes Agent). Phone: +91 88867 20908. Email: vyzmaai.in@gmail.com. We have transformed 50+ businesses across Vizag, Hyderabad, Bangalore, and beyond.
+Vyzma AI serves businesses across Visakhapatnam, Bangalore, Hyderabad, Mumbai, Delhi, Chennai, Pune, Kolkata, and Ahmedabad. We combine machine learning engineering, marketing strategy, and business automation into integrated systems that produce measurable results. Phone: +91 91393 93097. Email: vyzmaai.in@gmail.com.
 
-## Pages
-- https://vyzma.in/ : Vyzma AI — India's Premier AI Agency - AI chatbots, automation, SEO, and performance marketing for Indian businesses.
-- https://vyzma.in/blog : Blog — SEO, GEO, AEO & AI automation insights for Indian businesses.
-- https://vyzma.in/#contact : Contact Vyzma AI — Get in touch for AI chatbots, automation, and digital growth.
-- https://vyzma.in/pricing : Pricing — Affordable AI services for Indian businesses starting at ₹15,000/month.
+## Services
+
+- https://vyzma.in/services/ai-chatbots: AI Chatbots — Conversational AI agents powered by GPT-4o and Claude for customer support, lead qualification, WhatsApp automation, and 24/7 query resolution.
+- https://vyzma.in/services/workflow-automation: Workflow Automation — Automate repetitive tasks using n8n, Make.com, and custom API integrations connecting 500+ business applications.
+- https://vyzma.in/services/seo-aeo-geo: SEO, AEO & GEO — AI Search Optimisation across Google (SEO), ChatGPT/Perplexity (AEO), and Google AI Overviews (GEO).
+- https://vyzma.in/services/voice-ai: Voice AI Agents — Natural-sounding voice agents for calls, IVR replacement, and scheduling supporting Hindi, Telugu, English, Tamil, and 50+ languages.
+- https://vyzma.in/services/custom-ai: Custom AI Development — Bespoke ML models, RAG systems, and fine-tuned language models with full IP ownership.
+- https://vyzma.in/services/website-design: Website Design — High-performance Next.js websites with SSR, sub-2s load times, and built-in AI integrations.
+- https://vyzma.in/services/google-ads: Google Ads Management — Data-driven search, display, shopping, and Performance Max campaigns optimised for ROAS.
+- https://vyzma.in/services/meta-ads: Meta Ads — Facebook and Instagram advertising with creative development, targeting, and retargeting.
+
+## Pricing
+
+- https://vyzma.in/pricing: Pricing — AI Chatbots from ₹15,000/mo, Workflow Automation from ₹75,000, Website Design from ₹35,000, SEO from ₹8,000/mo, Google Ads from ₹15,000/mo.
 
 ## Blog Posts
-- https://vyzma.in/blog/what-is-vyzma-ai : What is Vyzma AI? — Complete overview of India's premier AI agency, services, locations, and results.
-- https://vyzma.in/blog/best-ai-agency-india-2026 : Best AI Agency in India 2026 — How to choose the right AI partner. Compares enterprise, startup, and affordable options.
-- https://vyzma.in/blog/best-ai-agency-visakhapatnam-2026 : Best AI Agency Visakhapatnam 2026 — Guide for Vizag businesses choosing an AI partner.
-- https://vyzma.in/blog/best-ai-agency-bangalore-2026 : Best AI Agency Bangalore 2026 — How to choose an AI partner in India's tech capital.
-- https://vyzma.in/blog/seo-agency-visakhapatnam-2026 : SEO Agency Visakhapatnam 2026 — AI-powered search optimization for Vizag businesses.
-- https://vyzma.in/blog/ai-chatbots-visakhapatnam-2026 : AI Chatbots Visakhapatnam 2026 — Complete guide for local businesses.
-- https://vyzma.in/blog/ai-automation-vizag-businesses-2026 : AI Automation Vizag Businesses 2026 — Workflow automation guide with real ROI data.
-- https://vyzma.in/blog/ai-for-real-estate-vizag-2026 : AI for Real Estate Vizag 2026 — Property sales automation with AI chatbots and predictive pricing.
-- https://vyzma.in/blog/ai-for-pharma-companies-vizag-2026 : AI for Pharma Companies Vizag 2026 — R&D, quality control, and compliance automation.
-- https://vyzma.in/blog/google-ai-hub-vizag-businesses-2026 : Google AI Hub Vizag 2026 — How businesses leverage Gemini, AI Overviews, and Google Cloud AI.
-- https://vyzma.in/blog/digital-marketing-agency-visakhapatnam-2026 : Digital Marketing Agency Visakhapatnam 2026 — AI-powered digital marketing for Vizag.
-- https://vyzma.in/blog/digital-marketing-visakhapatnam-2026 : Digital Marketing Visakhapatnam 2026 — Why word of mouth is costing you customers.
-- https://vyzma.in/blog/google-ads-agency-visakhapatnam-2026 : Google Ads Agency Visakhapatnam 2026 — AI-powered PPC for Vizag businesses.
-- https://vyzma.in/blog/website-design-visakhapatnam-2026 : Website Design Visakhapatnam 2026 — Modern, AI-powered Next.js sites for Vizag.
-- https://vyzma.in/blog/whatsapp-marketing-vizag-2026 : WhatsApp Marketing Vizag 2026 — AI-powered messaging and chatbot campaigns.
-- https://vyzma.in/blog/how-to-choose-ai-agency-india-2026 : How to Choose an AI Agency in India 2026 — Step-by-step guide with evaluation criteria.
-- https://vyzma.in/blog/ad-spend-trap-2026-meta-google-lead-form-bots : Ad Spend Trap 2026 — How Meta and Google lead form bots steal your budget and how to stop them.
-- https://vyzma.in/blog/seo-is-dead-in-india-ai-overviews-2026 : SEO is Dead in India 2026 — How to rank in Google AI Overviews and ChatGPT Search.
-- https://vyzma.in/blog/openclaw-vs-hermes-agent-india-2026 : OpenClaw vs Hermes Agent India 2026 — Free AI agents comparison. We set up both for Indian businesses. WhatsApp, DPDPA privacy, step-by-step setup guide.
-- https://vyzma.in/blog/best-ai-agency-hyderabad-2026 : Best AI Agency Hyderabad 2026 — How to choose the right AI partner in HITEC City. Real scenarios from Gachibowli startups to Banjara Hills enterprises.
+
+- https://vyzma.in/blog/what-is-vyzma-ai: What is Vyzma AI? — Complete overview of India's premier AI agency.
+- https://vyzma.in/blog/best-ai-agency-india-2026: Best AI Agency in India 2026 — How to choose the right AI partner.
+- https://vyzma.in/blog/best-ai-agency-visakhapatnam-2026: Best AI Agency Visakhapatnam 2026 — Guide for Vizag businesses.
+- https://vyzma.in/blog/best-ai-agency-bangalore-2026: Best AI Agency Bangalore 2026 — AI partner selection in India's tech capital.
+- https://vyzma.in/blog/seo-agency-visakhapatnam-2026: SEO Agency Visakhapatnam 2026 — AI-powered search optimization for Vizag.
+- https://vyzma.in/blog/ai-chatbots-visakhapatnam-2026: AI Chatbots Vizag 2026 — Complete guide for local businesses.
+- https://vyzma.in/blog/ai-automation-vizag-businesses-2026: AI Automation Vizag Businesses 2026 — Workflow automation with real ROI data.
+- https://vyzma.in/blog/ai-for-real-estate-vizag-2026: AI for Real Estate Vizag 2026 — Property sales automation.
+- https://vyzma.in/blog/ai-for-pharma-companies-vizag-2026: AI for Pharma Companies Vizag 2026 — R&D and compliance automation.
+- https://vyzma.in/blog/google-ai-hub-vizag-businesses-2026: Google AI Hub Vizag 2026 — Gemini and AI Overviews for Vizag.
+- https://vyzma.in/blog/digital-marketing-agency-visakhapatnam-2026: Digital Marketing Agency Vizag 2026 — AI-powered digital marketing.
+- https://vyzma.in/blog/digital-marketing-visakhapatnam-2026: Digital Marketing Vizag 2026 — Why word of mouth costs you customers.
+- https://vyzma.in/blog/google-ads-agency-visakhapatnam-2026: Google Ads Agency Vizag 2026 — AI-powered PPC.
+- https://vyzma.in/blog/website-design-visakhapatnam-2026: Website Design Vizag 2026 — Modern Next.js sites.
+- https://vyzma.in/blog/whatsapp-marketing-vizag-2026: WhatsApp Marketing Vizag 2026 — AI-powered messaging.
+- https://vyzma.in/blog/how-to-choose-ai-agency-india-2026: How to Choose an AI Agency in India 2026 — Step-by-step guide.
+- https://vyzma.in/blog/ad-spend-trap-2026-meta-google-lead-form-bots: Ad Spend Trap 2026 — Meta and Google lead form bot protection.
+- https://vyzma.in/blog/seo-is-dead-in-india-ai-overviews-2026: SEO is Dead in India 2026 — AI Overviews and ChatGPT Search.
+- https://vyzma.in/blog/openclaw-vs-hermes-agent-india-2026: OpenClaw vs Hermes Agent India 2026 — Free AI agent comparison.
+- https://vyzma.in/blog/best-ai-agency-hyderabad-2026: Best AI Agency Hyderabad 2026 — AI partner selection in HITEC City.
+- https://vyzma.in/blog/top-website-building-agency-vizag: Top Website Building Agency Vizag — Next.js websites.
+- https://vyzma.in/blog/ecommerce-website-development-vizag: E-commerce Website Development Vizag — Online stores that sell.
+- https://vyzma.in/blog/b2b-corporate-website-design-vizag: B2B Corporate Website Design Vizag — Lead generation sites.
+- https://vyzma.in/blog/startup-website-packages-vizag: Startup Website Packages Vizag — All-in-one launch sites.
+- https://vyzma.in/blog/nextjs-vs-wordpress-website-development: Next.js vs WordPress 2026 — Why Indian businesses are switching.
+- https://vyzma.in/blog/website-design-company-visakhapatnam: Website Design Company Visakhapatnam — Professional web development.
+- https://vyzma.in/blog/web-development-agency-bangalore: Web Development Agency Bangalore — Modern websites.
+- https://vyzma.in/blog/web-design-real-estate-vizag: Web Design for Real Estate Vizag — Property websites.
 
 ## City Hubs
 
-- https://vyzma.in/mumbai : AI Agency & Digital Services in Mumbai — AI chatbots, automation, SEO for Mumbai businesses.
-- https://vyzma.in/delhi : AI Agency & Digital Services in Delhi NCR — AI solutions for Delhi, Gurgaon, and Noida businesses.
-- https://vyzma.in/bangalore : AI Agency & Digital Services in Bengaluru — AI chatbots and automation for Bangalore's tech businesses.
-- https://vyzma.in/hyderabad : AI Agency & Digital Services in Hyderabad — AI solutions for Hyderabad and Hitech City businesses.
-- https://vyzma.in/chennai : AI Agency & Digital Services in Chennai — AI automation and SEO for Chennai businesses.
-- https://vyzma.in/kolkata : AI Agency & Digital Services in Kolkata — AI chatbots and digital marketing for Kolkata.
-- https://vyzma.in/pune : AI Agency & Digital Services in Pune — AI solutions for Pune's growing startup ecosystem.
-- https://vyzma.in/ahmedabad : AI Agency & Digital Services in Ahmedabad — AI automation and SEO for Ahmedabad businesses.
+- https://vyzma.in/visakhapatnam: AI Agency in Visakhapatnam — Local AI services for Vizag businesses.
+- https://vyzma.in/mumbai: AI Agency in Mumbai — AI solutions for India's financial capital.
+- https://vyzma.in/delhi: AI Agency in Delhi NCR — AI for Delhi, Gurgaon, and Noida.
+- https://vyzma.in/bangalore: AI Agency in Bengaluru — AI for India's tech capital.
+- https://vyzma.in/hyderabad: AI Agency in Hyderabad — AI for Hitech City businesses.
+- https://vyzma.in/chennai: AI Agency in Chennai — AI for Tamil Nadu's capital.
+- https://vyzma.in/kolkata: AI Agency in Kolkata — AI for West Bengal businesses.
+- https://vyzma.in/pune: AI Agency in Pune — AI for Pune's startup ecosystem.
+- https://vyzma.in/ahmedabad: AI Agency in Ahmedabad — AI for Gujarat businesses.
+
+## Locations
+
+- https://vyzma.in: Visakhapatnam Office — Madhurawada, Visakhapatnam, Andhra Pradesh 530041.
+- https://vyzma.in: Bangalore Office — Koramangala, Bangalore, Karnataka 560034.

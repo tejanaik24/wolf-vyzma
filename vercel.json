@@ -7,6 +7,21 @@
       "has": [{ "type": "host", "value": "www.vyzma.in" }],
       "destination": "https://vyzma.in/:path*",
       "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "/#services",
+      "permanent": true
     }
   ],
   "rewrites": [

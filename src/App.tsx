@@ -14,7 +14,7 @@ const App = () => {
       <div className="relative min-h-screen w-screen overflow-x-clip">
         <CustomCursor />
         <Navbar />
-        <main>
+        <main id="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

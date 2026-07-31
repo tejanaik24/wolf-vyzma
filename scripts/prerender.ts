@@ -19,42 +19,21 @@ function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Vyzma AI',
-  alternateName: 'Vyzma',
-  url: siteUrl,
-  description: 'AI and Digital Marketing Agency based in Visakhapatnam (Vizag) and Bangalore, India. We build AI chatbots, workflow automation, SEO, voice AI, and performance marketing systems for Indian businesses.',
-  foundingDate: '2024',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+91-8886720908',
-    contactType: 'sales',
-    email: 'vyzmaai.in@gmail.com',
-    availableLanguage: ['English', 'Hindi', 'Telugu'],
-  },
-  address: [
-    { '@type': 'PostalAddress', addressLocality: 'Visakhapatnam', addressRegion: 'Andhra Pradesh', addressCountry: 'IN' },
-    { '@type': 'PostalAddress', addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' },
-  ],
-  sameAs: ['https://instagram.com/vyzmaai', 'https://linkedin.com/company/vyzmaai', 'https://youtube.com/@vyzmaai'],
-};
-
 function stripDefaultMeta(html: string): string {
   return html
-    .replace(/<title>.*?<\/title>/, '')
-    .replace(/<meta name="description"[^>]*\/?>/g, '')
+    .replace(/<title>[\s\S]*?<\/title>/, '')
+    .replace(/<meta\s+name="description"[^>]*\/?>/g, '')
     .replace(/<link rel="canonical"[^>]*\/?>/g, '')
-    .replace(/<meta property="og:[^"]*"[^>]*\/?>/g, '')
-    .replace(/<meta name="twitter:[^"]*"[^>]*\/?>/g, '')
-    .replace(/<meta name="robots"[^>]*\/?>/g, '');
+    .replace(/<meta\s+property="og:[^"]*"[^>]*\/?>/g, '')
+    .replace(/<meta\s+name="twitter:[^"]*"[^>]*\/?>/g, '')
+    .replace(/<meta\s+name="robots"[^>]*\/?>/g, '');
 }
 
 function buildMetaTags(title: string, description: string, url: string, ogType = 'website'): string {
   return `
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeAttr(description)}" />
+    <meta name="author" content="Vyzma AI" />
     <link rel="canonical" href="${url}" />
     <meta property="og:title" content="${escapeAttr(title)}" />
     <meta property="og:description" content="${escapeAttr(description)}" />
@@ -91,7 +70,6 @@ function buildHomepage(template: string): string {
       "Vyzma AI is India's most affordable AI agency. AI chatbots, voice agents, workflow automation, SEO, and performance marketing for Indian businesses. Starting at ₹4,999/month. Based in Vizag and Bangalore.",
       siteUrl
     )}
-    ${jsonLdScript(organizationSchema)}
   `;
 
   const bodyContent = `

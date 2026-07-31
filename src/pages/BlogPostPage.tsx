@@ -2,6 +2,97 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { SEO } from "@/components/seo";
 
+const CITY_LINKS: Record<string, string> = {
+  vizag: "/city/visakhapatnam",
+  visakhapatnam: "/city/visakhapatnam",
+  bangalore: "/city/bangalore",
+  bengaluru: "/city/bangalore",
+  hyderabad: "/city/hyderabad",
+  mumbai: "/city/mumbai",
+  delhi: "/city/delhi",
+  chennai: "/city/chennai",
+  pune: "/city/pune",
+  kolkata: "/city/kolkata",
+  ahmedabad: "/city/ahmedabad",
+  jaipur: "/city/jaipur",
+  lucknow: "/city/lucknow",
+  surat: "/city/surat",
+  kochi: "/city/kochi",
+  indore: "/city/indore",
+  bhopal: "/city/bhopal",
+  chandigarh: "/city/chandigarh",
+  nagpur: "/city/nagpur",
+  coimbatore: "/city/coimbatore",
+  bhubaneswar: "/city/bhubaneswar",
+  guwahati: "/city/guwahati",
+};
+
+const SERVICE_LINKS: Record<string, string> = {
+  "web design": "/services/website-design",
+  "website design": "/services/website-design",
+  "web development": "/services/website-design",
+  "digital marketing": "/services/digital-marketing",
+  "social media marketing": "/services/social-media-management",
+  "social media management": "/services/social-media-management",
+  "social media": "/services/social-media-management",
+  "search engine optimization": "/services/seo-services",
+  seo: "/services/seo-services",
+  "ai chatbot": "/services/ai-chatbots",
+  chatbots: "/services/ai-chatbots",
+  "whatsapp marketing": "/services/whatsapp-marketing",
+  "whatsapp business": "/services/whatsapp-marketing",
+  "google ads": "/services/google-ads",
+  "meta ads": "/services/meta-ads",
+  "facebook ads": "/services/meta-ads",
+  "instagram ads": "/services/meta-ads",
+};
+
+const CITY_NAMES: Record<string, string> = {
+  vizag: "Visakhapatnam",
+  visakhapatnam: "Visakhapatnam",
+  bangalore: "Bangalore",
+  hyderabad: "Hyderabad",
+  mumbai: "Mumbai",
+  delhi: "Delhi",
+  chennai: "Chennai",
+  pune: "Pune",
+  kolkata: "Kolkata",
+  ahmedabad: "Ahmedabad",
+};
+
+function getContextualLinks(content: string): { label: string; url: string; caption: string }[] {
+  const lower = content.toLowerCase();
+  const links: { label: string; url: string; caption: string }[] = [];
+  const found: Set<string> = new Set();
+
+  for (const [keyword, url] of Object.entries(SERVICE_LINKS)) {
+    if (found.has(url)) continue;
+    if (lower.includes(keyword)) {
+      links.push({
+        label: keyword.replace(/\b\w/g, (c) => c.toUpperCase()),
+        url,
+        caption: `Learn about our ${keyword} services →`,
+      });
+      found.add(url);
+    }
+  }
+
+  for (const [keyword, url] of Object.entries(CITY_LINKS)) {
+    if (found.has(url)) continue;
+    if (lower.includes(keyword)) {
+      const name = CITY_NAMES[keyword] || keyword.replace(/\b\w/g, (c) => c.toUpperCase());
+      links.push({
+        label: name,
+        url,
+        caption: `AI & Digital Services in ${name} →`,
+      });
+      found.add(url);
+    }
+  }
+
+  return links.slice(0, 6);
+}
+
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-IN', {
     year: 'numeric',
@@ -127,28 +218,6 @@ export const BlogPostPage = () => {
   const otherPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
   const pageUrl = `https://vyzma.in/blog/${post.slug}`;
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    dateModified: post.date,
-    author: { "@type": "Organization", name: "Vyzma AI" },
-    publisher: { "@type": "Organization", name: "Vyzma AI", url: "https://vyzma.in" },
-    url: pageUrl,
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: post.faq.map((f) => ({
-      "@type": "Question",
-      name: f.question,
-      acceptedAnswer: { "@type": "Answer", text: f.answer },
-    })),
-  };
-
   return (
     <>
       <SEO
@@ -156,7 +225,6 @@ export const BlogPostPage = () => {
         description={post.metaDescription}
         canonicalUrl={pageUrl}
         ogType="article"
-        jsonLd={[articleSchema, faqSchema]}
       />
       <div className="pt-24 min-h-screen bg-[#0C0C0C] text-white">
       {/* Breadcrumb */}
@@ -207,6 +275,30 @@ export const BlogPostPage = () => {
           <div className="prose-content">
             {renderContent(post.content)}
           </div>
+
+          {/* Contextual internal links */}
+          {(() => {
+            const contextualLinks = getContextualLinks(post.content);
+            if (contextualLinks.length === 0) return null;
+            return (
+              <div className="mt-16 border-t border-white/[0.06] pt-12">
+                <p className="text-[10px] font-general uppercase tracking-widest text-[#3DA3FF] mb-2">Related Services & Locations</p>
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-6 font-zentry">EXPLORE MORE</h2>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {contextualLinks.map((link, i) => (
+                    <Link
+                      key={i}
+                      to={link.url}
+                      className="group rounded-lg border border-white/[0.08] bg-white/[0.02] p-4 transition-all hover:border-[#3DA3FF]/40 hover:bg-white/[0.05]"
+                    >
+                      <span className="text-sm font-semibold text-white group-hover:text-[#3DA3FF] transition-colors font-robert-medium">{link.label}</span>
+                      <span className="block mt-1 text-xs text-white/40 group-hover:text-white/60 transition-colors font-robert-regular">{link.caption}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           {post.faq.length > 0 && (
             <div className="mt-16 border-t border-white/[0.06] pt-12">

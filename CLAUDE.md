@@ -44,3 +44,37 @@ npm run preview    # preview production build
 - Brand: vyzma AI
 - Hero videos: local `/videos/vyzma-hero-1.mp4` (#1 of 4)
 - About background: `/videos/wolf-hero.mp4`
+
+## Deploy
+
+Vercel token is stored in `.env` as `VERCEL_TOKEN` (not committed to git).
+
+```powershell
+npm run build
+vercel --prod --token $env:VERCEL_TOKEN
+```
+
+## Active tasks
+See `VYZMA_CITY_SEO_STRATEGY.md` and `VYZMA_MEMORY.md` in this repo for the current SEO/content roadmap.
+
+## Do not touch
+This is the live production site (`vyzma.in`) for the business — always verify changes locally before deploying.
+
+## Last session notes
+_Auto-updated by nightly-update.ps1 on 2026-07-29_
+
+**Last 5 commits:**
+```
+82b8baf merge: resolve conflicts with origin/main
+9a30706 feat: add 8 website-design blog posts + daily auto-publish scheduler
+f3d5e49 fix: FAQ answers always readable by crawlers - remove opacity-0 hide
+af66c60 docs: update dependencies and folder structure in README
+34cb40e feat: add /about page with Person schema + fix FAQ static visibility
+```
+
+**TODO/FIXME found:**
+```
+None found.
+```
+
+**Last modified file:** wolf-vyzma\CLAUDE.md (modified 2026-07-28 23:01)

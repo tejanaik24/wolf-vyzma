@@ -27,6 +27,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 Disallow: /api/
 
 Sitemap: https://vyzma.in/sitemap.xml

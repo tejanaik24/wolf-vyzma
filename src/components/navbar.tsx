@@ -56,12 +56,17 @@ export const Navbar = () => {
   }, [isNavVisible]);
 
   return (
-    <header
-      ref={navContainerRef}
-      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
-    >
+    <>
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+      <header
+        ref={navContainerRef}
+        role="banner"
+        className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
+      >
       <div className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4">
+        <nav aria-label="Main navigation" className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
             <a href="/#hero" className="transition hover:opacity-75">
               <img src="/img/vyzma-logo.png" alt="Vyzma" loading="eager" width="128" height="128" className="h-32 w-auto" />
@@ -162,5 +167,6 @@ export const Navbar = () => {
         </div>
       )}
     </header>
+    </>
   );
 };

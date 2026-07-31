@@ -10,7 +10,7 @@ export const Footer = () => {
   const socialIcons = [FaInstagram, FaLinkedin, FaYoutube, FaWhatsapp];
 
   return (
-    <footer id="footer" className="bg-[#0A0A0D] border-t border-white/5 px-5 sm:px-8 md:px-10 pt-16 pb-8">
+    <footer id="footer" role="contentinfo" className="bg-[#0A0A0D] border-t border-white/5 px-5 sm:px-8 md:px-10 pt-16 pb-8">
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <div>
           <img src="/img/vyzma-logo.png" alt="Vyzma" loading="lazy" width="96" height="48" className="h-12 w-auto mb-4" />
@@ -25,7 +25,7 @@ export const Footer = () => {
                 "https://instagram.com/vyzmaai",
                 "https://linkedin.com/company/vyzmaai",
                 "https://youtube.com/@vyzmaai",
-                "https://wa.me/918886720908",
+                "https://wa.me/919139393097",
               ];
               return (
                 <a key={i} href={links[i]} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition text-lg">
@@ -72,7 +72,7 @@ export const Footer = () => {
 
       <div className="max-w-5xl mx-auto border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p className="text-white/30 text-xs">© 2026 Vyzma AI. All rights reserved.</p>
-        <p className="text-white/30 text-xs">📱 8886720908 | 📧 vyzmaai.in@gmail.com</p>
+        <p className="text-white/30 text-xs">📱 9139393097 | 📧 vyzmaai.in@gmail.com</p>
         <div className="flex gap-4 text-white/30 text-xs">
           <span className="hover:text-white cursor-pointer transition">Privacy Policy</span>
           <span className="hover:text-white cursor-pointer transition">Terms of Service</span>

@@ -63,6 +63,7 @@
             "@type": "Organization",
             "@id": "https://vyzma.in/#organization",
             "name": "Vyzma AI",
+            "alternateName": "Vyzma",
             "url": "https://vyzma.in/",
             "logo": {
               "@type": "ImageObject",
@@ -71,17 +72,21 @@
               "height": 630
             },
             "foundingDate": "2024",
-            "description": "Next-Generation AI Platform — intelligent agents, automation, and custom ML solutions.",
+            "description": "AI and Digital Marketing Agency based in Visakhapatnam (Vizag) and Bangalore, India. We build AI chatbots, workflow automation, SEO, voice AI, and performance marketing systems for Indian businesses.",
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+918886720908",
+              "telephone": "+919139393097",
               "contactType": "sales",
+              "email": "vyzmaai.in@gmail.com",
               "availableLanguage": ["English", "Telugu", "Hindi"]
             },
+            "address": [
+              { "@type": "PostalAddress", "addressLocality": "Visakhapatnam", "addressRegion": "Andhra Pradesh", "addressCountry": "IN" },
+              { "@type": "PostalAddress", "addressLocality": "Bangalore", "addressRegion": "Karnataka", "addressCountry": "IN" }
+            ],
             "sameAs": [
-              "https://github.com/vyzma-ai",
-              "https://linkedin.com/company/vyzmaai",
               "https://instagram.com/vyzmaai",
+              "https://linkedin.com/company/vyzmaai",
               "https://youtube.com/@vyzmaai"
             ]
           },
@@ -90,22 +95,27 @@
             "@id": "https://vyzma.in/#website",
             "url": "https://vyzma.in/",
             "name": "Vyzma AI",
-            "description": "Next-Generation AI Platform — intelligent agents, automation, and custom ML solutions.",
+            "alternateName": "Vyzma",
+            "description": "AI and Digital Marketing Agency — AI chatbots, workflow automation, SEO, voice AI, website design, digital marketing, and social media marketing for Indian businesses.",
             "publisher": {
               "@id": "https://vyzma.in/#organization"
             },
-            "inLanguage": "en-IN"
+            "inLanguage": "en-IN",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [".hero-heading", ".about-subtext", ".bento-title"]
+            }
           },
           {
             "@type": ["LocalBusiness", "ProfessionalService"],
             "@id": "https://vyzma.in/#localbusiness-vizag",
-            "name": "Vyzma AI — Visakhapatnam",
-            "description": "India's premier AI agency. AI chatbots, workflow automation, SEO, voice AI, and custom AI solutions for Indian businesses.",
+            "name": "Vyzma AI — Visakhapatnam (Vizag)",
+            "description": "Visakhapatnam's leading AI and digital marketing agency. We provide web design, digital marketing, search engine optimization (SEO), and social media marketing to businesses across Vizag's top localities including Madhurawada, Rushikonda, Dwaraka Nagar, Seethammadhara, MVP Colony, Gajuwaka, Pendurthi, Jagadamba Centre, Siripuram, Muralinagar, Akkayyapalem, Kancharapalem, Lawsons Bay Colony, and Kurmannapalem.",
             "url": "https://vyzma.in/",
-            "telephone": "+918886720908",
+            "telephone": "+919139393097",
             "email": "vyzmaai.in@gmail.com",
             "image": "https://vyzma.in/og-homepage.png",
-            "priceRange": "₹₹",
+            "priceRange": "\u20b94,999\u2013\u20b95,00,000",
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
@@ -128,34 +138,49 @@
               "longitude": "83.3741"
             },
             "sameAs": [
-              "https://github.com/vyzma-ai",
-              "https://linkedin.com/company/vyzmaai",
               "https://instagram.com/vyzmaai",
+              "https://linkedin.com/company/vyzmaai",
               "https://youtube.com/@vyzmaai"
             ],
             "areaServed": [
               { "@type": "City", "name": "Visakhapatnam", "addressRegion": "Andhra Pradesh", "addressCountry": "IN" },
+              { "@type": "City", "name": "Madhurawada", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Rushikonda", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Dwaraka Nagar", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Seethammadhara", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "MVP Colony", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Gajuwaka", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Pendurthi", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Jagadamba Centre", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Siripuram", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Lawsons Bay Colony", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Kurmannapalem", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Akkayyapalem", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
+              { "@type": "City", "name": "Kancharapalem", "containedInPlace": { "@type": "City", "name": "Visakhapatnam" } },
               { "@type": "City", "name": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
               { "@type": "City", "name": "Bangalore", "addressRegion": "Karnataka", "addressCountry": "IN" },
               { "@type": "City", "name": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" },
               { "@type": "City", "name": "Delhi", "addressRegion": "Delhi", "addressCountry": "IN" },
-              { "@type": "City", "name": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
-              { "@type": "City", "name": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" },
-              { "@type": "City", "name": "Kolkata", "addressRegion": "West Bengal", "addressCountry": "IN" },
-              { "@type": "City", "name": "Ahmedabad", "addressRegion": "Gujarat", "addressCountry": "IN" }
+              { "@type": "City", "name": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
             ],
-            "branchOf": { "@id": "https://vyzma.in/#organization" }
+            "branchOf": { "@id": "https://vyzma.in/#organization" },
+            "makesOffer": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-web-design-vizag", "name": "Web Design", "description": "High-performance Next.js websites with server-side rendering, sub-2 second load times, SEO-first architecture, and built-in AI integrations for Vizag businesses." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-digital-marketing-vizag", "name": "Digital Marketing", "description": "AI-powered Google Ads, Meta Ads, and performance marketing campaigns optimized for ROI for Vizag businesses across Madhurawada, Rushikonda, and Dwaraka Nagar." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-seo-vizag", "name": "Search Engine Optimization", "description": "Comprehensive SEO services including technical SEO, local SEO, on-page optimization, and link building to rank Vizag businesses on Google and AI search platforms." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-social-media-vizag", "name": "Social Media Marketing", "description": "Instagram, Facebook, and LinkedIn content strategy, ad creative development, audience targeting, and weekly optimization for Vizag businesses." } }
+            ]
           },
           {
             "@type": ["LocalBusiness", "ProfessionalService"],
             "@id": "https://vyzma.in/#localbusiness-bangalore",
-            "name": "Vyzma AI — Bangalore",
-            "description": "India's premier AI agency. AI chatbots, workflow automation, SEO, voice AI, and custom AI solutions for Indian businesses.",
+            "name": "Vyzma AI — Bengaluru (Bangalore)",
+            "description": "Bangalore's premier AI and digital marketing agency with an Innovation Hub in Koramangala. We provide web design, digital marketing, search engine optimization (SEO), and social media marketing to businesses across Bangalore's key localities including Koramangala, Whitefield, Indiranagar, Electronic City, HSR Layout, MG Road, Jayanagar, JP Nagar, Banashankari, Rajajinagar, Malleswaram, Basavanagudi, Marathahalli, Bellandur, BTM Layout, and Sarjapur Road.",
             "url": "https://vyzma.in/",
-            "telephone": "+918886720908",
+            "telephone": "+919139393097",
             "email": "vyzmaai.in@gmail.com",
             "image": "https://vyzma.in/og-homepage.png",
-            "priceRange": "₹₹",
+            "priceRange": "\u20b94,999\u2013\u20b95,00,000",
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
@@ -178,19 +203,157 @@
               "longitude": "77.6245"
             },
             "sameAs": [
-              "https://github.com/vyzma-ai",
-              "https://linkedin.com/company/vyzmaai",
               "https://instagram.com/vyzmaai",
+              "https://linkedin.com/company/vyzmaai",
               "https://youtube.com/@vyzmaai"
             ],
             "areaServed": [
               { "@type": "City", "name": "Bangalore", "addressRegion": "Karnataka", "addressCountry": "IN" },
+              { "@type": "City", "name": "Koramangala", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Whitefield", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Indiranagar", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Electronic City", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "HSR Layout", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Jayanagar", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "JP Nagar", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Banashankari", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Rajajinagar", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Malleswaram", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Basavanagudi", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Marathahalli", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Bellandur", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "BTM Layout", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
+              { "@type": "City", "name": "Sarjapur Road", "containedInPlace": { "@type": "City", "name": "Bangalore" } },
               { "@type": "City", "name": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
               { "@type": "City", "name": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
               { "@type": "City", "name": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" },
               { "@type": "City", "name": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" }
             ],
-            "branchOf": { "@id": "https://vyzma.in/#organization" }
+            "branchOf": { "@id": "https://vyzma.in/#organization" },
+            "makesOffer": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-web-design-bangalore", "name": "Web Design", "description": "High-performance Next.js websites with server-side rendering, sub-2 second load times, SEO-first architecture, and built-in AI integrations for Bangalore businesses." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-digital-marketing-bangalore", "name": "Digital Marketing", "description": "AI-powered Google Ads, Meta Ads, and performance marketing campaigns optimized for ROI for Bangalore businesses across Koramangala, Indiranagar, and Whitefield." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-seo-bangalore", "name": "Search Engine Optimization", "description": "Comprehensive SEO services including technical SEO, local SEO, on-page optimization, and link building to rank Bangalore businesses on Google and AI search platforms." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://vyzma.in/#service-social-media-bangalore", "name": "Social Media Marketing", "description": "Instagram, Facebook, and LinkedIn content strategy, ad creative development, audience targeting, and weekly optimization for Bangalore businesses." } }
+            ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-ai-chatbots",
+            "name": "AI Chatbots",
+            "description": "Conversational AI agents powered by GPT-4o and Claude for customer support, lead qualification, WhatsApp automation, and 24/7 query resolution.",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "AI Chatbot Development",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-workflow-automation",
+            "name": "Workflow Automation",
+            "description": "Automation of repetitive tasks using n8n, Make.com, and custom API integrations. Data entry, invoice processing, CRM updates, approval workflows connecting 500+ business applications.",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "Business Process Automation",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-seo-aeo-geo",
+            "name": "SEO, AEO & GEO \u2014 AI Search Optimisation",
+            "description": "Organic search presence across Google (SEO), AI assistants like ChatGPT and Perplexity (Answer Engine Optimisation), and Google AI Overviews (Generative Engine Optimisation).",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "Search Engine Optimization",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-voice-ai",
+            "name": "Voice AI Agents",
+            "description": "Natural-sounding voice agents for customer calls, IVR replacement, appointment scheduling, and outbound follow-ups supporting Hindi, Telugu, English, Tamil, and 50+ languages.",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "Voice AI Development",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-website-design",
+            "name": "Website Design & Development",
+            "description": "High-performance Next.js websites with server-side rendering, sub-2 second load times, SEO-first architecture, and built-in AI integrations.",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "Web Development",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-google-ads",
+            "name": "Google Ads Management",
+            "description": "Data-driven Google Ads campaigns for search, display, shopping, and Performance Max. Optimised for Return on Ad Spend (ROAS).",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "Pay-Per-Click Advertising",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-meta-ads",
+            "name": "Meta Ads \u2014 Facebook & Instagram",
+            "description": "Facebook and Instagram advertising campaigns including ad creative, audience targeting, retargeting, and weekly optimisation for brand awareness and lead generation.",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "Social Media Advertising",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://vyzma.in/#service-whatsapp-marketing",
+            "name": "WhatsApp Marketing",
+            "description": "AI-powered WhatsApp Business API campaigns with chatbot integration, automated broadcasts, and two-way conversational marketing. 98% open rates.",
+            "provider": { "@id": "https://vyzma.in/#organization" },
+            "serviceType": "Messaging Marketing",
+            "areaServed": ["Visakhapatnam", "Bangalore", "Hyderabad", "Mumbai", "Delhi", "Chennai", "Pune", "Kolkata", "Ahmedabad"]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://vyzma.in/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What services does Vyzma AI offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vyzma AI offers eight core services: AI chatbots (GPT-4o, Claude), workflow automation (n8n, Make.com), SEO/AEO/GEO for AI search, voice AI agents supporting 50+ languages, custom AI development, Next.js website design, Google Ads management, and Meta Ads (Facebook & Instagram)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does Vyzma AI charge?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vyzma AI pricing starts from \u20b915,000 per month for AI chatbots, \u20b950,000 one-time setup with monthly retainers based on usage. Workflow automation projects range from \u20b975,000 to \u20b95,00,000. SEO starts at \u20b98,000/month. Website design starts at \u20b935,000."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Vyzma AI located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vyzma AI is headquartered in Visakhapatnam (Vizag), Andhra Pradesh, with an Innovation Hub in Bangalore, Karnataka. We serve clients across all major Indian cities including Hyderabad, Mumbai, Delhi, Chennai, Pune, Kolkata, and Ahmedabad."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I contact Vyzma AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can contact Vyzma AI via phone at +91 91393 93097, email at vyzmaai.in@gmail.com, WhatsApp at +919139393097, or through the website contact form."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Vyzma AI offer free consultations?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Vyzma AI offers free consultations for Indian businesses. You can book a free call through the website or contact via WhatsApp or phone to discuss your AI requirements."
+                }
+              }
+            ]
           }
         ]
       }
@@ -205,6 +368,9 @@
     <div id="root"></div>
 
     <noscript>Enable JavaScript to run this Vite.js application.</noscript>
+    <meta name="speakable" content="https://vyzma.in/#hero" />
+    <meta name="speakable" content="https://vyzma.in/#about" />
+    <meta name="speakable" content="https://vyzma.in/#features" />
 
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -21,6 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+.env
+.env.*
 bun.lockb
 
 # Large unused video files

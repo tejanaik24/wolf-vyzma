@@ -5,15 +5,54 @@ const SITE_URL = "https://vyzma.in";
 const OG_FALLBACK = `${SITE_URL}/og-homepage.png`;
 
 const CITIES = [
-  { slug: "mumbai", name: "Mumbai", state: "Maharashtra", tagline: "India's Financial & Commercial Capital", population: "12.6M+" },
-  { slug: "delhi", name: "Delhi", state: "Delhi NCR", tagline: "India's Capital & Political Hub", population: "19M+" },
-  { slug: "bangalore", name: "Bengaluru", state: "Karnataka", tagline: "India's Silicon Valley & Tech Capital", population: "8.4M+" },
-  { slug: "hyderabad", name: "Hyderabad", state: "Telangana", tagline: "The City of Pearls & Tech Innovation", population: "6.9M+" },
-  { slug: "chennai", name: "Chennai", state: "Tamil Nadu", tagline: "India's Manufacturing & Auto Hub", population: "7.1M+" },
-  { slug: "kolkata", name: "Kolkata", state: "West Bengal", tagline: "The City of Joy — Eastern India's Business Hub", population: "4.5M+" },
-  { slug: "pune", name: "Pune", state: "Maharashtra", tagline: "India's Education & Automotive Hub", population: "3.1M+" },
-  { slug: "ahmedabad", name: "Ahmedabad", state: "Gujarat", tagline: "India's Commercial & Industrial Powerhouse", population: "5.6M+" },
+  { slug: "mumbai", name: "Mumbai", state: "Maharashtra", tagline: "India's Financial & Commercial Capital", population: "12.6M+", knownFor: "Financial district, Bollywood, startups, real estate", description: "Mumbai, the city that never sleeps, is home to India's largest concentration of businesses — from Bollywood to fintech, real estate to hospitality. As the financial capital, Mumbai businesses need cutting-edge AI solutions to stay competitive in the world's most demanding market." },
+  { slug: "delhi", name: "Delhi", state: "Delhi NCR", tagline: "India's Capital & Political Hub", population: "19M+", knownFor: "Government, trade, manufacturing, startups", description: "Delhi NCR, encompassing Delhi, Gurgaon, and Noida, is India's largest metropolitan region and a powerhouse of commerce, politics, and technology. From government contracts to B2B services, Delhi businesses need AI-driven efficiency to lead the national capital region." },
+  { slug: "bangalore", name: "Bengaluru", state: "Karnataka", tagline: "India's Silicon Valley & Tech Capital", population: "8.4M+", knownFor: "IT parks, startups, R&D centers, innovation", description: "Bengaluru (Bangalore) is India's undisputed tech capital, home to thousands of startups, global R&D centers, and the most concentrated pool of tech talent in the country. From Koramangala to Whitefield, Bangalore businesses rely on AI to innovate faster and scale smarter." },
+  { slug: "hyderabad", name: "Hyderabad", state: "Telangana", tagline: "The City of Pearls & Tech Innovation", population: "6.9M+", knownFor: "Pharma, IT/ITES, biotechnology, startups", description: "Hyderabad, with its world-class HITEC City and thriving pharma ecosystem, has emerged as India's second-largest tech hub. From Gachibowli to Madhapur, Hyderabad businesses are adopting AI at scale to power everything from life sciences to enterprise software." },
+  { slug: "chennai", name: "Chennai", state: "Tamil Nadu", tagline: "India's Manufacturing & Auto Hub", population: "7.1M+", knownFor: "Automotive, manufacturing, IT, healthcare", description: "Chennai, the Detroit of India, is a powerhouse of manufacturing, automotive, and IT services. From OMR to the industrial corridors, Chennai businesses are leveraging AI to optimize supply chains, improve manufacturing quality, and deliver world-class software." },
+  { slug: "kolkata", name: "Kolkata", state: "West Bengal", tagline: "The City of Joy — Eastern India's Business Hub", population: "4.5M+", knownFor: "Manufacturing, IT, education, cultural industries", description: "Kolkata, the cultural and commercial capital of Eastern India, has a rich legacy of industry, trade, and intellectual capital. From Salt Lake Sector V to the CBD, Kolkata businesses are embracing AI to modernize traditional industries and drive digital transformation across the eastern corridor." },
+  { slug: "pune", name: "Pune", state: "Maharashtra", tagline: "India's Education & Automotive Hub", population: "3.1M+", knownFor: "Automotive, education, IT, manufacturing", description: "Pune, the Oxford of the East, combines a thriving education ecosystem with a booming automotive and IT industry. From Hinjawadi to Kharadi, Pune businesses are leveraging AI for everything from car manufacturing to edtech, making it one of India's fastest-growing AI adoption markets." },
+  { slug: "ahmedabad", name: "Ahmedabad", state: "Gujarat", tagline: "India's Commercial & Industrial Powerhouse", population: "5.6M+", knownFor: "Textiles, pharma, trading, manufacturing", description: "Ahmedabad, the commercial capital of Gujarat, is a hub of trade, textiles, pharmaceuticals, and manufacturing. From the SG Highway corridor to the GIFT City financial hub, Ahmedabad businesses are rapidly adopting AI to drive efficiency in traditional industries and build the next generation of smart enterprises." },
 ];
+
+const VIZAG_OVERRIDES = {
+  hub: {
+    title: "Best AI Agency in Visakhapatnam (Vizag) 2026 | Vyzma AI",
+    desc: "Vyzma AI is Visakhapatnam's leading AI agency. AI chatbots, SEO, digital marketing, Google Ads, WhatsApp marketing, and website design for Vizag businesses. Free consultation."
+  },
+  "ai-agency": {
+    title: "AI Agency Visakhapatnam — AI Chatbots & Automation for Vizag Businesses | Vyzma AI",
+    desc: "Best AI agency in Visakhapatnam. Vyzma AI builds AI chatbots, workflow automation, and voice AI for Vizag businesses. Starting from ₹50,000. Free demo available."
+  },
+  "seo-services": {
+    title: "SEO Agency Visakhapatnam — Rank on Google in 90 Days | Vyzma AI",
+    desc: "Best SEO agency in Visakhapatnam. AI-powered local SEO, technical SEO, and content SEO for Vizag businesses. Google rankings guaranteed in 90 days. Free audit included."
+  },
+  "digital-marketing": {
+    title: "Digital Marketing Agency Visakhapatnam — AI-Powered Results for Vizag | Vyzma AI",
+    desc: "Best digital marketing agency in Visakhapatnam. Google Ads, Meta Ads, SEO, and WhatsApp marketing for Vizag businesses. AI-powered campaigns that deliver real leads."
+  },
+  "social-media-management": {
+    title: "Social Media Agency Visakhapatnam — Grow Instagram & Facebook Fast | Vyzma AI",
+    desc: "Best social media management agency in Visakhapatnam. Vyzma AI manages Instagram, Facebook, and YouTube for Vizag businesses. Content creation, ads, and real follower growth."
+  },
+  "google-ads": {
+    title: "Google Ads Agency Visakhapatnam — More Leads, Less Wasted Budget | Vyzma AI",
+    desc: "Best Google Ads agency in Visakhapatnam. AI-optimised PPC campaigns for Vizag businesses. Stop wasting budget on fake clicks. Free Google Ads account audit."
+  },
+  "ai-chatbots": {
+    title: "AI Chatbots Visakhapatnam — WhatsApp & Website Bots for Vizag Businesses | Vyzma AI",
+    desc: "Best AI chatbot agency in Visakhapatnam. WhatsApp bots, website chatbots, and voice AI for Vizag businesses. Cut support costs by 60%. Starting from ₹12,000/month."
+  },
+  "whatsapp-marketing": {
+    title: "WhatsApp Marketing Visakhapatnam — Get 5x More Customer Replies | Vyzma AI",
+    desc: "Best WhatsApp marketing agency in Visakhapatnam. AI-powered WhatsApp broadcasts, chatbots, and Business API for Vizag businesses. More replies, more sales."
+  },
+  "website-design": {
+    title: "Website Design Visakhapatnam — Fast Modern Websites for Vizag Businesses | Vyzma AI",
+    desc: "Best website design agency in Visakhapatnam. Vyzma AI builds fast, SEO-ready Next.js websites for Vizag businesses. Google-friendly from day one. Starting from ₹35,000."
+  }
+};
 
 const CITY_SERVICES = [
   { slug: "ai-agency", name: "AI Agency Services", shortName: "AI Agency", keywords: "AI agency, artificial intelligence" },
@@ -30,8 +69,8 @@ const BLOG_POSTS = [
   {
     slug: "what-is-vyzma-ai",
     title: "What is Vyzma AI? India's Premier AI Agency — Services, Locations & Results",
-    metaTitle: "What is Vyzma AI? India's Premier AI Agency | Vyzma AI",
-    metaDescription: "Vyzma AI is India's premier AI agency based in Visakhapatnam & Bangalore. We build AI chatbots, automation, SEO, and performance marketing for Indian businesses. Learn about our services and results.",
+    metaTitle: "Vyzma AI Review 2026: Is It India's Best AI Agency? (Honest Answer)",
+    metaDescription: "Unbiased Vyzma AI review 2026. Services, pricing, real client results, and how Vyzma compares to other AI agencies in Vizag and Bangalore. Read before you hire.",
     date: "2026-05-16",
     category: "About Vyzma AI",
     faq: [
@@ -45,8 +84,8 @@ const BLOG_POSTS = [
   {
     slug: "google-ai-hub-vizag-businesses-2026",
     title: "Google AI Hub Vizag: How Businesses Can Leverage AI in 2026",
-    metaTitle: "Google AI Hub Vizag Businesses 2026 | Vyzma AI",
-    metaDescription: "Google AI Hub Vizag businesses 2026 guide. Learn how Vizag companies leverage Gemini, AI Overviews and Google Cloud AI for growth. Practical insights from Rushikonda IT corridor to Madhurawada tech parks.",
+    metaTitle: "Google AI Hub Vizag 2026: What It Means for Your Business (Free Access Inside)",
+    metaDescription: "Google is setting up an AI Hub in Visakhapatnam. Here's exactly what it offers Vizag businesses — free Gemini credits, Cloud tools, and AI training. Full breakdown inside.",
     date: "2026-05-12",
     category: "AI Technology",
     faq: [
@@ -71,8 +110,8 @@ const BLOG_POSTS = [
   {
     slug: "ai-automation-vizag-businesses-2026",
     title: "AI Automation Vizag Businesses 2026 — The Complete Guide to Workflow Automation",
-    metaTitle: "AI Automation Vizag 2026 | Workflow Automation Guide | Vyzma AI",
-    metaDescription: "AI automation Vizag businesses in 2026: Complete guide to workflow automation for logistics, retail, and manufacturing. Real ROI data from Gajuwaka, MVP Colony, and Pendurthi companies.",
+    metaTitle: "AI Automation Vizag: Save 30 Hours Every Week — Real Business Examples (2026)",
+    metaDescription: "3 Vizag businesses in logistics, retail and manufacturing are saving 30+ hours every week using AI automation. See exactly what they automated and how much it cost.",
     date: "2026-05-12",
     category: "AI Automation",
     faq: [
@@ -84,8 +123,8 @@ const BLOG_POSTS = [
   {
     slug: "ai-chatbots-visakhapatnam-2026",
     title: "AI Chatbots Visakhapatnam 2026 — The Complete Guide for Local Businesses",
-    metaTitle: "AI Chatbots Visakhapatnam 2026 | Business Guide | Vyzma AI",
-    metaDescription: "AI chatbots Visakhapatnam 2026: Complete guide for local businesses. Learn how clinics in MVP Colony, resorts in Rushikonda, and e-commerce stores in Dwaraka Nagar use AI chatbots.",
+    metaTitle: "AI Chatbots Vizag 2026: Cut Customer Support Costs by 60% (Real Examples)",
+    metaDescription: "3 Vizag businesses cut support costs by 60% using AI chatbots. Clinics, resorts, and e-commerce stores explain exactly how — with WhatsApp bot setup included.",
     date: "2026-05-12",
     category: "AI Chatbots",
     faq: [
@@ -97,8 +136,8 @@ const BLOG_POSTS = [
   {
     slug: "ai-for-real-estate-vizag-2026",
     title: "AI for Real Estate Vizag 2026: Transforming Property Sales with Intelligent Automation",
-    metaTitle: "AI for Real Estate Vizag 2026 | Vyzma AI",
-    metaDescription: "Explore how AI for real estate Vizag 2026 helps builders and agents automate lead scoring, schedule site visits, and run 24/7 property chatbots across Rushikonda, Madhurawada, and Kommadi.",
+    metaTitle: "AI for Real Estate Vizag: Sell Properties 35% Faster Without Extra Ad Spend",
+    metaDescription: "Vizag property dealers using AI chatbots close 35% more deals without spending more on ads. See how — WhatsApp bot, lead scoring, and follow-up automation explained.",
     date: "2026-05-12",
     category: "Industry",
     faq: [
@@ -149,8 +188,8 @@ const BLOG_POSTS = [
   {
     slug: "seo-agency-visakhapatnam-2026",
     title: "SEO Agency Visakhapatnam 2026: Why Local Businesses in Vizag Are Choosing AI-Powered Search Optimization",
-    metaTitle: "SEO Agency Visakhapatnam 2026 | AI-Powered Search Optimization | Vyzma AI",
-    metaDescription: "Top SEO agency Visakhapatnam 2026 offering AI-driven local SEO, technical SEO, and GEO services. Helping Vizag businesses rank #1 on Google.",
+    metaTitle: "Best SEO Agency Visakhapatnam 2026 — AI-Powered Results in 90 Days",
+    metaDescription: "Looking for an SEO agency in Visakhapatnam? Vyzma AI uses AI-powered SEO to rank Vizag businesses on Google in 90 days. See pricing, process and real results.",
     date: "2026-05-12",
     category: "SEO",
     faq: [
@@ -188,8 +227,8 @@ const BLOG_POSTS = [
   {
     slug: "whatsapp-marketing-vizag-2026",
     title: "WhatsApp Marketing Vizag 2026: The Complete Guide to Growing Your Business with AI-Powered Messaging",
-    metaTitle: "WhatsApp Marketing Vizag 2026 | Vyzma AI",
-    metaDescription: "Complete guide to WhatsApp marketing Vizag 2026. Learn how Vizag businesses use AI chatbots, broadcast campaigns, and WhatsApp Business API to grow revenue.",
+    metaTitle: "WhatsApp Marketing Vizag: Get 5x More Replies With AI Chatbots (2026 Guide)",
+    metaDescription: "Vizag businesses using AI-powered WhatsApp marketing get 5x more customer replies than regular broadcasts. Step-by-step guide for local businesses. Free strategy inside.",
     date: "2026-05-12",
     category: "WhatsApp Marketing",
     faq: [
@@ -214,8 +253,8 @@ const BLOG_POSTS = [
   {
     slug: "best-ai-agency-india-2026",
     title: "Best AI Agency in India 2026: How to Choose the Right AI Partner for Your Business",
-    metaTitle: "Best AI Agency in India 2026 | Vyzma AI",
-    metaDescription: "Best AI agency in India 2026 guide. Compare enterprise giants, AI-native startups, mid-market agencies, and affordable full-service options. Real scenarios and pricing comparison.",
+    metaTitle: "Best AI Agency India 2026: Top 5 Compared (Honest, No Paid Rankings)",
+    metaDescription: "Honest comparison of India's best AI agencies in 2026. No paid placements. We compare pricing, services, and real results for SMEs across Vizag, Bangalore, and Hyderabad.",
     date: "2026-06-02",
     category: "AI Agency",
     faq: [
@@ -249,7 +288,7 @@ const BLOG_POSTS = [
     title: "Top Website Building Agency in Vizag: Why Vyzma AI Builds the Best Websites",
     metaTitle: "Top Website Building Agency in Vizag | Vyzma AI Website Design",
     metaDescription: "Top website building agency in Vizag. Vyzma AI builds high-performance Next.js websites with AI integration, sub-2 second load times, and SEO-first architecture for Vizag businesses.",
-    date: "2099-01-01",
+    date: "2026-07-05",
     category: "Web Design",
     faq: [
       { question: "How much does a website cost in Vizag?", answer: "Website costs in Vizag vary based on complexity. A basic 5-page business website from Vyzma AI starts at Rs 35,000. E-commerce sites start at Rs 1,25,000, and corporate portals start at Rs 1,50,000+." },
@@ -264,7 +303,7 @@ const BLOG_POSTS = [
     title: "E-commerce Website Development in Vizag: Build an Online Store That Actually Sells",
     metaTitle: "E-commerce Website Development Vizag | Online Store Builder | Vyzma AI",
     metaDescription: "E-commerce website development in Vizag. Vyzma AI builds online stores with WhatsApp integration, secure payments, inventory management, and AI-powered product recommendations for Vizag businesses.",
-    date: "2099-01-01",
+    date: "2026-07-06",
     category: "Web Design",
     faq: [
       { question: "How much does an e-commerce website cost in Vizag?", answer: "E-commerce website development in Vizag starts at Rs 1,25,000 for a standard online store. Complex stores with advanced features may range from Rs 2,00,000 to Rs 5,00,000." },
@@ -279,7 +318,7 @@ const BLOG_POSTS = [
     title: "B2B & Corporate Website Design in Vizag: Sites That Generate Leads, Not Just Looks",
     metaTitle: "B2B Corporate Website Design Vizag | Lead Generation Sites | Vyzma AI",
     metaDescription: "B2B and corporate website design in Vizag. Vyzma AI builds professional business websites with lead generation, CRM integration, client portals, and SEO-optimised architecture for Vizag B2B companies.",
-    date: "2099-01-01",
+    date: "2026-07-07",
     category: "Web Design",
     faq: [
       { question: "How much does a corporate website cost in Vizag?", answer: "Corporate website design in Vizag starts at Rs 65,000 for a standard business website. Complex sites with CRM integration and client portals range from Rs 1,50,000 to Rs 3,00,000." },
@@ -294,7 +333,7 @@ const BLOG_POSTS = [
     title: "Startup Website Packages Vizag: All-in-One Websites for Early-Stage Companies",
     metaTitle: "Startup Website Packages Vizag | All-in-One Launch Sites | Vyzma AI",
     metaDescription: "Startup website packages Vizag for early-stage companies. All-in-one packages including branding, Next.js development, SEO setup, and AI chatbot from Rs 35,000. Launch your startup website in 2 weeks.",
-    date: "2099-01-01",
+    date: "2026-07-08",
     category: "Web Design",
     faq: [
       { question: "What's included in the Rs 35,000 starter package?", answer: "5 custom pages, Next.js development, mobile responsiveness, basic SEO, AI chatbot, WhatsApp integration, contact form, domain setup, and 1 month hosting. Timeline: 10-14 days." },
@@ -448,7 +487,7 @@ for (const post of BLOG_POSTS) {
 
   page = page.replace(
     "</head>",
-    `  <script type="application/ld+json">\n${JSON.stringify(blogSchema, null, 2)}\n    </script>\n  </head>`
+    `  <meta name="author" content="Vyzma AI" />\n    <script type="application/ld+json">\n${JSON.stringify(blogSchema, null, 2)}\n    </script>\n  </head>`
   );
 
   const outDir = path.join(distDir, "blog", post.slug);
@@ -458,10 +497,164 @@ for (const post of BLOG_POSTS) {
   console.log(`  OK  blog/${post.slug}/index.html`);
 }
 
+// === Static body for city pages (SEO: H1 + content visible to crawlers) ===
+
+const PAGE_HEADER = `
+<header class="fixed inset-x-0 top-4 z-50 h-16 border-none sm:inset-x-6">
+  <div class="absolute top-1/2 w-full -translate-y-1/2">
+    <nav class="flex size-full items-center justify-between p-4">
+      <div class="flex items-center gap-7">
+        <a href="/" class="transition hover:opacity-75"><img src="/img/vyzma-logo.png" alt="Vyzma" width="128" height="128" class="h-32 w-auto" /></a>
+        <a href="/#contact" class="hidden md:inline-flex items-center justify-center gap-1 rounded-full bg-[#3DA3FF] px-4 py-2 text-xs font-general uppercase tracking-widest text-white">Book Free Call</a>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-white/70 text-xs font-general uppercase tracking-widest">
+        <a href="/" class="nav-hover-btn">Home</a>
+        <a href="/blog" class="nav-hover-btn">Blog</a>
+        <a href="/#services" class="nav-hover-btn">Services</a>
+        <a href="/#industries" class="nav-hover-btn">Industries</a>
+        <a href="/#contact" class="nav-hover-btn">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>`;
+
+const PAGE_FOOTER = `
+<footer class="bg-[#0A0A0D] border-t border-white/5 px-5 sm:px-8 md:px-10 pt-16 pb-8">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <div>
+      <img src="/img/vyzma-logo.png" alt="Vyzma" width="96" height="48" class="h-12 w-auto mb-4" />
+      <p class="text-white/40 text-sm leading-relaxed mb-6">India's most affordable AI agency.<br />Helping businesses grow with AI.<br />Starting at ₹4,999/month.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-5">Services</h4>
+      <ul class="space-y-2.5 text-white/40 text-sm">
+        <li><a href="/#services" class="hover:text-white">AI Chatbots</a></li><li>AI Voice Agents</li><li>Workflow Automation</li>
+        <li><a href="/#services" class="hover:text-white">Website Design</a></li><li>SEO + GEO + AEO</li><li>Meta Ads</li><li>Google Ads</li><li>Digital Marketing</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-5">Company</h4>
+      <ul class="space-y-2.5 text-white/40 text-sm">
+        <li><a href="/about" class="hover:text-white">About Vyzma</a></li>
+        <li><a href="/blog" class="hover:text-white">Blog</a></li>
+        <li><a href="/#contact" class="hover:text-white">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-5">Get in Touch</h4>
+      <ul class="space-y-2.5 text-white/40 text-sm">
+        <li>📱 8886720908</li><li>📧 vyzmaai.in@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-5xl mx-auto border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <p class="text-white/30 text-xs">© 2026 Vyzma AI. All rights reserved.</p>
+  </div>
+</footer>`;
+
+function buildCityHubBody(city) {
+  const serviceCards = CITY_SERVICES.map((s, i) => `
+    <a href="/${city.slug}/${s.slug}" class="group block p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] transition-all duration-300">
+      <span class="text-[10px] font-mono tracking-[0.1em] text-white/20 mb-3 block">0${i + 1}</span>
+      <h3 class="text-lg font-semibold text-white group-hover:text-[#c4a05c] transition-colors mb-2">${escapeHtml(s.name)} in ${escapeHtml(city.name)}</h3>
+      <p class="text-sm text-white/40 leading-relaxed">${escapeHtml(city.name)} businesses trust Vyzma AI for ${s.keywords.toLowerCase()}.</p>
+    </a>`).join("\n");
+
+  return `
+${PAGE_HEADER}
+<main class="min-h-screen bg-black">
+  <section class="relative pt-32 pb-20 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto">
+      <nav class="mb-6 text-sm">
+        <a href="/" class="text-white/40 hover:text-white/60 transition-colors">Home</a>
+        <span class="text-white/20 mx-2">/</span>
+        <span class="text-white/60">${escapeHtml(city.name)}</span>
+      </nav>
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">AI & Digital Services in <span class="text-[#c4a05c]">${escapeHtml(city.name)}</span></h1>
+      <p class="text-lg text-white/50 mb-2">${escapeHtml(city.tagline)}</p>
+      <p class="text-white/40 max-w-3xl mb-8">${escapeHtml(city.description)}</p>
+      <div class="flex flex-wrap gap-6 mb-12 text-sm">
+        <span class="text-white/40">Population: <span class="text-white/80">${escapeHtml(city.population)}</span></span>
+        <span class="text-white/40">Known for: <span class="text-white/80">${escapeHtml(city.knownFor)}</span></span>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        ${serviceCards}
+      </div>
+    </div>
+  </section>
+  <section class="py-20 px-6 md:px-12 border-t border-white/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Why ${escapeHtml(city.name)} Businesses Choose Vyzma AI</h2>
+      <p class="text-white/50 mb-8 max-w-2xl mx-auto">We build AI-powered solutions that help ${escapeHtml(city.name)} businesses automate operations, engage customers, and drive measurable growth. From chatbots and automation to SEO, website design, and digital marketing — we deliver results.</p>
+      <a href="https://wa.me/919139393097" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors">Book a Free Consultation</a>
+    </div>
+  </section>
+</main>
+${PAGE_FOOTER}`;
+}
+
+function buildCityServiceBody(city, service) {
+  const points = [
+    `${city.name} expertise — we understand local business needs`,
+    `Team of AI specialists delivering results for Indian businesses`,
+    `Proven track record with clients across ${city.name}`,
+    `Affordable pricing built for ${city.name} businesses`,
+    `Multilingual support — English, Hindi, and regional languages`,
+    `End-to-end service from strategy to execution and support`,
+  ].map((p) => `
+      <div class="flex items-start gap-3 p-4 rounded-lg border border-white/5 bg-white/[0.02]">
+        <span class="text-[#c4a05c] mt-0.5 shrink-0">◆</span>
+        <span class="text-white/60 text-sm">${escapeHtml(p)}</span>
+      </div>`).join("\n");
+
+  const otherServices = CITY_SERVICES
+    .filter((s) => s.slug !== service.slug)
+    .map((s) => `
+      <a href="/${city.slug}/${s.slug}" class="block p-4 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/10 transition-all text-sm">
+        <span class="text-white/80">${escapeHtml(s.name)} in ${escapeHtml(city.name)}</span>
+      </a>`).join("\n");
+
+  return `
+${PAGE_HEADER}
+<main class="min-h-screen bg-black">
+  <section class="relative pt-32 pb-20 px-6 md:px-12">
+    <div class="max-w-5xl mx-auto">
+      <nav class="mb-6 text-sm">
+        <a href="/" class="text-white/40 hover:text-white/60 transition-colors">Home</a>
+        <span class="text-white/20 mx-2">/</span>
+        <a href="/${city.slug}" class="text-white/40 hover:text-white/60 transition-colors">${escapeHtml(city.name)}</a>
+        <span class="text-white/20 mx-2">/</span>
+        <span class="text-white/60">${escapeHtml(service.shortName)}</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">${escapeHtml(service.name)} in <span class="text-[#c4a05c]">${escapeHtml(city.name)}</span></h1>
+      <p class="text-white/50 text-lg mb-8">${escapeHtml(city.tagline)}</p>
+      <p class="text-white/40 max-w-3xl mb-12 leading-relaxed">Vyzma AI provides expert ${escapeHtml(service.keywords.toLowerCase())} for ${escapeHtml(city.name)} businesses. ${escapeHtml(city.tagline)}. Book a free consultation.</p>
+      <div class="grid md:grid-cols-2 gap-4 mb-12">
+        ${points}
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://wa.me/919139393097" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors">Get Started in ${escapeHtml(city.name)}</a>
+        <a href="/${city.slug}" class="px-8 py-4 border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors">All ${escapeHtml(city.name)} Services</a>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 px-6 md:px-12 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-8">Other Services in ${escapeHtml(city.name)}</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+        ${otherServices}
+      </div>
+    </div>
+  </section>
+</main>
+${PAGE_FOOTER}`;
+}
+
 // === City Hub Pages ===
 for (const city of CITIES) {
-  const title = `AI & Digital Services in ${city.name} | Vyzma AI`;
-  const desc = `Best AI agency, website design, and digital marketing in ${city.name}, ${city.state}. ${city.tagline}. Vyzma AI provides AI chatbots, SEO, Google Ads, and social media management for ${city.name} businesses.`;
+  const hubOverride = city.slug === "vizag" ? VIZAG_OVERRIDES.hub : null;
+  const title = hubOverride ? hubOverride.title : `AI & Digital Services in ${city.name} | Vyzma AI`;
+  const desc = hubOverride ? hubOverride.desc : `Best AI agency, website design, and digital marketing in ${city.name}, ${city.state}. ${city.tagline}. Vyzma AI provides AI chatbots, SEO, Google Ads, and social media management for ${city.name} businesses.`;
 
   let page = html;
   page = page.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`);
@@ -491,16 +684,20 @@ for (const city of CITIES) {
 
   page = page.replace("</head>", `  <script type="application/ld+json">\n${JSON.stringify(hubSchema, null, 2)}\n    </script>\n  </head>`);
 
+  page = page.replace('<div id="root"></div>', `<div id="root">${buildCityHubBody(city)}</div>`);
+
   const outDir = path.join(distDir, city.slug);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, "index.html"), page, "utf-8");
+  console.log(`  OK  ${city.slug}/index.html (city hub)`);
 }
 
 // === City Service Pages ===
 for (const city of CITIES) {
   for (const service of CITY_SERVICES) {
-    const title = `${service.shortName} in ${city.name} | Vyzma AI`;
-    const desc = `Best ${service.shortName.toLowerCase()} in ${city.name}, ${city.state}. ${city.tagline}. Vyzma AI provides expert ${service.keywords.toLowerCase()} for ${city.name} businesses. Book a free consultation.`;
+    const serviceOverride = city.slug === "vizag" && VIZAG_OVERRIDES[service.slug] ? VIZAG_OVERRIDES[service.slug] : null;
+    const title = serviceOverride ? serviceOverride.title : `${service.shortName} in ${city.name} | Vyzma AI`;
+    const desc = serviceOverride ? serviceOverride.desc : `Best ${service.shortName.toLowerCase()} in ${city.name}, ${city.state}. ${city.tagline}. Vyzma AI provides expert ${service.keywords.toLowerCase()} for ${city.name} businesses. Book a free consultation.`;
 
     let page = html;
     page = page.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`);
@@ -533,6 +730,8 @@ for (const city of CITIES) {
     };
 
     page = page.replace("</head>", `  <script type="application/ld+json">\n${JSON.stringify(serviceSchema, null, 2)}\n    </script>\n  </head>`);
+
+    page = page.replace('<div id="root"></div>', `<div id="root">${buildCityServiceBody(city, service)}</div>`);
 
     const outDir = path.join(distDir, city.slug, service.slug);
     fs.mkdirSync(outDir, { recursive: true });

@@ -83,7 +83,7 @@ export const CityHubPage = () => {
             We build AI-powered solutions that help {city.name} businesses automate operations, engage customers, and drive measurable growth. From chatbots and automation to SEO, website design, and digital marketing — we deliver results.
           </p>
           <a
-            href="https://wa.me/918886720908"
+            href="https://wa.me/919139393097"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors"
@@ -160,7 +160,7 @@ export const CityServicePage = () => {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="https://wa.me/918886720908"
+              href="https://wa.me/919139393097"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors"

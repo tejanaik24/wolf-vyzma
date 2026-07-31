@@ -1,32 +1,46 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 interface SEOProps {
   title: string;
   description: string;
   canonicalUrl?: string;
   ogType?: string;
-  jsonLd?: Record<string, unknown>[];
 }
 
-export const SEO = ({ title, description, canonicalUrl, ogType = "website", jsonLd }: SEOProps) => {
-  const siteUrl = "https://vyzma.in";
-  const fullUrl = canonicalUrl ?? siteUrl;
+const SITE_URL = "https://vyzma.in";
 
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <link rel="canonical" href={fullUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:type" content={ogType} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      {jsonLd?.map((schema, i) => (
-        <script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>
-      ))}
-    </Helmet>
-  );
+function setMeta(attr: "name" | "property", key: string, content: string) {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
+export const SEO = ({ title, description, canonicalUrl, ogType = "website" }: SEOProps) => {
+  const fullUrl = canonicalUrl ?? SITE_URL;
+
+  useEffect(() => {
+    document.title = title;
+    setMeta("name", "description", description);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", description);
+    setMeta("property", "og:url", fullUrl);
+    setMeta("property", "og:type", ogType);
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:title", title);
+    setMeta("name", "twitter:description", description);
+
+    let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      document.head.appendChild(link);
+    }
+    link.setAttribute("href", fullUrl);
+  }, [title, description, fullUrl, ogType]);
+
+  return null;
 };
