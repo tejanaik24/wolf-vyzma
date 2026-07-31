@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { CITIES, SERVICES_LIST, getCity, cityHubTitle } from "@/lib/city-data";
+import { CITIES, SERVICES_LIST, getCity, cityHubTitle, cityServiceTitle } from "@/lib/city-data";
 import { useEffect } from "react";
 
 export const CityHubPage = () => {
@@ -103,7 +103,7 @@ export const CityServicePage = () => {
 
   useEffect(() => {
     if (city && service) {
-      document.title = `${service.shortName} in ${city.name} | Vyzma AI`;
+      document.title = cityServiceTitle(service, city);
     }
   }, [city, service]);
 

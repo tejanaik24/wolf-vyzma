@@ -151,6 +151,10 @@ function buildHomepage(template: string): string {
           <h3 class="text-xl font-bold text-white mb-3">Digital Marketing</h3>
           <p class="text-white/50 leading-relaxed">Meta Ads, Google Ads, Instagram marketing, and content strategy. Performance-driven campaigns for Indian audiences.</p>
         </div>
+        <div class="rounded-lg border border-white/[0.08] bg-white/[0.02] p-8">
+          <h3 class="text-xl font-bold text-white mb-3">UI/UX Design</h3>
+          <p class="text-white/50 leading-relaxed">User research, wireframes, and pixel-perfect Figma interfaces. Award-winning UI/UX design that feels premium and converts visitors into customers.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -247,7 +251,7 @@ function buildHomepage(template: string): string {
       <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-5">Services</h4>
       <ul class="space-y-2.5 text-white/40 text-sm">
         <li>AI Chatbots</li><li>AI Voice Agents</li><li>Workflow Automation</li>
-        <li>Website Design</li><li>SEO + GEO + AEO</li><li>Meta Ads</li><li>Google Ads</li><li>Digital Marketing</li>
+        <li>Website Design</li><li>UI/UX Design</li><li>SEO + GEO + AEO</li><li>Meta Ads</li><li>Google Ads</li><li>Digital Marketing</li>
       </ul>
     </div>
     <div>

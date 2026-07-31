@@ -256,6 +256,13 @@ export const SERVICES_LIST: ServiceInfo[] = [
     description: "WhatsApp Business API marketing for {city} businesses — broadcast campaigns, AI chatbot integration, order notifications, and two-way customer engagement at 98% open rates.",
     keywords: ["WhatsApp marketing", "WhatsApp Business API", "WhatsApp chatbot"],
   },
+  {
+    slug: "ui-ux-design",
+    name: "UI/UX Design",
+    shortName: "UI/UX Design",
+    description: "Award-winning UI/UX design for {city} businesses — user research, wireframes, high-fidelity Figma prototypes, and pixel-perfect interfaces. We design products people love to use and interfaces that convert visitors into customers.",
+    keywords: ["UI UX design", "UI/UX design agency", "UX design services", "UI UX designer"],
+  },
 ];
 
 export function getCity(slug: string): City | undefined {
@@ -267,6 +274,7 @@ export function getService(slug: string): ServiceInfo | undefined {
 }
 
 export function cityServiceTitle(service: ServiceInfo, city: City): string {
+  if (service.slug === "ai-agency") return `AI Agency in ${city.name} | AI Consulting & Automation | Vyzma AI`;
   return `${service.shortName} in ${city.name} | Vyzma AI`;
 }
 

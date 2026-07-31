@@ -63,6 +63,7 @@ const CITY_SERVICES = [
   { slug: "google-ads", name: "Google Ads Management", shortName: "Google Ads", keywords: "Google Ads" },
   { slug: "ai-chatbots", name: "AI Chatbots & Automation", shortName: "AI Chatbots", keywords: "AI chatbots" },
   { slug: "whatsapp-marketing", name: "WhatsApp Marketing", shortName: "WhatsApp Marketing", keywords: "WhatsApp marketing" },
+  { slug: "ui-ux-design", name: "UI/UX Design", shortName: "UI/UX Design", keywords: "UI UX design" },
 ];
 
 const BLOG_POSTS = [
@@ -529,7 +530,7 @@ const PAGE_FOOTER = `
       <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-5">Services</h4>
       <ul class="space-y-2.5 text-white/40 text-sm">
         <li><a href="/#services" class="hover:text-white">AI Chatbots</a></li><li>AI Voice Agents</li><li>Workflow Automation</li>
-        <li><a href="/#services" class="hover:text-white">Website Design</a></li><li>SEO + GEO + AEO</li><li>Meta Ads</li><li>Google Ads</li><li>Digital Marketing</li>
+        <li><a href="/#services" class="hover:text-white">Website Design</a></li><li>UI/UX Design</li><li>SEO + GEO + AEO</li><li>Meta Ads</li><li>Google Ads</li><li>Digital Marketing</li>
       </ul>
     </div>
     <div>
@@ -696,7 +697,7 @@ for (const city of CITIES) {
 for (const city of CITIES) {
   for (const service of CITY_SERVICES) {
     const serviceOverride = city.slug === "vizag" && VIZAG_OVERRIDES[service.slug] ? VIZAG_OVERRIDES[service.slug] : null;
-    const title = serviceOverride ? serviceOverride.title : `${service.shortName} in ${city.name} | Vyzma AI`;
+    const title = serviceOverride ? serviceOverride.title : service.slug === "ai-agency" ? `AI Agency in ${city.name} | AI Consulting & Automation | Vyzma AI` : `${service.shortName} in ${city.name} | Vyzma AI`;
     const desc = serviceOverride ? serviceOverride.desc : `Best ${service.shortName.toLowerCase()} in ${city.name}, ${city.state}. ${city.tagline}. Vyzma AI provides expert ${service.keywords.toLowerCase()} for ${city.name} businesses. Book a free consultation.`;
 
     let page = html;
