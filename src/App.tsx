@@ -2,11 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { DevAnnotations } from "@/components/DevAnnotations";
 import { HomePage } from "@/pages/HomePage";
 import { BlogListingPage } from "@/pages/BlogListingPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
 import { CityHubPage, CityServicePage } from "@/pages/CityHubPage";
 import { AboutPage } from "@/pages/AboutPage";
+import { ComparePage } from "@/pages/ComparePage";
+import { ResearchPage } from "@/pages/ResearchPage";
 
 const App = () => {
   return (
@@ -20,13 +23,17 @@ const App = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/blog" element={<BlogListingPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/compare/:slug" element={<ComparePage />} />
+            <Route path="/research/:slug" element={<ResearchPage />} />
             <Route path="/:city/:service" element={<CityServicePage />} />
             <Route path="/:city" element={<CityHubPage />} />
           </Routes>
         </main>
         <Footer />
+        <DevAnnotations />
       </div>
     </Router>
   );
 };
+
 export default App;

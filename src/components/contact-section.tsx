@@ -10,17 +10,46 @@ export const ContactSection = () => {
     whatsapp: "",
     challenge: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // 1. Dual Dispatch: Send lead data to vyzmaai.in@gmail.com via FormSubmit AJAX API
+      await fetch("https://formsubmit.co/ajax/vyzmaai.in@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Lead: ${form.name} (${form.businessType} - ${form.city})`,
+          Name: form.name,
+          BusinessType: form.businessType,
+          City: form.city,
+          WhatsApp: form.whatsapp,
+          Challenge: form.challenge,
+        }),
+      });
+    } catch (err) {
+      console.error("FormSubmit lead backup error:", err);
+    }
+
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+
+    // 2. Open WhatsApp as secondary convenience action
     const msg = encodeURIComponent(
       `Hi Vyzma! I'm ${form.name} from ${form.city}. I run a ${form.businessType} business. My WhatsApp is ${form.whatsapp}. My biggest challenge: ${form.challenge}`
     );
-    window.open(`https://wa.me/919139393097?text=${msg}`, "_blank");
+    window.open(`https://wa.me/918886720908?text=${msg}`, "_blank");
   };
 
   return (
@@ -36,13 +65,13 @@ export const ContactSection = () => {
           </p>
 
           <a
-            href="https://wa.me/919139393097"
+            href="https://wa.me/918886720908"
             target="_blank"
             rel="noreferrer noopener"
             className="inline-flex items-center gap-3 bg-[#25D366] text-white rounded-full px-6 py-3 font-medium text-sm mb-6 hover:opacity-90 transition"
           >
             <FaWhatsapp className="text-lg" />
-            WhatsApp: 9139393097
+            WhatsApp: 8886720908
           </a>
 
           <p className="text-white/60 text-sm mb-2">
@@ -56,60 +85,87 @@ export const ContactSection = () => {
 
         <FadeIn delay={0.2} x={30}>
           <div className="bg-[#14151A] border border-white/10 rounded-2xl p-6 sm:p-8">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                name="name"
-                placeholder="Your Name"
-                value={form.name}
-                onChange={handleChange}
-                className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30"
-              />
-              <select
-                name="businessType"
-                value={form.businessType}
-                onChange={handleChange}
-                className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition"
-              >
-                <option value="">Business Type</option>
-                <option value="Clinic">Clinic / Hospital</option>
-                <option value="Restaurant">Restaurant / Cafe</option>
-                <option value="Gym">Gym / Fitness</option>
-                <option value="Coaching">Coaching Institute</option>
-                <option value="RealEstate">Real Estate</option>
-                <option value="Ecommerce">E-commerce</option>
-                <option value="Retail">Local Shop / Retail</option>
-                <option value="Other">Other</option>
-              </select>
-              <input
-                name="city"
-                placeholder="Your City"
-                value={form.city}
-                onChange={handleChange}
-                className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30"
-              />
-              <input
-                name="whatsapp"
-                type="tel"
-                placeholder="WhatsApp Number"
-                value={form.whatsapp}
-                onChange={handleChange}
-                className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30"
-              />
-              <textarea
-                name="challenge"
-                placeholder="What is your biggest challenge right now?"
-                value={form.challenge}
-                onChange={handleChange}
-                rows={4}
-                className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30 resize-none"
-              />
-              <button type="submit" className="w-full bg-[#3DA3FF] text-white rounded-full px-6 py-3 font-medium text-sm uppercase tracking-wider hover:bg-[#3DA3FF]/90 transition">
-                Send Message →
-              </button>
-            </form>
+            {isSubmitted ? (
+              <div className="text-center py-8 space-y-4">
+                <div className="w-16 h-16 bg-[#25D366]/20 text-[#25D366] rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                  ✓
+                </div>
+                <h3 className="text-white font-bold text-xl">Details Received!</h3>
+                <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">
+                  Thank you, {form.name || "friend"}! We've received your request and will reach out on WhatsApp / Email shortly.
+                </p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="text-[#3DA3FF] text-xs underline hover:text-white transition"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input
+                  name="name"
+                  required
+                  placeholder="Your Name"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30"
+                />
+                <select
+                  name="businessType"
+                  required
+                  value={form.businessType}
+                  onChange={handleChange}
+                  className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition"
+                >
+                  <option value="">Business Type</option>
+                  <option value="Clinic">Clinic / Hospital</option>
+                  <option value="Restaurant">Restaurant / Cafe</option>
+                  <option value="Gym">Gym / Fitness</option>
+                  <option value="Coaching">Coaching Institute</option>
+                  <option value="RealEstate">Real Estate</option>
+                  <option value="Ecommerce">E-commerce</option>
+                  <option value="Retail">Local Shop / Retail</option>
+                  <option value="Other">Other</option>
+                </select>
+                <input
+                  name="city"
+                  required
+                  placeholder="Your City"
+                  value={form.city}
+                  onChange={handleChange}
+                  className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30"
+                />
+                <input
+                  name="whatsapp"
+                  type="tel"
+                  required
+                  placeholder="WhatsApp Number"
+                  value={form.whatsapp}
+                  onChange={handleChange}
+                  className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30"
+                />
+                <textarea
+                  name="challenge"
+                  placeholder="What is your biggest challenge right now?"
+                  value={form.challenge}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full bg-[#0C0C0C] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#3DA3FF] outline-none transition placeholder:text-white/30 resize-none"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#3DA3FF] text-white rounded-full px-6 py-3 font-medium text-sm uppercase tracking-wider hover:bg-[#3DA3FF]/90 transition disabled:opacity-50"
+                >
+                  {isSubmitting ? "Sending Lead..." : "Send Message →"}
+                </button>
+              </form>
+            )}
           </div>
         </FadeIn>
       </div>
     </section>
   );
 };
+

@@ -25,7 +25,7 @@ export const Footer = () => {
                 "https://instagram.com/vyzmaai",
                 "https://linkedin.com/company/vyzmaai",
                 "https://youtube.com/@vyzmaai",
-                "https://wa.me/919139393097",
+                "https://wa.me/918886720908",
               ];
               return (
                 <a key={i} href={links[i]} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition text-lg">
@@ -72,7 +72,7 @@ export const Footer = () => {
 
       <div className="max-w-5xl mx-auto border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p className="text-white/30 text-xs">© 2026 Vyzma AI. All rights reserved.</p>
-        <p className="text-white/30 text-xs">📱 9139393097 | 📧 vyzmaai.in@gmail.com</p>
+        <p className="text-white/30 text-xs">📱 8886720908 | 📧 vyzmaai.in@gmail.com</p>
         <div className="flex gap-4 text-white/30 text-xs">
           <span className="hover:text-white cursor-pointer transition">Privacy Policy</span>
           <span className="hover:text-white cursor-pointer transition">Terms of Service</span>

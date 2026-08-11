@@ -61,15 +61,15 @@ See `VYZMA_CITY_SEO_STRATEGY.md` and `VYZMA_MEMORY.md` in this repo for the curr
 This is the live production site (`vyzma.in`) for the business — always verify changes locally before deploying.
 
 ## Last session notes
-_Auto-updated by nightly-update.ps1 on 2026-07-29_
+_Auto-updated by nightly-update.ps1 on 2026-08-11_
 
 **Last 5 commits:**
 ```
-82b8baf merge: resolve conflicts with origin/main
-9a30706 feat: add 8 website-design blog posts + daily auto-publish scheduler
-f3d5e49 fix: FAQ answers always readable by crawlers - remove opacity-0 hide
-af66c60 docs: update dependencies and folder structure in README
-34cb40e feat: add /about page with Person schema + fix FAQ static visibility
+527ac1d Add Gmail signature image assets
+279f524 feat: add UI/UX Design Agency in India blog post + update sitemap and llms.txt
+c4b7920 SEO: fix keyword cannibalization + add UI/UX Design service
+aaee58e fix: add Content-Security-Policy header (self + fonts + pexels)
+399c64c fix: redirect www.vyzma.in root path to apex (catch-all missed bare /)
 ```
 
 **TODO/FIXME found:**
@@ -77,4 +77,4 @@ af66c60 docs: update dependencies and folder structure in README
 None found.
 ```
 
-**Last modified file:** wolf-vyzma\CLAUDE.md (modified 2026-07-28 23:01)
+**Last modified file:** wolf-vyzma\CLAUDE.md (modified 2026-08-10 23:01)

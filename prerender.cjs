@@ -587,7 +587,7 @@ ${PAGE_HEADER}
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Why ${escapeHtml(city.name)} Businesses Choose Vyzma AI</h2>
       <p class="text-white/50 mb-8 max-w-2xl mx-auto">We build AI-powered solutions that help ${escapeHtml(city.name)} businesses automate operations, engage customers, and drive measurable growth. From chatbots and automation to SEO, website design, and digital marketing — we deliver results.</p>
-      <a href="https://wa.me/919139393097" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors">Book a Free Consultation</a>
+      <a href="https://wa.me/918886720908" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors">Book a Free Consultation</a>
     </div>
   </section>
 </main>
@@ -634,7 +634,7 @@ ${PAGE_HEADER}
         ${points}
       </div>
       <div class="flex flex-wrap gap-4">
-        <a href="https://wa.me/919139393097" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors">Get Started in ${escapeHtml(city.name)}</a>
+        <a href="https://wa.me/918886720908" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-[#c4a05c] text-black font-semibold rounded-lg hover:bg-[#d4b06c] transition-colors">Get Started in ${escapeHtml(city.name)}</a>
         <a href="/${city.slug}" class="px-8 py-4 border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors">All ${escapeHtml(city.name)} Services</a>
       </div>
     </div>
@@ -740,9 +740,79 @@ for (const city of CITIES) {
   }
 }
 
+const COMPARISONS_DATA = [
+  { slug: "nextjs-vs-wordpress-2026", title: "Next.js vs WordPress (2026 Benchmark): Speed, Cost & SEO for Indian SMBs", desc: "Head-to-head 2026 comparison of Next.js vs WordPress for Indian SMBs. Speed metrics, 3-year TCO, security risks, and AI integration capabilities compared." },
+  { slug: "vyzma-ai-vs-traditional-agencies", title: "Vyzma AI vs Traditional Digital Marketing Agencies in India (2026)", desc: "Compare Vyzma AI's AI-automated marketing & Next.js tech stack against traditional Indian agencies. See pricing, lead response speed, and ROI comparisons." },
+  { slug: "vyzma-ai-vs-freelancers", title: "Vyzma AI vs Hiring Freelancers: Which is Right for Your Business?", desc: "Evaluating Vyzma AI vs hiring freelancers in India. Compare team depth, code quality, SLA guarantees, and pricing for website & AI projects." },
+  { slug: "custom-ai-chatbot-vs-intercom", title: "Custom AI Chatbots vs SaaS Tools (Intercom / ManyChat): 2026 Pricing & Features", desc: "Compare custom Vyzma AI chatbots against SaaS platforms like Intercom and ManyChat for Indian SMBs. Telugu & Hindi support, per-message fees, and setup costs compared." },
+];
+
+const RESEARCH_DATA = [
+  { slug: "indian-smb-ai-adoption-2026", title: "2026 State of AI Adoption in Indian SMBs: Benchmark Report", desc: "Original research report analyzing AI adoption, budgets, ROI channels, and lead conversion rates across 500+ Indian SMBs in Vizag, Bangalore, Hyderabad & Mumbai." },
+  { slug: "customer-support-cost-benchmark-india-2026", title: "Customer Support Cost & Latency Benchmark for Indian Businesses (2026)", desc: "Benchmark analysis on customer support costs and lead loss across Indian retail, healthcare, and real estate. Learn how WhatsApp AI chatbots cut support costs by 58%." },
+];
+
+
+for (const comp of COMPARISONS_DATA) {
+  const url = `${SITE_URL}/compare/${comp.slug}`;
+  let page = html;
+  page = page.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(comp.title)}</title>`);
+  page = page.replace(/<meta\s+name="description"[\s\S]*?\/?>/, (m) => m.replace(/content="[^"]*"/, `content="${escapeAttr(comp.desc)}"`));
+  page = page.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${url}" />`);
+  page = page.replace(/<meta property="og:url"[^>]*\/?>/, `<meta property="og:url" content="${url}" />`);
+  page = page.replace(/<meta property="og:title"[^>]*\/?>/, `<meta property="og:title" content="${escapeAttr(comp.title)}" />`);
+  page = page.replace(/<meta\s+property="og:description"[\s\S]*?\/?>/, `<meta property="og:description" content="${escapeAttr(comp.desc)}" />`);
+  
+  const outDir = path.join(distDir, "compare", comp.slug);
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, "index.html"), page, "utf-8");
+  console.log(`  OK  compare/${comp.slug}/index.html`);
+}
+
+for (const res of RESEARCH_DATA) {
+  const url = `${SITE_URL}/research/${res.slug}`;
+  let page = html;
+  page = page.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(res.title)}</title>`);
+  page = page.replace(/<meta\s+name="description"[\s\S]*?\/?>/, (m) => m.replace(/content="[^"]*"/, `content="${escapeAttr(res.desc)}"`));
+  page = page.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${url}" />`);
+  page = page.replace(/<meta property="og:url"[^>]*\/?>/, `<meta property="og:url" content="${url}" />`);
+  page = page.replace(/<meta property="og:title"[^>]*\/?>/, `<meta property="og:title" content="${escapeAttr(res.title)}" />`);
+  page = page.replace(/<meta\s+property="og:description"[\s\S]*?\/?>/, `<meta property="og:description" content="${escapeAttr(res.desc)}" />`);
+
+  const outDir = path.join(distDir, "research", res.slug);
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, "index.html"), page, "utf-8");
+  console.log(`  OK  research/${res.slug}/index.html`);
+}
+
 const totalCityPages = CITIES.length * CITY_SERVICES.length;
 console.log(`  OK  ${totalCityPages} city-service pages prerendered.`);
-console.log(`\nDone — ${BLOG_POSTS.length} blog + ${totalCityPages} city pages prerendered.`);
+
+// === Generate Complete Sitemap ===
+const sitemapUrls = [
+  `  <url><loc>${SITE_URL}/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>`,
+  `  <url><loc>${SITE_URL}/blog</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`,
+  ...BLOG_POSTS.map((p) => `  <url><loc>${SITE_URL}/blog/${p.slug}</loc><lastmod>${p.date || "2026-08-12"}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`),
+  ...COMPARISONS_DATA.map((c) => `  <url><loc>${SITE_URL}/compare/${c.slug}</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>`),
+  ...RESEARCH_DATA.map((r) => `  <url><loc>${SITE_URL}/research/${r.slug}</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>`),
+  ...CITIES.map((c) => `  <url><loc>${SITE_URL}/${c.slug}</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`),
+];
+
+for (const city of CITIES) {
+  for (const service of CITY_SERVICES) {
+    sitemapUrls.push(`  <url><loc>${SITE_URL}/${city.slug}/${service.slug}</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`);
+  }
+}
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join("\n")}\n</urlset>\n`;
+
+fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemapXml, "utf-8");
+fs.writeFileSync(path.join(__dirname, "public", "sitemap.xml"), sitemapXml, "utf-8");
+console.log(`  OK  sitemap.xml generated with ${sitemapUrls.length} URLs.`);
+
+console.log(`\nDone — ${BLOG_POSTS.length} blog + ${COMPARISONS_DATA.length} compare + ${RESEARCH_DATA.length} research + ${totalCityPages} city pages prerendered (${sitemapUrls.length} sitemap URLs).`);
+
+
 
 function buildSchema(post, url) {
   const schema = {
