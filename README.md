@@ -66,6 +66,7 @@ vyzma-ai/
       |--- custom-cursor.tsx
       |--- DevAnnotations.tsx
       |--- faq-section.tsx
+      |--- featured-research-section.tsx
       |--- footer.tsx
       |--- hero.tsx
       |--- how-it-works.tsx
