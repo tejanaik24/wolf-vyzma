@@ -13,6 +13,7 @@ import { AboutSection } from "@/components/about-section";
 import { FaqSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { Offices } from "@/components/offices";
+import { FeaturedResearchSection } from "@/components/featured-research-section";
 
 export const HomePage = () => {
   return (
@@ -33,9 +34,11 @@ export const HomePage = () => {
       <HowItWorks />
       <WhyVyzma />
       <AboutSection />
+      <FeaturedResearchSection />
       <FaqSection />
       <ContactSection />
       <Offices />
     </>
   );
 };
+
