@@ -10,6 +10,7 @@ import { CityHubPage, CityServicePage } from "@/pages/CityHubPage";
 import { AboutPage } from "@/pages/AboutPage";
 import { ComparePage } from "@/pages/ComparePage";
 import { ResearchPage } from "@/pages/ResearchPage";
+import { StickyCTA } from "@/components/sticky-cta";
 
 const App = () => {
   return (
@@ -30,10 +31,12 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <StickyCTA />
         <DevAnnotations />
       </div>
     </Router>
   );
 };
+
 
 export default App;

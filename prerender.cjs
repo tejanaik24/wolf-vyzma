@@ -810,7 +810,17 @@ fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemapXml, "utf-8");
 fs.writeFileSync(path.join(__dirname, "public", "sitemap.xml"), sitemapXml, "utf-8");
 console.log(`  OK  sitemap.xml generated with ${sitemapUrls.length} URLs.`);
 
+// Trigger IndexNow ping automatically
+try {
+  const { execSync } = require("child_process");
+  execSync("node scripts/ping-indexnow.cjs", { stdio: "inherit" });
+} catch (e) {
+  console.warn("IndexNow auto-ping warning:", e.message);
+}
+
+
 console.log(`\nDone — ${BLOG_POSTS.length} blog + ${COMPARISONS_DATA.length} compare + ${RESEARCH_DATA.length} research + ${totalCityPages} city pages prerendered (${sitemapUrls.length} sitemap URLs).`);
+
 
 
 
