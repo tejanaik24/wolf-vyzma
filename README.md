@@ -50,6 +50,8 @@ vyzma-ai/
   |- scripts/
     |-- generate-blog-images.cjs
     |-- indexnow-submit.cjs
+    |-- ping-indexnow.cjs
+    |-- ping-indexnow.js
     |-- prerender.ts
     |-- sanitize-utf8.cjs
     |-- schedule-blog.cjs
@@ -62,6 +64,7 @@ vyzma-ai/
       |--- button.tsx
       |--- contact-section.tsx
       |--- custom-cursor.tsx
+      |--- DevAnnotations.tsx
       |--- faq-section.tsx
       |--- footer.tsx
       |--- hero.tsx
@@ -75,6 +78,7 @@ vyzma-ai/
       |--- rounded-corners.tsx
       |--- seo.tsx
       |--- services-section.tsx
+      |--- sticky-cta.tsx
       |--- trust-bar.tsx
       |--- why-vyzma.tsx
       |--- wolf-slides-section.tsx
@@ -83,14 +87,18 @@ vyzma-ai/
     |-- lib/
       |--- blog-data.ts
       |--- city-data.ts
+      |--- compare-data.ts
       |--- is-mobile.ts
+      |--- research-data.ts
       |--- utils.ts
     |-- pages/
       |--- AboutPage.tsx
       |--- BlogListingPage.tsx
       |--- BlogPostPage.tsx
       |--- CityHubPage.tsx
+      |--- ComparePage.tsx
       |--- HomePage.tsx
+      |--- ResearchPage.tsx
     |-- App.tsx
     |-- index.css
     |-- main.tsx
@@ -160,6 +168,7 @@ Useful resources and dependencies that are used in Nova.
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.13
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
 - [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^6.0.1
+- [agentation](https://www.npmjs.com/package/agentation): ^3.0.2
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
