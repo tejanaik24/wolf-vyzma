@@ -61,15 +61,15 @@ See `VYZMA_CITY_SEO_STRATEGY.md` and `VYZMA_MEMORY.md` in this repo for the curr
 This is the live production site (`vyzma.in`) for the business — always verify changes locally before deploying.
 
 ## Last session notes
-_Auto-updated by nightly-update.ps1 on 2026-08-11_
+_Auto-updated by nightly-update.ps1 on 2026-08-12_
 
 **Last 5 commits:**
 ```
+6c8931f feat(seo): homepage internal authority links for Google AI Hub Vizag and Best AI Agency India
+77342f0 docs: update dependencies and folder structure in README
+aaf28d1 feat(growth): indexnow auto-ping, sticky conversion CTA, and canonical schema phone fixes
+ec1b2b6 feat(seo): dual-dispatch lead capture, 112-url sitemap, comparison pages and research reports
 527ac1d Add Gmail signature image assets
-279f524 feat: add UI/UX Design Agency in India blog post + update sitemap and llms.txt
-c4b7920 SEO: fix keyword cannibalization + add UI/UX Design service
-aaee58e fix: add Content-Security-Policy header (self + fonts + pexels)
-399c64c fix: redirect www.vyzma.in root path to apex (catch-all missed bare /)
 ```
 
 **TODO/FIXME found:**
@@ -77,4 +77,4 @@ aaee58e fix: add Content-Security-Policy header (self + fonts + pexels)
 None found.
 ```
 
-**Last modified file:** wolf-vyzma\CLAUDE.md (modified 2026-08-10 23:01)
+**Last modified file:** wolf-vyzma\src\pages\HomePage.tsx (modified 2026-08-12 02:12)

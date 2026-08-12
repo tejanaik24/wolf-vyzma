@@ -10,6 +10,7 @@ import { CityHubPage, CityServicePage } from "@/pages/CityHubPage";
 import { AboutPage } from "@/pages/AboutPage";
 import { ComparePage } from "@/pages/ComparePage";
 import { ResearchPage } from "@/pages/ResearchPage";
+import { CalculatorPage } from "@/pages/CalculatorPage";
 import { StickyCTA } from "@/components/sticky-cta";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/calculator" element={<CalculatorPage />} />
             <Route path="/blog" element={<BlogListingPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/compare/:slug" element={<ComparePage />} />
