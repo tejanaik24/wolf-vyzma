@@ -31,6 +31,8 @@ export const BLOG_POSTS: BlogPost[] = [
 
 If you run a clinic, real estate firm, coaching institute, or service business in India, you already know WhatsApp is where sales happen. Over 95% of Indian consumers prefer chatting on WhatsApp over email or phone calls.
 
+![Automated WhatsApp Lead Capture Workflow Infographic](/img/whatsapp-lead-sop.png)
+
 However, most Indian SMBs suffer from **the Manual Lead Leak Trap**:
 1. A potential customer visits your site at 9:30 PM.
 2. They click a standard "WhatsApp Us" button.
@@ -42,6 +44,8 @@ In 2026, **the first business to respond within 60 seconds wins 80% of the deal*
 ---
 
 ## The Smart 3-Step WhatsApp Lead Capture System
+
+![Team analyzing automated WhatsApp lead capture workflow](https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
 
 Instead of relying on basic static WhatsApp links, modern high-converting websites use an integrated 3-layer stack:
 
@@ -71,6 +75,8 @@ When the user clicks, your AI agent instantly knows which page they came from an
 
 ## Step 2: Connect Webhooks via n8n or Make.com
 
+![n8n Webhooks and WhatsApp Business API CRM Integration](https://images.pexels.com/photos/6961857/pexels-photo-6961857.png?auto=compress&cs=tinysrgb&h=650&w=940)
+
 You do not need ₹50,000/month enterprise software to automate WhatsApp. You can connect your website's contact forms directly to the official **WhatsApp Business API** using open-source automation tools like **n8n**:
 
 1. **Website Form Submit:** User fills their name and phone number on your site.
@@ -81,6 +87,8 @@ You do not need ₹50,000/month enterprise software to automate WhatsApp. You ca
 ---
 
 ## Step 3: Train an AI Conversational Agent in Telugu & English
+
+![Multilingual AI Chatbot interface handling Telugu and English inquiries](https://images.pexels.com/photos/16380905/pexels-photo-16380905.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
 
 For Indian businesses in cities like Visakhapatnam, Hyderabad, and Bangalore, leads communicate in a mix of **English, Telugu, and Hindi**.
 
@@ -100,6 +108,8 @@ Want to check if your current website is leaking leads or invisible to AI search
 ---
 
 ## How NIFS India Scaled Lead Conversions by 340%
+
+![Business conversion growth and lead analytics dashboard](https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
 
 When National Institute of Fire & Safety (NIFS India) upgraded their website infrastructure, they integrated instant WhatsApp lead triggers and autonomous GSC indexing. Within 20 days:
 - **+340% increase** in qualified organic leads.
