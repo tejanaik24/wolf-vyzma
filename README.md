@@ -96,6 +96,7 @@ vyzma-ai/
       |--- AboutPage.tsx
       |--- BlogListingPage.tsx
       |--- BlogPostPage.tsx
+      |--- CalculatorPage.tsx
       |--- CityHubPage.tsx
       |--- ComparePage.tsx
       |--- HomePage.tsx
