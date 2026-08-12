@@ -785,14 +785,32 @@ for (const res of RESEARCH_DATA) {
   console.log(`  OK  research/${res.slug}/index.html`);
 }
 
-const calcDir = path.join(distDir, "calculator");
-fs.mkdirSync(calcDir, { recursive: true });
-let calcPage = html;
-calcPage = calcPage.replace(/<title>.*?<\/title>/, `<title>AI &amp; Web Agency ROI Calculator | Vyzma AI</title>`);
-calcPage = calcPage.replace(/<meta\s+name="description"[\s\S]*?\/?>/, (m) => m.replace(/content="[^"]*"/, `content="Estimate your ROI, organic lead growth, hours saved, and projected revenue boost with Vyzma AI's high-performance engineering &amp; autonomous SEO systems."`));
-calcPage = calcPage.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${SITE_URL}/calculator" />`);
-fs.writeFileSync(path.join(calcDir, "index.html"), calcPage, "utf-8");
-console.log(`  OK  calculator/index.html`);
+const caseDir = path.join(distDir, "case-studies", "nifs-india-seo-transformation");
+fs.mkdirSync(caseDir, { recursive: true });
+let casePage = html;
+casePage = casePage.replace(/<title>.*?<\/title>/, `<title>NIFS India Case Study — 340% Organic Growth &amp; #1 Google Ranks | Vyzma AI</title>`);
+casePage = casePage.replace(/<meta\s+name="description"[\s\S]*?\/?>/, (m) => m.replace(/content="[^"]*"/, `content="Discover how Vyzma AI transformed NIFS India's search presence: 340% organic lead growth, 500+ daily searches, GA4 property integration, and #1 positions on core safety keywords."`));
+casePage = casePage.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${SITE_URL}/case-studies/nifs-india-seo-transformation" />`);
+fs.writeFileSync(path.join(caseDir, "index.html"), casePage, "utf-8");
+console.log(`  OK  case-studies/nifs-india-seo-transformation/index.html`);
+
+const auditDir = path.join(distDir, "free-audit");
+fs.mkdirSync(auditDir, { recursive: true });
+let auditPage = html;
+auditPage = auditPage.replace(/<title>.*?<\/title>/, `<title>Free Website &amp; AI Search Audit Tool | Vyzma AI</title>`);
+auditPage = auditPage.replace(/<meta\s+name="description"[\s\S]*?\/?>/, (m) => m.replace(/content="[^"]*"/, `content="Run a 100% free instant website &amp; GEO audit. Check your Core Web Vitals, Schema markup, and ChatGPT/Google AI search visibility in 10 seconds."`));
+auditPage = auditPage.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${SITE_URL}/free-audit" />`);
+fs.writeFileSync(path.join(auditDir, "index.html"), auditPage, "utf-8");
+console.log(`  OK  free-audit/index.html`);
+
+const resDir = path.join(distDir, "free-resources");
+fs.mkdirSync(resDir, { recursive: true });
+let resPage = html;
+resPage = resPage.replace(/<title>.*?<\/title>/, `<title>Free AI &amp; SEO Resource Vault 2026 | Vyzma AI</title>`);
+resPage = resPage.replace(/<meta\s+name="description"[\s\S]*?\/?>/, (m) => m.replace(/content="[^"]*"/, `content="Download free 2026 AI automation playbooks, prompt vaults, SEO checklists, and competitor analysis SOPs for Indian business owners."`));
+resPage = resPage.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${SITE_URL}/free-resources" />`);
+fs.writeFileSync(path.join(resDir, "index.html"), resPage, "utf-8");
+console.log(`  OK  free-resources/index.html`);
 
 const totalCityPages = CITIES.length * CITY_SERVICES.length;
 console.log(`  OK  ${totalCityPages} city-service pages prerendered.`);
@@ -801,6 +819,9 @@ console.log(`  OK  ${totalCityPages} city-service pages prerendered.`);
 const sitemapUrls = [
   `  <url><loc>${SITE_URL}/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>`,
   `  <url><loc>${SITE_URL}/calculator</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`,
+  `  <url><loc>${SITE_URL}/case-studies/nifs-india-seo-transformation</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`,
+  `  <url><loc>${SITE_URL}/free-audit</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`,
+  `  <url><loc>${SITE_URL}/free-resources</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`,
   `  <url><loc>${SITE_URL}/blog</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`,
   ...BLOG_POSTS.map((p) => `  <url><loc>${SITE_URL}/blog/${p.slug}</loc><lastmod>${p.date || "2026-08-12"}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`),
   ...COMPARISONS_DATA.map((c) => `  <url><loc>${SITE_URL}/compare/${c.slug}</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>`),

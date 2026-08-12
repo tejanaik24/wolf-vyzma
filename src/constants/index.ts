@@ -1,8 +1,9 @@
 export const NAV_ITEMS = [
   { label: "Services", href: "/#services" },
+  { label: "Free Audit", href: "/free-audit" },
   { label: "Calculator", href: "/calculator" },
-  { label: "Industries", href: "/#industries" },
-  { label: "About", href: "/#about" },
+  { label: "Resources", href: "/free-resources" },
+  { label: "Case Study", href: "/case-studies/nifs-india-seo-transformation" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ] as const;

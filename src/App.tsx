@@ -11,6 +11,9 @@ import { AboutPage } from "@/pages/AboutPage";
 import { ComparePage } from "@/pages/ComparePage";
 import { ResearchPage } from "@/pages/ResearchPage";
 import { CalculatorPage } from "@/pages/CalculatorPage";
+import { CaseStudyPage } from "@/pages/CaseStudyPage";
+import { FreeAuditPage } from "@/pages/FreeAuditPage";
+import { FreeResourcesPage } from "@/pages/FreeResourcesPage";
 import { StickyCTA } from "@/components/sticky-cta";
 
 const App = () => {
@@ -24,6 +27,9 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/calculator" element={<CalculatorPage />} />
+            <Route path="/case-studies/nifs-india-seo-transformation" element={<CaseStudyPage />} />
+            <Route path="/free-audit" element={<FreeAuditPage />} />
+            <Route path="/free-resources" element={<FreeResourcesPage />} />
             <Route path="/blog" element={<BlogListingPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/compare/:slug" element={<ComparePage />} />
